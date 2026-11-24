@@ -401,7 +401,8 @@ function applyCov(L, x0, y0, bw, bh, C, o) {
   let Bm = null, Bs = null;
   if (o.blooms && o.rng) {
     const rng = o.rng, shapes = [];
-    for (let b = 0; b < o.blooms; b++) {
+    if (o.bloomAt) for (const [bx, by, R] of o.bloomAt) shapes.push(cauliflower(bx, by, R, rng));
+    else for (let b = 0; b < o.blooms; b++) {
       for (let t = 0; t < 80; t++) {
         const xx = (rng() * bw) | 0, yy = (rng() * bh) | 0;
         if (C[yy * bw + xx] > 0.85) { shapes.push(cauliflower(x0 + xx, y0 + yy, rng.range(o.bloomR[0], o.bloomR[1]), rng)); break; }
@@ -615,7 +616,7 @@ function koiFrame(k) {
   const N = 260, Pp = new Float32Array(N * 2), T = new Float32Array(N), ds = k.len / (N - 1);
   let x = k.x, y = k.y;
   for (let i = 0; i < N; i++) {
-    const s = i / (N - 1), th = k.heading + k.bend1 * s + k.bend2 * s * s;
+    const s = i / (N - 1), th = k.thetaFn ? k.heading + k.thetaFn(s) : k.heading + k.bend1 * s + k.bend2 * s * s;
     Pp[i * 2] = x; Pp[i * 2 + 1] = y; T[i] = th;
     x -= Math.cos(th) * ds; y -= Math.sin(th) * ds;
   }
@@ -682,7 +683,9 @@ function patchPoly(F, Wh, sc, vc, rs, rv, rng, irr = 0.2, n = 24) {
 function paintKoi(name, k) {
   const rng = makeRng(name);
   const F = koiFrame(k), Wh = k.halfW;
-  const thm = F.ang(0.35), lit = (-Math.sin(thm) * -0.62 + Math.cos(thm) * -0.78) > 0 ? 1 : -1;
+  const light = k.light || [-0.62, -0.78], thm = F.ang(0.35);
+  const lc = -Math.sin(thm) * light[0] + Math.cos(thm) * light[1];
+  const lit = lc > 0 ? 1 : -1, litW = k.smoothLight ? Math.min(1, Math.abs(lc) / 0.35) : 1;
 
   const body = koiBody(F, Wh);
   const tail = koiTail(F, Wh, k.flick, k.tailSpread);
@@ -704,12 +707,12 @@ function paintKoi(name, k) {
   if (k.type === 'kohaku') {
     paint(L, { shape: layered(body, rng, { layers: 8, d0: 1, a0: 0.02, d1: 1, a1: 0.05 }), clip: bodyM, pig: INK.shade, density: 0.055, hard: 0.85, edge: 0.7, edgeR: 3, pool: 1.5, poolR: Wh * 0.45, vary: 0.6, varyScale: 40, seed: 7, gran: 0.4 });
     const side = stripPoly(F, Wh, 0.05, 0.78, lit > 0 ? -1.15 : 0.3, lit > 0 ? -0.3 : 1.15);
-    paint(L, { shape: layered(side, rng, { layers: 12, d0: 2, a0: 0.07, d1: 2, a1: 0.09 }), clip: bodyM, pig: INK.shade, density: 0.1, hard: 0.08, vary: 0.5, varyScale: 50, seed: 8, gran: 0.45 });
+    paint(L, { shape: layered(side, rng, { layers: 12, d0: 2, a0: 0.07, d1: 2, a1: 0.09 }), clip: bodyM, pig: INK.shade, density: 0.1 * litW, hard: 0.08, vary: 0.5, varyScale: 50, seed: 8, gran: 0.45 });
     k.patches.forEach((p, i) => {
       const r = paint(L, {
         shape: layered(patchPoly(F, Wh, p[0], p[1], p[2], p[3], rng, 0.3), rng, { layers: 10, d0: 2, a0: 0.05, d1: 2, a1: 0.05 }),
         clip: bodyM, pig: INK.redK, density: 0.78, hard: 0.93, edge: 0.8, edgeR: 3, pool: 0.3, poolR: 12,
-        vary: 0.45, varyScale: 30, seed: 20 + i, gran: 0.18, blooms: i === 1 ? 1 : 0, bloomR: [8, 14], bloomLift: 0.35, bloomRim: 0.9, rng
+        vary: 0.45, varyScale: 30, seed: 20 + i, gran: 0.18, blooms: i === 1 ? 1 : 0, bloomAt: k.fixedBlooms ? [[...F.at(p[0] + p[2] * 0.3, p[1] * Wh), 11]] : null, bloomR: [8, 14], bloomLift: 0.35, bloomRim: 0.9, rng
       });
       const pm = layerMask(L, r);
       // a deeper red dropped in off-centre while the patch was wet
@@ -720,11 +723,11 @@ function paintKoi(name, k) {
     paint(L, {
       shape: layered(body, rng, { layers: 8, d0: 1, a0: 0.02, d1: 1, a1: 0.05 }), clip: bodyM, pig: k.base, density: k.baseD,
       hard: 0.9, edge: 0.7, edgeR: 3, pool: 0.45, poolR: 14, vary: 0.38, varyScale: 42, seed: 9, gran: 0.16,
-      blooms: 1, bloomR: [10, 18], bloomLift: 0.28, bloomRim: 1.0, rng
+      blooms: 1, bloomAt: k.fixedBlooms ? [[...F.at(0.42, 0.2 * Wh), 14]] : null, bloomR: [10, 18], bloomLift: 0.28, bloomRim: 1.0, rng
     });
     paint(L, { shape: layered(stripPoly(F, Wh, 0.06, 0.76, -0.5, 0.5), rng, { layers: 12, d0: 2, a0: 0.05, d1: 2, a1: 0.09 }), clip: bodyM, pig: k.dark, density: k.darkD, hard: 0, soften: 5, vary: 0.45, varyScale: 40, seed: 10, gran: 0.25 });
     const side = stripPoly(F, Wh, 0.08, 0.76, lit > 0 ? -1.15 : 0.35, lit > 0 ? -0.35 : 1.15);
-    paint(L, { shape: layered(side, rng, { layers: 12, d0: 2, a0: 0.07, d1: 2, a1: 0.09 }), clip: bodyM, pig: INK.shade, density: 0.12, hard: 0.1, vary: 0.4, varyScale: 50, seed: 11, gran: 0.4 });
+    paint(L, { shape: layered(side, rng, { layers: 12, d0: 2, a0: 0.07, d1: 2, a1: 0.09 }), clip: bodyM, pig: INK.shade, density: 0.12 * litW, hard: 0.1, vary: 0.4, varyScale: 50, seed: 11, gran: 0.4 });
     // scales, flicked in with the tip of a small brush
     const arcs = [];
     for (let s = 0.2, row = 0; s < 0.72; s += 0.036, row++) {
@@ -745,7 +748,7 @@ function paintKoi(name, k) {
       clip: bodyM, pig: k.dark, density: k.scaleD, hard: 0.5, edge: 0.3, edgeR: 2, dry: 0.36, gran: 0.3
     });
     // a wet sheen lifted along the back on the side facing the light
-    paint(L, { shape: layered(stripPoly(F, Wh, 0.1, 0.58, lit * 0.22, lit * 0.6), rng, { layers: 10, d0: 2, a0: 0.05, d1: 2, a1: 0.08 }), clip: bodyM, lift: 0.42, hard: 0.35, edgeR: 4, liftRim: 0.3 });
+    paint(L, { shape: layered(stripPoly(F, Wh, 0.1, 0.58, lit * 0.22, lit * 0.6), rng, { layers: 10, d0: 2, a0: 0.05, d1: 2, a1: 0.08 }), clip: bodyM, lift: 0.42 * litW, hard: 0.35, edgeR: 4, liftRim: 0.3 });
   }
 
   // --- fins & tail: thin veils with rays ---
@@ -766,7 +769,7 @@ function paintKoi(name, k) {
   });
 
   // --- dorsal fin, gill covers, eyes ---
-  const dp = []; for (let i = 0; i <= 24; i++) dp.push(F.at(0.3 + 0.36 * i / 24, Wh * 0.07 * Math.sin(i / 24 * Math.PI) * -lit));
+  const dp = []; for (let i = 0; i <= 24; i++) dp.push(F.at(0.3 + 0.36 * i / 24, Wh * 0.07 * Math.sin(i / 24 * Math.PI) * -lit * litW));
   paint(L, { shape: layered(taperPoly(dp, Wh * 0.16, Wh * 0.06, 0.25, 0.5), rng, { layers: 6, d0: 1, a0: 0.05, d1: 1, a1: 0.06 }), pig: k.dorsalInk, density: k.dorsalD, hard: 0.7, edge: 0.6, edgeR: 2, gran: 0.25 });
   for (const sd of [1, -1]) {
     const g = []; for (let i = 0; i <= 10; i++) { const t = i / 10, s = 0.172 + 0.04 * Math.pow(t, 1.6); g.push(F.at(s, sd * (0.25 + 0.68 * t) * koiW(s) * Wh)); }
@@ -782,7 +785,7 @@ function paintKoi(name, k) {
   applyCov(L, L.x, L.y, L.w, L.h, new Float32Array(L.M), { pig: INK.pond, density: k.veil, hard: 0, vary: 0.9, varyScale: 70, seed: 80, gran: 0.4 });
 
   // --- shadow on the pond floor ---
-  const dx = 26 * k.depth, dy = 38 * k.depth, off = P => P.map(p => [p[0] + dx, p[1] + dy]);
+  const so = k.shadowOff || [26 * k.depth, 38 * k.depth], dx = so[0], dy = so[1], off = P => P.map(p => [p[0] + dx, p[1] + dy]);
   const sb = bboxPts([off(body), off(tail), ...fins.map(f => off(f.poly))]);
   const S = new Layer(sb[0] - 60, sb[1] - 60, sb[2] - sb[0] + 120, sb[3] - sb[1] + 120, 'multiply');
   paint(S, { shape: layered(off(body), rng, { layers: 14, d0: 2, a0: 0.03, d1: 2, a1: 0.08 }), pig: INK.shadow, density: 0.36, hard: 0.3, edge: 0.3, edgeR: 5, vary: 0.4, varyScale: 60, seed: 90, gran: 0.6 });
@@ -794,35 +797,32 @@ function paintKoi(name, k) {
 /* =====================================================================
    THE MAIN SUBJECT — kohaku, white with red patches, centre of frame
    ===================================================================== */
-function drawKohaku() {
-  return paintKoi('koi-kohaku', {
-    type: 'kohaku', x: 600, y: 745, heading: -1.78, bend1: 0.75, bend2: -0.25, len: 525, halfW: 58,
-    flick: -0.15, tailSpread: 1.0, pecAng: [1.1, 0.9], pecLen: [1.35, 1.2], pelAng: [0.72, 0.6],
-    finAlpha: 0.64, finInk: INK.shade, finD: 0.09, rayInk: INK.shade, rayD: 0.28,
-    dorsalInk: INK.shade, dorsalD: 0.26, lineInk: INK.shade, veil: 0.02, depth: 1.0, rim: 0.75,
-    patches: [[0.118, 0.06, 0.058, 0.5], [0.33, -0.22, 0.12, 0.8], [0.585, 0.28, 0.1, 0.7], [0.462, 0.75, 0.032, 0.3]]
-  });
-}
+const KOHAKU = {
+  type: 'kohaku', x: 600, y: 745, heading: -1.78, bend1: 0.75, bend2: -0.25, len: 525, halfW: 58,
+  flick: -0.15, tailSpread: 1.0, pecAng: [1.1, 0.9], pecLen: [1.35, 1.2], pelAng: [0.72, 0.6],
+  finAlpha: 0.64, finInk: INK.shade, finD: 0.09, rayInk: INK.shade, rayD: 0.28,
+  dorsalInk: INK.shade, dorsalD: 0.26, lineInk: INK.shade, veil: 0.02, depth: 1.0, rim: 0.75,
+  patches: [[0.118, 0.06, 0.058, 0.5], [0.33, -0.22, 0.12, 0.8], [0.585, 0.28, 0.1, 0.7], [0.462, 0.75, 0.032, 0.3]]
+};
+function drawKohaku(pose) { return pose ? paintKoiPosed('koi-kohaku', KOHAKU, pose) : paintKoi('koi-kohaku', KOHAKU); }
 
 /* ---- the other creatures: a red koi and an orange koi ---- */
-function drawRedKoi() {
-  return paintKoi('koi-red', {
-    type: 'solid', x: 238, y: 520, heading: 3.22, bend1: -0.95, bend2: 0.75, len: 440, halfW: 49,
-    flick: 0, tailSpread: 1.0, pecAng: [0.95, 1.15], pecLen: [1.25, 1.3], pelAng: [0.65, 0.72],
-    base: INK.redK, baseD: 0.76, dark: INK.redDark, darkD: 0.4, scaleD: 0.24,
-    finAlpha: 0.6, finInk: INK.redK, finD: 0.3, rayInk: INK.redDark, rayD: 0.45,
-    dorsalInk: INK.redDark, dorsalD: 0.55, lineInk: INK.redDark, veil: 0.06, depth: 1.15, rim: 0.7
-  });
-}
-function drawOrangeKoi() {
-  return paintKoi('koi-orange', {
-    type: 'solid', x: 820, y: 1330, heading: -0.45, bend1: 0.75, bend2: -0.4, len: 430, halfW: 47,
-    flick: 0, tailSpread: 1.05, pecAng: [1.1, 0.92], pecLen: [1.3, 1.22], pelAng: [0.7, 0.62],
-    base: INK.orange, baseD: 0.7, dark: INK.orangeDk, darkD: 0.38, scaleD: 0.28,
-    finAlpha: 0.6, finInk: INK.orange, finD: 0.32, rayInk: INK.orangeDk, rayD: 0.45,
-    dorsalInk: INK.orangeDk, dorsalD: 0.55, lineInk: INK.orangeDk, veil: 0.08, depth: 1.3, rim: 0.7
-  });
-}
+const RED_KOI = {
+  type: 'solid', x: 238, y: 520, heading: 3.22, bend1: -0.95, bend2: 0.75, len: 440, halfW: 49,
+  flick: 0, tailSpread: 1.0, pecAng: [0.95, 1.15], pecLen: [1.25, 1.3], pelAng: [0.65, 0.72],
+  base: INK.redK, baseD: 0.76, dark: INK.redDark, darkD: 0.4, scaleD: 0.24,
+  finAlpha: 0.6, finInk: INK.redK, finD: 0.3, rayInk: INK.redDark, rayD: 0.45,
+  dorsalInk: INK.redDark, dorsalD: 0.55, lineInk: INK.redDark, veil: 0.06, depth: 1.15, rim: 0.7
+};
+const ORANGE_KOI = {
+  type: 'solid', x: 820, y: 1330, heading: -0.45, bend1: 0.75, bend2: -0.4, len: 430, halfW: 47,
+  flick: 0, tailSpread: 1.05, pecAng: [1.1, 0.92], pecLen: [1.3, 1.22], pelAng: [0.7, 0.62],
+  base: INK.orange, baseD: 0.7, dark: INK.orangeDk, darkD: 0.38, scaleD: 0.28,
+  finAlpha: 0.6, finInk: INK.orange, finD: 0.32, rayInk: INK.orangeDk, rayD: 0.45,
+  dorsalInk: INK.orangeDk, dorsalD: 0.55, lineInk: INK.orangeDk, veil: 0.08, depth: 1.3, rim: 0.7
+};
+function drawRedKoi(pose) { return pose ? paintKoiPosed('koi-red', RED_KOI, pose) : paintKoi('koi-red', RED_KOI); }
+function drawOrangeKoi(pose) { return pose ? paintKoiPosed('koi-orange', ORANGE_KOI, pose) : paintKoi('koi-orange', ORANGE_KOI); }
 
 /* =====================================================================
    LILY PADS — floating on the surface
@@ -997,7 +997,7 @@ function drawLotus() {
 /* =====================================================================
    BACKGROUND — depth layer 3: the water surface (over the fish)
    ===================================================================== */
-function drawWaterSurface() {
+function drawWaterSurface(withRings = true) {
   const L = new Layer(0, 0, W, H, 'multiply'), rng = makeRng('surface');
   for (let i = 0; i < 12; i++) {
     const y0 = rng.range(120, H - 120), x0 = rng.range(-120, W - 260), len = rng.range(240, 620);
@@ -1007,7 +1007,7 @@ function drawWaterSurface() {
     paint(L, { shape: layered(taperPoly(pts, rng.range(2.5, 4.5), rng.range(1.5, 2.5), 0.3, 0.4), rng, { layers: 4, d0: 1, a0: 0.05, d1: 1, a1: 0.06 }), pig: INK.deep, density: rng.range(0.14, 0.24), hard: 0.6, edge: 0.4, edgeR: 2, dry: 0.34, gran: 0.4 });
   }
   // rings spreading where a fish nudged the surface
-  for (const [x, y, n] of [[196, 500, 3], [915, 1262, 3]]) {
+  for (const [x, y, n] of withRings ? [[196, 500, 3], [915, 1262, 3]] : []) {
     let a0 = rng() * TAU;
     for (let k = 0; k < n; k++) {
       const r = 30 + k * 26 + rng.gauss() * 3, arcs = [];
@@ -1078,6 +1078,133 @@ function drawPaperGrain(c) {
 }
 
 /* =====================================================================
+   ANIMATION — a seamless loop, painted frame by frame for video
+   (open the page with #video, then call koiVideo.render(i) for each frame)
+   ===================================================================== */
+const LOOP = 16, FPS = 30;          // seconds per loop, frames per second
+const ORIGIN = [800, 600];          // where a moving koi is painted, head facing +x
+const angDiff = (a, b) => { let d = a - b; while (d > Math.PI) d -= TAU; while (d < -Math.PI) d += TAU; return d; };
+
+// the route the red and orange koi swim, circling the kohaku anticlockwise
+const ROUTE = (() => {
+  const cx = 540, cy = 965, a = 335, b = 515, n = 4000, pts = [], cum = [0];
+  for (let i = 0; i <= n; i++) {
+    const ph = 1.5 * Math.PI - i / n * TAU;
+    const r = 1 + 0.05 * Math.sin(2 * ph + 1.1) + 0.03 * Math.sin(3 * ph + 0.4);
+    pts.push([cx + Math.cos(ph) * a * r, cy + Math.sin(ph) * b * r]);
+  }
+  for (let i = 1; i <= n; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  const len = cum[n];
+  return {
+    len,
+    at(sig) {
+      sig = ((sig % len) + len) % len;
+      let lo = 0, hi = n;
+      while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (cum[mid] <= sig) lo = mid; else hi = mid; }
+      const t = (sig - cum[lo]) / (cum[hi] - cum[lo] || 1), p = pts[lo], q = pts[hi];
+      return [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t, Math.atan2(q[1] - p[1], q[0] - p[0])];
+    }
+  };
+})();
+// a travelling wave down the body: stronger toward the tail, whole cycles per loop
+const swimWave = (s, t, amp, cycles, ph) => amp * Math.pow(s, 1.6) * Math.sin(TAU * cycles * t / LOOP - 2.3 * Math.PI * s + ph);
+
+// the main subject hovers in the middle of the pond, swaying and sculling its fins
+function kohakuPose(t) {
+  const u = TAU * t / LOOP, h = -1.78 + 0.07 * Math.sin(u + 1.0);
+  const fwd = 22 * Math.sin(u), side = 14 * Math.sin(2 * u + 0.6);
+  return {
+    x: 600 + Math.cos(h) * fwd - Math.sin(h) * side, y: 745 + Math.sin(h) * fwd + Math.cos(h) * side, th: h,
+    theta: s => 0.75 * s - 0.25 * s * s + swimWave(s, t, 0.15, 8, 0),
+    pec: [1.1 + 0.16 * Math.sin(6 * u), 0.9 + 0.16 * Math.sin(6 * u + 2.4)],
+    pel: [0.72 + 0.07 * Math.sin(6 * u + 1), 0.6 + 0.07 * Math.sin(6 * u + 3)]
+  };
+}
+// the other two follow the route, half a lap apart, one lap per loop
+function routePose(spec, sig0, t, cycles, ph) {
+  const u = TAU * t / LOOP, sig = sig0 + ROUTE.len * t / LOOP, [x, y, th] = ROUTE.at(sig);
+  return {
+    x, y, th,
+    theta: s => angDiff(ROUTE.at(sig - s * spec.len)[2], th) + swimWave(s, t, 0.19, cycles, ph),
+    pec: [spec.pecAng[0] - 0.1 + 0.12 * Math.sin(cycles * u + ph), spec.pecAng[1] - 0.1 + 0.12 * Math.sin(cycles * u + ph + 2.6)],
+    pel: spec.pelAng
+  };
+}
+// paint a koi in its own frame (so its pigment travels with it) and remember where it goes
+function paintKoiPosed(name, spec, pose) {
+  const c = Math.cos(pose.th), sn = Math.sin(pose.th), toLocal = ([x, y]) => [x * c + y * sn, -x * sn + y * c];
+  const g = paintKoi(name, Object.assign({}, spec, {
+    x: ORIGIN[0], y: ORIGIN[1], heading: 0, thetaFn: pose.theta, pecAng: pose.pec, pelAng: pose.pel,
+    light: toLocal([-0.62, -0.78]), shadowOff: toLocal([26 * spec.depth, 38 * spec.depth]), smoothLight: true, fixedBlooms: true
+  }));
+  g.place = { x: pose.x, y: pose.y, th: pose.th, ox: ORIGIN[0], oy: ORIGIN[1] };
+  return g;
+}
+// lily pads and the lotus ride the water a little
+function floatPlace(x, y, i, t, amp = 1) {
+  const u = TAU * t / LOOP + i * 1.7;
+  return { x: x + 3 * amp * Math.sin(u), y: y + 2.5 * amp * Math.cos(u + 0.8), th: 0.012 * amp * Math.sin(u + 2.1), ox: x, oy: y };
+}
+// rings spreading from where something touched the surface
+const RING_SOURCES = [[330, 700, 0.0], [805, 1250, 0.45], [640, 455, 0.72]];
+function drawRipples(t) {
+  const out = [], P = LOOP / 2, life = 5.2;
+  RING_SOURCES.forEach(([x, y, off], si) => {
+    const age = ((t + off * LOOP) % P + P) % P;
+    if (age > life) return;
+    const fade = Math.pow(1 - age / life, 1.3), R = 10 + 32 * age;
+    const L = new Layer(x - R - 30, y - R - 30, 2 * R + 60, 2 * R + 60, 'multiply');
+    for (let k = 0; k < 3; k++) {
+      const r = R - k * 22;
+      if (r < 6) continue;
+      const rng = makeRng('ring-' + si + '-' + k);
+      let a = rng() * TAU; const a0 = a, arcs = [];
+      while (a < a0 + TAU && arcs.length < 7) {
+        const span = rng.range(0.5, 1.3), pts = [];
+        for (let q = 0; q <= 1.0001; q += 0.05) { const aa = a + span * q; pts.push([x + Math.cos(aa) * r, y + Math.sin(aa) * r * 0.93]); }
+        arcs.push(pts); a += span + rng.range(0.25, 0.6);
+      }
+      for (const A of arcs) paint(L, { shape: layered(taperPoly(A, 3.4 - k * 0.6, 2.6 - k * 0.4, 0.3, 0.3), rng, { layers: 3, d0: 1, a0: 0.04, d1: 1, a1: 0.05 }), pig: INK.deep, density: (0.34 - k * 0.07) * fade, hard: 0.7, edge: 0.5, edgeR: 2, dry: 0.3, gran: 0.4 });
+    }
+    out.push(L);
+  });
+  return out;
+}
+function putAt(c, L, mode, pl) {
+  if (!L) return;
+  c.save();
+  c.globalCompositeOperation = mode;
+  c.imageSmoothingQuality = 'high';
+  c.translate(pl.x, pl.y); c.rotate(pl.th); c.translate(-pl.ox, -pl.oy);
+  c.drawImage(layerToCanvas(L), L.x, L.y);
+  c.restore();
+}
+function renderFrame(scene, i) {
+  const t = i / FPS;
+  const koi = [
+    drawRedKoi(routePose(RED_KOI, ROUTE.len * 0.06, t, 10, 0)),
+    drawKohaku(kohakuPose(t)),
+    drawOrangeKoi(routePose(ORANGE_KOI, ROUTE.len * 0.56, t, 10, 1.7))
+  ];
+  const rings = drawRipples(t);
+  const padPl = PADS.map((p, j) => floatPlace(p.x, p.y, j, t));
+  const lotusPl = floatPlace(858, 330, 3, t, 1.2);
+
+  drawPaper(ctx);
+  put(ctx, scene.pond, 'multiply');
+  scene.pads.forEach((g, j) => putAt(ctx, g.shadow, 'multiply', padPl[j]));
+  putAt(ctx, scene.lotus.shadow, 'multiply', lotusPl);
+  for (const g of koi) putAt(ctx, g.shadow, 'multiply', g.place);
+  for (const g of koi) { putAt(ctx, g.rim, 'multiply', g.place); putAt(ctx, g.body, 'source-over', g.place); }
+  put(ctx, scene.surface, 'multiply');
+  for (const L of rings) put(ctx, L, 'multiply');
+  scene.pads.forEach((g, j) => { putAt(ctx, g.rim, 'multiply', padPl[j]); putAt(ctx, g.body, 'source-over', padPl[j]); });
+  putAt(ctx, scene.lotus.rim, 'multiply', lotusPl); putAt(ctx, scene.lotus.body, 'source-over', lotusPl);
+  put(ctx, scene.splatter, 'multiply');
+  drawPaperGrain(ctx);
+}
+
+/* =====================================================================
    COMPOSE
    ===================================================================== */
 function put(c, L, mode) {
@@ -1093,6 +1220,13 @@ async function main() {
   const pond = new Layer(0, 0, W, H, 'multiply');
   drawPondFloor(pond); await tick();
   drawPondMidwater(pond); await tick();
+  if (location.hash === '#video') {
+    const scene = { pond, pads: drawLilyPads(), lotus: drawLotus(), surface: drawWaterSurface(false), splatter: drawSplatters() };
+    window.koiVideo = { fps: FPS, frames: LOOP * FPS, render: i => renderFrame(scene, i) };
+    renderFrame(scene, 0);
+    document.body.dataset.done = '1';
+    return;
+  }
   const koi = [drawRedKoi(), drawKohaku(), drawOrangeKoi()]; await tick();
   const pads = drawLilyPads(); await tick();
   const lotus = drawLotus();
