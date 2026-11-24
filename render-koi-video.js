@@ -33,7 +33,7 @@ const workers = Number(process.argv[4] || 4);
   }));
   console.log('encoding', out);
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(meta.fps), '-i', path.join(dir, 'f_%04d.png'),
-    '-c:v', 'libx264', '-preset', 'slow', '-crf', '19', '-pix_fmt', 'yuv420p', '-profile:v', 'high',
+    '-c:v', 'libx264', '-preset', 'slow', '-crf', '15', '-tune', 'grain', '-pix_fmt', 'yuv420p', '-profile:v', 'high',
     '-movflags', '+faststart', out], { stdio: 'inherit' });
   console.log('done in', ((Date.now() - t0) / 1000).toFixed(0), 's');
 })();
