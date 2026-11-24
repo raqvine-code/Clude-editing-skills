@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koi Pond</title>
+<style>
+  html, body { margin: 0; width: 100%; height: 100%; background: #000; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="painting" width="1080" height="1920"></canvas>
+<script>
+(() => {
+'use strict';
+
+/* =====================================================================
+   Koi pond in watercolour — everything painted with Canvas 2D + pixel
+   maths. Pigment is tracked as optical density (Beer–Lambert), so washes
+   glaze subtractively like transparent watercolour on paper.
+   ===================================================================== */
+
+const W = 1080, H = 1920;
+const SEED = 4417;
+const TAU = Math.PI * 2;
+const PAPER = [247, 242, 231];
+
+const canvas = document.getElementById('painting');
+const ctx = canvas.getContext('2d');
+
+function fit() {
+  const s = Math.min(window.innerWidth / W, window.innerHeight / H);
+  canvas.style.width = Math.floor(W * s) + 'px';
+  canvas.style.height = Math.floor(H * s) + 'px';
+}
+window.addEventListener('resize', fit);
+fit();
+
+/* ---------------- seeded randomness ---------------- */
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function hashStr(s) {
+  let h = 2166136261;
+  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+// every element gets its own stream, so it repaints identically on its own
+function makeRng(name) {
+  const f = mulberry32((Math.imul(SEED, 2654435761) ^ hashStr(name)) >>> 0);
+  const r = () => f();
+  r.range = (a, b) => a + (b - a) * f();
+  r.gauss = () => { let u = 0; while (u === 0) u = f(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(TAU * f()); };
+  r.chance = p => f() < p;
+  return r;
+}
+
+/* ---------------- noise ---------------- */
+const GRAD = new Float32Array(32);
+for (let i = 0; i < 16; i++) { const a = i / 16 * TAU + 0.13; GRAD[i * 2] = Math.cos(a); GRAD[i * 2 + 1] = Math.sin(a); }
+function ih(x, y, s) {
+  let h = (Math.imul(x, 374761393) + Math.imul(y, 668265263) + Math.imul(s ^ SEED, 1442695041)) | 0;
+  h = Math.imul(h ^ (h >>> 13), 1274126177);
+  return (h ^ (h >>> 16)) >>> 0;
+}
+function gnoise(x, y, s) {
+  const ix = Math.floor(x), iy = Math.floor(y), fx = x - ix, fy = y - iy;
+  const u = fx * fx * fx * (fx * (fx * 6 - 15) + 10), v = fy * fy * fy * (fy * (fy * 6 - 15) + 10);
+  let h = (ih(ix, iy, s) & 15) << 1;           const n00 = GRAD[h] * fx + GRAD[h + 1] * fy;
+  h = (ih(ix + 1, iy, s) & 15) << 1;           const n10 = GRAD[h] * (fx - 1) + GRAD[h + 1] * fy;
+  h = (ih(ix, iy + 1, s) & 15) << 1;           const n01 = GRAD[h] * fx + GRAD[h + 1] * (fy - 1);
+  h = (ih(ix + 1, iy + 1, s) & 15) << 1;       const n11 = GRAD[h] * (fx - 1) + GRAD[h + 1] * (fy - 1);
+  const a = n00 + (n10 - n00) * u, b = n01 + (n11 - n01) * u;
+  return (a + (b - a) * v) * 1.45;
+}
+function fbm(x, y, oct, s) {
+  let sum = 0, amp = 1, norm = 0;
+  for (let i = 0; i < oct; i++) { sum += amp * gnoise(x, y, s + i * 101); norm += amp; amp *= 0.5; x *= 2.03; y *= 2.03; }
+  return sum / norm;
+}
+// smooth noise field over a box, sampled coarse and interpolated
+function lowNoise(x0, y0, bw, bh, scale, seed, oct) {
+  const step = Math.max(3, Math.round(scale / 7));
+  const gw = Math.floor(bw / step) + 2, gh = Math.floor(bh / step) + 2;
+  const G = new Float32Array(gw * gh);
+  for (let j = 0; j < gh; j++) for (let i = 0; i < gw; i++) G[j * gw + i] = fbm((x0 + i * step) / scale, (y0 + j * step) / scale, oct, seed);
+  const out = new Float32Array(bw * bh);
+  for (let yy = 0; yy < bh; yy++) {
+    const fy = yy / step, j = fy | 0, ty = fy - j;
+    for (let xx = 0; xx < bw; xx++) {
+      const fx = xx / step, i = fx | 0, tx = fx - i;
+      const a = G[j * gw + i], b = G[j * gw + i + 1], c = G[(j + 1) * gw + i], d = G[(j + 1) * gw + i + 1];
+      const top = a + (b - a) * tx, bot = c + (d - c) * tx;
+      out[yy * bw + xx] = top + (bot - top) * ty;
+    }
+  }
+  return out;
+}
+
+/* ---------------- paper: cold-press tooth ---------------- */
+const PH = new Float32Array(W * H);   // paper height 0..1
+const FL = new Float32Array(W * H);   // pigment flocculation / clumping
+function buildPaper() {
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const i = y * W + x;
+      const n1 = gnoise(x / 6.3, y / 6.3, 11);
+      const n2 = gnoise(x / 2.5, y / 2.5, 12);
+      const n3 = gnoise(x / 17, y / 17, 13);
+      let h = 0.5 + 0.5 * (0.5 * n1 + 0.24 * n2 + 0.26 * n3);
+      PH[i] = h < 0 ? 0 : h > 1 ? 1 : h;
+      const wn = (ih(x, y, 991) & 1023) / 1023;
+      FL[i] = 0.5 + 0.3 * gnoise(x / 1.9, y / 1.9, 14) + 0.28 * (wn - 0.5);
+    }
+  }
+}
+const wrapX = x => ((x % W) + W) % W;
+const wrapY = y => ((y % H) + H) % H;
+
+/* ---------------- pigments (absorbance per unit density) ---------------- */
+const pig = (r, g, b) => [-Math.log(r / 255), -Math.log(g / 255), -Math.log(b / 255)];
+const mix = (...parts) => { const a = [0, 0, 0]; for (const [p, w] of parts) { a[0] += p[0] * w; a[1] += p[1] * w; a[2] += p[2] * w; } return a; };
+const PG = {
+  turq:     pig(30, 150, 155),   // phthalo turquoise
+  indigo:   pig(45, 60, 100),    // indigo
+  sap:      pig(125, 165, 50),   // sap green
+  scarlet:  pig(222, 52, 40),    // scarlet / cadmium red
+  crimson:  pig(160, 25, 55),    // alizarin
+  orange:   pig(246, 142, 36),   // cadmium orange
+  rose:     pig(226, 96, 150),   // quinacridone rose
+  graphite: pig(150, 150, 158)   // pencil
+};
+const INK = {
+  pond:     mix([PG.turq, 0.9], [PG.indigo, 0.1], [PG.sap, 0.1]),
+  deep:     mix([PG.turq, 0.85], [PG.indigo, 0.45], [PG.sap, 0.08]),
+  shadow:   mix([PG.turq, 0.55], [PG.indigo, 0.65], [PG.crimson, 0.05]),
+  shade:    mix([PG.indigo, 0.7], [PG.orange, 0.22], [PG.turq, 0.2]),
+  stone:    mix([PG.indigo, 0.6], [PG.orange, 0.28], [PG.turq, 0.35]),
+  leaf:     mix([PG.sap, 1], [PG.turq, 0.16]),
+  leafDark: mix([PG.sap, 0.8], [PG.indigo, 0.55]),
+  redK:     mix([PG.scarlet, 1], [PG.crimson, 0.12]),
+  redDark:  mix([PG.crimson, 0.9], [PG.scarlet, 0.4], [PG.indigo, 0.12]),
+  orange:   mix([PG.orange, 1], [PG.scarlet, 0.06]),
+  orangeDk: mix([PG.orange, 0.8], [PG.scarlet, 0.45], [PG.indigo, 0.05]),
+  gold:     mix([PG.orange, 1], [PG.sap, 0.35]),
+  rust:     mix([PG.orange, 0.8], [PG.scarlet, 0.35], [PG.sap, 0.2]),
+  rose:     PG.rose,
+  roseDeep: mix([PG.rose, 1], [PG.crimson, 0.25]),
+  eye:      mix([PG.indigo, 0.8], [PG.crimson, 0.6]),
+  graphite: PG.graphite
+};
+
+/* ---------------- layers ---------------- */
+// 'multiply' layers hold glazes that darken what is beneath.
+// 'paint' layers are reserved paper (alpha mask M) with pigment on it.
+function Layer(x, y, w, h, kind) {
+  this.x = Math.floor(x); this.y = Math.floor(y);
+  this.w = Math.ceil(w); this.h = Math.ceil(h);
+  this.kind = kind;
+  this.A = new Float32Array(this.w * this.h * 3);
+  this.M = kind === 'paint' ? new Float32Array(this.w * this.h) : null;
+  this.canvas = null;
+}
+function layerToCanvas(L) {
+  if (L.canvas) return L.canvas;
+  const c = document.createElement('canvas'); c.width = L.w; c.height = L.h;
+  const x = c.getContext('2d');
+  const id = x.createImageData(L.w, L.h), d = id.data, A = L.A;
+  const isPaint = L.kind === 'paint';
+  const b0 = isPaint ? PAPER[0] : 255, b1 = isPaint ? PAPER[1] : 255, b2 = isPaint ? PAPER[2] : 255;
+  for (let i = 0, j = 0, k = 0, n = L.w * L.h; i < n; i++, j += 4, k += 3) {
+    d[j] = b0 * Math.exp(-A[k]); d[j + 1] = b1 * Math.exp(-A[k + 1]); d[j + 2] = b2 * Math.exp(-A[k + 2]);
+    d[j + 3] = isPaint ? L.M[i] * 255 : 255;
+  }
+  x.putImageData(id, 0, 0);
+  L.canvas = c;
+  return c;
+}
+function layerMask(L, r) {
+  const m = new Float32Array(L.w * L.h);
+  if (!r) return m;
+  for (let yy = 0; yy < r.bh; yy++) {
+    const li = (r.y0 - L.y + yy) * L.w + (r.x0 - L.x);
+    for (let xx = 0; xx < r.bw; xx++) m[li + xx] = r.C[yy * r.bw + xx];
+  }
+  return m;
+}
+
+/* ---------------- raster helpers ---------------- */
+const scratch = document.createElement('canvas');
+scratch.width = W; scratch.height = H;
+const sctx = scratch.getContext('2d', { willReadFrequently: true });
+
+function raster(x0, y0, bw, bh, draw) {
+  sctx.setTransform(1, 0, 0, 1, 0, 0);
+  sctx.globalCompositeOperation = 'source-over';
+  sctx.globalAlpha = 1;
+  sctx.clearRect(0, 0, bw + 2, bh + 2);
+  sctx.setTransform(1, 0, 0, 1, -x0, -y0);
+  draw(sctx);
+  sctx.setTransform(1, 0, 0, 1, 0, 0);
+  sctx.globalCompositeOperation = 'source-over';
+  const d = sctx.getImageData(0, 0, bw, bh).data;
+  const C = new Float32Array(bw * bh);
+  for (let i = 0, j = 3; i < C.length; i++, j += 4) C[i] = d[j] * (1 / 255);
+  return C;
+}
+function fillPath(c, P) {
+  c.beginPath(); c.moveTo(P[0][0], P[0][1]);
+  for (let i = 1; i < P.length; i++) c.lineTo(P[i][0], P[i][1]);
+  c.closePath(); c.fill();
+}
+function bboxPts(list) {
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const P of list) for (const p of P) {
+    if (p[0] < x0) x0 = p[0]; if (p[0] > x1) x1 = p[0];
+    if (p[1] < y0) y0 = p[1]; if (p[1] > y1) y1 = p[1];
+  }
+  return [x0, y0, x1, y1];
+}
+function boxPass(src, w, h, r) {
+  const tmp = new Float32Array(w * h), out = new Float32Array(w * h), inv = 1 / (2 * r + 1);
+  for (let y = 0; y < h; y++) {
+    const o = y * w; let acc = 0;
+    for (let i = -r; i <= r; i++) acc += src[o + (i < 0 ? 0 : i >= w ? w - 1 : i)];
+    for (let x = 0; x < w; x++) {
+      tmp[o + x] = acc * inv;
+      const xa = x - r, xb = x + r + 1;
+      acc += src[o + (xb >= w ? w - 1 : xb)] - src[o + (xa < 0 ? 0 : xa)];
+    }
+  }
+  for (let x = 0; x < w; x++) {
+    let acc = 0;
+    for (let i = -r; i <= r; i++) acc += tmp[(i < 0 ? 0 : i >= h ? h - 1 : i) * w + x];
+    for (let y = 0; y < h; y++) {
+      out[y * w + x] = acc * inv;
+      const ya = y - r, yb = y + r + 1;
+      acc += tmp[(yb >= h ? h - 1 : yb) * w + x] - tmp[(ya < 0 ? 0 : ya) * w + x];
+    }
+  }
+  return out;
+}
+function blurArr(src, w, h, r) {
+  r = Math.max(1, Math.round(r / 2));
+  return boxPass(boxPass(src, w, h, r), w, h, r);
+}
+
+/* ---------------- hand-made shapes ---------------- */
+// recursive midpoint displacement: each vertex carries its own wobbliness
+function deformPoly(pts, depth, amt, rng) {
+  let p = pts;
+  for (let d = 0; d < depth; d++) {
+    const q = [], n = p.length;
+    for (let i = 0; i < n; i++) {
+      const a = p[i], b = p[(i + 1) % n];
+      q.push(a);
+      const dx = b[0] - a[0], dy = b[1] - a[1];
+      const len = Math.sqrt(dx * dx + dy * dy), v = (a[2] + b[2]) * 0.5, s = len * amt * v;
+      q.push([(a[0] + b[0]) * 0.5 + rng.gauss() * s, (a[1] + b[1]) * 0.5 + rng.gauss() * s, v * (0.8 + rng() * 0.4)]);
+    }
+    p = q;
+  }
+  return p;
+}
+function prepPoly(pts, rng, vmin, vmax) { return pts.map(p => [p[0], p[1], vmin + (vmax - vmin) * rng()]); }
+// a wash shape: many slightly different translucent passes stacked
+function layered(pts, rng, o = {}) {
+  const base = deformPoly(prepPoly(pts, rng, o.vmin ?? 0.4, o.vmax ?? 1.4), o.d0 ?? 2, o.a0 ?? 0.08, rng);
+  const n = o.layers ?? 10, polys = [];
+  for (let k = 0; k < n; k++) polys.push(deformPoly(base, o.d1 ?? 2, o.a1 ?? 0.06, rng));
+  return {
+    bbox: bboxPts(polys),
+    draw: c => {
+      c.globalCompositeOperation = 'lighter';
+      c.fillStyle = 'rgba(255,255,255,' + (1 / n) + ')';
+      for (const P of polys) fillPath(c, P);
+      c.globalCompositeOperation = 'source-over';
+    }
+  };
+}
+function polysShape(polys) {
+  return { bbox: bboxPts(polys), draw: c => { c.fillStyle = '#fff'; for (const P of polys) fillPath(c, P); } };
+}
+function blobPoly(cx, cy, rx, ry, rot, n, rng, irr = 0.2) {
+  const pts = [], ph = rng() * 50, c = Math.cos(rot), s = Math.sin(rot);
+  for (let i = 0; i < n; i++) {
+    const a = i / n * TAU;
+    const r = 1 + irr * gnoise(Math.cos(a) * 1.2 + ph, Math.sin(a) * 1.2 + ph, 17);
+    const x = Math.cos(a) * rx * r, y = Math.sin(a) * ry * r;
+    pts.push([cx + x * c - y * s, cy + x * s + y * c]);
+  }
+  return pts;
+}
+function cauliflower(x, y, R, rng) {
+  // a back-run: lobed outline whose rim breaks into fine frills
+  const n = 40, pts = [], lobes = 5 + Math.floor(rng() * 5), ph = rng() * TAU;
+  for (let i = 0; i < n; i++) {
+    const a = i / n * TAU;
+    const r = R * (0.78 + 0.16 * Math.abs(Math.sin(a * lobes * 0.5 + ph)) + 0.12 * rng());
+    pts.push([x + Math.cos(a) * r, y + Math.sin(a) * r * 0.85]);
+  }
+  return deformPoly(deformPoly(prepPoly(pts, rng, 0.5, 1.3), 2, 0.12, rng), 2, 0.22, rng);
+}
+// a brush stroke following a path, swelling and tapering
+function taperPoly(pts, w0, w1, tin = 0.15, tout = 0.35) {
+  const n = pts.length, Lp = [], Rp = [];
+  for (let i = 0; i < n; i++) {
+    const a = pts[Math.max(0, i - 1)], b = pts[Math.min(n - 1, i + 1)];
+    let tx = b[0] - a[0], ty = b[1] - a[1]; const tl = Math.hypot(tx, ty) || 1; tx /= tl; ty /= tl;
+    const t = i / (n - 1);
+    const w = (w0 + (w1 - w0) * t) * 0.5 * Math.min(1, (t + 0.04) / tin, (1 - t + 0.04) / tout);
+    Lp.push([pts[i][0] - ty * w, pts[i][1] + tx * w]);
+    Rp.push([pts[i][0] + ty * w, pts[i][1] - tx * w]);
+  }
+  return Lp.concat(Rp.reverse());
+}
+function lens(x, y, len, th, ang) {
+  const pts = [], c = Math.cos(ang), s = Math.sin(ang);
+  for (let i = 0; i < 14; i++) {
+    const a = i / 14 * TAU, px = Math.cos(a) * len / 2, py = Math.sin(a) * th / 2;
+    pts.push([x + px * c - py * s, y + px * s + py * c]);
+  }
+  return pts;
+}
+
+/* ---------------- the brush: lay a wash into a layer ----------------
+   o.shape   {bbox, draw}  coverage drawn in white
+   o.pig     absorbance vector, o.density
+   o.hard    0 = wet-in-wet soft edge, 1 = hard dried edge
+   o.edge    dark rim where pigment migrated to the drying edge
+   o.pool    broader pooling inside the edge
+   o.vary    uneven pigment load, o.gran granulation into paper tooth
+   o.blooms  back-runs (cauliflowers), o.dry dry-brush on paper peaks
+   o.lift    lift pigment out with a damp brush instead of adding
+   o.clip / o.exclude   masks over the layer, o.toMask writes reserve      */
+function paint(L, o) {
+  const sh = o.shape;
+  const m = Math.ceil(Math.max(o.edge ? (o.edgeR ?? 4) * 2 : 0, o.pool ? (o.poolR ?? 18) * 1.5 : 0, 6) + (o.margin ?? 0) + (o.soften ?? 0) * 2);
+  const x0 = Math.max(L.x, Math.floor(sh.bbox[0]) - m), y0 = Math.max(L.y, Math.floor(sh.bbox[1]) - m);
+  const x1 = Math.min(L.x + L.w, Math.ceil(sh.bbox[2]) + m), y1 = Math.min(L.y + L.h, Math.ceil(sh.bbox[3]) + m);
+  const bw = x1 - x0, bh = y1 - y0;
+  if (bw <= 2 || bh <= 2) return null;
+  const C = raster(x0, y0, bw, bh, sh.draw);
+  return applyCov(L, x0, y0, bw, bh, C, o);
+}
+function applyCov(L, x0, y0, bw, bh, C, o) {
+  const n = bw * bh;
+  // wet paper: the charge diffuses outward before it settles
+  if (o.soften) { const S = blurArr(C, bw, bh, o.soften); for (let i = 0; i < n; i++) C[i] = Math.min(1, S[i] * (0.75 + 0.5 * C[i])); }
+  const hard = o.hard ?? 0.6;
+  if (hard > 0) {
+    const lo = o.lo ?? 0.3, hi = o.hi ?? 0.52, k = 1 / (hi - lo);
+    for (let i = 0; i < n; i++) {
+      const c = C[i]; if (c === 0) continue;
+      let t = (c - lo) * k; t = t < 0 ? 0 : t > 1 ? 1 : t; t = t * t * (3 - 2 * t);
+      C[i] = c + (t - c) * hard;
+    }
+  }
+  if (o.clip || o.exclude) {
+    const cl = o.clip, ex = o.exclude;
+    for (let yy = 0; yy < bh; yy++) {
+      const li = (y0 - L.y + yy) * L.w + (x0 - L.x), ci = yy * bw;
+      for (let xx = 0; xx < bw; xx++) {
+        let c = C[ci + xx]; if (c === 0) continue;
+        if (cl) c *= cl[li + xx];
+        if (ex) c *= 1 - ex[li + xx];
+        C[ci + xx] = c;
+      }
+    }
+  }
+  if (o.dry) {
+    const soft = o.drySoft ?? 0.09, t0 = o.dry - soft, k = 1 / (2 * soft);
+    for (let yy = 0; yy < bh; yy++) {
+      const row = wrapY(y0 + yy) * W; let px = wrapX(x0);
+      for (let xx = 0; xx < bw; xx++, px = px + 1 === W ? 0 : px + 1) {
+        const i = yy * bw + xx; if (C[i] === 0) continue;
+        const pi = row + px;
+        let t = (PH[pi] + 0.35 * (FL[pi] - 0.5) - t0) * k; t = t < 0 ? 0 : t > 1 ? 1 : t;
+        C[i] *= t;
+      }
+    }
+  }
+  if (o.toMask) {
+    const a = o.toMask, M = L.M;
+    for (let yy = 0; yy < bh; yy++) {
+      const li = (y0 - L.y + yy) * L.w + (x0 - L.x);
+      for (let xx = 0; xx < bw; xx++) { const v = C[yy * bw + xx] * a; if (v > M[li + xx]) M[li + xx] = v; }
+    }
+    if (!o.pig && !o.lift) return { x0, y0, bw, bh, C };
+  }
+  const E = o.edge || o.lift ? blurArr(C, bw, bh, o.edgeR ?? 4) : null;
+  const P = o.pool ? blurArr(C, bw, bh, o.poolR ?? 18) : null;
+  const V = o.vary ? lowNoise(x0, y0, bw, bh, o.varyScale ?? 90, o.seed ?? 1, 3) : null;
+  let Bm = null, Bs = null;
+  if (o.blooms && o.rng) {
+    const rng = o.rng, shapes = [];
+    for (let b = 0; b < o.blooms; b++) {
+      for (let t = 0; t < 80; t++) {
+        const xx = (rng() * bw) | 0, yy = (rng() * bh) | 0;
+        if (C[yy * bw + xx] > 0.85) { shapes.push(cauliflower(x0 + xx, y0 + yy, rng.range(o.bloomR[0], o.bloomR[1]), rng)); break; }
+      }
+    }
+    if (shapes.length) {
+      Bm = raster(x0, y0, bw, bh, c => { c.fillStyle = '#fff'; for (const S of shapes) fillPath(c, S); });
+      Bs = blurArr(Bm, bw, bh, o.bloomEdge ?? 5);
+    }
+  }
+  const A = L.A, d0 = o.density ?? 0.5, gran = o.gran ?? 0.3, pg = o.pig;
+  const edge = o.edge || 0, pool = o.pool || 0, vary = o.vary || 0;
+  const bl = o.bloomLift ?? 0.55, br = o.bloomRim ?? 1.3, lift = o.lift || 0, liftRim = o.liftRim ?? 0.5;
+  for (let yy = 0; yy < bh; yy++) {
+    const row = wrapY(y0 + yy) * W; let px = wrapX(x0);
+    let li = ((y0 - L.y + yy) * L.w + (x0 - L.x)) * 3;
+    for (let xx = 0; xx < bw; xx++, li += 3, px = px + 1 === W ? 0 : px + 1) {
+      const i = yy * bw + xx, c = C[i];
+      if (lift) {
+        let ring = E[i] - c; if (ring < 0) ring = 0;
+        if (c < 0.002 && ring < 0.002) continue;
+        let f = 1 - lift * c * (0.72 + 0.55 * FL[row + px]) + lift * liftRim * ring;
+        if (f < 0) f = 0;
+        A[li] *= f; A[li + 1] *= f; A[li + 2] *= f;
+        continue;
+      }
+      if (c < 0.002) continue;
+      const pi = row + px;
+      let d = c;
+      if (V) d *= 1 + vary * V[i];
+      if (E) { const e = c - E[i]; if (e > 0) d += edge * e * 2; }
+      if (P) { const p = c - P[i]; if (p > 0) d += pool * p * 1.6; }
+      if (Bm) { const b = Bm[i]; d *= 1 - bl * b * (0.75 + 0.5 * FL[pi]); const r = Bs[i] - b; if (r > 0) d += br * r * 2 * c; }
+      d *= 1 + gran * (1.5 * (0.5 - PH[pi]) + 1.0 * (FL[pi] - 0.5));
+      d *= d0;
+      if (d <= 0) continue;
+      A[li] += d * pg[0]; A[li + 1] += d * pg[1]; A[li + 2] += d * pg[2];
+    }
+  }
+  return { x0, y0, bw, bh, C };
+}
+// the darker line a wash leaves where it was painted around a reserved shape
+function rimLayer(L, strength, ink, seed, r = 4) {
+  const R = new Layer(L.x, L.y, L.w, L.h, 'multiply');
+  const B = blurArr(L.M, L.w, L.h, r);
+  const N = lowNoise(L.x, L.y, L.w, L.h, 45, seed, 2);
+  for (let y = 0; y < L.h; y++) {
+    const row = wrapY(L.y + y) * W; let px = wrapX(L.x);
+    for (let x = 0; x < L.w; x++, px = px + 1 === W ? 0 : px + 1) {
+      const i = y * L.w + x, ring = B[i] - L.M[i];
+      if (ring <= 0.003) continue;
+      const pi = row + px;
+      let nv = 0.5 + 0.5 * N[i]; nv = nv < 0 ? 0 : nv;
+      const d = ring * strength * (0.25 + 1.3 * nv) * (1 + 0.8 * (0.5 - PH[pi]));
+      R.A[i * 3] += d * ink[0]; R.A[i * 3 + 1] += d * ink[1]; R.A[i * 3 + 2] += d * ink[2];
+    }
+  }
+  return R;
+}
+function pencil(L, polys, rng, dens) {
+  const lines = [];
+  for (const P of polys) {
+    for (let pass = 0; pass < 2; pass++) {
+      let cur = []; const ph = rng() * 100;
+      const skip = pass === 0 ? 0.035 : 0.09;
+      for (let i = 0; i < P.length; i++) {
+        if (rng() < skip) { if (cur.length > 1) lines.push(cur); cur = []; if (pass === 1) i += 4; continue; }
+        const p = P[i];
+        cur.push([p[0] + 3.2 * gnoise(i * 0.07 + ph, 0.5, 41), p[1] + 3.2 * gnoise(i * 0.07 + ph, 7.5, 41)]);
+      }
+      if (cur.length > 1) lines.push(cur);
+    }
+  }
+  const bb = bboxPts(lines);
+  paint(L, {
+    shape: { bbox: bb, draw: c => {
+      c.strokeStyle = 'rgba(255,255,255,0.75)'; c.lineWidth = 1.25; c.lineJoin = 'round'; c.lineCap = 'round';
+      for (const ln of lines) { c.beginPath(); c.moveTo(ln[0][0], ln[0][1]); for (let i = 1; i < ln.length; i++) c.lineTo(ln[i][0], ln[i][1]); c.stroke(); }
+    } },
+    pig: INK.graphite, density: dens, hard: 0, dry: 0.38, gran: 0.5
+  });
+}
+
+/* =====================================================================
+   BACKGROUND — depth layer 0: the paper itself
+   ===================================================================== */
+function drawPaper(c) {
+  c.globalCompositeOperation = 'source-over';
+  c.fillStyle = 'rgb(' + PAPER.join(',') + ')';
+  c.fillRect(0, 0, W, H);
+}
+
+/* =====================================================================
+   BACKGROUND — depth layer 1: the deep water / pond floor
+   ===================================================================== */
+function drawPondFloor(L) {
+  const rng = makeRng('pond-floor');
+  // 1. the first big wash, laid in overlapping horizontal strokes
+  const bands = 8, bh = (H + 200) / bands;
+  for (let b = 0; b < bands; b++) {
+    const yc = -100 + (b + 0.5) * bh, half = bh * 0.6, tilt = rng.range(-0.07, 0.07);
+    const top = [], bot = [];
+    for (let i = 0; i <= 12; i++) {
+      const x = -90 + i * (W + 180) / 12;
+      top.push([x, yc - half + tilt * (x - W / 2) + rng.range(-28, 28)]);
+      bot.push([x, yc + half + tilt * (x - W / 2) + rng.range(-28, 28)]);
+    }
+    paint(L, {
+      shape: layered(top.concat(bot.reverse()), rng, { layers: 10, d0: 2, a0: 0.12, d1: 2, a1: 0.09 }),
+      pig: INK.pond, density: rng.range(0.3, 0.37), hard: 0.22, edge: 0.18, edgeR: 6,
+      vary: 0.42, varyScale: 170, seed: 100 + b, gran: 0.6
+    });
+  }
+  // 2. deeper colour charged in while the paper is still wet
+  const charges = [
+    [120, 1520, 360, 430, 0.46, 0.4], [1000, 1240, 250, 420, 0.38, 2.0], [560, 1010, 330, 430, 0.34, 1.2],
+    [640, 70, 430, 210, 0.38, 0.1], [210, 760, 220, 290, 0.3, 0.8], [880, 1880, 380, 220, 0.42, 0.2],
+    [990, 640, 210, 260, 0.3, 2.6], [420, 1420, 200, 150, 0.26, 0.5], [70, 300, 200, 300, 0.32, 0.3]
+  ];
+  charges.forEach(([x, y, rx, ry, d, rot], i) => {
+    paint(L, {
+      shape: layered(blobPoly(x, y, rx, ry, rot, 18, rng, 0.3), rng, { layers: 14, d0: 3, a0: 0.13, d1: 2, a1: 0.12 }),
+      pig: i % 3 === 1 ? INK.shadow : INK.deep, density: d, hard: 0.1, soften: 10, edge: 0.1, edgeR: 8,
+      vary: 0.55, varyScale: 110, seed: 200 + i, gran: 0.7,
+      blooms: i % 3 === 0 ? 1 : 0, bloomR: [40, 80], bloomLift: 0.5, bloomRim: 1.1, bloomEdge: 7, rng
+    });
+  });
+  // a little sap green floated into the shallows
+  [[330, 1180, 260, 180], [820, 760, 220, 160], [520, 340, 260, 150]].forEach(([x, y, rx, ry], i) => {
+    paint(L, { shape: layered(blobPoly(x, y, rx, ry, rng() * TAU, 16, rng, 0.3), rng, { layers: 14, d0: 3, a0: 0.13, d1: 2, a1: 0.12 }), pig: mix([PG.sap, 0.8], [PG.turq, 0.3]), density: 0.12, hard: 0.05, vary: 0.6, varyScale: 90, seed: 260 + i, gran: 0.5 });
+  });
+  // 3. sky reflections lifted out with a damp brush
+  const streaks = [[300, 330, 520, 70, -0.5], [820, 840, 420, 46, -0.55], [250, 1300, 380, 52, -0.48], [760, 1640, 520, 80, -0.52]];
+  for (const [x, y, len, wd, a] of streaks) {
+    const pts = [];
+    for (let i = 0; i <= 20; i++) {
+      const t = i / 20, env = Math.pow(Math.sin(Math.PI * t), 0.7);
+      pts.push([x + Math.cos(a) * (t - 0.5) * len - Math.sin(a) * wd * 0.5 * env, y + Math.sin(a) * (t - 0.5) * len + Math.cos(a) * wd * 0.5 * env]);
+    }
+    for (let i = 20; i >= 0; i--) {
+      const t = i / 20, env = Math.pow(Math.sin(Math.PI * t), 0.7);
+      pts.push([x + Math.cos(a) * (t - 0.5) * len + Math.sin(a) * wd * 0.5 * env, y + Math.sin(a) * (t - 0.5) * len - Math.cos(a) * wd * 0.5 * env]);
+    }
+    paint(L, { shape: layered(pts, rng, { layers: 12, d0: 2, a0: 0.1, d1: 2, a1: 0.1 }), lift: 0.38, hard: 0.2, edgeR: 8, liftRim: 0.4 });
+  }
+}
+
+/* =====================================================================
+   BACKGROUND — depth layer 2: mid-water glazes, stones, light glints
+   ===================================================================== */
+function drawPondMidwater(L) {
+  const rng = makeRng('pond-mid');
+  // second glazes on dry paper: hard edges that follow the slow swirl of water
+  const sweeps = [
+    [560, 980, 470, 70, -2.9, -1.3], [540, 1000, 560, 90, 0.1, 1.45], [600, 940, 330, 45, 1.9, 3.1],
+    [470, 1080, 700, 85, -1.2, -0.25], [620, 900, 780, 110, 2.25, 3.35], [560, 1000, 880, 120, -0.6, 0.55]
+  ];
+  sweeps.forEach(([cx, cy, rm, hw, a1, a2], i) => {
+    const outer = [], inner = [];
+    for (let k = 0; k <= 26; k++) {
+      const t = k / 26, a = a1 + (a2 - a1) * t, env = Math.pow(Math.sin(Math.PI * t), 0.6);
+      const ro = rm + hw * env * (1 + 0.25 * gnoise(t * 3, i, 23)), ri = rm - hw * env * (1 + 0.25 * gnoise(t * 3, i + 9, 23));
+      outer.push([cx + Math.cos(a) * ro, cy + Math.sin(a) * ro * 1.15]);
+      inner.push([cx + Math.cos(a) * ri, cy + Math.sin(a) * ri * 1.15]);
+    }
+    paint(L, {
+      shape: layered(outer.concat(inner.reverse()), rng, { layers: 8, d0: 2, a0: 0.06, d1: 2, a1: 0.05 }),
+      pig: i % 2 ? INK.deep : INK.pond, density: 0.15, hard: 0.9, edge: 1.0, edgeR: 4, pool: 0.25, poolR: 26,
+      vary: 0.45, varyScale: 80, seed: 300 + i, gran: 0.6
+    });
+  });
+  // a few stones resting on the pond floor
+  const stones = [[90, 860, 46], [985, 1410, 40], [160, 1260, 30], [700, 1500, 34], [900, 760, 28], [300, 1880, 52], [1040, 1760, 44], [470, 30, 40]];
+  stones.forEach(([x, y, r], i) => {
+    const poly = blobPoly(x, y, r * 1.2, r * 0.85, rng() * TAU, 14, rng, 0.2);
+    paint(L, { shape: layered(poly, rng, { layers: 8, d0: 2, a0: 0.07, d1: 2, a1: 0.07 }), pig: INK.stone, density: 0.2, hard: 0.7, edge: 0.8, edgeR: 3, vary: 0.5, varyScale: 30, seed: 400 + i, gran: 0.8 });
+    const sh = blobPoly(x + r * 0.35, y + r * 0.35, r * 0.8, r * 0.5, 0.7, 12, rng, 0.2);
+    paint(L, { shape: layered(sh, rng, { layers: 10, d0: 2, a0: 0.1, d1: 2, a1: 0.1 }), pig: INK.shadow, density: 0.18, hard: 0.15, gran: 0.6 });
+  });
+  // dry-brush drags: a loaded brush skimmed fast, catching only the tops of the tooth
+  const drags = [[30, 700, 310, -0.05, 30], [650, 1232, 300, 0.05, 22], [400, 1672, 250, -0.1, 22], [690, 128, 260, 0.03, 26], [760, 790, 230, -0.06, 18]];
+  drags.forEach(([x, y, len, a, wd], i) => {
+    const pts = [];
+    for (let t = 0; t <= 1.0001; t += 1 / 30) pts.push([x + Math.cos(a) * len * t, y + Math.sin(a) * len * t + 4 * Math.sin(t * 7 + i)]);
+    paint(L, { shape: layered(taperPoly(pts, wd, wd * 0.6, 0.08, 0.45), rng, { layers: 5, d0: 1, a0: 0.08, d1: 1, a1: 0.1 }), pig: INK.deep, density: 0.34, hard: 0.7, edge: 0.4, edgeR: 2, dry: 0.56, drySoft: 0.07, gran: 0.5 });
+  });
+  // glints: tiny bits of untouched paper lifted back out
+  const glints = [[180, 610], [215, 625], [930, 560], [760, 470], [330, 1470], [360, 1452], [880, 1500], [140, 1080], [990, 1050], [520, 1660], [700, 1745], [260, 420], [610, 560], [860, 860], [430, 1240], [300, 960]];
+  glints.forEach(([x, y]) => {
+    const len = rng.range(9, 30), th = rng.range(2.2, 4.5);
+    paint(L, { shape: layered(lens(x, y, len, th, -0.18 + rng.gauss() * 0.12), rng, { layers: 3, d0: 1, a0: 0.12, d1: 1, a1: 0.1 }), lift: 0.82, hard: 0.95, edgeR: 3, liftRim: 0.7 });
+  });
+}
+
+/* =====================================================================
+   KOI — shared anatomy
+   ===================================================================== */
+const KS = [0, 0.05, 0.1, 0.16, 0.24, 0.33, 0.42, 0.5, 0.58, 0.66, 0.72, 0.77, 0.8, 0.84];
+const KW = [0, 0.52, 0.69, 0.81, 0.93, 1.0, 0.97, 0.88, 0.72, 0.5, 0.33, 0.21, 0.175, 0.17];
+function koiW(s) {
+  if (s <= 0) return 0;
+  if (s < 0.05) return 0.52 * Math.sqrt(s / 0.05);
+  for (let i = 2; i < KS.length; i++) if (s <= KS[i]) {
+    const t = (s - KS[i - 1]) / (KS[i] - KS[i - 1]), u = t * t * (3 - 2 * t);
+    return KW[i - 1] + (KW[i] - KW[i - 1]) * (0.5 * t + 0.5 * u);
+  }
+  return KW[KW.length - 1];
+}
+// the spine: head tip at (x,y) facing `heading`, curving by bend1/bend2
+function koiFrame(k) {
+  const N = 260, Pp = new Float32Array(N * 2), T = new Float32Array(N), ds = k.len / (N - 1);
+  let x = k.x, y = k.y;
+  for (let i = 0; i < N; i++) {
+    const s = i / (N - 1), th = k.heading + k.bend1 * s + k.bend2 * s * s;
+    Pp[i * 2] = x; Pp[i * 2 + 1] = y; T[i] = th;
+    x -= Math.cos(th) * ds; y -= Math.sin(th) * ds;
+  }
+  const idx = s => { let f = s * (N - 1); if (f < 0) f = 0; if (f > N - 1.0001) f = N - 1.0001; return f; };
+  return {
+    at(s, v) {
+      const f = idx(s), i = f | 0, t = f - i;
+      const px = Pp[i * 2] + (Pp[i * 2 + 2] - Pp[i * 2]) * t, py = Pp[i * 2 + 1] + (Pp[i * 2 + 3] - Pp[i * 2 + 1]) * t;
+      const th = T[i] + (T[i + 1] - T[i]) * t;
+      return [px - Math.sin(th) * v, py + Math.cos(th) * v];
+    },
+    ang(s) { const f = idx(s), i = f | 0, t = f - i; return T[i] + (T[i + 1] - T[i]) * t; }
+  };
+}
+function koiBody(F, Wh) {
+  const Lp = [], Rp = [], K = 72;
+  for (let k = 0; k <= K; k++) {
+    const s = 0.835 * Math.pow(k / K, 1.3), w = koiW(s) * Wh;
+    Lp.push(F.at(s, w)); Rp.push(F.at(s, -w));
+  }
+  return Lp.concat(Rp.reverse());
+}
+function koiTail(F, Wh, flick, spread) {
+  const E = [[0.785, 0.16], [0.83, 0.28], [0.875, 0.47], [0.92, 0.7], [0.96, 0.9], [0.99, 1.02], [1.0, 0.92], [0.99, 0.7], [0.972, 0.46], [0.952, 0.24], [0.938, 0.08], [0.935, 0]];
+  const pts = [], f = s => flick * Math.pow((s - 0.785) / 0.215, 1.5);
+  for (const [s, v] of E) pts.push(F.at(s, (v * spread + f(s)) * Wh));
+  for (let i = E.length - 2; i >= 0; i--) { const [s, v] = E[i]; pts.push(F.at(s, (-v * spread + f(s)) * Wh)); }
+  return pts;
+}
+function koiFan(F, Wh, sb, side, alpha, sigma, Lf) {
+  const th = F.ang(sb), w = koiW(sb) * Wh;
+  const c0 = F.at(sb, side * w * 0.72);
+  const phi0 = th + Math.PI - side * alpha;
+  const arc = [];
+  for (let i = 0; i <= 16; i++) {
+    const t = i / 16, phi = phi0 - side * sigma * (1 - 2 * t);
+    const l = Lf * (0.9 - 0.34 * t + 0.2 * Math.sin(Math.PI * t));
+    arc.push([c0[0] + Math.cos(phi) * l, c0[1] + Math.sin(phi) * l]);
+  }
+  const r1 = F.at(sb - 0.03, side * koiW(sb - 0.03) * Wh * 0.8);
+  const r2 = F.at(sb + 0.05, side * koiW(sb + 0.05) * Wh * 0.8);
+  return { poly: [r1, ...arc, r2], c0, arc, side };
+}
+function stripPoly(F, Wh, s0, s1, v0, v1, n = 26) {
+  const Lp = [], Rp = [];
+  for (let i = 0; i <= n; i++) {
+    const t = i / n, s = s0 + (s1 - s0) * t, w = koiW(s) * Wh, env = Math.pow(Math.sin(Math.PI * t), 0.45);
+    const mid = (v0 + v1) / 2, half = (v1 - v0) / 2 * env;
+    Lp.push(F.at(s, (mid + half) * w)); Rp.push(F.at(s, (mid - half) * w));
+  }
+  return Lp.concat(Rp.reverse());
+}
+function patchPoly(F, Wh, sc, vc, rs, rv, rng, irr = 0.2, n = 24) {
+  const pts = [], ph = rng() * 10;
+  for (let i = 0; i < n; i++) {
+    const a = i / n * TAU;
+    const r = 1 + irr * (gnoise(Math.cos(a) * 1.3 + ph, Math.sin(a) * 1.3, 31) + 0.55 * gnoise(Math.cos(a) * 3.2 + ph, Math.sin(a) * 3.2, 32)) + 0.07 * Math.abs(Math.sin(a * 6 + ph));
+    pts.push(F.at(sc + Math.cos(a) * rs * r, (vc + Math.sin(a) * rv * r) * Wh));
+  }
+  return pts;
+}
+
+// paints one koi into its own layers: shadow on the floor, rim in the water, the fish itself
+function paintKoi(name, k) {
+  const rng = makeRng(name);
+  const F = koiFrame(k), Wh = k.halfW;
+  const thm = F.ang(0.35), lit = (-Math.sin(thm) * -0.62 + Math.cos(thm) * -0.78) > 0 ? 1 : -1;
+
+  const body = koiBody(F, Wh);
+  const tail = koiTail(F, Wh, k.flick, k.tailSpread);
+  const pecs = [1, -1].map((sd, i) => koiFan(F, Wh, 0.2, sd, k.pecAng[i], 0.36, Wh * k.pecLen[i]));
+  const pels = [1, -1].map((sd, i) => koiFan(F, Wh, 0.5, sd, k.pelAng[i], 0.2, Wh * 0.62));
+  const fins = [...pecs, ...pels];
+  const bb = bboxPts([body, tail, ...fins.map(f => f.poly)]), m = 40;
+  const L = new Layer(bb[0] - m, bb[1] - m, bb[2] - bb[0] + 2 * m, bb[3] - bb[1] + 2 * m, 'paint');
+
+  // --- reserve the white of the paper where the fish will be ---
+  const bodyM = layerMask(L, paint(L, { shape: layered(body, rng, { layers: 8, d0: 1, a0: 0.025, d1: 1, a1: 0.06 }), hard: 0.95, toMask: 1 }));
+  const finMs = fins.map(f => layerMask(L, paint(L, { shape: layered(f.poly, rng, { layers: 8, d0: 2, a0: 0.05, d1: 1, a1: 0.07 }), hard: 0.9, toMask: k.finAlpha, exclude: bodyM })));
+  const tailM = layerMask(L, paint(L, { shape: layered(tail, rng, { layers: 8, d0: 2, a0: 0.05, d1: 1, a1: 0.07 }), hard: 0.9, toMask: k.finAlpha * 0.85, exclude: bodyM }));
+  paint(L, { shape: layered(stripPoly(F, Wh, 0.77, 0.9, -1.6, 1.6), rng, { layers: 10, d0: 1, a0: 0.05, d1: 1, a1: 0.08 }), hard: 0.2, toMask: Math.min(1, k.finAlpha * 1.25), clip: tailM });
+
+  pencil(L, [body, tail, ...fins.map(f => f.arc)], rng, 0.42);
+
+  // --- skin ---
+  if (k.type === 'kohaku') {
+    paint(L, { shape: layered(body, rng, { layers: 8, d0: 1, a0: 0.02, d1: 1, a1: 0.05 }), clip: bodyM, pig: INK.shade, density: 0.055, hard: 0.85, edge: 0.7, edgeR: 3, pool: 1.5, poolR: Wh * 0.45, vary: 0.6, varyScale: 40, seed: 7, gran: 0.4 });
+    const side = stripPoly(F, Wh, 0.05, 0.78, lit > 0 ? -1.15 : 0.3, lit > 0 ? -0.3 : 1.15);
+    paint(L, { shape: layered(side, rng, { layers: 12, d0: 2, a0: 0.07, d1: 2, a1: 0.09 }), clip: bodyM, pig: INK.shade, density: 0.1, hard: 0.08, vary: 0.5, varyScale: 50, seed: 8, gran: 0.45 });
+    k.patches.forEach((p, i) => {
+      const r = paint(L, {
+        shape: layered(patchPoly(F, Wh, p[0], p[1], p[2], p[3], rng, 0.3), rng, { layers: 10, d0: 2, a0: 0.05, d1: 2, a1: 0.05 }),
+        clip: bodyM, pig: INK.redK, density: 0.78, hard: 0.93, edge: 0.8, edgeR: 3, pool: 0.3, poolR: 12,
+        vary: 0.45, varyScale: 30, seed: 20 + i, gran: 0.18, blooms: i === 1 ? 1 : 0, bloomR: [8, 14], bloomLift: 0.35, bloomRim: 0.9, rng
+      });
+      const pm = layerMask(L, r);
+      // a deeper red dropped in off-centre while the patch was wet
+      const ds = rng.range(-0.4, 0.4) * p[2], dv = rng.range(-0.35, 0.35) * p[3];
+      paint(L, { shape: layered(patchPoly(F, Wh, p[0] + ds, p[1] + dv, p[2] * 0.55, p[3] * 0.5, rng, 0.45), rng, { layers: 14, d0: 3, a0: 0.12, d1: 2, a1: 0.12 }), clip: pm, pig: INK.redDark, density: 0.24, hard: 0, soften: 4, vary: 0.6, varyScale: 22, seed: 40 + i, gran: 0.25 });
+    });
+  } else {
+    paint(L, {
+      shape: layered(body, rng, { layers: 8, d0: 1, a0: 0.02, d1: 1, a1: 0.05 }), clip: bodyM, pig: k.base, density: k.baseD,
+      hard: 0.9, edge: 0.7, edgeR: 3, pool: 0.45, poolR: 14, vary: 0.38, varyScale: 42, seed: 9, gran: 0.16,
+      blooms: 1, bloomR: [10, 18], bloomLift: 0.28, bloomRim: 1.0, rng
+    });
+    paint(L, { shape: layered(stripPoly(F, Wh, 0.06, 0.76, -0.5, 0.5), rng, { layers: 12, d0: 2, a0: 0.05, d1: 2, a1: 0.09 }), clip: bodyM, pig: k.dark, density: k.darkD, hard: 0, soften: 5, vary: 0.45, varyScale: 40, seed: 10, gran: 0.25 });
+    const side = stripPoly(F, Wh, 0.08, 0.76, lit > 0 ? -1.15 : 0.35, lit > 0 ? -0.35 : 1.15);
+    paint(L, { shape: layered(side, rng, { layers: 12, d0: 2, a0: 0.07, d1: 2, a1: 0.09 }), clip: bodyM, pig: INK.shade, density: 0.12, hard: 0.1, vary: 0.4, varyScale: 50, seed: 11, gran: 0.4 });
+    // scales, flicked in with the tip of a small brush
+    const arcs = [];
+    for (let s = 0.2, row = 0; s < 0.72; s += 0.036, row++) {
+      for (let j = -3; j <= 3; j++) {
+        const v = (j + (row % 2 ? 0.5 : 0)) * 0.27;
+        // the painter only suggests scales: dense along the back, dropping out toward flanks and ends
+        const keep = 0.75 - Math.abs(v) * 0.55 - Math.abs(s - 0.42) * 1.2 + 0.25 * gnoise(s * 9, v * 3, 51);
+        if (Math.abs(v) > 0.82 || rng() > keep) continue;
+        const w = koiW(s) * Wh, c = F.at(s + rng.gauss() * 0.003, v * w + rng.gauss()), th = F.ang(s) + Math.PI + rng.gauss() * 0.15;
+        arcs.push([c[0], c[1], 0.036 * k.len * rng.range(0.42, 0.55), th, rng.range(0.7, 1.1), rng.range(1.0, 2.0)]);
+      }
+    }
+    paint(L, {
+      shape: { bbox: bboxPts([body]), draw: c => {
+        c.strokeStyle = '#fff'; c.lineCap = 'round';
+        for (const [x, y, r, th, sp, lw] of arcs) { c.lineWidth = lw; c.beginPath(); c.arc(x, y, r, th - sp, th + sp); c.stroke(); }
+      } },
+      clip: bodyM, pig: k.dark, density: k.scaleD, hard: 0.5, edge: 0.3, edgeR: 2, dry: 0.36, gran: 0.3
+    });
+    // a wet sheen lifted along the back on the side facing the light
+    paint(L, { shape: layered(stripPoly(F, Wh, 0.1, 0.58, lit * 0.22, lit * 0.6), rng, { layers: 10, d0: 2, a0: 0.05, d1: 2, a1: 0.08 }), clip: bodyM, lift: 0.42, hard: 0.35, edgeR: 4, liftRim: 0.3 });
+  }
+
+  // --- fins & tail: thin veils with rays ---
+  fins.forEach((f, i) => {
+    paint(L, { shape: layered(f.poly, rng, { layers: 8, d0: 2, a0: 0.05, d1: 1, a1: 0.07 }), clip: finMs[i], pig: k.finInk, density: k.finD, hard: 0.85, edge: 1.0, edgeR: 3, pool: 0.5, poolR: 10, vary: 0.5, varyScale: 24, seed: 60 + i, gran: 0.3 });
+    const rays = f.arc.map(p => [f.c0, [(f.c0[0] * 0.35 + p[0] * 0.65) + rng.gauss(), (f.c0[1] * 0.35 + p[1] * 0.65) + rng.gauss()], p]);
+    paint(L, {
+      shape: { bbox: bboxPts([f.poly]), draw: c => { c.strokeStyle = '#fff'; c.lineCap = 'round'; c.lineWidth = 1.4; for (const r of rays) { c.beginPath(); c.moveTo(r[0][0], r[0][1]); c.quadraticCurveTo(r[1][0], r[1][1], r[2][0], r[2][1]); c.stroke(); } } },
+      clip: finMs[i], pig: k.rayInk, density: k.rayD, hard: 0.4, dry: 0.3, gran: 0.3
+    });
+  });
+  paint(L, { shape: layered(tail, rng, { layers: 8, d0: 2, a0: 0.05, d1: 1, a1: 0.07 }), clip: tailM, pig: k.finInk, density: k.finD, hard: 0.85, edge: 1.0, edgeR: 3, pool: 0.5, poolR: 12, vary: 0.5, varyScale: 30, seed: 70, gran: 0.3 });
+  const root = F.at(0.775, 0);
+  const tailRays = tail.slice(1, tail.length - 1).flatMap((p, i, a) => i < a.length - 1 ? [p, [(p[0] + a[i + 1][0]) / 2, (p[1] + a[i + 1][1]) / 2]] : [p]);
+  paint(L, {
+    shape: { bbox: bboxPts([tail]), draw: c => { c.strokeStyle = '#fff'; c.lineCap = 'round'; c.lineWidth = 1.3; for (const p of tailRays) { const mx = root[0] * 0.4 + p[0] * 0.6 + rng.gauss() * 1.5, my = root[1] * 0.4 + p[1] * 0.6 + rng.gauss() * 1.5; c.beginPath(); c.moveTo(root[0], root[1]); c.quadraticCurveTo(mx, my, p[0], p[1]); c.stroke(); } } },
+    clip: tailM, pig: k.rayInk, density: k.rayD, hard: 0.4, dry: 0.3, gran: 0.3
+  });
+
+  // --- dorsal fin, gill covers, eyes ---
+  const dp = []; for (let i = 0; i <= 24; i++) dp.push(F.at(0.3 + 0.36 * i / 24, Wh * 0.07 * Math.sin(i / 24 * Math.PI) * -lit));
+  paint(L, { shape: layered(taperPoly(dp, Wh * 0.16, Wh * 0.06, 0.25, 0.5), rng, { layers: 6, d0: 1, a0: 0.05, d1: 1, a1: 0.06 }), pig: k.dorsalInk, density: k.dorsalD, hard: 0.7, edge: 0.6, edgeR: 2, gran: 0.25 });
+  for (const sd of [1, -1]) {
+    const g = []; for (let i = 0; i <= 10; i++) { const t = i / 10, s = 0.172 + 0.04 * Math.pow(t, 1.6); g.push(F.at(s, sd * (0.25 + 0.68 * t) * koiW(s) * Wh)); }
+    paint(L, { shape: layered(taperPoly(g, 2.6, 1.4, 0.3, 0.4), rng, { layers: 3, d0: 1, a0: 0.04, d1: 1, a1: 0.04 }), clip: bodyM, pig: k.lineInk, density: 0.3, hard: 0.6, dry: 0.3, gran: 0.3 });
+    const ec = F.at(0.088, sd * koiW(0.088) * Wh * 0.9);
+    paint(L, { shape: layered(blobPoly(ec[0], ec[1], Wh * 0.085, Wh * 0.07, F.ang(0.088), 12, rng, 0.1), rng, { layers: 4, d0: 1, a0: 0.05, d1: 1, a1: 0.05 }), pig: INK.eye, density: 0.8, hard: 1, edge: 0.4, edgeR: 2, gran: 0.1, toMask: 1 });
+    paint(L, { shape: polysShape([blobPoly(ec[0] - Wh * 0.02, ec[1] - Wh * 0.025, 1.8, 1.5, 0, 8, rng, 0.1)]), lift: 0.85, hard: 1, edgeR: 2 });
+    const nc = F.at(0.03, sd * Wh * 0.17);
+    paint(L, { shape: polysShape([blobPoly(nc[0], nc[1], 2.4, 1.6, F.ang(0.03), 8, rng, 0.15)]), pig: k.lineInk, density: 0.35, hard: 0.8, gran: 0.2 });
+  }
+
+  // --- the water over the fish: one faint cool glaze ---
+  applyCov(L, L.x, L.y, L.w, L.h, new Float32Array(L.M), { pig: INK.pond, density: k.veil, hard: 0, vary: 0.9, varyScale: 70, seed: 80, gran: 0.4 });
+
+  // --- shadow on the pond floor ---
+  const dx = 26 * k.depth, dy = 38 * k.depth, off = P => P.map(p => [p[0] + dx, p[1] + dy]);
+  const sb = bboxPts([off(body), off(tail), ...fins.map(f => off(f.poly))]);
+  const S = new Layer(sb[0] - 60, sb[1] - 60, sb[2] - sb[0] + 120, sb[3] - sb[1] + 120, 'multiply');
+  paint(S, { shape: layered(off(body), rng, { layers: 14, d0: 2, a0: 0.03, d1: 2, a1: 0.08 }), pig: INK.shadow, density: 0.36, hard: 0.3, edge: 0.3, edgeR: 5, vary: 0.4, varyScale: 60, seed: 90, gran: 0.6 });
+  for (const P of [tail, ...fins.map(f => f.poly)]) paint(S, { shape: layered(off(P), rng, { layers: 10, d0: 2, a0: 0.06, d1: 2, a1: 0.1 }), pig: INK.shadow, density: 0.14, hard: 0.25, gran: 0.6 });
+
+  return { shadow: S, rim: rimLayer(L, k.rim, INK.deep, 95), body: L };
+}
+
+/* =====================================================================
+   THE MAIN SUBJECT — kohaku, white with red patches, centre of frame
+   ===================================================================== */
+function drawKohaku() {
+  return paintKoi('koi-kohaku', {
+    type: 'kohaku', x: 600, y: 745, heading: -1.78, bend1: 0.75, bend2: -0.25, len: 525, halfW: 58,
+    flick: -0.15, tailSpread: 1.0, pecAng: [1.1, 0.9], pecLen: [1.35, 1.2], pelAng: [0.72, 0.6],
+    finAlpha: 0.64, finInk: INK.shade, finD: 0.09, rayInk: INK.shade, rayD: 0.28,
+    dorsalInk: INK.shade, dorsalD: 0.26, lineInk: INK.shade, veil: 0.02, depth: 1.0, rim: 0.75,
+    patches: [[0.118, 0.06, 0.058, 0.5], [0.33, -0.22, 0.12, 0.8], [0.585, 0.28, 0.1, 0.7], [0.462, 0.75, 0.032, 0.3]]
+  });
+}
+
+/* ---- the other creatures: a red koi and an orange koi ---- */
+function drawRedKoi() {
+  return paintKoi('koi-red', {
+    type: 'solid', x: 238, y: 520, heading: 3.22, bend1: -0.95, bend2: 0.75, len: 440, halfW: 49,
+    flick: 0, tailSpread: 1.0, pecAng: [0.95, 1.15], pecLen: [1.25, 1.3], pelAng: [0.65, 0.72],
+    base: INK.redK, baseD: 0.76, dark: INK.redDark, darkD: 0.4, scaleD: 0.24,
+    finAlpha: 0.6, finInk: INK.redK, finD: 0.3, rayInk: INK.redDark, rayD: 0.45,
+    dorsalInk: INK.redDark, dorsalD: 0.55, lineInk: INK.redDark, veil: 0.06, depth: 1.15, rim: 0.7
+  });
+}
+function drawOrangeKoi() {
+  return paintKoi('koi-orange', {
+    type: 'solid', x: 820, y: 1330, heading: -0.45, bend1: 0.75, bend2: -0.4, len: 430, halfW: 47,
+    flick: 0, tailSpread: 1.05, pecAng: [1.1, 0.92], pecLen: [1.3, 1.22], pelAng: [0.7, 0.62],
+    base: INK.orange, baseD: 0.7, dark: INK.orangeDk, darkD: 0.38, scaleD: 0.28,
+    finAlpha: 0.6, finInk: INK.orange, finD: 0.32, rayInk: INK.orangeDk, rayD: 0.45,
+    dorsalInk: INK.orangeDk, dorsalD: 0.55, lineInk: INK.orangeDk, veil: 0.08, depth: 1.3, rim: 0.7
+  });
+}
+
+/* =====================================================================
+   LILY PADS — floating on the surface
+   ===================================================================== */
+const PADS = [
+  { x: 95, y: 150, r: 190, rot: 0.9, cool: 0.3, sq: 0.94, tilt: 0.4 },
+  { x: 380, y: 70, r: 104, rot: 2.4, cool: 0.12, sq: 0.9, tilt: 1.2 },
+  { x: 50, y: 520, r: 98, rot: -0.4, cool: 0.35, sq: 0.95, tilt: 2.0 },
+  { x: 950, y: 430, r: 158, rot: 3.7, cool: 0.18, sq: 0.93, tilt: 0.2 },
+  { x: 1030, y: 80, r: 112, rot: 1.9, cool: 0.3, sq: 0.92, tilt: 2.6 },
+  { x: 640, y: 215, r: 56, rot: 4.4, cool: 0.08, sq: 0.9, tilt: 0.9 },
+  { x: 1035, y: 975, r: 142, rot: 2.9, cool: 0.24, sq: 0.94, tilt: 1.6 },
+  { x: 860, y: 1100, r: 64, rot: 0.3, cool: 0.1, sq: 0.9, tilt: 0.3 },
+  { x: 70, y: 1050, r: 140, rot: -0.2, cool: 0.2, sq: 0.95, tilt: 2.3 },
+  { x: 250, y: 1240, r: 58, rot: 5.1, cool: 0.14, sq: 0.88, tilt: 1.0 },
+  { x: 150, y: 1730, r: 200, rot: 1.2, cool: 0.26, sq: 0.94, tilt: 0.7 },
+  { x: 580, y: 1850, r: 136, rot: 4.0, cool: 0.14, sq: 0.92, tilt: 2.9 },
+  { x: 965, y: 1660, r: 170, rot: 2.2, cool: 0.22, sq: 0.93, tilt: 1.9 },
+  { x: 432, y: 1522, r: 84, rot: 0.8, cool: 0.08, sq: 0.9, tilt: 0.5 }
+];
+function padOutline(p, rng) {
+  const pts = [], n = 72, notch = p.notch ?? rng.range(0.16, 0.34), a0 = p.rot + notch / 2, a1 = p.rot + TAU - notch / 2, ph = rng() * 20;
+  const ct = Math.cos(p.tilt), st = Math.sin(p.tilt);
+  for (let i = 0; i <= n; i++) {
+    const a = a0 + (a1 - a0) * i / n;
+    const rr = p.r * (1 + 0.05 * gnoise(Math.cos(a) * 1.4 + ph, Math.sin(a) * 1.4, 5) + 0.015 * gnoise(Math.cos(a) * 5 + ph, Math.sin(a) * 5, 6));
+    const x = Math.cos(a) * rr, y = Math.sin(a) * rr, yy = (x * st + y * ct) * p.sq, xx = x * ct - y * st;
+    pts.push([p.x + xx * ct + yy * st, p.y - xx * st + yy * ct]);
+  }
+  // the slit runs into the centre, its lips not quite meeting
+  pts.push([p.x + Math.cos(p.rot) * p.r * 0.06, p.y + Math.sin(p.rot) * p.r * 0.06]);
+  return pts;
+}
+function paintPad(p, idx) {
+  const rng = makeRng('pad-' + idx);
+  const outline = padOutline(p, rng), bb = bboxPts([outline]), m = 34;
+  const L = new Layer(bb[0] - m, bb[1] - m, bb[2] - bb[0] + 2 * m, bb[3] - bb[1] + 2 * m, 'paint');
+  const pm = layerMask(L, paint(L, { shape: layered(outline, rng, { layers: 8, d0: 1, a0: 0.02, d1: 1, a1: 0.04 }), hard: 0.95, toMask: 1 }));
+  const base = mix([PG.sap, 0.9], [PG.turq, p.cool], [PG.indigo, 0.07]);
+  // first wash, flooded in and left to dry with a hard edge
+  paint(L, {
+    shape: layered(outline, rng, { layers: 8, d0: 1, a0: 0.02, d1: 1, a1: 0.05 }), clip: pm, pig: base, density: 0.42,
+    hard: 0.9, edge: 0.8, edgeR: 3, pool: 0.45, poolR: 18, vary: 0.55, varyScale: p.r * 0.45, seed: idx * 7 + 3, gran: 0.4,
+    blooms: rng.chance(0.55) ? 1 : 0, bloomR: [p.r * 0.1, p.r * 0.2], bloomLift: 0.45, bloomRim: 1.0, rng
+  });
+  // warm yellow-green and cool blue-green mingling while wet
+  for (let j = 0; j < 3; j++) {
+    const a = rng() * TAU, d = rng() * p.r * 0.55;
+    const blob = blobPoly(p.x + Math.cos(a) * d, p.y + Math.sin(a) * d, p.r * rng.range(0.25, 0.45), p.r * rng.range(0.2, 0.35), rng() * TAU, 14, rng, 0.3);
+    paint(L, { shape: layered(blob, rng, { layers: 12, d0: 2, a0: 0.13, d1: 2, a1: 0.12 }), clip: pm, pig: j === 1 ? mix([PG.turq, 0.8], [PG.sap, 0.3]) : mix([PG.sap, 0.7], [PG.orange, 0.3]), density: 0.16, hard: 0, soften: 6, vary: 0.5, varyScale: 40, seed: idx * 7 + 30 + j, gran: 0.4 });
+  }
+  // darker green dropped into the side away from the light
+  const sh = blobPoly(p.x + p.r * rng.range(0.25, 0.5), p.y + p.r * rng.range(0.25, 0.5), p.r * rng.range(0.55, 0.8), p.r * rng.range(0.45, 0.6), 0.75, 16, rng, 0.3);
+  paint(L, { shape: layered(sh, rng, { layers: 12, d0: 2, a0: 0.12, d1: 2, a1: 0.1 }), clip: pm, pig: INK.leafDark, density: rng.range(0.22, 0.34), hard: 0, soften: 6, vary: 0.5, varyScale: 40, seed: idx * 7 + 4, gran: 0.45 });
+  for (let j = 0; j < 2; j++) {
+    const a = rng() * TAU, d = rng() * p.r * 0.6;
+    const blob = blobPoly(p.x + Math.cos(a) * d, p.y + Math.sin(a) * d, p.r * rng.range(0.16, 0.3), p.r * rng.range(0.12, 0.24), rng() * TAU, 12, rng, 0.3);
+    paint(L, { shape: layered(blob, rng, { layers: 10, d0: 2, a0: 0.12, d1: 2, a1: 0.1 }), clip: pm, pig: j ? INK.leaf : INK.leafDark, density: 0.18, hard: j ? 0.75 : 0.1, edge: 0.7, edgeR: 3, gran: 0.4 });
+  }
+  // veins lifted out, a few dark hairlines
+  const notch = p.notch ?? 0.26, cx = p.x + Math.cos(p.rot) * p.r * 0.05, cy = p.y + Math.sin(p.rot) * p.r * 0.05;
+  const nv = Math.round(13 + p.r / 25), veins = [];
+  for (let i = 0; i < nv; i++) {
+    const a = p.rot + notch / 2 + 0.12 + (TAU - notch - 0.24) * (i + 0.5) / nv + rng.gauss() * 0.04, bend = rng.gauss() * 0.06;
+    const pts = [];
+    for (let t = 0; t <= 1.0001; t += 0.1) { const aa = a + bend * t * t, rr = p.r * (0.06 + 0.86 * t); pts.push([cx + Math.cos(aa) * rr, cy + Math.sin(aa) * rr]); }
+    veins.push(pts);
+  }
+  veins.forEach(v => { if (rng() < 0.2) return; paint(L, { shape: layered(taperPoly(v.slice(0, 6 + Math.floor(rng() * 5)), p.r * 0.03, p.r * 0.012, 0.1, 0.5), rng, { layers: 3, d0: 1, a0: 0.06, d1: 1, a1: 0.06 }), clip: pm, lift: 0.2, hard: 0.4, edgeR: 3, liftRim: 0.6 }); });
+  paint(L, {
+    shape: { bbox: bb, draw: c => { c.strokeStyle = '#fff'; c.lineCap = 'round'; c.lineWidth = 1.1; for (const v of veins) { if (rng() < 0.55) continue; c.beginPath(); c.moveTo(v[1][0] + 2, v[1][1] + 2); for (let i = 2; i < v.length - 2; i++) c.lineTo(v[i][0] + 2, v[i][1] + 2); c.stroke(); } } },
+    clip: pm, pig: INK.leafDark, density: 0.18, hard: 0.3, dry: 0.4, gran: 0.4
+  });
+  // upturned rim catching shadow, and a little rust where the leaf is ageing
+  const ra = rng() * TAU, rl = rng.range(1.2, 2.6), rimPts = [];
+  for (let t = 0; t <= 1.0001; t += 1 / 30) { const a = ra + rl * t; rimPts.push([p.x + Math.cos(a) * p.r * 0.95, p.y + Math.sin(a) * p.r * 0.95 * 0.97]); }
+  paint(L, { shape: layered(taperPoly(rimPts, p.r * 0.06, p.r * 0.05, 0.2, 0.3), rng, { layers: 5, d0: 1, a0: 0.06, d1: 1, a1: 0.08 }), clip: pm, pig: INK.leafDark, density: 0.3, hard: 0.65, edge: 0.6, edgeR: 2, gran: 0.4 });
+  if (idx % 3 !== 1) {
+    const a = rng() * TAU;
+    const blob = blobPoly(p.x + Math.cos(a) * p.r * 0.82, p.y + Math.sin(a) * p.r * 0.82, p.r * 0.2, p.r * 0.13, a, 12, rng, 0.35);
+    paint(L, { shape: layered(blob, rng, { layers: 10, d0: 2, a0: 0.14, d1: 2, a1: 0.12 }), clip: pm, pig: INK.rust, density: 0.32, hard: 0.15, gran: 0.4 });
+  }
+  // light caught on the upper-left of the leaf, lifted softly
+  const hl = blobPoly(p.x - p.r * 0.35, p.y - p.r * 0.38, p.r * 0.42, p.r * 0.3, -0.7, 12, rng, 0.25);
+  paint(L, { shape: layered(hl, rng, { layers: 12, d0: 2, a0: 0.12, d1: 2, a1: 0.1 }), clip: pm, lift: 0.3, hard: 0.1, edgeR: 6, liftRim: 0.2 });
+
+  // shadow on the water below
+  const off = outline.map(q => [q[0] + 22, q[1] + 30]), ob = bboxPts([off]);
+  const S = new Layer(ob[0] - 50, ob[1] - 50, ob[2] - ob[0] + 100, ob[3] - ob[1] + 100, 'multiply');
+  paint(S, { shape: layered(off, rng, { layers: 14, d0: 2, a0: 0.03, d1: 2, a1: 0.07 }), pig: INK.shadow, density: 0.3, hard: 0.35, edge: 0.3, edgeR: 5, vary: 0.4, varyScale: 60, seed: idx * 7 + 5, gran: 0.6 });
+
+  return { shadow: S, rim: rimLayer(L, 0.75, INK.deep, idx * 7 + 6), body: L };
+}
+function drawLilyPads() { return PADS.map(paintPad); }
+
+/* =====================================================================
+   THE LOTUS — pink, seen from straight above
+   ===================================================================== */
+function petalPoly(cx, cy, ang, r0, len, wid, curl) {
+  const ca = Math.cos(ang), sa = Math.sin(ang), nx = -sa, ny = ca, Lp = [], Rp = [];
+  for (let i = 0; i <= 24; i++) {
+    const u = i / 24, hw = wid * 0.5 * Math.pow(Math.sin(Math.PI * Math.pow(u, 0.72)), 0.62) * (1 - 0.12 * u), bend = curl * u * u * len;
+    const px = cx + ca * (r0 + u * len) + nx * bend, py = cy + sa * (r0 + u * len) + ny * bend;
+    Lp.push([px + nx * hw, py + ny * hw]); Rp.push([px - nx * hw, py - ny * hw]);
+  }
+  return Lp.concat(Rp.reverse());
+}
+function drawLotus() {
+  const rng = makeRng('lotus');
+  const cx = 858, cy = 330, R = 118;
+  const L = new Layer(cx - R - 50, cy - R - 50, 2 * R + 100, 2 * R + 100, 'paint');
+  const occ = new Float32Array(L.w * L.h);
+  const addOcc = r => { if (!r) return; for (let yy = 0; yy < r.bh; yy++) { const li = (r.y0 - L.y + yy) * L.w + (r.x0 - L.x); for (let xx = 0; xx < r.bw; xx++) { const v = r.C[yy * r.bw + xx]; if (v > occ[li + xx]) occ[li + xx] = v; } } };
+  const gap = () => { const b = blurArr(occ, L.w, L.h, 3); for (let i = 0; i < b.length; i++) b[i] = Math.min(1, b[i] * 1.9); return b; };
+
+  // seed head and stamens sit on top, so they are painted first and the petals go around them
+  const rr = R * 0.17;
+  const pod = paint(L, { shape: layered(blobPoly(cx, cy, rr, rr * 0.95, 0, 16, rng, 0.08), rng, { layers: 8, d0: 1, a0: 0.04, d1: 1, a1: 0.05 }), toMask: 1, pig: INK.gold, density: 0.42, hard: 0.95, edge: 0.9, edgeR: 3, vary: 0.4, varyScale: 14, seed: 501, gran: 0.3 });
+  addOcc(pod);
+  const holes = [[0, 0], ...Array.from({ length: 6 }, (_, i) => [Math.cos(i / 6 * TAU + 0.3) * rr * 0.55, Math.sin(i / 6 * TAU + 0.3) * rr * 0.55])];
+  paint(L, { shape: polysShape(holes.map(([hx, hy]) => blobPoly(cx + hx, cy + hy, rr * 0.13, rr * 0.13, 0, 8, rng, 0.15))), pig: mix([PG.sap, 0.7], [PG.orange, 0.5], [PG.indigo, 0.25]), density: 0.55, hard: 0.9, edge: 0.5, edgeR: 2, gran: 0.2 });
+  const stamens = [];
+  for (let i = 0; i < 46; i++) {
+    const a = i / 46 * TAU + rng.gauss() * 0.05, r1 = rr * 1.02, r2 = rr * rng.range(1.55, 2.0), bend = rng.gauss() * 0.12;
+    stamens.push([[cx + Math.cos(a) * r1, cy + Math.sin(a) * r1], [cx + Math.cos(a + bend) * r2, cy + Math.sin(a + bend) * r2]]);
+  }
+  const st = paint(L, {
+    shape: { bbox: [cx - rr * 2.1, cy - rr * 2.1, cx + rr * 2.1, cy + rr * 2.1], draw: c => { c.strokeStyle = '#fff'; c.lineCap = 'round'; for (const [a, b] of stamens) { c.lineWidth = rng.range(1.3, 2.4); c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.stroke(); c.beginPath(); c.arc(b[0], b[1], 1.8, 0, TAU); c.fill(); } } },
+    toMask: 1, pig: INK.gold, density: 0.5, hard: 0.7, gran: 0.25
+  });
+  addOcc(st);
+
+  // petals, innermost first: each new one is painted around those already down
+  const rings = [
+    { n: 5, len: 0.5, wid: 0.62, r0: 0.1, rot: 0.4, d: 0.2, tip: 0.36 },
+    { n: 7, len: 0.76, wid: 0.5, r0: 0.12, rot: 0.4 + Math.PI / 7, d: 0.15, tip: 0.3 },
+    { n: 10, len: 1.0, wid: 0.44, r0: 0.14, rot: 0.1, d: 0.11, tip: 0.26 }
+  ];
+  const outerPolys = [];
+  rings.forEach((g, gi) => {
+    for (let i = 0; i < g.n; i++) {
+      const a = g.rot + i / g.n * TAU + rng.gauss() * 0.1, len = g.len * R * rng.range(0.84, 1.1);
+      const poly = petalPoly(cx, cy, a, g.r0 * R, len, g.wid * len * rng.range(0.85, 1.12), rng.gauss() * 0.07);
+      if (gi === 2) outerPolys.push(poly);
+      const petal = layered(poly, rng, { layers: 8, d0: 2, a0: 0.04, d1: 1, a1: 0.05 });
+      paint(L, { shape: petal, hard: 0.95, toMask: 1 });   // the whole flower stays reserved paper
+      const r = paint(L, {
+        shape: petal, exclude: gap(),
+        pig: INK.rose, density: g.d * rng.range(0.8, 1.2), hard: 0.9, edge: 1.2, edgeR: 3, pool: 0.5, poolR: 10, vary: 0.5, varyScale: 22, seed: 510 + gi * 20 + i, gran: 0.15
+      });
+      if (!r) continue;
+      const pm = layerMask(L, r);
+      const tx = cx + Math.cos(a) * (g.r0 * R + len * 0.95), ty = cy + Math.sin(a) * (g.r0 * R + len * 0.95);
+      paint(L, { shape: layered(blobPoly(tx, ty, len * 0.34, len * 0.22 * g.wid / 0.4, a, 12, rng, 0.35), rng, { layers: 12, d0: 2, a0: 0.12, d1: 2, a1: 0.12 }), clip: pm, pig: INK.roseDeep, density: g.tip, hard: 0, soften: 9, vary: 0.5, varyScale: 18, seed: 560 + gi * 20 + i, gran: 0.2 });
+      // a breath of yellow-green where the petal meets the heart
+      const bx = cx + Math.cos(a) * (g.r0 * R + len * 0.12), by = cy + Math.sin(a) * (g.r0 * R + len * 0.12);
+      paint(L, { shape: layered(blobPoly(bx, by, len * 0.2, len * 0.14, a, 10, rng, 0.3), rng, { layers: 10, d0: 2, a0: 0.12, d1: 2, a1: 0.12 }), clip: pm, pig: INK.gold, density: 0.07, hard: 0, soften: 6, gran: 0.2 });
+      const vs = [];
+      for (let j = -1; j <= 1; j++) { const pts = []; for (let t = 0.15; t <= 0.85; t += 0.1) { const off = j * g.wid * len * 0.17 * Math.sin(Math.PI * t); pts.push([cx + Math.cos(a) * (g.r0 * R + t * len) - Math.sin(a) * off, cy + Math.sin(a) * (g.r0 * R + t * len) + Math.cos(a) * off]); } vs.push(pts); }
+      paint(L, { shape: { bbox: bboxPts([poly]), draw: c => { c.strokeStyle = '#fff'; c.lineWidth = 1; for (const v of vs) { c.beginPath(); c.moveTo(v[0][0], v[0][1]); for (const q of v) c.lineTo(q[0], q[1]); c.stroke(); } } }, clip: pm, pig: INK.rose, density: 0.16, hard: 0.3, dry: 0.4, gran: 0.2 });
+      addOcc(r);
+    }
+  });
+
+  const off = P => P.map(q => [q[0] + 40, q[1] + 52]);
+  const sp = outerPolys.map(off), sb = bboxPts(sp);
+  const S = new Layer(sb[0] - 50, sb[1] - 50, sb[2] - sb[0] + 100, sb[3] - sb[1] + 100, 'multiply');
+  for (const P of sp) paint(S, { shape: layered(P, rng, { layers: 8, d0: 2, a0: 0.05, d1: 2, a1: 0.1 }), pig: INK.shadow, density: 0.16, hard: 0.2, gran: 0.6 });
+  return { shadow: S, rim: rimLayer(L, 0.6, INK.deep, 599, 3), body: L };
+}
+
+/* =====================================================================
+   BACKGROUND — depth layer 3: the water surface (over the fish)
+   ===================================================================== */
+function drawWaterSurface() {
+  const L = new Layer(0, 0, W, H, 'multiply'), rng = makeRng('surface');
+  for (let i = 0; i < 12; i++) {
+    const y0 = rng.range(120, H - 120), x0 = rng.range(-120, W - 260), len = rng.range(240, 620);
+    const amp = rng.range(3, 9), f = rng.range(0.008, 0.02), ph = rng() * TAU, tilt = rng.range(-0.08, 0.06);
+    const pts = [];
+    for (let t = 0; t <= 1.0001; t += 1 / 40) { const x = x0 + t * len; pts.push([x, y0 + Math.sin(x * f + ph) * amp + tilt * t * len]); }
+    paint(L, { shape: layered(taperPoly(pts, rng.range(2.5, 4.5), rng.range(1.5, 2.5), 0.3, 0.4), rng, { layers: 4, d0: 1, a0: 0.05, d1: 1, a1: 0.06 }), pig: INK.deep, density: rng.range(0.14, 0.24), hard: 0.6, edge: 0.4, edgeR: 2, dry: 0.34, gran: 0.4 });
+  }
+  // rings spreading where a fish nudged the surface
+  for (const [x, y, n] of [[196, 500, 3], [915, 1262, 3]]) {
+    let a0 = rng() * TAU;
+    for (let k = 0; k < n; k++) {
+      const r = 30 + k * 26 + rng.gauss() * 3, arcs = [];
+      let a = a0 + rng.gauss() * 0.4;
+      while (a < a0 + TAU) {
+        const span = rng.range(0.4, 1.2), pts = [];
+        for (let t = 0; t <= 1.0001; t += 0.05) { const aa = a + span * t; pts.push([x + Math.cos(aa) * r, y + Math.sin(aa) * r * 0.92]); }
+        arcs.push(pts); a += span + rng.range(0.25, 0.7);
+        if (arcs.length > 6) break;
+      }
+      for (const P of arcs) paint(L, { shape: layered(taperPoly(P, 3.2 - k * 0.5, 2.6 - k * 0.4, 0.3, 0.3), rng, { layers: 3, d0: 1, a0: 0.04, d1: 1, a1: 0.05 }), pig: INK.deep, density: 0.3 - k * 0.05, hard: 0.7, edge: 0.5, edgeR: 2, dry: 0.3, gran: 0.4 });
+    }
+  }
+  return L;
+}
+
+/* =====================================================================
+   SPLATTERS — flicked from a loaded brush
+   ===================================================================== */
+function drawSplatters() {
+  const L = new Layer(0, 0, W, H, 'multiply'), rng = makeRng('splatter');
+  const drops = [];
+  const sprays = [[110, 1330, -0.7, 7, INK.deep], [560, 120, 2.6, 5, INK.deep], [720, 1590, -0.3, 4, INK.redK], [300, 860, 0.9, 4, INK.orange], [980, 1800, 3.6, 4, INK.leafDark]];
+  for (const [x, y, a, n, ink] of sprays) {
+    for (let i = 0; i < n; i++) {
+      const d = i * rng.range(16, 34), r = Math.max(1.3, 6.5 - i * 0.9 + rng.gauss() * 1.2);
+      drops.push([x + Math.cos(a) * d + rng.gauss() * 8, y + Math.sin(a) * d + rng.gauss() * 8, r, a, rng() < 0.4 ? 1.8 : 1.1, ink]);
+    }
+  }
+  for (let i = 0; i < 7; i++) drops.push([rng.range(40, W - 40), rng.range(40, H - 40), rng.range(1.4, 3.5), rng() * TAU, 1.1, rng() < 0.7 ? INK.deep : INK.redK]);
+  for (const [x, y, r, a, el, ink] of drops) {
+    const poly = blobPoly(x, y, r * el, r, a, 14, rng, 0.12);
+    paint(L, { shape: layered(poly, rng, { layers: 4, d0: 1, a0: 0.12, d1: 1, a1: 0.1 }), pig: ink, density: rng.range(0.3, 0.55), hard: 1, edge: 1.6, edgeR: Math.max(2, r * 0.5), gran: 0.25 });
+  }
+  return L;
+}
+
+/* =====================================================================
+   PAPER GRAIN — the tooth of cold-press paper catching side light
+   ===================================================================== */
+let grainCanvases = null;
+function drawPaperGrain(c) {
+  if (!grainCanvases) {
+    const mul = document.createElement('canvas'), scr = document.createElement('canvas');
+    mul.width = scr.width = W; mul.height = scr.height = H;
+    const mi = new ImageData(W, H), si = new ImageData(W, H), md = mi.data, sd = si.data;
+    const cockle = lowNoise(0, 0, W, H, 420, 777, 2);
+    for (let y = 0; y < H; y++) {
+      const ya = y > 0 ? y - 1 : 0, yb = y < H - 1 ? y + 1 : y;
+      for (let x = 0; x < W; x++) {
+        const i = y * W + x, xa = x > 0 ? x - 1 : 0, xb = x < W - 1 ? x + 1 : x;
+        const lit = (PH[yb * W + xb] - PH[ya * W + xa]) * 6.5;
+        const shade = lit < 0 ? Math.min(1, -lit) : 0, hi = lit > 0 ? Math.min(1, lit) : 0;
+        const valley = PH[i] < 0.5 ? (0.5 - PH[i]) * 2 : 0;
+        const m = 1 - 0.085 * shade - 0.035 * valley - 0.012 * (0.5 + 0.5 * cockle[i]);
+        const j = i * 4;
+        md[j] = md[j + 1] = md[j + 2] = 255 * m; md[j + 3] = 255;
+        sd[j] = sd[j + 1] = sd[j + 2] = 255 * 0.06 * hi; sd[j + 3] = 255;
+      }
+    }
+    mul.getContext('2d').putImageData(mi, 0, 0);
+    scr.getContext('2d').putImageData(si, 0, 0);
+    grainCanvases = { mul, scr };
+  }
+  c.globalCompositeOperation = 'multiply'; c.drawImage(grainCanvases.mul, 0, 0);
+  c.globalCompositeOperation = 'screen'; c.drawImage(grainCanvases.scr, 0, 0);
+  c.globalCompositeOperation = 'source-over';
+}
+
+/* =====================================================================
+   COMPOSE
+   ===================================================================== */
+function put(c, L, mode) {
+  if (!L) return;
+  c.globalCompositeOperation = mode;
+  c.drawImage(layerToCanvas(L), L.x, L.y);
+  c.globalCompositeOperation = 'source-over';
+}
+const tick = () => new Promise(r => setTimeout(r, 0));
+
+async function main() {
+  buildPaper(); await tick();
+  const pond = new Layer(0, 0, W, H, 'multiply');
+  drawPondFloor(pond); await tick();
+  drawPondMidwater(pond); await tick();
+  const koi = [drawRedKoi(), drawKohaku(), drawOrangeKoi()]; await tick();
+  const pads = drawLilyPads(); await tick();
+  const lotus = drawLotus();
+  const surface = drawWaterSurface();
+  const splatter = drawSplatters(); await tick();
+
+  drawPaper(ctx);
+  put(ctx, pond, 'multiply');
+  for (const g of [...pads, lotus, ...koi]) put(ctx, g.shadow, 'multiply');
+  for (const g of koi) { put(ctx, g.rim, 'multiply'); put(ctx, g.body, 'source-over'); }
+  put(ctx, surface, 'multiply');
+  for (const g of pads) { put(ctx, g.rim, 'multiply'); put(ctx, g.body, 'source-over'); }
+  put(ctx, lotus.rim, 'multiply'); put(ctx, lotus.body, 'source-over');
+  put(ctx, splatter, 'multiply');
+  drawPaperGrain(ctx);
+
+  window.koiPainting = { pond, koi, pads, lotus, surface, splatter };
+  document.body.dataset.done = '1';
+}
+main();
+})();
+</script>
+</body>
+</html>
