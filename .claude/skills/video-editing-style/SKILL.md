@@ -1,6 +1,6 @@
 ---
 name: video-editing-style
-description: Professional short-form vertical (9:16) editing methodology, reverse-engineered frame by frame from five high-retention reels - an editorial motion-graphics explainer, two talking-head reels with kinetic captions, two faceless 2.5D documentary stories and a raw-vs-edited agency showcase. Use it whenever the user wants to plan, script, edit, caption, sound-design, review or critique a reel, TikTok, YouTube Short or other vertical video, asks for an edit in this style or like these reels, wants a beat sheet, shot list, caption system, transition plan or an After Effects, Premiere, CapCut or Remotion build sheet, or wants to analyse a reference video's editing. Gives measured numbers (frame counts, ease curves, sync offsets, SFX grammar, loudness), a word-to-event mapping workflow, a transition and device library, fixes for the references' mistakes and a scorecard script that checks a render against the reference ranges.
+description: Professional short-form vertical (9:16) editing methodology, reverse-engineered frame by frame from five high-retention reels - an editorial motion-graphics explainer, two talking-head reels with kinetic captions, two faceless 2.5D documentary stories and a raw-vs-edited agency showcase. Use it whenever the user wants to plan, script, edit, caption, sound-design, review or critique a reel, TikTok, YouTube Short or other vertical video, asks for an edit in this style or like these reels, wants a beat sheet, shot list, caption system, font pairing, transition plan or an After Effects, Premiere, CapCut or Remotion build sheet, or wants to analyse a reference video's editing. Gives measured numbers (frame counts, ease curves, sync offsets, SFX grammar, loudness), a word-to-event mapping workflow, a transition and device library, fixes for the references' mistakes and a scorecard script that checks a render against the reference ranges.
 ---
 
 # Short-form editing methodology (5 reference reels)
@@ -19,7 +19,8 @@ guesses. Frame counts assume 30 fps: convert with seconds = frames / 30. Sizes a
 
 Read this file first. Then open only the reference you need: the format file for the chosen format
 (`format-a…`, `format-b-talking-head.md`, `format-c-faceless-documentary.md`), `transitions.md` for a transition
-recipe, `devices.md` for a graphic or text device, a reel note when you want the full beat sheet or evidence.
+recipe, `devices.md` for a graphic or text device, `typography-pairings.md` for font pairings, caption colours and the
+dark-wall type zone, a reel note when you want the full beat sheet or evidence.
 
 ## 1. The method in one paragraph
 
@@ -146,10 +147,14 @@ Pick one per reel; full specs in the format files and `devices.md`.
   ultra-black extruded caps with one red word (cap ≈7.8 % W in R2); data = typewriter (≈1 char/f, underline trailing
   ≈8 f); archive/moral = bold italic serif, one word at a time. R3 showed text for ≈15 % of its spoken words; R2 had text on screen for ≈37 % of its runtime.
 - **Dual-font word reveal (format A).** Bold grotesk + italic serif, words blur in over 6–8 f. See format A.
+- **Font pairings (client board).** Quiet italic-serif word over a loud heavy-sans caps word, the big word 75–85 % of W
+  wide, block in the top 40 % of the frame above the speaker's head, haldi/kumkum/cream colour roles, glue words small and
+  concept words big. Six pairings with measured sizes, colours and use rules: `references/typography-pairings.md`.
 
 Legibility floor (the references broke all of these):
 - Smallest text ≥ 2.5 % H on the final 9:16 frame (R4's small line was ≈0.9 % H inside its wrapper: unreadable).
-- Contrast ≥ 4.5:1, or a 2–3 px dark stroke / 30 % shadow (R1 white on a light shirt 2.35:1; R2 red on sky 1.3:1).
+- Contrast ≥ 4.5:1, or a 2–3 px dark stroke / 30 % shadow (R1 white on a light shirt 2.35:1; R2 red on sky 1.3:1; kumkum red
+  on a dark wall 2.9:1 needs its ink outline).
 - Reading order left → right, top → bottom (R1 stacked "practice / it in your saying / own words").
 - Animate keywords with scale or tracking, not a fade from 35 % (R1 keywords were near-invisible for 3–4 frames).
 - Spell-check every overlay against the script: **all five references shipped a typo** ("Billionairs",
