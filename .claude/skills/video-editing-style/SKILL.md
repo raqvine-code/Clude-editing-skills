@@ -91,6 +91,12 @@ Build in this order. Each layer names where its numbers live.
 - **Install earshot first** in a cloud session (`sfx-sources-and-ears.md` section 2); the other two need Python and ffmpeg only.
 - Validator notes: Real SFX's description has an unquoted colon and earshot's is 1,327 characters (limit 1,024 in the skill-creator validator); the harness loads both, so they are left as published.
 
+## 6c. Other tools installed next to this skill (2026-11-27)
+- **auto-editor** (CLI + 5 skills): cuts silence and dead air from long raw takes; the owner's 12 s talking-head clip had almost none (it removed 0.16 s). Use when a raw take has real pauses; keep pauses that carry a beat.
+- **yt-dlp** (CLI, install per session): fetches a reference the owner links, for study only (Rule 1.4); never reuse the footage; delete it afterwards.
+- **three.js skills** (13): only for a 3D intro or object; not part of the default short.
+- Verdicts for all ten tools the owner listed, and the HyperFrames pilot option: `06-tools/EXTERNAL-REPOS.md`.
+
 ## 7. Learning a new style from reference videos
 1. Follow `06-tools/watch/GUIDE.md`: frames at the source rate, word transcript, cuts, audio events; measure, do not guess. Label every number (measured, observed, estimate).
 2. Find the technique, not the look: why the move is on that word, what the eye does, what the sound does.
