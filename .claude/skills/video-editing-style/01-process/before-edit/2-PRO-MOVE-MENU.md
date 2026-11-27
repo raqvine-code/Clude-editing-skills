@@ -38,6 +38,8 @@ How to build them: render a scene clip with a `tools/scenes.py` in the project (
 | **Object type card** (full-frame accent plate + hero word + ONE object: icon system, tiles, phone) with a colour-inversion cut on the stressed word | a one-word claim ("wins", "chasing") that deserves the whole frame; counts as MG only with an object | `editor-showcase-caption-edit-style` 4 (9-10), 6 | `caption_moves.py` `typecard` (`invert`) |
 | **Number tiles** (1-2-3 diamonds pop; the named one rolls to its word, the rest fade) | "one of these three things", "number one..." | `editor-showcase-caption-edit-style` 4 (16) | `caption_moves.py` `tiles` |
 
+**Variety (2026-11-27):** no two neighbouring cards or captions may share a layout, and no sound file is used more than 3 times in a 47 s video (gate row). See `04-styles/editor-showcase-caption-edit-style/GUIDE.md` section 10b.
+
 **Gate note (2026-11-27):** a `layers` entry keyed `txt_...` is a text move and a `dims` entry with `amt` >= 0.99 is a focus pull; the gate counts neither as designed MG.
 
 ## 2. Footage B-roll

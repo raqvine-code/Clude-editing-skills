@@ -2,6 +2,13 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-27 (feedback on the redo): "same pattern in every frame", fonts, captions and SFX not liked
+**The user's words:** "Then why you edited the previous video? Because I don't like that video. The caption, typographies, subtitles, even fonts also. Also, do not add proper SFX. Also, every frames you did like same pattern using. I don't like that also. So improve your editing skill. Already I provided zip file, right? ... if you have any doubt, ask me now. Also ... before you will do video editing, give me the frames and your plan."
+- **Process rule (CLAUDE.md-level):** after a rejection, or whenever the owner asks, send the plan plus storyboard frames and wait for approval before rendering. Added to `CLAUDE.md` Rule 0.
+- **Variety rules:** `04-styles/editor-showcase-caption-edit-style/GUIDE.md` 10b (no two neighbouring cards share a layout, 4+ caption treatments, no ghosted words, readable small words, varied real sounds).
+- **Gate:** three new sound rows in `pre_edit_gate.py` (no file over 3 uses in a 47 s video, distinct files >= 60 % of cues, synthesised cues <= 20 %). The redo would have failed all three.
+- **Open:** client rules for this video (owner will say); a real SFX source (Mixkit pages are behind a bot check from the cloud container).
+
 ## 2026-11-27 (redo): the rejected short rebuilt with the new workflow
 **The user's words:** "Redo the rejected short with this workflow".
 - **Built to the gate:** PRE-EDIT + PLAN, then 9 designed card layers, 6 B-roll clips, 71 sound cues, no music, no grade, captions on the chest (centre 61 %), gate READY (13 MG events, 47 %, HL + MC), -14.0 LUFS. The full record is `04-styles/editor-showcase-caption-edit-style/references/worked-example/` and `02-craft/shorts-editing-pro/LEARNING-LOG.md`.

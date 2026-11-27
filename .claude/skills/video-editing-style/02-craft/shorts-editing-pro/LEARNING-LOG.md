@@ -18,7 +18,10 @@
 - **What was new:** the six card kinds in `caption_moves.py`; camera face-follow (`anchor_track`); B-roll `dy`; focus pull as a `dims` entry; gate counts only object layers as MG.
 - **What went wrong and the fix:** (1) `anchor_track` crashed the multi-frame render (numpy array used with `or`; stills had hidden it): always run a short `video --from --to` render, not only stills, after a kit change. (2) The sunset clip showed only sky inside the card window: use `dy` + `z`. (3) Hero text stayed on the footage while a card opened: it now fades during `release`. (4) Tiles collided with the hero line: tiles at y 1388, size 84. (5) The `neg` flash leaves one black frame (kit design).
 - **Time:** 1428 frames at 1080x1920 took about 17 min on 4 cores; layers about 5 min; do the layer render in the background while writing the sheets.
-- **Open:** client feedback. Clash stated to the user: the first brief asked for music and a grade; the client bar says none.
+- **Feedback (2026-11-27):** "Then why you edited the previous video? Because I don't like that video. The caption, typographies, subtitles, even fonts also. Also, do not add proper SFX. Also, every frames you did like same pattern using. I don't like that also. So improve your editing skill. Already I provided zip file... if you have any doubt, ask me now. Also, before you will do video editing, give me the frames and your plan."
+- **Why it failed (measured on the redo's EDL):** 6 cards on one layout; 29 captions at one height, 17 of them the same "small grey words + one gold CAPS word"; faint, half-transparent small words and ghosted future words; 71 sound cues from 18 files (one pop 16 times, many synthesised, none heard by me). The ZIP's numbers were used, its variety was not.
+- **Rule changes:** (1) NEW PROCESS RULE: after a rejection, or when the owner asks, show the plan AND storyboard frames (stills on the real footage, one per distinct layout) and wait for approval before any full render. (2) Variety rules, `editor-showcase-caption-edit-style` 10b. (3) Gate rows for sound variety.
+- **Open:** the owner will give the client rules for this video; real recordings only (Mixkit) were asked for, but Mixkit's category pages now return a Cloudflare bot check from this container, so only IDs already known can be downloaded; no music, no grade.
 
 ---
 

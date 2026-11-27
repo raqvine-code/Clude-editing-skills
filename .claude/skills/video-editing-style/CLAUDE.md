@@ -24,7 +24,8 @@ Why it exists: the client was not impressed by video 25. It was text on a talkin
    - a sound on every insert
    - a move and a sound on every pause of 0.5 s or more
    - **Text on footage is not motion graphics.**
-3. Run `python3 01-process/before-edit/tools/pre_edit_gate.py <project>/edl.json` on the DRAFT EDL. No full render until it says READY; run it again before delivery. A FAIL is fixed by adding the missing work, never by editing the gate.
+3. **Show the plan and storyboard frames first (2026-11-27).** After a rejection, for any redo, and whenever the owner asks: render ONE still per distinct layout on the real footage (`shortkit.py stills`), put them on a numbered sheet beside the plan table, send both, ask the open questions, and wait for the owner's OK before any full render.
+4. Run `python3 01-process/before-edit/tools/pre_edit_gate.py <project>/edl.json` on the DRAFT EDL. No full render until it says READY; run it again before delivery. A FAIL is fixed by adding the missing work, never by editing the gate.
 
 ## Rule 1: pick the skill without being asked (2026-11-22)
 1. For any edit request, check which skills fit and follow them exactly. Several fit: combine them.

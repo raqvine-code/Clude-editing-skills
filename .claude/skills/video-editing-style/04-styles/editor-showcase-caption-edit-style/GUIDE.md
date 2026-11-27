@@ -142,6 +142,16 @@ Best fit for his shorts: **P19 as the caption base + P17's object cards (speaker
 | turn (≈ 2/3) | the strongest card: inversion or the video-into-phone scene |
 | last 2 s | quiet ending (recipe 19) or the hook's look again for the loop; never end on black or mid-word (R6 and R8 both do) |
 
+## 10b. Variety rules (added 2026-11-27 after the redo was rejected for "same pattern in every frame")
+The redo had 6 cards with one layout (window on top, hero word in the lower third, tiny script line under it), 29 captions at one height and 17 of them "small grey words + one gold CAPS word", and 71 sounds from 18 files. The references change something on every beat. Rules:
+1. **No two neighbouring cards share a layout.** Vary at least three of: hero position (top / centre / lower third / split across the card edge), hero size (50-87 % of the width), type voice (heavy sans / italic serif / script / condensed caps), plate colour, plate shape (full frame / window / phone / strip), motion (rise / wipe / converge / blur / type-on), text direction (stacked / one line / two sides).
+2. **Captions rotate through at least 4 treatments** in one video (lead-in + hero, one big word, two-tone line, boxed line, pill, script + sans, number tile); the same treatment may not run twice in a row.
+3. **A hero is not on every group.** Some groups are plain readable lines with no hero (R8 does this); a hero marks the one word the sentence turns on.
+4. **No ghosted future words.** Words arrive on their time; a line is never shown half-faded (the redo's grey trailing words looked unfinished).
+5. **Small words stay readable at phone size:** at least 3 % of the frame height (58 px at 1080x1920) at full opacity.
+6. **Sound: a different recording for each kind of event, real recordings only, no file more than 3 times in a 47 s video** (gate row). Fewer, better matched cues beat 71 cues from 18 files. Pick the sound by what moves: a card closing = a soft close or paper sound, a colour flip = a short click, a list pop = a UI tick, never one pop for every word.
+7. Listen or look: when you cannot hear the mix (cloud session), say so to the owner and ask for one check before delivery.
+
 ## 11. QC for this style (add to the normal QC)
 - Caption block centre measured on 5 stills: 54-62 % of the height, and chin + 13-21 %.
 - Read only the hero words in order: does the message survive?
@@ -149,6 +159,7 @@ Best fit for his shorts: **P19 as the caption base + P17's object cards (speaker
 - Colours on screen: accent, its dark, its light, white. Anything else is a mistake.
 - Every return to the speaker has the focus pull; every plate change has a sound.
 - Spell-check every card against the audio (R6 shipped "TEN TIME").
+- Variety audit (section 10b): lay the cards side by side; if two neighbours look like the same template, redesign one.
 - Thin script at phone size: view a still at 25 % zoom; if the script is not readable, raise its weight or opacity.
 
 ## 12. Limits

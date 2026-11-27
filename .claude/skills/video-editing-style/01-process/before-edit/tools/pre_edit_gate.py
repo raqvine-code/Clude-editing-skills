@@ -109,6 +109,15 @@ def main():
     row("Event gaps over 1.3 s", not gaps, str(gaps[:6]) if gaps else "none", "none", look=len(gaps) <= 2)
     row("Pauses >= 0.5 s carrying a move AND a sound", not bare, ("%d of %d bare: %s" % (len(bare), len(pauses), bare[:6])) if facts else "no facts.json", "all", look=len(bare) <= 2)
     row("Inserts with a sound within 0.15 s", not no_sound, str(no_sound[:8]) if no_sound else "all", "all")
+    # 2026-11-27 (owner: "do not add proper SFX"; the redo used 71 cues from 18 files, one pop 16 times, many synthesised): sound variety
+    import collections
+    sf = collections.Counter(os.path.basename(c.get("file", "")) for c in e.get("sfx", []))
+    n_sfx = sum(sf.values()); top = sf.most_common(1)[0] if sf else ("-", 0)
+    max_rep = 3 if OUT < 55 else 4
+    synth = sum(1 for c in e.get("sfx", []) if "synth" in c.get("file", "").lower())
+    row("Sound variety: no file used more than %d times" % max_rep, top[1] <= max_rep, "%d cues, %d files; most used: %s x%d" % (n_sfx, len(sf), top[0], top[1]), "<= %d each (pick another recording, do not repeat)" % max_rep)
+    row("Sound variety: distinct files vs cues", len(sf) >= 0.6 * n_sfx if n_sfx else True, "%d / %d = %.0f %%" % (len(sf), n_sfx, 100 * len(sf) / max(1, n_sfx)), ">= 60 %")
+    row("Sound: synthesised cues (file path contains 'synth')", synth <= 0.2 * n_sfx if n_sfx else True, "%d of %d" % (synth, n_sfx), "<= 20 % (real recordings; owner 2026-11-27)")
     row("Font families", len(fam) <= 2, ", ".join(fam), "<= 2")
     row("Above-head accents", len(above) <= 3, str(len(above)), "1-3")
     row("Text devices (stacks + giants + txt_ layers)", True, "%d (running caption groups: %d)" % (len(stacks) + len(giants) + len(txt_layers), len(caps)), "info: text is not MG (mistakes 16)")
