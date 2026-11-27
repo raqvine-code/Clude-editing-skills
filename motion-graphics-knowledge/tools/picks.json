@@ -1,0 +1,264 @@
+[
+ {
+  "cat": "Films and storytelling",
+  "items": [
+   {
+    "k": 109,
+    "why": "Letterboxed silhouette film: fog, lamp light and a slow camera carry a wordless story. The most cinematic piece in the library.",
+    "thumb": "thumbs/01.jpg",
+    "tw": 480,
+    "th": 204
+   },
+   {
+    "k": 28,
+    "why": "A photon's 170,000-year escape from the Sun told in 20 seconds, ending on a human eye and the line \"YOU BLINKED.\" The best concept-to-payoff of the short pieces.",
+    "thumb": "thumbs/02.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 130,
+    "why": "One character from birth to death. An age counter and heartbeat readout run throughout, and the art style changes with each life stage. Built to loop.",
+    "thumb": "thumbs/03.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 156,
+    "why": "Cinematic Earth and Sun renders with running counters. A data poem with real pacing and restraint.",
+    "thumb": "thumbs/04.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 173,
+    "why": "Five-minute film built around a gravitationally lensed black hole render. Slow and contemplative, with Chinese captions.",
+    "thumb": "thumbs/05.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 63,
+    "why": "The same lesson retold as a corporate explainer, a terminal session, an 8-bit game, a nature documentary, film noir, kids' TV, an infomercial, a movie trailer and a bare HTML page. The widest stylistic range in the library.",
+    "thumb": "thumbs/06.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 68,
+    "why": "Four-minute animated short with characters, a storm sequence and dialogue captions, held together by a consistent colour script.",
+    "thumb": "thumbs/07.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 186,
+    "why": "Five-minute 3D cartoon episode: stylised characters, a moving camera and a bold purple, red and yellow palette.",
+    "thumb": "thumbs/08.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 41,
+    "why": "Poster-grade graphic design with a new palette and type system for every chapter, Indic scripts set alongside Latin.",
+    "thumb": "thumbs/09.jpg",
+    "tw": 480,
+    "th": 270
+   }
+  ]
+ },
+ {
+  "cat": "3D and painterly worlds",
+  "items": [
+   {
+    "k": 32,
+    "why": "Real-time 3D shot like live action: sunset pier, lens flares, shallow depth of field, close-ups on the pedals and the beak.",
+    "thumb": "thumbs/10.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 154,
+    "why": "One continuous aerial take with painterly clouds, sea reflections and a rolling camera.",
+    "thumb": "thumbs/11.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 59,
+    "why": "A single unbroken scene that drifts from sunset to a moonlit night over water while lines of classical Chinese verse appear in vertical type.",
+    "thumb": "thumbs/12.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 195,
+    "why": "98-second exploded-view 3D explainer with a clean studio-white look, from a one-line prompt. Its soundtrack is close to silent. The site also lists the same film and prompt under @mdaman010.",
+    "thumb": "thumbs/13.jpg",
+    "tw": 480,
+    "th": 246
+   }
+  ]
+ },
+ {
+  "cat": "Art-directed motion studies",
+  "items": [
+   {
+    "k": 151,
+    "why": "Shader-driven kaleidoscopic eye tunnel with iridescent liquid-metal forms. The most visually intense 20 seconds in the library.",
+    "thumb": "thumbs/14.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 82,
+    "why": "A point becomes a line, a circle, a sphere, a lens, a ball, a flock and a world, laid out like numbered figures in a book. Concept and restraint over spectacle.",
+    "thumb": "thumbs/15.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 161,
+    "why": "Swiss and Bauhaus poster typography that escapes its own layout grid: primary colours, huge type, 60fps.",
+    "thumb": "thumbs/16.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 142,
+    "why": "Epicycles drawing pi, Lissajous curves, a Julia set, a phyllotaxis spiral and Euler's identity. The maths drives the motion.",
+    "thumb": "thumbs/17.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 125,
+    "why": "Vertical ad built from classical engravings and serif type on white, cut fast. The creator attached a reference video (see the site's note).",
+    "note": "using any reference with a fast edit (5s video is enough)",
+    "thumb": "thumbs/18.jpg",
+    "tw": 270,
+    "th": 480
+   },
+   {
+    "k": 177,
+    "why": "Risograph print look: halftone grain, misregistered pink, blue and yellow inks, Korean typography.",
+    "thumb": "thumbs/19.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 191,
+    "why": "Lyric typography timed to an attached song, built on sun and eclipse imagery. Needs your own music track.",
+    "thumb": "thumbs/20.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 95,
+    "why": "A particle murmuration that reshapes into network maps and a timeline in one flowing take. Data visualisation as choreography.",
+    "thumb": "thumbs/21.jpg",
+    "tw": 480,
+    "th": 270
+   }
+  ]
+ },
+ {
+  "cat": "Designer showreels",
+  "items": [
+   {
+    "k": 131,
+    "why": "The widest technical range of the showreels: reflective 3D primitives, a fluid simulation, a particle vortex and sliced type.",
+    "thumb": "thumbs/22.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 230,
+    "why": "One orange dot links every scene, bookended by a \"Reduce Motion\" toggle, with a halftone ripple and a 3D ring of type. A structured, reusable prompt.",
+    "thumb": "thumbs/23.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 69,
+    "why": "A strict two-colour editorial system (ultramarine on cream) at 60fps. Made with the library's standard showreel prompt, which 28 entries share; this is the most disciplined result.",
+    "thumb": "thumbs/24.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 197,
+    "why": "The same showreel prompt with the opposite result: lime glass and chrome 3D knots with heavy kinetic type, 32 seconds.",
+    "thumb": "thumbs/25.jpg",
+    "tw": 480,
+    "th": 270
+   }
+  ]
+ },
+ {
+  "cat": "Product and brand films",
+  "items": [
+   {
+    "k": 225,
+    "why": "Apple-keynote style launch film in one continuous take. Scenes morph into each other and it ends on hands holding a framed print. Needs your photos, a song and a stock clip.",
+    "thumb": "thumbs/26.jpg",
+    "tw": 480,
+    "th": 480
+   },
+   {
+    "k": 226,
+    "why": "A single shape morphs through a button, a player, a slider, a toggle, tabs, a chart and a command palette, driven by a cursor.",
+    "thumb": "thumbs/27.jpg",
+    "tw": 480,
+    "th": 480
+   },
+   {
+    "k": 183,
+    "why": "A white ball bounces through sliders, notifications and a keyboard in one take, so every interface change lands as a physical impact.",
+    "thumb": "thumbs/28.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 227,
+    "why": "Dark, minimal product film with a 3D carousel of vertical clips. Needs 10 to 20 clips you own.",
+    "thumb": "thumbs/29.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 139,
+    "why": "Brand film in orange halftone and serif type: a dot-matrix upload, a globe, an infinity loop.",
+    "thumb": "thumbs/30.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 202,
+    "why": "Polished dark SaaS launch film: a link being typed, a globe, live dashboards, a constellation of partners.",
+    "thumb": "thumbs/31.jpg",
+    "tw": 480,
+    "th": 270
+   },
+   {
+    "k": 200,
+    "why": "3D props (a big red button, slot reels, dice, a coin) cut against a light-trail vortex and glitch type.",
+    "thumb": "thumbs/32.jpg",
+    "tw": 480,
+    "th": 270
+   }
+  ]
+ },
+ {
+  "cat": "Real-footage edit",
+  "items": [
+   {
+    "k": 187,
+    "why": "Real talking-head footage cut out and dropped into eight visual styles (kawaii, manga, rubber-hose cartoon, holographic card, 8-bit and more) with synced captions. The only real-footage edit in the library.",
+    "thumb": "thumbs/33.jpg",
+    "tw": 480,
+    "th": 270
+   }
+  ]
+ }
+]

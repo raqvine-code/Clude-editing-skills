@@ -1,0 +1,143 @@
+# Visual reference index
+
+Both folders are frame sheets of the source videos (the videos themselves are not included). Open them as images.
+
+## triage/  (all 242 entries)
+
+Each sheet holds 6 videos, one row per video, 8 evenly spaced frames per row. The label on each row is `#entry slug | title | duration size audio | tags`. `#entry` is the number in `data/entries-all-242.csv`. Sheet N covers entries 6N-5 to 6N.
+
+- `triage/sheet_01.jpg`: entries 1-6 (Pixel wizard crypto animation, AIsa API key promo, Celld job ownership explainer, Claude self-intro motion graphic, Sotto reading app explainer, Claude motion designer showreel)
+- `triage/sheet_02.jpg`: entries 7-12 (Sketchbook animals come alive, Fitters Bible app promo, Trezio app motion reel, FigPad product promo, Motion designer showreel, Pixel art card battle game)
+- `triage/sheet_03.jpg`: entries 13-18 (Stock analysis app promo, Distilbook promo showreel, Abstract motion design reel, Distilbook product video, Distilbook motion showreel, Animated business explainer)
+- `triage/sheet_04.jpg`: entries 19-24 (Anime robot combining sequence, Handwoven textiles brand explainer, Commotion app showreel, Shop chatbot mascot promo, Studio website showreel, Scrabble tile character story)
+- `triage/sheet_05.jpg`: entries 25-30 (Reddit marketing tool launch video, Prompt Motion site promo, Agent crew app launch, Photon journey from the Sun, Pixelup Labs studio showreel, SaaS launch video)
+- `triage/sheet_06.jpg`: entries 31-36 (Studio1 intro showreel, Pelican riding a bicycle, Claude motion design showreel, Bento.surf product video, Particle sphere motion reel, First & 10 yellow line explainer)
+- `triage/sheet_07.jpg`: entries 37-42 (Recruiter self-intro reel, Product intro synced to music, Spotify product film, Badge unlock screen animation, Indian civilisation history film, Three.js Skyraider aircraft model)
+- `triage/sheet_08.jpg`: entries 43-48 (Lidlezz app promo, Amazon wholesale pitch video, Datagran ChatGPT ads explainer, Motion principles showreel, Fiery samurai kata, Claude motion reel)
+- `triage/sheet_09.jpg`: entries 49-54 (Claude motion designer showreel, Sahi trading terminal reveal, Taxtello bookkeeping app film, Motion designer showreel, Lightspark social promo video, Clay-style music video)
+- `triage/sheet_10.jpg`: entries 55-60 (Lism CSS 1.0 release video, Recipe brand 20th anniversary, Field guide site launch film, Tennis game launch video, Tengwang Pavilion moonlit river, Morphing UI states loop)
+- `triage/sheet_11.jpg`: entries 61-66 (Dubz Up motion showreel, Muse connector tracker promo, Recursion explained in genres, Website analyzer product promo, Five scroll-based sections, Motion designer showreel)
+- `triage/sheet_12.jpg`: entries 67-72 (AI Arena product promo, The Last Light animated short, Blue editorial motion showreel, Voice agent SaaS launch, Parenting app hype video, Enxovaly baby app promo)
+- `triage/sheet_13.jpg`: entries 73-78 (Matra caption app promo, Speech built as architecture, Claude motion design reel, Steam new releases news recap, Overthinking motion study, Festival lineup promo reel)
+- `triage/sheet_14.jpg`: entries 79-84 (Beat-synced bouncing 3D ball, Keyframe motion design reel, Motion designer showreel, Full Stop figure sequence, Deliberately terrible motion showreel, Prompting mistakes video tutorial)
+- `triage/sheet_15.jpg`: entries 85-90 (Portfolio motion reel, Motion designer showreel, mdfor.dev product intro video, Chuseok pixel night scene, Browser automation skill launch, Database client launch video)
+- `triage/sheet_16.jpg`: entries 91-96 (Personal skills showreel, Paper-style product launch film, Sherwood agentic hedge fund explainer, fal motion design showreel, Drone Emprit showreel, Distilbook motion showreel)
+- `triage/sheet_17.jpg`: entries 97-102 (Four seasons train window, Kinetic type showreel, Branding agency showreel, Animated agent session story, NotchBrowser product teaser, Claude motion reel)
+- `triage/sheet_18.jpg`: entries 103-108 (FundMyCompute platform overview, AgentHud project motion video, Ondefica app motion reel, Supademo launch video, Code-only motion design reel, Tented image gen product video)
+- `triage/sheet_19.jpg`: entries 109-114 (Lighthouse keeper silent short, Collision-driven music machine, Animated short about a bug, Motion designer showreel, Ball escaping twelve rings, Design portfolio video reel)
+- `triage/sheet_20.jpg`: entries 115-120 (Chaotic Claude POV video, History of AI timeline, Email verification tool promo, org2html product showreel, PicTwin AI app ad, Lead Notifi product ad)
+- `triage/sheet_21.jpg`: entries 121-126 (Whiteboard skill tutorial, Geometric motion designer showreel, CloudJoi search showcase, Swiss-style motion showreel, Engraving-style Claude ad, Cinetic skill launch film)
+- `triage/sheet_22.jpg`: entries 127-132 (TasteSkill dashboard showcase, Derivative concept explainer, GenVizu product launch, Cycle of life animation, Motion techniques showreel, Kinetic type and particle showreel)
+- `triage/sheet_23.jpg`: entries 133-138 (Ren app launch video, Gene Spectra promo, Personal research intro reel, Shin Majin-shiki promo, Brieform product presentation, Starry Night cat-spotting game)
+- `triage/sheet_24.jpg`: entries 139-144 (Flowdrive motion showreel, Step race app promo, Crux motion design showreel, Mathematics motion showreel, ODATANO Cardano hype edit, AI data centre 3D film)
+- `triage/sheet_25.jpg`: entries 145-150 (ocrX app launch video, Email tool promo reel, HTML app demo skill, GravityDEX anime hype edit, LiteLLM promo reel, Quetzal social app reel)
+- `triage/sheet_26.jpg`: entries 151-156 (Psychedelic hypnotic eye showreel, Bold typographic motion showreel, Motion designer portrait showreel, Porco Rosso sunset dogfight, DeFi Saver stop-motion explainer, What happens in one second)
+- `triage/sheet_27.jpg`: entries 157-162 (Frame by Frame launch video, Launch video remake comparison, Photo retouch app promo, Backlink audit data promo, Poster breaking its frame, Voice agent landing page)
+- `triage/sheet_28.jpg`: entries 163-168 (Token bucket rate limiter, Mascot referral program promo, Pixel art LLM history, Jev engineering showreel, Alan agent platform promo, QuickDesign brand promo)
+- `triage/sheet_29.jpg`: entries 169-174 (UK dubstep track with ASCII visuals, AllInvestView product promo, Motion designer résumé reel, founder.page launch video, Black hole time story, Reflex brand motion reel)
+- `triage/sheet_30.jpg`: entries 175-180 (Claude motion design showreel, Chunku product promo, Risograph studio intro, Oscilloscope-style studio motion graphic, SuperX feature release teaser, Nohandslabs brand promo)
+- `triage/sheet_31.jpg`: entries 181-186 (Negroni recipe animation, Ora 2 image model launch film, White ball UI motion loop, Easing and morphing showreel, Hoplite cloud handoff launch, Animated space cartoon episode)
+- `triage/sheet_32.jpg`: entries 187-192 (Talking-head clip edit, Norilu product launch video, Motion design showreel, 3D motion design showreel, Synced lyrics motion video, Motion design showreel)
+- `triage/sheet_33.jpg`: entries 193-198 (ViralGrow product promo, White Russian recipe animation, AI data centre 3D tour, Kinetic shapes showreel, Bold kinetic type showreel, Claude self-promo spot)
+- `triage/sheet_34.jpg`: entries 199-204 (Kinetic type self-portrait, Chain.wtf pitch video, Claude motion designer showreel, Dub promo video, Flexprice motion showreel, EyezOn 100 users thank-you)
+- `triage/sheet_35.jpg`: entries 205-210 (Claude motion design showreel, DistilBook product explainer, DistilBook product explainer, DistilBook motion explainer, Replica symmetry breaking whiteboard, What day is it)
+- `triage/sheet_36.jpg`: entries 211-216 (TypingMind logo reveal, TechHalla kinetic type bumper, Visual guides library launch, Claude motion design reel, Motion designer showreel, AjustaCV Pro pricing promo)
+- `triage/sheet_37.jpg`: entries 217-222 (Second brain service promo, sweetRegret app update reel, Travel visa service promo, Motion design principles reel, Kinetic type motion showreel, Anime maid dance showreel)
+- `triage/sheet_38.jpg`: entries 223-228 (Moroccan political history timeline, YouTube transcript product ad, Photo print app launch film, Shape morphing through UI states, UGC ad generator promo, Landing page 3D scroll)
+- `triage/sheet_39.jpg`: entries 229-234 (Food craving launch film, Orange dot motion system, Bold Pilot SEO promo, Motion designer showreel, MotionSites one million visitors, Tally product demo)
+- `triage/sheet_40.jpg`: entries 235-240 (Developer portfolio site showreel, Type, form, space showreel, Supasito launch video, Shadow theatre home story, SaaS product launch video, What is Git explainer)
+- `triage/sheet_41.jpg`: entries 241-242 (Motion designer showreel, Kinetic type showreel)
+
+## detail/  (the 89 entries shortlisted from triage)
+
+One sheet per video, named `NNN-slug.jpg` (NNN = entry number). Rows 1-3: 18 evenly spaced frames. Bottom row: 6 consecutive frames 70 ms apart, taken from the most sustained-motion moment, to show the in-betweens (easing, motion blur, overlaps). Of these 89, 72 were examined closely (grades in `data/entries-all-242.json`); 18 were shortlisted but not examined beyond triage: 9, 15, 17, 27, 29, 42, 57, 74, 94, 110, 120, 122, 129, 134, 138, 166, 168, 236.
+
+- `detail/003-0xnfrith-5be616.jpg`: Celld job ownership explainer [B+]
+- `detail/007-abderrahmen-g-9e8ed0.jpg`: Sketchbook animals come alive [A-]
+- `detail/008-adamdesgns-478d6d.jpg`: Fitters Bible app promo [A-]
+- `detail/009-agonaliu-466a8f.jpg`: Trezio app motion reel
+- `detail/014-ajith-io-4c248f.jpg`: Distilbook promo showreel [A]
+- `detail/015-ajith-io-b5626e.jpg`: Abstract motion design reel
+- `detail/017-ajith-io-ea7f2d.jpg`: Distilbook motion showreel
+- `detail/022-anas0ra-e57aea.jpg`: Shop chatbot mascot promo [B+]
+- `detail/024-anilraok-eff262.jpg`: Scrabble tile character story [A-]
+- `detail/027-anxuanng-dfe32f.jpg`: Agent crew app launch
+- `detail/028-apoorvjain25-d24184.jpg`: Photon journey from the Sun (profile M2, picked)
+- `detail/029-arjunsh1607-93005d.jpg`: Pixelup Labs studio showreel
+- `detail/032-axtonliu-0b861d.jpg`: Pelican riding a bicycle (profile M1, picked)
+- `detail/036-blueoctopusai-dd17bd.jpg`: First & 10 yellow line explainer [A-]
+- `detail/038-bogdandragomir-35e024.jpg`: Product intro synced to music [A-]
+- `detail/041-buildfastwithai-53234e.jpg`: Indian civilisation history film (profile M3, picked)
+- `detail/042-buildfastwithai-ed9447.jpg`: Three.js Skyraider aircraft model
+- `detail/047-chrisjdimarco-f068db.jpg`: Fiery samurai kata [A-]
+- `detail/054-davidshulmanfl-371638.jpg`: Clay-style music video [not picked]
+- `detail/057-deeprajo1-27fb9f.jpg`: Field guide site launch film
+- `detail/058-deifosv-04e4d3.jpg`: Tennis game launch video [A-]
+- `detail/059-demitiyageekzen-7770ad.jpg`: Tengwang Pavilion moonlit river (profile M1, picked)
+- `detail/061-devius-maximus-beab45.jpg`: Dubz Up motion showreel [A-]
+- `detail/063-emollick-8661a8.jpg`: Recursion explained in genres (profile M3, picked)
+- `detail/068-faroukzy-9ff23e.jpg`: The Last Light animated short (profile M1, picked)
+- `detail/069-fionntobin-97b7af.jpg`: Blue editorial motion showreel (profile M4, picked)
+- `detail/072-gabrielbuzziv-4ff0c6.jpg`: Enxovaly baby app promo [A]
+- `detail/074-gdgtify-287ddf.jpg`: Speech built as architecture
+- `detail/077-gizakdag-cf4ae6.jpg`: Overthinking motion study [A-]
+- `detail/079-gorden-sun-041f56.jpg`: Beat-synced bouncing 3D ball [B+]
+- `detail/082-hbcoop-de365c.jpg`: Full Stop figure sequence (profile M2, picked)
+- `detail/092-ik-builds-b8bdcf.jpg`: Paper-style product launch film [B+]
+- `detail/094-influencer-seo-ce8c33.jpg`: fal motion design showreel
+- `detail/095-ismailfahmi-557268.jpg`: Drone Emprit showreel (profile M2, picked)
+- `detail/097-itsolelehmann-e47532.jpg`: Four seasons train window [A-]
+- `detail/099-jacksonfall-54b2ac.jpg`: Branding agency showreel [B+]
+- `detail/100-jake11moran-a269c4.jpg`: Animated agent session story [A-]
+- `detail/107-johnsavage-ai-b091c0.jpg`: Code-only motion design reel [A]
+- `detail/109-kamstudiolabs-0b0824.jpg`: Lighthouse keeper silent short (profile M1, picked)
+- `detail/110-kamstudiolabs-447565.jpg`: Collision-driven music machine
+- `detail/111-kamstudiolabs-c9bb28.jpg`: Animated short about a bug [A-]
+- `detail/116-kloss-xyz-fe0c31.jpg`: History of AI timeline [A-]
+- `detail/120-leadnotifi-e83f94.jpg`: Lead Notifi product ad
+- `detail/122-leonkohli-6dc01b.jpg`: Geometric motion designer showreel
+- `detail/124-levabashidze-2d713a.jpg`: Swiss-style motion showreel [A-]
+- `detail/125-lexnlin-038035.jpg`: Engraving-style Claude ad (profile M5, picked)
+- `detail/129-listudio-820c7b.jpg`: GenVizu product launch
+- `detail/130-loicrambo-ad6830.jpg`: Cycle of life animation (profile M3, picked)
+- `detail/131-lukasersil-0ed38e.jpg`: Motion techniques showreel (profile M4, picked)
+- `detail/134-madebyjmayala-b9204d.jpg`: Gene Spectra promo
+- `detail/138-mandelduck-95fd08.jpg`: Starry Night cat-spotting game
+- `detail/139-manuelogomigo-f33ca9.jpg`: Flowdrive motion showreel (profile M7, picked)
+- `detail/142-math-files-39c9d0.jpg`: Mathematics motion showreel (profile M2, picked)
+- `detail/144-mdaman010-e7226a.jpg`: AI data centre 3D film [A-]
+- `detail/148-micheleharmonic-77628e.jpg`: GravityDEX anime hype edit [A-]
+- `detail/151-monokern-ade5b6.jpg`: Psychedelic hypnotic eye showreel (profile M5, picked)
+- `detail/152-motiondsgnr-9dcfa6.jpg`: Bold typographic motion showreel [A-]
+- `detail/154-nft-chen-5f8bb0.jpg`: Porco Rosso sunset dogfight (profile M1, picked)
+- `detail/155-nikolajankovic-ce4ff4.jpg`: DeFi Saver stop-motion explainer [B+]
+- `detail/156-nolkeeg-bf062e.jpg`: What happens in one second (profile M2, picked)
+- `detail/161-pankajkumar-dev-0bee87.jpg`: Poster breaking its frame (profile M4, picked)
+- `detail/166-polydao-7a572b.jpg`: Jev engineering showreel
+- `detail/168-quickdesignio-dd93d0.jpg`: QuickDesign brand promo
+- `detail/173-rebutonepress-810f78.jpg`: Black hole time story (profile M1, picked)
+- `detail/174-reflex-cloud-72ffe5.jpg`: Reflex brand motion reel [A-]
+- `detail/177-rneayan-474bcf.jpg`: Risograph studio intro (profile M5, picked)
+- `detail/178-rneayan-ea6129.jpg`: Oscilloscope-style studio motion graphic [A-]
+- `detail/182-rossaxbt-3085b7.jpg`: Ora 2 image model launch film [A-]
+- `detail/183-rossaxbt-94583b.jpg`: White ball UI motion loop (profile M6, picked)
+- `detail/186-ryzoft-4f85bd.jpg`: Animated space cartoon episode (profile M1, picked)
+- `detail/187-sab8a-364a5a.jpg`: Talking-head clip edit (profile M3, picked)
+- `detail/190-sahildesigner23-ee3155.jpg`: 3D motion design showreel [A-]
+- `detail/191-samaote-5e2fc2.jpg`: Synced lyrics motion video (profile M5, picked)
+- `detail/192-samuel-spitz-974923.jpg`: Motion design showreel [A]
+- `detail/197-shneural-2abdfa.jpg`: Bold kinetic type showreel (profile M4, picked)
+- `detail/200-spearwtf-3c1fd1.jpg`: Chain.wtf pitch video (profile M7, picked)
+- `detail/201-stephanlivera-df17a2.jpg`: Claude motion designer showreel [A-]
+- `detail/202-steventey-0d20e4.jpg`: Dub promo video (profile M7, picked)
+- `detail/222-topi-003-b0e12c.jpg`: Anime maid dance showreel [B+]
+- `detail/225-twoclipping-221cab.jpg`: Photo print app launch film (profile M7, picked)
+- `detail/226-twoclipping-5cba86.jpg`: Shape morphing through UI states (profile M6, picked)
+- `detail/227-twoclipping-6dd14e.jpg`: UGC ad generator promo (profile M7, picked)
+- `detail/228-twoclipping-d89be5.jpg`: Landing page 3D scroll [A-]
+- `detail/229-ultimaxbt-2ddf1e.jpg`: Food craving launch film [A-]
+- `detail/230-ultimaxbt-bbebf5.jpg`: Orange dot motion system (profile M6, picked)
+- `detail/233-viktoroddy-98c1d8.jpg`: MotionSites one million visitors [A-]
+- `detail/236-web3wesley-7bb108.jpg`: Type, form, space showreel
+- `detail/238-x4b47x-9cc84f.jpg`: Shadow theatre home story [B+]
+- `detail/241-zaqailo-212ad3.jpg`: Motion designer showreel [A-]

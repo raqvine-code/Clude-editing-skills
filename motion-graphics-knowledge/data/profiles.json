@@ -1,0 +1,72 @@
+{
+ "profiles": {
+  "M1": {
+   "name": "Narrative short / cinematic world",
+   "entries": [
+    109,
+    68,
+    186,
+    173,
+    32,
+    154,
+    59
+   ]
+  },
+  "M2": {
+   "name": "One-idea concept piece / data poem / 3D explainer",
+   "entries": [
+    28,
+    156,
+    82,
+    142,
+    95,
+    195
+   ]
+  },
+  "M3": {
+   "name": "Format-play and chaptered pieces",
+   "entries": [
+    63,
+    130,
+    41,
+    187
+   ]
+  },
+  "M4": {
+   "name": "Type-and-shape showreel",
+   "entries": [
+    69,
+    161,
+    197,
+    131
+   ]
+  },
+  "M5": {
+   "name": "Look-driven piece (one strong visual medium)",
+   "entries": [
+    151,
+    177,
+    125,
+    191
+   ]
+  },
+  "M6": {
+   "name": "One-take UI motion",
+   "entries": [
+    226,
+    183,
+    230
+   ]
+  },
+  "M7": {
+   "name": "Product / brand launch film",
+   "entries": [
+    225,
+    227,
+    139,
+    202,
+    200
+   ]
+  }
+ }
+}
