@@ -2,6 +2,18 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-27 (first P21 edit): "GTA 6: why it took 13 years", framed window and Tenglish captions
+**The user's words:** "Edit my GTA 6 facts video ... DO NOT START EDITING IMMEDIATELY ... Show me the visual frames and references for each scene ... No background music (BGM). No colour grading." Then: "Ok it looks fine the storyboard and I select these 1.framed window opt B 2.Tinglish opt B."
+- **Saved:** `04-styles/vice-neon-title-edit-style/references/worked-example-gta6/` (README, compositor, timeline, Tenglish captions, sound plan, plan, storyboards, final key moments, credits). GUIDE section 10 holds the lessons.
+- **New know-how:**
+  - official game media pages (Rockstar's media page offers zips "to download and share") come first; YouTube blocks cloud downloads, and that is not bypassed;
+  - evidence cards are Playwright clips of a page's `h1` or key paragraph;
+  - per-clip Whisper for Telugu;
+  - the concat-filter join for split phone exports;
+  - Shorts-safe caption band (y about 1460-1560, right edge clear);
+  - hits must land on the cut, about −10 dB under the voice, or earshot (and viewers) do not hear an attack.
+- **Open:** the owner's feedback on the edit; trailer gameplay if the owner supplies the files.
+
 ## 2026-11-27 (new style P21): vice-neon titles learned from a logo reveal and two type posters
 **The user's words:** "Learn these fonts and pictures and video also, because after learn this I will send you one video. It's all about a man. It's my video. I am telling about GTA 6 facts, means why GTA 13 years takes time and that type of. So use your entire creativity. Go and first of all you learn this, then after I will send you one video."
 - **Studied:** one 26.65 s logo reveal (every frame measured: reveal, light sweep, flash-and-settle line, neon edge draw, fill and bloom, diagonal wordmark wipe; sound: an orchestral build, then sparse notes the moves land on) and two type posters (editorial serif on deep red; stacked game title on a blue-to-pink sky).

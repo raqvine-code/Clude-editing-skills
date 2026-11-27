@@ -12,6 +12,26 @@
 
 ---
 
+## 2026-11-27 (cloud session) · "GTA 6: why it took 13 years" (owner's own Telugu facts video), 57.7 s · delivered
+- **Brief (quoted):** "combine all 6 clips in the correct order ... DO NOT START EDITING IMMEDIATELY ... frames and references for each scene ... GTA 6 gameplay B-rolls, research-evidence B-rolls, motion graphics ... No background music ... No colour grading." The owner approved the storyboard and chose **"framed window opt B"** and **"Tinglish opt B"**.
+- **Built with:**
+  - style P21 (vice-neon titles) plus motion-graphics-craft M2 (numbers and counters drive the motion), and the browser compositor;
+  - 21 scenes, with one governing idea: GTA V's sales line never fell, so GTA VI's clock kept running;
+  - B-roll: official Rockstar media (animated cover, character clips, 4K screenshots and artwork, GTA V images) and evidence cards from Guinness, PC Gamer, Outlook Respawn, Game Informer and Engadget.
+- **What went wrong and the fix:**
+  1. The concat-copy join drifted the voice 0.27 s by the last clip. Joined again with the concat filter, each clip's audio trimmed to its own picture.
+  2. Whisper on the whole Telugu file looped. Transcribed per clip, with a vocabulary prompt for unclear spots; the meaning-critical word "pattaledu" was checked on three crops.
+  3. YouTube refused downloads from the cloud server. Not bypassed: official Rockstar media instead, and the owner was offered trailer files as an option.
+  4. Earshot sync started at 68 %. Hits had silence before the attack and sat 8-11 dB under continuous speech. Fixed by placing hits on their loudest point, adding a short real attack on every cut at about −10 dB under the voice, and lowering the two cues that masked "Kaani". Sync rose to 78 %.
+  5. Frame extraction by seeking was slow. Read sequentially instead: 3462 frames in 20 s.
+- **Numbers:**
+  - 3462 frames at 60 fps, rendered in 7.3 min;
+  - 104 cues from 71 real files, at most 3 uses each, none masking the voice;
+  - −14.0 LUFS, −1.4 dBTP; picture and audio sync 0 frames / 0.000 s against the master;
+  - earshot 20 of 23 in range: music is excluded by the owner's rule, density 4.4 onsets/s against 4.7 in music-backed references, low end thin (minor);
+  - gate: one FAIL (3 font families), approved by the owner on the storyboard.
+- **Rule changes:** P21 GUIDE section 10 (layout B and caption band, official media first, the earshot lesson), CHANGELOG entry.
+
 ## 2026-11-27 (cloud session) · "The story you tell yourself" v4, 45.0 s · three fixes after the owner's notes on v3
 - **Feedback (quoted):** "1. Every cursue caption or letters is cut the edges once you see and fix it . 2.At 39 sec the frame is move fast like it doesn't sync the voice check the once and fix it sync the voice 3.Add some proper motion graphics make sure don't add messy type of random graphics" (screenshots at 0:08 "luck frame", 0:32 "seeing", 0:39 the two bubbles).
 - **What went wrong 1, script letters cut:** the write-on mask (a moving gradient) stopped at 110 % of the word box, so the last tenth of every script word stayed half transparent ("frame" lost its "e"), and Great Vibes swashes, tails and capitals overhang the glyph box, so the masked box cut them off ("seeing" lost the tail of its "g"). **Fix:** the mask runs to 124 % and is removed (`mask: none`) the frame the word is complete; script spans get padding `.22em .36em .34em` with equal negative margins, so the mask box covers the overhang without moving the layout.

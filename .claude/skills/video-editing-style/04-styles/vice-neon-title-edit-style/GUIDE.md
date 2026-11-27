@@ -78,6 +78,20 @@ Rule: one card uses ONE family (sunset on black, or sky, or red editorial). Lime
 
 Floors from `01-process/before-edit/2-PRO-MOVE-MENU.md` still apply (a designed motion graphic every 8 s, a sound on every insert), and so does Rule 0 step 3: plan plus storyboard frames before a full render.
 
+## 6b. Lessons from the first P21 edit (GTA 6 video, 2026-11-27): see `references/worked-example-gta6/`
+- **Layout B (the owner's choice):** the talking head sits in its 4:5 window (y 276-1644) between two neon lines, with a small wide-tracked label in the top band. Designed scenes break out to full screen.
+- **Captions:**
+  - one Tenglish line (Inter Tight 700, plum outline), centred at y 1500, with the spoken word in orange;
+  - keep y 1440-1560 clear in every design;
+  - keep key items off the right edge (x > 940, y 1000-1700, under the like and share buttons) and below y 1600.
+- **B-roll source order:**
+  1. the game's official media page (download-and-share zips);
+  2. official images on the publisher's site;
+  3. evidence pages captured as cards.
+  YouTube refuses downloads from a cloud server: ask the owner for the files instead.
+- **Facts on screen:** only checked facts. The narrator's opinion stays in his voice. Illustrative charts carry an ILLUSTRATION tag and no invented numbers.
+- **Sound without music:** put a short real attack (click, knock, glitch hit, shutter) on every cut, placed by its loudest point, at about −10 dB under the voice. Quieter hits vanish under continuous speech.
+
 ## 7. Tool
 
 ```

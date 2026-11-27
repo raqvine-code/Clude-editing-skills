@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: Price; src: url(fonts/PricedownBl.otf); }
+@font-face { font-family: Serif; src: url(fonts/NotoSerifDisplay.ttf); font-stretch: 62.5% 100%; font-weight: 100 900; }
+@font-face { font-family: Tight; src: url(fonts/InterTight.ttf); font-weight: 100 900; }
+@font-face { font-family: Inter; src: url(fonts/Inter.ttf); font-weight: 100 900; }
+@font-face { font-family: Hand; src: url(fonts/PatrickHand.ttf); }
+@font-face { font-family: Telugu; src: url(fonts/NotoSansTelugu.ttf); font-weight: 100 900; }
+:root {
+  /* P21 vice-neon palette (measured from the owner's references) */
+  --indigo: #3447B5; --violet: #7C3CC4; --magenta: #C936B6; --pink: #F0489C; --coral: #F7706A; --orange: #FDA53A;
+  --plum: #1E0624; --plum2: #31072C; --lilac: #E9DDF0; --lime: #9EFE3C; --hot: #FA3BB1; --gold: #FEB423; --night: #07030B;
+  --sunset: linear-gradient(180deg, var(--indigo) 0%, var(--violet) 20%, var(--magenta) 40%, var(--pink) 58%, var(--coral) 78%, var(--orange) 100%);
+  --sky: linear-gradient(180deg, #2B3FA6 0%, #4B4FC9 28%, #8B6DE6 52%, #E7A2EA 78%, #FBCDEB 100%);
+}
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+#stage { position: absolute; inset: 0; overflow: hidden; background: var(--night); }
+.L { position: absolute; inset: 0; overflow: hidden; }
+.abs { position: absolute; }
+img.full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+#main { position: absolute; left: 0; top: 0; transform-origin: 0 0; width: 1080px; height: 1368px; }
+#grain { position: absolute; inset: 0; opacity: .085; mix-blend-mode: overlay; pointer-events: none; }
+/* type voices */
+.price { font-family: Price; color: #F6F2FA; -webkit-text-stroke: .13em var(--plum); paint-order: stroke fill; line-height: .80;
+         filter: drop-shadow(3px 3px 0 var(--hot)) drop-shadow(-2px -2px 0 var(--hot)) drop-shadow(0 18px 30px rgba(0,0,0,.55)); white-space: nowrap; }
+.serif { font-family: Serif; font-stretch: 78%; font-weight: 400; letter-spacing: -.065em; word-spacing: .16em; color: #fff; line-height: .9; white-space: nowrap; }
+.track { font: 600 40px/1.4 Tight; letter-spacing: .34em; text-indent: .34em; color: var(--lilac); white-space: nowrap; text-shadow: 0 4px 18px rgba(0,0,0,.6); }
+.hand { font-family: Hand; color: #fff; -webkit-text-stroke: 3px #fff; transform-origin: 0 50%; white-space: nowrap; text-shadow: 0 6px 18px rgba(0,0,0,.45); }
+.pill { position: absolute; padding: 10px 30px 13px; border-radius: 60px; font: 400 44px/1 Tight; letter-spacing: -.01em; color: #fff; white-space: nowrap;
+        background: rgba(24,16,30,.72); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.28), 0 10px 30px rgba(0,0,0,.35); backdrop-filter: blur(10px); }
+.label { font: 700 30px/1 Tight; letter-spacing: .22em; color: var(--lilac); white-space: nowrap; }
+.num { font: 900 120px/1 Tight; letter-spacing: -.03em; color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.card { position: absolute; overflow: hidden; border-radius: 34px; box-shadow: 0 30px 70px rgba(0,0,0,.55), 0 0 0 2px rgba(255,255,255,.10); background: #111; }
+.card img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+.ev { position: absolute; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 30px 70px rgba(0,0,0,.6); }
+.ev img { display: block; width: 100%; }
+.src { position: absolute; font: 500 26px/1 Inter; color: rgba(255,255,255,.72); letter-spacing: .02em; white-space: nowrap; }
+.hd { position: absolute; width: 14px; height: 14px; background: #fff; }
+.cap { position: absolute; left: 0; width: 1080px; text-align: center; }
+.capw { font-family: Tight; font-weight: 700; color: #fff; -webkit-text-stroke: 7px #1E0624; paint-order: stroke fill; letter-spacing: -.005em; white-space: nowrap;
+        text-shadow: 0 6px 18px rgba(0,0,0,.55); }
+.tel { font: 600 50px/1.25 Telugu; color: #fff; text-shadow: 0 4px 16px rgba(0,0,0,.7); }
+</style></head>
+<body><div id="stage">
+  <div id="Lbg" class="L"></div>
+  <div id="Lmain" class="L"><img id="main"></div>
+  <div id="Lbroll" class="L"></div>
+  <div id="Lmg" class="L"></div>
+  <div id="Ltext" class="L"></div>
+  <div id="Lcap" class="L"></div>
+  <svg id="grain" width="1080" height="1920"><filter id="gn"><feTurbulence id="turb" type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="1"/><feColorMatrix type="saturate" values="0"/></filter><rect width="1080" height="1920" filter="url(#gn)"/></svg>
+</div>
+<script src="engine.js"></script>
+</body></html>
