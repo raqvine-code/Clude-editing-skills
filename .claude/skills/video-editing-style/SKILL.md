@@ -81,6 +81,16 @@ Build in this order. Each layer names where its numbers live.
 | Frame sheets of any video; panel sheets of a showcase reel | `02-craft/event-map-reel-edit-style/tools/frame_sheets.sh`; `04-styles/editor-showcase-caption-edit-style/tools/panel_sheets.py` |
 | Rebuild the index, check structure | `python3 06-tools/tools/build_index.py` |
 
+## 6b. Sound: three skills installed next to this one (2026-11-27, owner's request)
+`../real-sfx/` (places real recordings on cue frames, keeps voice, reports), `../real-sound/` (whole soundtracks: sourcing with licence checks, mixing, mastering, credits) and `../earshot/` (makes and LISTENS: `realness`, `rank`, `critique`, `timeline`). All three are third-party, MIT (Real SFX's bundled UI pack is CC0). Use them for the sound pass of any edit; this skill's rules win where they differ:
+- **The bank first:** `03-sound-type-assets/sound-and-music-design/assets/openverse-real/` (75 real recordings with credits), then `references/sfx-sources-and-ears.md` for more. Real SFX's own rule agrees: sound is never synthesised (its `uisfx` pack, itself synthesised, only for interface ticks).
+- **Client bar beats them:** no BGM, no grade, the owner's fonts. `real-sound` can edit music to picture, but only when the client allows music.
+- **Sound variety gate** (no file over 3 uses, 60 % distinct, at most 20 % synthesised) applies to any sound they place.
+- **No parallel agents:** `real-sound` offers a multi-agent critique; do not run it unless the owner asks (usage limits, `CLAUDE.md` Rule 3.4).
+- **Never upload audio** (their optional Gemini listener) without the owner's explicit yes.
+- **Install earshot first** in a cloud session (`sfx-sources-and-ears.md` section 2); the other two need Python and ffmpeg only.
+- Validator notes: Real SFX's description has an unquoted colon and earshot's is 1,327 characters (limit 1,024 in the skill-creator validator); the harness loads both, so they are left as published.
+
 ## 7. Learning a new style from reference videos
 1. Follow `06-tools/watch/GUIDE.md`: frames at the source rate, word transcript, cuts, audio events; measure, do not guess. Label every number (measured, observed, estimate).
 2. Find the technique, not the look: why the move is on that word, what the eye does, what the sound does.
