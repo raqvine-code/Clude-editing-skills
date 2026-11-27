@@ -14,9 +14,10 @@ Rule: every video gets ONE style, chosen from THIS video's content (topic, speak
 | `ultimate-editors-shortform-style/` | calm premium talking head, sans plus script (= P15) | 1 reel, brief never received |
 | `aesthetic-pro-reel-edit-style/` | Instagram-editor aesthetic talking head (= P16); built for Naveen bro | 11 reels |
 | `editor-showcase-caption-edit-style/` | caption-led editor-showcase looks (= P17-P20): type cards with inversion, brand-colour caps + pills, under-chin kinetic, script + sans; `tools/caption_moves.py` | measured, 4 reels |
+| `vice-neon-title-edit-style/` | neon-sunset title look (= P21): neon edge draw, gradient fill, wordmark wipe, editorial serif card, game-title card; `tools/vice_neon_titles.html` | measured, 1 logo reveal + 2 posters |
 | `top-editor-styles/` | MrBeast, Hormozi, Johnny Harris, Iman Gadzhi, calm educational | general knowledge, least precise |
 
-## Profile map P1-P20 (next new style = P21)
+## Profile map P1-P21 (next new style = P22)
 | P | Style | Form | Lives in |
 |---|---|---|---|
 | P1 | glass spotlight motion ad | 9:16 ad, music-led | `04-styles/pro-video-editing/profiles/P1-glass-spotlight-motion-ad.md` |
@@ -39,6 +40,7 @@ Rule: every video gets ONE style, chosen from THIS video's content (topic, speak
 | P18 | brand-colour condensed caps + pills | brand talking head, 10-30 s | `04-styles/editor-showcase-caption-edit-style/GUIDE.md` |
 | P19 | under-chin kinetic captions, one focal zone | any teaching talking head | `04-styles/editor-showcase-caption-edit-style/GUIDE.md` |
 | P20 | script word + small sans on the chest | calm premium talking head | `04-styles/editor-showcase-caption-edit-style/GUIDE.md` |
+| P21 | vice-neon titles: neon numeral, sunset gradient, game-style wordmark, editorial serif card | gaming / facts / countdown talking head, title cards | `04-styles/vice-neon-title-edit-style/GUIDE.md` |
 | - | screenshot-only looks (no measured video) | - | `04-styles/pro-video-editing/profiles/screenshot-only-styles.md` |
 
 ## Adding a style

@@ -2,6 +2,16 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-27 (new style P21): vice-neon titles learned from a logo reveal and two type posters
+**The user's words:** "Learn these fonts and pictures and video also, because after learn this I will send you one video. It's all about a man. It's my video. I am telling about GTA 6 facts, means why GTA 13 years takes time and that type of. So use your entire creativity. Go and first of all you learn this, then after I will send you one video."
+- **Studied:** one 26.65 s logo reveal (every frame measured: reveal, light sweep, flash-and-settle line, neon edge draw, fill and bloom, diagonal wordmark wipe; sound: an orchestral build, then sparse notes the moves land on) and two type posters (editorial serif on deep red; stacked game title on a blue-to-pink sky).
+- **Saved:** `04-styles/vice-neon-title-edit-style/` (GUIDE, `references/r9-logo-reveal-measured.md`, `tools/vice_neon_titles.html` + `render.js` + `fetch_fonts.sh`), profile **P21** in `04-styles/README.md`, router rows in `SKILL.md` and `README.md`.
+- **Fonts:** Pricedown Black for the game-title voice (free for commercial use; not committed, fetched by script), Noto Serif Display (width 78 %, tight tracking) for the editorial serif after 11 candidates were rendered beside the poster, Patrick Hand for the handwritten aside after 6 candidates. The poster's own serif was not found under a free commercial licence.
+- **Proof:** a 13.5 s original test (a neon "13", "years in the making", a serif chapter card, a game-title card with our own striped sun) rendered with the tool and sent to the owner.
+- **Rule kept:** no studio or game logo is redrawn; game footage only if the owner supplies it.
+- **Second skill installed the same day:** `.claude/skills/motion-graphics-craft/` (the owner's motion-graphics pack, profiles M1-M7), with the full pack unzipped at the repository root; the owner said "Keep it as it is".
+- **Open:** the owner's GTA 6 facts video (to come); plan plus storyboard frames before any render.
+
 ## 2026-11-27 (re-edit, v4): script letters whole, the 0:39 bubble in sync, three keyword motion graphics
 **The user's words:** "Every cursue caption or letters is cut the edges ... At 39 sec the frame is move fast like it doesn't sync the voice ... Add some proper motion graphics make sure don't add messy type of random graphics".
 - **Cause and fix, clipped script:** the write-on mask never fully cleared and swash glyphs overhang their box. The mask now runs past the word and is removed when the word is complete; script spans are padded with matching negative margins. Saved in `worked-example-v4/hc/engine.js` (`writeOn`) and `hc/stage.html` (`.w.script`).

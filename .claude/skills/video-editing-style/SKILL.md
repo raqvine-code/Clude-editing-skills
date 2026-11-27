@@ -1,11 +1,11 @@
 ---
 name: video-editing-style
-description: The owner's complete video-editing rulebook as one skill - a process gate, craft methods, 20 measured style profiles (P1-P20), client rule folders, sound and type guides, and render tools (shortkit EDL renderer, pre-edit gate, caption-move renderer). Use it whenever the user wants to plan, edit, caption, sound-design, review or redo a reel, Short, TikTok, podcast clip or long-form YouTube video; asks for a premium, aesthetic, advanced or pro edit, kinetic captions, typography, text animation, motion graphics, transitions, B-roll or a hook; sends raw talking-head footage or a client video; or sends reference videos to analyse and save as a new style. Read this file first - it gives the order of every edit (client, Core 5 plus ONE style, analyse, plan, gate, hook sample, render, QC, deliver and log), the floors every short must meet, and a router into the layer folders. Never start an edit from memory without it.
+description: The owner's complete video-editing rulebook as one skill - a process gate, craft methods, 21 measured style profiles (P1-P21), client rule folders, sound and type guides, and render tools (shortkit EDL renderer, pre-edit gate, caption-move renderer). Use it whenever the user wants to plan, edit, caption, sound-design, review or redo a reel, Short, TikTok, podcast clip or long-form YouTube video; asks for a premium, aesthetic, advanced or pro edit, kinetic captions, typography, text animation, motion graphics, transitions, B-roll or a hook; sends raw talking-head footage or a client video; or sends reference videos to analyse and save as a new style. Read this file first - it gives the order of every edit (client, Core 5 plus ONE style, analyse, plan, gate, hook sample, render, QC, deliver and log), the floors every short must meet, and a router into the layer folders. Never start an edit from memory without it.
 ---
 
 # Video editing style: the editing brain
 
-This folder is the owner's whole editing rulebook: 37 skills in eight layers, written from 25 delivered edits, 100+ reference videos and reels, and client feedback. This file is the entry point. Every skill inside is a `GUIDE.md`; all paths below are relative to this folder (`<ROOT>`).
+This folder is the owner's whole editing rulebook: 38 skills in eight layers, written from 25 delivered edits, 100+ reference videos and reels, and client feedback. This file is the entry point. Every skill inside is a `GUIDE.md`; all paths below are relative to this folder (`<ROOT>`).
 
 **Two rejections shaped it.** Video 25 and a cloud-session short were both turned down for the same reason: **text on a talking head**. Captions, stock clips and titles are not an edit. Designed motion graphics, literal pictures for the words, sound on every change and the client's own rules are.
 
@@ -61,6 +61,7 @@ Build in this order. Each layer names where its numbers live.
 |---|---|---|
 | Naveen bro short, or any "aesthetic / premium Instagram-editor" talking head | P16 aesthetic pro reel + the client's caption look | `04-styles/aesthetic-pro-reel-edit-style/GUIDE.md`, `05-clients/naveen-bro/CLIENT-BAR.md` |
 | Caption-led talking head like the editor showcases ("Raw vs My Edit") | P17 type cards + inversion, P18 brand-colour caps + pills, P19 under-chin kinetic (safest base), P20 script + sans | `04-styles/editor-showcase-caption-edit-style/GUIDE.md` |
+| Gaming, facts or countdown video that needs neon-sunset titles (the owner's GTA 6 facts video) | P21 vice-neon titles: neon numeral, sunset gradient, game-style wordmark, serif chapter cards | `04-styles/vice-neon-title-edit-style/GUIDE.md` |
 | Heavy-edit talking head with two-tier kinetic captions; faceless 2.5D documentary story | P13, P14 (the event-map method) | `02-craft/event-map-reel-edit-style/GUIDE.md`, full numbers in its `references/event-map-method-full.md` |
 | Calm premium talking head, "Remotion short" | P15 | `04-styles/ultimate-editors-shortform-style/GUIDE.md` |
 | Energetic list video, word-pop captions | Tharun Speaks | `04-styles/tharun-speaks-edit-style/GUIDE.md` |
@@ -100,7 +101,7 @@ Build in this order. Each layer names where its numbers live.
 ## 7. Learning a new style from reference videos
 1. Follow `06-tools/watch/GUIDE.md`: frames at the source rate, word transcript, cuts, audio events; measure, do not guess. Label every number (measured, observed, estimate).
 2. Find the technique, not the look: why the move is on that word, what the eye does, what the sound does.
-3. Save with `06-tools/skill-saver/GUIDE.md`: a new `04-styles/<slug>-edit-style/` folder with its own `GUIDE.md` (frontmatter `name` = folder name), the next profile number (**P21**) in `04-styles/README.md`, an entry in `08-learning-log/CHANGELOG.md` with the owner's words, then rebuild the index.
+3. Save with `06-tools/skill-saver/GUIDE.md`: a new `04-styles/<slug>-edit-style/` folder with its own `GUIDE.md` (frontmatter `name` = folder name), the next profile number (**P22**) in `04-styles/README.md`, an entry in `08-learning-log/CHANGELOG.md` with the owner's words, then rebuild the index.
 4. Reference videos are other creators' finished work: study only; never reuse their footage, faces or branding.
 5. Keep exactly one `SKILL.md` (this file). New skill files are named `GUIDE.md`.
 
@@ -117,7 +118,7 @@ Build in this order. Each layer names where its numbers live.
 | `01-process/` | the gate, reading list, move menu, PRE-EDIT sheet, plan template |
 | `02-craft/` | how to build: shorts kit, event map, motion graphics, text moves, HL + MC, hooks, long-form |
 | `03-sound-type-assets/` | sound design, fonts and subtitles, placement research, B-roll and PNG catalogs, thumbnails |
-| `04-styles/` | the style library, profiles P1-P20 |
+| `04-styles/` | the style library, profiles P1-P21 |
 | `05-clients/` | one folder per client: rules that never carry to another client |
 | `06-tools/` | watch-and-learn, After Effects builder, skill-saver, index builder |
 | `07-edit-kit-reference/` | 41 open-source kit skills, reached through `02-craft/edit-kit-playbook` |
@@ -127,6 +128,6 @@ Build in this order. Each layer names where its numbers live.
 Earlier learnings kept whole: the five-reel event-map method (`02-craft/event-map-reel-edit-style/references/event-map-method-full.md`, with its format, transition, device and per-reel notes beside it) and the client font-board study (`05-clients/naveen-bro/mustard-red-caption-style/references/typography-pairings-measured.md`).
 
 ## 10. Known limits
-- P12-P15 and P17-P20 were learned from analysis without a client-approved render. Treat their numbers as a starting point and check stills.
+- P12-P15 and P17-P21 were learned from analysis without a client-approved render. Treat their numbers as a starting point and check stills.
 - Sound in the reference analyses is measured from the signal, not listened to. Font names of references are visual guesses.
 - No client has approved an edit built to the gate from a cloud session yet. The rejected short of 2026-11-26 is still to be rebuilt.

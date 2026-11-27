@@ -51,7 +51,7 @@ Never start editing before the analysis and the plan exist. Never pick effects a
 
 ## Fast access
 - `SKILL.md`: the entry point when this folder is loaded as the Claude skill `video-editing-style`.
-- `INDEX.md`: all 37 skills, path, scope, use-when.
+- `INDEX.md`: all 38 skills, path, scope, use-when.
 - `PATHS-AND-SETUP.md`: Mac folders, tool paths, what is not in this zip, and what works in a cloud session.
 - `06-tools/MAC-TOOLCHAIN.md`: what is installed on the Mac (ffmpeg, render venv, Telugu shaping, Homebrew on Intel).
 - `08-learning-log/CHANGELOG.md`: everything learned, by date.

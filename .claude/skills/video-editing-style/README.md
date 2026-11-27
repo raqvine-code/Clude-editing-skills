@@ -25,7 +25,7 @@ Owner: Raghu (studio: RAQVINE; channel: Move with Raghu). Skills were first writ
 | `01-process/` | the gate before every edit, the master plan, the PLAN.md template |
 | `02-craft/` | how to build: method, motion graphics, text moves, hooks, long-form |
 | `03-sound-type-assets/` | SFX and music, fonts and subtitles, B-roll and PNG catalogs, thumbnails |
-| `04-styles/` | the style library (profiles P1-P20, other creators' measured styles) |
+| `04-styles/` | the style library (profiles P1-P21, other creators' measured styles) |
 | `05-clients/` | rules that belong to ONE client; never carry them to another |
 | `06-tools/` | watch a video and learn it, After Effects rebuild, save a lesson, index tool |
 | `07-edit-kit-reference/` | 41 open-source kit skills, text only; reach them through `02-craft/edit-kit-playbook` |
@@ -42,6 +42,7 @@ Owner: Raghu (studio: RAQVINE; channel: Move with Raghu). Skills were first writ
 | Talking head, calm premium, "Remotion short" | `04-styles/ultimate-editors-shortform-style/GUIDE.md` |
 | Talking head, aesthetic Instagram-editor look | `04-styles/aesthetic-pro-reel-edit-style/GUIDE.md` |
 | Talking head, caption-led editor-showcase look (type cards, pills, under-chin kinetic, script + sans; P17-P20) | `04-styles/editor-showcase-caption-edit-style/GUIDE.md` |
+| Gaming / facts video with neon-sunset titles (P21) | `04-styles/vice-neon-title-edit-style/GUIDE.md` |
 | Faceless voice-over reel (no camera footage) | `04-styles/faceless-explainer-reel-edit-style/GUIDE.md` |
 | Style from the 20 profiles (glass ad, noir red, podcast clip...) | `04-styles/README.md`, then `04-styles/pro-video-editing/GUIDE.md` |
 | Creator look (MrBeast, Hormozi, Johnny Harris, Iman Gadzhi, calm) | `04-styles/top-editor-styles/GUIDE.md` |

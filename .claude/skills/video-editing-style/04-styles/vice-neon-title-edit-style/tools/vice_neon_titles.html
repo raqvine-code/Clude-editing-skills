@@ -1,0 +1,102 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Price;src:url(fonts/PricedownBl.otf)}
+@font-face{font-family:NotoD;src:url(fonts/NotoSerifDisplay.ttf);font-stretch:62.5% 100%;font-weight:100 900}
+@font-face{font-family:InterT;src:url(fonts/InterTight.ttf);font-weight:100 900}
+@font-face{font-family:Inter;src:url(fonts/Inter.ttf);font-weight:100 900}
+@font-face{font-family:Hand;src:url(fonts/PatrickHand.ttf)}
+:root{--indigo:#3447B5;--violet:#7C3CC4;--magenta:#C936B6;--pink:#F0489C;--coral:#F7706A;--orange:#FDA53A;--plum:#1E0624;--lilac:#E9DDF0;--lime:#9EFE3C;--hot:#FA3BB1}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+.sc{position:absolute;inset:0;display:none;overflow:hidden}
+#grain{position:absolute;inset:0;opacity:.10;mix-blend-mode:overlay;pointer-events:none}
+/* A: wide-tracked opener line */
+#A{background:#000}
+#A .t{position:absolute;left:0;right:0;top:880px;text-align:center;font:600 46px/1.5 InterT;letter-spacing:.34em;color:var(--lilac);text-indent:.34em}
+#A .t small{display:block;font:600 30px/1.4 InterT;letter-spacing:.42em;text-indent:.42em;color:#CDB9D6}
+/* B: neon numerals */
+#B{background:radial-gradient(900px 700px at 50% 44%, #170a22 0%, #05020a 60%, #000 100%)}
+#B svg{position:absolute;left:0;top:0}
+.wm{position:absolute;left:0;right:0;text-align:center;font:400 150px/0.86 Price;color:#F1EDF6;-webkit-text-stroke:22px var(--plum);paint-order:stroke fill;filter:drop-shadow(0 10px 0 rgba(20,2,26,.9)) drop-shadow(0 0 22px rgba(240,72,156,.35))}
+/* C: editorial serif card */
+#C{background:radial-gradient(1200px 1100px at 62% 30%, #7a1a10 0%, #3d0705 38%, #0a0202 78%)}
+#C .pill{position:absolute;left:176px;top:690px;padding:10px 34px 14px;border-radius:60px;font:300 62px/1 InterT;letter-spacing:-.02em;color:#fff;background:rgba(40,40,44,.72);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.28), 0 10px 30px rgba(0,0,0,.35)}
+#C .ser{position:absolute;left:0;right:0;top:800px;text-align:center;white-space:nowrap;font:400 236px/0.9 NotoD;font-stretch:78%;letter-spacing:-.065em;word-spacing:.16em;color:#fff}
+#C .ser span{display:block;overflow:hidden;padding:.06em 0 .02em} #C .ser i{display:block;font-style:normal}
+#C .body{position:absolute;left:0;right:0;top:1420px;text-align:center;font:300 38px/1.3 Inter;color:rgba(255,255,255,.82)}
+.hd{position:absolute;width:13px;height:13px;background:#fff}
+/* D: stacked game-title card */
+#D{background:linear-gradient(180deg,#2B3FA6 0%,#4B4FC9 28%,#8B6DE6 52%,#E7A2EA 78%,#FBCDEB 100%)}
+#D .shape{position:absolute;left:150px;top:250px;width:780px;height:780px;border-radius:50%;background:linear-gradient(180deg,#FEB423 0%,#F7706A 38%,#F0489C 62%,#C936B6 100%);
+  -webkit-mask-image:linear-gradient(180deg,#000 0 52%,transparent 52% 54.5%,#000 54.5% 62%,transparent 62% 65.5%,#000 65.5% 72%,transparent 72% 76.5%,#000 76.5% 82%,transparent 82% 87.5%,#000 87.5% 92%,transparent 92% 100%);box-shadow:0 0 0 0 #000}
+#D .rim{position:absolute;left:90px;top:190px;width:900px;height:900px;border-radius:50%;background:radial-gradient(closest-side,rgba(254,180,35,.38),rgba(250,59,177,.20) 60%,transparent 100%)}
+#D .big{position:absolute;left:0;right:0;top:310px;text-align:center;font:400 300px/0.78 Price;color:#fff;-webkit-text-stroke:34px #31072C;paint-order:stroke fill;filter:drop-shadow(0 0 0 #FA3BB1) drop-shadow(3px 3px 0 #FA3BB1) drop-shadow(-3px -3px 0 #FA3BB1)}
+#D .hand{position:absolute;left:110px;top:1130px;font:400 118px/0.84 Hand;color:#fff;transform:scaleX(.92);transform-origin:0 0;-webkit-text-stroke:3.5px #fff}
+#D .arrow{position:absolute;left:118px;top:1246px}
+#D .bar{position:absolute;right:86px;top:1150px;width:52px;height:230px;background:repeating-linear-gradient(180deg,#fff 0 5px,transparent 5px 9px,#fff 9px 11px,transparent 11px 16px)}
+</style></head><body>
+<div id="A" class="sc"><div class="t">THE REAL REASON<small>IT TOOK SO LONG</small></div></div>
+<div id="B" class="sc">
+ <svg width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+   <linearGradient id="fillG" gradientUnits="userSpaceOnUse" x1="0" y1="455" x2="0" y2="1015"><stop offset="0" stop-color="#3447B5"/><stop offset=".2" stop-color="#7C3CC4"/><stop offset=".4" stop-color="#C936B6"/><stop offset=".58" stop-color="#F0489C"/><stop offset=".78" stop-color="#F7706A"/><stop offset="1" stop-color="#FDA53A"/></linearGradient>
+   <linearGradient id="edgeG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF62D6"/><stop offset=".5" stop-color="#FF7FB0"/><stop offset="1" stop-color="#FFB45E"/></linearGradient>
+   <linearGradient id="wipeV" x1="0" y1="0" x2="0" y2="1"><stop id="wv0" offset="0" stop-color="#fff"/><stop id="wv1" offset="0" stop-color="#000"/></linearGradient>
+   <linearGradient id="riseV" x1="0" y1="1" x2="0" y2="0"><stop id="rv0" offset="0" stop-color="#fff"/><stop id="rv1" offset="0" stop-color="#000"/></linearGradient>
+   <mask id="mEdge" maskUnits="userSpaceOnUse" x="0" y="300" width="1080" height="900"><rect x="0" y="300" width="1080" height="900" fill="url(#wipeV)"/></mask>
+   <mask id="mFill" maskUnits="userSpaceOnUse" x="0" y="300" width="1080" height="900"><rect x="0" y="300" width="1080" height="900" fill="url(#riseV)"/></mask>
+   <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+   <filter id="glow2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+  <g id="num" style="transform-origin:540px 760px">
+   <g mask="url(#mFill)"><text id="nFill" x="540" y="1010" text-anchor="middle" font-family="InterT" font-weight="900" font-size="760" letter-spacing="-30" fill="url(#fillG)">13</text></g>
+   <g mask="url(#mEdge)">
+    <text id="nGlow" x="540" y="1010" text-anchor="middle" font-family="InterT" font-weight="900" font-size="760" letter-spacing="-30" fill="none" stroke="url(#edgeG)" stroke-width="16" filter="url(#glow)">13</text>
+    <text id="nGlow2" x="540" y="1010" text-anchor="middle" font-family="InterT" font-weight="900" font-size="760" letter-spacing="-30" fill="none" stroke="url(#edgeG)" stroke-width="9" filter="url(#glow2)">13</text>
+    <text id="nEdge" x="540" y="1010" text-anchor="middle" font-family="InterT" font-weight="900" font-size="760" letter-spacing="-30" fill="none" stroke="url(#edgeG)" stroke-width="5" stroke-linejoin="miter">13</text>
+   </g>
+  </g>
+ </svg>
+ <div class="wm" id="wm1" style="top:770px">years</div><div class="wm" id="wm2" style="top:900px;font-size:128px">in the making</div>
+</div>
+<div id="C" class="sc"><div class="pill" id="pill">Fact 01</div><div class="ser"><span><i id="s1">THE LONG</i></span><span><i id="s2">WAIT</i></span></div>
+ <div class="body" id="body">Thirteen years between two games.<br>Here is what filled them</div><div class="hd" style="left:560px;top:706px"></div><div class="hd" style="left:912px;top:1262px"></div></div>
+<div id="D" class="sc"><div class="rim"></div><div class="shape"></div><div class="big" id="big">WHY<br>SO<br>LONG</div><div class="hand" id="hand">13 years<br><span style="padding-left:1.0em">of waiting</span></div>
+ <svg class="arrow" width="90" height="90" viewBox="0 0 90 90"><path d="M14 76 L72 18 M30 16 L74 16 L74 60" fill="none" stroke="#9EFE3C" stroke-width="14" stroke-linecap="square"/></svg><div class="bar"></div></div>
+<svg id="grain" width="1080" height="1920"><filter id="gn"><feTurbulence id="turb" type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="1"/><feColorMatrix type="saturate" values="0"/></filter><rect width="1080" height="1920" filter="url(#gn)"/></svg>
+<script>
+const $ = id => document.getElementById(id), clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), prog = (t, t0, d) => clamp((t - t0) / d);
+const outCubic = p => 1 - Math.pow(1 - p, 3), inOut = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2, lerp = (a, b, p) => a + (b - a) * p;
+const SC = { A: [0, 2.3], B: [2.3, 8.4], C: [8.4, 11.2], D: [11.2, 13.5] };
+// diagonal soft wipe (measured on the reference: wordmark in 1.0 s for 3 lines, exit 0.3 s, both top-left to bottom-right)
+function wipe(el, p, out = false) {
+  const x = lerp(-30, 130, p);
+  const g = out ? `linear-gradient(115deg, transparent ${x - 22}%, #000 ${x}%)` : `linear-gradient(115deg, #000 ${x - 22}%, transparent ${x}%)`;
+  el.style.webkitMaskImage = (p >= 1 && !out) ? 'none' : g; el.style.opacity = (out && p >= 1) || (!out && p <= 0) ? 0 : 1;
+}
+window.renderAt = t => {
+  for (const k in SC) $(k).style.display = t >= SC[k][0] && t < SC[k][1] ? 'block' : 'none';
+  $('turb').setAttribute('seed', 1 + Math.round(t * 30) % 97);
+  if (t < SC.A[1]) {                      // A: appears in one frame, bright and soft, settles in 0.35 s; fades out in 0.37 s
+    const a = $('A').firstElementChild, tin = 0.25, p = prog(t, tin, 0.35), e = prog(t, 1.75, 0.37);
+    a.style.opacity = t < tin ? 0 : 1 - e; a.style.filter = `blur(${lerp(7, 0, outCubic(p))}px) brightness(${lerp(1.75, 1, outCubic(p))})`;
+  } else if (t < SC.B[1]) {
+    const u = t - SC.B[0];                // edge draw 0.2-2.0 s (top to bottom, linear), fill rises 1.7-2.4, bloom + settle 2.2-3.8, wordmark 4.1-5.1, exit 5.75-6.05
+    const pe = prog(u, 0.2, 1.8); $('wv0').setAttribute('offset', clamp(pe * 1.25 - 0.22)); $('wv1').setAttribute('offset', clamp(pe * 1.25));
+    const pf = inOut(prog(u, 1.7, 0.7)); $('rv0').setAttribute('offset', clamp(pf * 1.3 - 0.3)); $('rv1').setAttribute('offset', clamp(pf * 1.3));
+    const bloom = inOut(prog(u, 2.2, 1.6));
+    $('nFill').style.filter = `brightness(${lerp(0.34, 1, bloom)}) saturate(${lerp(0.75, 1.08, bloom)})`;
+    $('nGlow').style.opacity = lerp(0.95, 0.0, prog(u, 2.6, 1.2)) * prog(u, 0.2, 0.4); $('nGlow2').style.opacity = lerp(1, 0.35, prog(u, 2.6, 1.2));
+    $('num').style.transform = `scale(${lerp(1.13, 1, outCubic(prog(u, 1.9, 1.8)))})`;
+    wipe($('wm1'), prog(u, 4.1, 0.5)); wipe($('wm2'), prog(u, 4.55, 0.55));
+    const ex = prog(u, 5.75, 0.3);
+    if (ex > 0) { [$('wm1'), $('wm2')].forEach(e => wipe(e, ex, true)); const x = lerp(-30, 130, ex); $('B').querySelector('svg').style.webkitMaskImage = `linear-gradient(115deg, transparent ${x - 22}%, #000 ${x}%)`; }
+    else $('B').querySelector('svg').style.webkitMaskImage = 'none';
+  } else if (t < SC.C[1]) {
+    const u = t - SC.C[0]; const r = (el, t0) => { const p = outCubic(prog(u, t0, 0.5)); el.style.transform = `translateY(${lerp(105, 0, p)}%)`; el.style.filter = `blur(${lerp(10, 0, p)}px)`; };
+    r($('s1'), 0.15); r($('s2'), 0.30); const pp = outCubic(prog(u, 0.0, 0.35)); $('pill').style.opacity = pp; $('pill').style.transform = `translateX(${lerp(-30, 0, pp)}px)`;
+    $('body').style.opacity = prog(u, 0.75, 0.4); $('C').style.backgroundSize = `${100 + 4 * u}% ${100 + 4 * u}%`;
+  } else {
+    const u = t - SC.D[0]; const p = outCubic(prog(u, 0.05, 0.35)); $('big').style.transform = `scale(${lerp(1.25, 1, p)})`; $('big').style.opacity = prog(u, 0.05, 0.1);
+    const h = outCubic(prog(u, 0.5, 0.3)); $('hand').style.opacity = h; $('hand').style.transform = `scaleX(.92) rotate(-3deg) translateY(${lerp(30, 0, h)}px)`;
+  }
+};
+</script></body></html>
