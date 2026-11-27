@@ -2,6 +2,14 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-27 (re-edit, preview stage): storyboard built with a browser compositor, waiting for approval
+**The user's words:** the master brief (R7 > R6 > R5 > R8; new captions, typography, SFX, icons and motion; keep the B-roll; no BGM, no grade; previews first), then "For fonts use R8 fonts and for caption placement use R7 and R6 and for typography use all reference videos".
+- **Fonts matched to R8 by side-by-side renders:** Great Vibes (closest swash capitals and contrast of 13 scripts tried) + Arimo (R8's sans is Helvetica / Arial-like). Accent sampled from the footage.
+- **New renderer:** HTML/CSS pages drawn frame by frame in the pre-installed Chromium (Playwright): real typography, blur, masks, shadows; about 0.05-0.08 s per frame. Files: `04-styles/editor-showcase-caption-edit-style/references/worked-example-v4/` (`build.py` timeline, `hc/engine.js` 12 components and 6 caption treatments, `hc/render.js`, `boards.py` review boards).
+- **Light trim:** 2.6 s removed (one filler + six pause tightenings), each cut verified by transcription.
+- **Self-review fixes before showing the owner:** word spacing, deep-green board layering, sentence capitals, last words held at least 0.34 s, small words raised to 56 px, echo restacked.
+- **Open:** owner approval of the four boards; then sound (real bank), full render, earshot critique, gate.
+
 ## 2026-11-27 (feedback on the redo): "same pattern in every frame", fonts, captions and SFX not liked
 **The user's words:** "Then why you edited the previous video? Because I don't like that video. The caption, typographies, subtitles, even fonts also. Also, do not add proper SFX. Also, every frames you did like same pattern using. I don't like that also. So improve your editing skill. Already I provided zip file, right? ... if you have any doubt, ask me now. Also ... before you will do video editing, give me the frames and your plan."
 - **Process rule (CLAUDE.md-level):** after a rejection, or whenever the owner asks, send the plan plus storyboard frames and wait for approval before rendering. Added to `CLAUDE.md` Rule 0.
