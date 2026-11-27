@@ -13,10 +13,11 @@ EDL (all times in OUTPUT seconds unless named src):
 { "name": "Self_Story", "src": "/path/raw.mp4", "fps": 60, "project": "/path/edits/<id>",
   "keeps": [[src_in, src_out], ...],                      # source seconds; output = concatenation (frame-exact, 800 samples/frame)
   "anchor": [720, 820], "eye_y": 700,                      # source px of the eye line centre, screen y it should sit at
+  "anchor_track": [[0.0, 480.0], [1.0, 484.0]],            # optional (2026-11-27): source x of the face centre over time; the camera follows it
   "camera": [[t, scale, ease], ...],                       # keyframes; two keys at the same t = hard jump (cut); ease of the segment INTO a key
   "grade": {"exp": 0.35, "contrast": 1.10, "pivot": 0.42, "sat": 1.08, "warm": 0.02, "teal": 0.03, "face": 0.22, "vignette": 0.32, "grain": 0.035, "black": 0.02},
   "broll": [{"key": "coins", "file": "...", "src": 1.0, "t0": 3.4, "t1": 5.1, "speed": 1.0, "cx": 0.5, "z": [1.0, 1.06],
-             "entry": "whip|whipL|blurzoom|cut", "gain": 1.0, "gamma": 1.0, "sat": 1.0, "bw": false, "shade": true}],
+             "entry": "whip|whipL|blurzoom|cut", "gain": 1.0, "gamma": 1.0, "sat": 1.0, "bw": false, "shade": true, "dy": 0}],   # dy = shift up in px (2026-11-27)
   "flashes": [{"t": 7.5, "type": "white|neg"}],
   "captions": [{"t0": 0.0, "t1": 1.0, "y": 1300, "words": [[t, "text", "n|k", {opts}], ...]}],   # n = small lead-in words, k = keyword line (big)
       # P13 two-tier (2026-11-22): optional "y" per group; keyword opts {"c": "#hex" role colour, "fx": "track" (letter-spacing settles in 0.2 s,
@@ -107,10 +108,16 @@ def cam_scale(e, t):
     return ks[i][1]
 
 
-def cam_matrix(e, s, W, H, sw, sh, k):
-    """affine src->out. k = output scale factor (1 or 0.5). s = zoom (1 = full source width)."""
+def cam_matrix(e, s, W, H, sw, sh, k, t=None):
+    """affine src->out. k = output scale factor (1 or 0.5). s = zoom (1 = full source width).
+    2026-11-27: optional e["anchor_track"] = [[t, source x of the face centre], ...] makes the horizontal anchor follow the speaker
+    (smooth it first: a 1-2 s moving average), so a speaker who sways stays in the focal zone the captions are placed for."""
     base = W / sw * s                      # px out per px src
     ax, ay = e["anchor"]; ey = e["eye_y"] * k
+    if t is not None and e.get("anchor_track"):
+        if "_atr" not in e: e["_atr"] = np.array(e["anchor_track"], np.float64)
+        tr = e["_atr"]
+        ax = float(np.interp(t, tr[:, 0], tr[:, 1]))
     # src rect visible: x0 = ax - (W/2)/base ...; clamp inside source
     x0 = min(max(ax - (W / 2) / base, 0), sw - W / base)
     y0 = min(max(ay - ey / base, 0), sh - H / base)
@@ -336,7 +343,7 @@ class Renderer:
         e, k, W, H, fps = s.e, s.k, s.W, s.H, s.e["fps"]; t = fi / fps
         src = s.src_frame(fi)
         sc = cam_scale(e, t)
-        M, fx, fy = cam_matrix(e, sc, W, H, s.sw, s.sh, k)
+        M, fx, fy = cam_matrix(e, sc, W, H, s.sw, s.sh, k, t)
         a_u8 = cv2.warpAffine(src, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
         x = s.look.aroll(a_u8, fx, fy, k)
         _pm = []
@@ -425,7 +432,7 @@ class Renderer:
                 bz = z
                 if ent == "blurzoom" and pe < 1: bz = z * (1 + 0.22 * (1 - EASE["out3"](pe)))
                 sc_ = bz / zmax
-                Mb = np.float32([[sc_, 0, W / 2 - img.shape[1] * sc_ / 2], [0, sc_, H / 2 - img.shape[0] * sc_ / 2]])
+                Mb = np.float32([[sc_, 0, W / 2 - img.shape[1] * sc_ / 2], [0, sc_, H / 2 - img.shape[0] * sc_ / 2 - sl.get("dy", 0) * k]])   # dy: shift the clip up by dy px (2026-11-27; use with z > 1 so the border never shows)
                 b = cv2.warpAffine(img, Mb, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
                 if ent in ("whip", "whipL") and pe < 1:
                     q = 1 - EASE["out3"](pe); dx = int((1 if ent == "whip" else -1) * q * 0.35 * W)

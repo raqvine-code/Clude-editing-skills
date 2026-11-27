@@ -88,8 +88,11 @@ python3 tools/caption_moves.py my_moves.json <project>/assets/moves --sheet
 ```
 - Front `layers` draw under `stacks` and `captions`, so a stack can sit on a card when needed.
 - A `typecard` without `window` hides the speaker: it needs no person matte, so it works where MediaPipe is missing (`PATHS-AND-SETUP.md`, cloud section).
-- Tested 2026-11-27: all five kinds render (`references/frames/caption_moves_test_board.jpg`); `typecard` + `window`, `dims` focus pull and `writeon` were rendered through `shortkit.py stills` on a real 60 fps clip.
-- Not built yet: letter-level script write-on (the tool wipes the whole phrase), the phone bezel and UI chrome (draw them as a PNG layer), the footage scaling down into the card (the tool crops into it instead).
+- Tested 2026-11-27: all kinds render (`references/frames/caption_moves_test_board.jpg`), and a whole 47.6 s short was built, rendered, mixed and delivered with them: `references/worked-example/` (PRE-EDIT sheet, PLAN, `build.py` that writes the layer spec + EDL + facts, `qc.py`). Copy `build.py` for the next short.
+- Kinds in the tool now: `writeon`, `pill`, `converge`, `typecard` (several heroes, ghost-to-solid `solid_t`, speaker `window` with `release` and a haldi `border` = picture frame, `strike`, `icons`), `tiles` (with `labels`), `quote` (the HL card: brush under each highlighted word as it is spoken, card `pulses` on beats), `mc` (the MC: one pinned word over seven procedural pattern sources). `--only key1,key2` re-renders single moves.
+- Kit changes made for it (2026-11-27): shortkit `anchor_track` (the camera follows the speaker's x), B-roll `dy` (shift a clip up so its subject sits inside a card window), the gate no longer counts `txt_` layers or focus-pull `dims`.
+- Key the layers: `mg_` (object cards), `hl_` (quote card), `mc_` (match cut), `txt_` (text-only moves).
+- Not built yet: letter-level script write-on (the tool wipes the whole phrase), the phone bezel and UI chrome (draw them as a PNG layer), the footage scaling down into the card (the tool crops into it instead), `neg` flash leaves one black frame (kit design).
 
 ## 6. What counts for the gate
 `01-process/before-edit/2-PRO-MOVE-MENU.md` says text on footage is never motion graphics. For this style:

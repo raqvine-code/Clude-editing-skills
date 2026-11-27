@@ -2,6 +2,12 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-27 (redo): the rejected short rebuilt with the new workflow
+**The user's words:** "Redo the rejected short with this workflow".
+- **Built to the gate:** PRE-EDIT + PLAN, then 9 designed card layers, 6 B-roll clips, 71 sound cues, no music, no grade, captions on the chest (centre 61 %), gate READY (13 MG events, 47 %, HL + MC), -14.0 LUFS. The full record is `04-styles/editor-showcase-caption-edit-style/references/worked-example/` and `02-craft/shorts-editing-pro/LEARNING-LOG.md`.
+- **Tool upgrades made while building it:** `caption_moves.py` gained `quote` (HL), `mc` (MC), `tiles` labels, `typecard` heroes / `solid_t` / `release` / `border` / `strike` / `icons` / `bg_alpha`, `--only`; `shortkit.py` gained `anchor_track` (camera follows the speaker) and B-roll `dy`; `pre_edit_gate.py` ignores `txt_` layers and focus-pull `dims`.
+- **Open:** client feedback on the redo. The owner's first brief asked for music and a colour grade; the Naveen bro bar says none of either. The redo follows the bar; adding music or a grade is a one-line change.
+
 ## 2026-11-27: four editor-showcase references -> P17-P20, a caption-move tool, and one skill folder
 **The user's words:** "I dont like this edit, you need to learnt so much edits" (about a 47 s English talking-head short edited in a cloud session on 2026-11-26), then, with four reference shorts and this rulebook as a zip: "Reverse-engineer their caption styles, typography, text animations, motion graphics, transitions, timing, and visual effects. Understand the techniques behind the references, not just their appearance ... Integrate everything into my existing Claude video-editing skill without losing previous learnings."
 - **Why the edit was rejected (checked against this rulebook):** it was made without it. Music and a colour grade were added, captions and titles sat above the head, the inserts were stock clips and text, and nothing was designed: the same "text on a talking head" failure as video 25. Logged in `02-craft/shorts-editing-pro/LEARNING-LOG.md`.

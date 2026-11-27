@@ -12,6 +12,16 @@
 
 ---
 
+## 2026-11-27 (cloud session) · "The story you tell yourself" REDO, 47.6 s English talking head · delivered, feedback pending
+- **What was made:** the same four clips, rebuilt to the gate: P19 under-chin captions as the base, P17 object cards as inserts. 9 card layers (hook card, good-things B-roll card, luck frame, FACTS -> FRAMES inversion, 1-2-3 tiles, PATTERNS match cut, HL quote card, mirror, CTA card = the hook card again), 6 literal B-roll clips, 71 sound cues, no music, no grade. Worked example: `04-styles/editor-showcase-caption-edit-style/references/worked-example/`.
+- **Numbers (gate READY, QC):** 13 designed MG events, 47 % of runtime, longest stretch 8.4 s, HL + MC, 29 caption groups, caption block centre 61 % of the height (chin + 17 %), nothing above the head, colour within 1.5 levels of the source (no grade), -14.0 LUFS, true peak -1.5 dBTP, 1428 frames.
+- **What was new:** the six card kinds in `caption_moves.py`; camera face-follow (`anchor_track`); B-roll `dy`; focus pull as a `dims` entry; gate counts only object layers as MG.
+- **What went wrong and the fix:** (1) `anchor_track` crashed the multi-frame render (numpy array used with `or`; stills had hidden it): always run a short `video --from --to` render, not only stills, after a kit change. (2) The sunset clip showed only sky inside the card window: use `dy` + `z`. (3) Hero text stayed on the footage while a card opened: it now fades during `release`. (4) Tiles collided with the hero line: tiles at y 1388, size 84. (5) The `neg` flash leaves one black frame (kit design).
+- **Time:** 1428 frames at 1080x1920 took about 17 min on 4 cores; layers about 5 min; do the layer render in the background while writing the sheets.
+- **Open:** client feedback. Clash stated to the user: the first brief asked for music and a grade; the client bar says none.
+
+---
+
 ## 2026-11-26 (cloud session) · "The story you tell yourself", 47 s English talking head · REJECTED
 - **What was made:** four consecutive clips joined into one 9:16 short with stock B-roll, kinetic titles, music, sound effects and a grade. It was built in a cloud session WITHOUT this rulebook (the zip arrived a day later).
 - **What went wrong:** music and a colour grade were added (this speaker's set looks like the Naveen bro English shorts, where the latest word is no BGM and no grade: confirm the client with the owner); titles and captions sat above the head; inserts were stock clips and text on footage; no designed motion graphics, no HL, no MC; no gate, no PRE-EDIT sheet.

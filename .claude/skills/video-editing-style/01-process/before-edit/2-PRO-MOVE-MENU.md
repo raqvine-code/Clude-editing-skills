@@ -21,8 +21,8 @@ How to build them: render a scene clip with a `tools/scenes.py` in the project (
 |---|---|---|---|
 | **List device**: checklist card filling item by item / pedestals / 1-2-3 step pill | list 3+ things ("guarantee, secure job, what people say, blueprint") | `event-map-reel-edit-style` 8, `ultimate-editors-shortform-style` 5 | scene clip, or `layers` + `dims` |
 | **Contrast-pair object** (one object changes state) | set two ideas against each other (action / outcome, control / uncertainty, myth / fact) | `faceless-explainer-reel-edit-style` 12B | scene clip |
-| **Quote / verse / page card with HL** (brush wipe under the spoken words) | quote a book, scripture, article, a person | `text-highlight-match-cut` | `hl_` scene clip |
-| **Match cut (MC)** (one pinned word, 5-7 sources flash-cut behind every 3-4 frames) | repeat a key word or claim ("uncertainty", "control") | `text-highlight-match-cut` | `mc_` scene clip |
+| **Quote / verse / page card with HL** (brush wipe under the spoken words) | quote a book, scripture, article, a person; or the thesis sentence of the talk | `text-highlight-match-cut` | `hl_` scene clip, or `caption_moves.py` `quote` as an `hl_` layer over a `dims` entry (worked example in `04-styles/editor-showcase-caption-edit-style/references/worked-example/`) |
+| **Match cut (MC)** (one pinned word, 5-7 sources flash-cut behind every 3-4 frames) | repeat a key word or claim ("uncertainty", "control") | `text-highlight-match-cut` | `mc_` scene clip, or `caption_moves.py` `mc` (procedural pattern sources in the client colours) as an `mc_` layer |
 | **Stat wedge / live number / odometer** | say a percentage or number | `faceless-explainer-reel-edit-style`, `client-video-editing-process` | scene clip, `giants` number beat |
 | **On-screen UI** (small card / pill over a darkened, blurred lower band) | name a tool, a step, a choice, a message | `ultimate-editors-shortform-style` 5, `app-product-animation` | `layers` (front) + `dims` |
 | **Split screen** (animation top 58 %, speaker bottom 42 %) | explain a process while he keeps talking | `ultimate-editors-shortform-style` 3 | scene clip with a speaker window, or `layers` |
