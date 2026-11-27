@@ -1,0 +1,236 @@
+{
+  "window_seconds": 0.1,
+  "loudness_db_mean": -25.5,
+  "loudness_db_p10_p90": [
+    -33.0,
+    -19.0
+  ],
+  "silence_threshold_db": -45.0,
+  "silences": [],
+  "silence_total_seconds": 0,
+  "probable_sfx_hits": [
+    {
+      "time": 2.5,
+      "jump_db": 9.5,
+      "high_freq_ratio": 0.13
+    },
+    {
+      "time": 3.4,
+      "jump_db": 12.4,
+      "high_freq_ratio": 0.09
+    },
+    {
+      "time": 5.5,
+      "jump_db": 11.9,
+      "high_freq_ratio": 0.17
+    },
+    {
+      "time": 6.3,
+      "jump_db": 10.5,
+      "high_freq_ratio": 0.35
+    },
+    {
+      "time": 6.7,
+      "jump_db": 10.5,
+      "high_freq_ratio": 0.15
+    },
+    {
+      "time": 8.7,
+      "jump_db": 9.7,
+      "high_freq_ratio": 0.13
+    },
+    {
+      "time": 13.8,
+      "jump_db": 11.1,
+      "high_freq_ratio": 0.06
+    },
+    {
+      "time": 16.4,
+      "jump_db": 11.5,
+      "high_freq_ratio": 0.07
+    },
+    {
+      "time": 16.7,
+      "jump_db": 10.3,
+      "high_freq_ratio": 0.12
+    },
+    {
+      "time": 21.5,
+      "jump_db": 11.7,
+      "high_freq_ratio": 0.07
+    },
+    {
+      "time": 22.4,
+      "jump_db": 9.5,
+      "high_freq_ratio": 0.94
+    },
+    {
+      "time": 22.7,
+      "jump_db": 10.5,
+      "high_freq_ratio": 0.19
+    },
+    {
+      "time": 25.5,
+      "jump_db": 13.0,
+      "high_freq_ratio": 0.17
+    },
+    {
+      "time": 26.6,
+      "jump_db": 10.4,
+      "high_freq_ratio": 0.93
+    },
+    {
+      "time": 28.6,
+      "jump_db": 13.0,
+      "high_freq_ratio": 0.14
+    },
+    {
+      "time": 29.4,
+      "jump_db": 9.3,
+      "high_freq_ratio": 0.06
+    },
+    {
+      "time": 30.7,
+      "jump_db": 11.0,
+      "high_freq_ratio": 0.25
+    },
+    {
+      "time": 33.2,
+      "jump_db": 15.0,
+      "high_freq_ratio": 0.15
+    },
+    {
+      "time": 36.2,
+      "jump_db": 11.0,
+      "high_freq_ratio": 0.2
+    },
+    {
+      "time": 37.1,
+      "jump_db": 9.1,
+      "high_freq_ratio": 0.25
+    },
+    {
+      "time": 38.6,
+      "jump_db": 11.6,
+      "high_freq_ratio": 0.11
+    },
+    {
+      "time": 39.3,
+      "jump_db": 13.3,
+      "high_freq_ratio": 0.15
+    },
+    {
+      "time": 41.1,
+      "jump_db": 13.3,
+      "high_freq_ratio": 0.14
+    },
+    {
+      "time": 43.8,
+      "jump_db": 16.3,
+      "high_freq_ratio": 0.47
+    }
+  ],
+  "loudness_timeline_db": [
+    -32.9,
+    -18.1,
+    -26.0,
+    -22.5,
+    -28.0,
+    -20.5,
+    -24.1,
+    -23.1,
+    -20.9,
+    -26.2,
+    -20.4,
+    -12.6,
+    -23.5,
+    -34.1,
+    -18.5,
+    -29.3,
+    -26.1,
+    -28.5,
+    -20.1,
+    -23.8,
+    -26.2,
+    -25.6,
+    -24.2,
+    -25.2,
+    -26.1,
+    -25.4,
+    -35.1,
+    -32.0,
+    -15.6,
+    -21.7,
+    -28.2,
+    -28.3,
+    -26.5,
+    -29.6,
+    -20.8,
+    -20.6,
+    -22.6,
+    -22.3,
+    -31.5,
+    -27.2,
+    -29.2,
+    -20.4,
+    -40.8,
+    -17.6,
+    -30.9,
+    -29.4,
+    -24.4,
+    -19.0,
+    -18.2,
+    -24.7,
+    -33.7,
+    -17.1,
+    -25.8,
+    -29.0,
+    -17.1,
+    -26.9,
+    -25.6,
+    -39.4,
+    -38.5,
+    -25.5,
+    -25.3,
+    -31.7,
+    -30.2,
+    -25.0,
+    -27.5,
+    -28.4,
+    -38.4,
+    -18.1,
+    -19.0,
+    -31.2,
+    -25.9,
+    -27.7,
+    -37.3,
+    -24.5,
+    -30.1,
+    -22.5,
+    -25.2,
+    -36.9,
+    -32.9,
+    -27.4,
+    -38.1,
+    -29.0,
+    -26.4,
+    -22.5,
+    -20.4,
+    -29.0,
+    -30.7,
+    -30.8,
+    -33.4,
+    -21.0,
+    -31.0,
+    -26.3,
+    -27.8,
+    -21.4,
+    -31.1,
+    -23.8,
+    -25.6,
+    -25.7,
+    -37.1,
+    -28.4
+  ],
+  "note": "Hits with high_freq_ratio above 0.4 are often whooshes, clicks or glitches. Confirm by looking at the frame at that time."
+}

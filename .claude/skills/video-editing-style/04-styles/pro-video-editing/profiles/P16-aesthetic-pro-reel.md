@@ -1,0 +1,5 @@
+# P16 Aesthetic Pro Reel (Haldi-Kumkum, Instagram-editor level)
+
+**This profile lives in its own skill: `04-styles/aesthetic-pro-reel-edit-style/GUIDE.md`.** The 11 measured Instagram references are in its `references/instagram-references.md`; the caption layer is `05-clients/naveen-bro/mustard-red-caption-style` (M4).
+
+In one paragraph: a talking-head short (built for the Naveen bro Telugu / English shorts, 2026-11-25) edited to the level of Instagram's aesthetic editors. The grade is dark and warm. Captions are two fonts per line (Bricolage lead-in + Fraunces Soft Italic haldi keyword) that arrive blur-to-sharp. A cut or punch lands every 2-2.5 s, and a literal B-roll appears for every concrete noun. A quiet designed insert comes every 6-8 s, rotating through: an off-white paper scene with the speaker cut out and a haldi ribbon, a face HUD with a mono label of the script's own words, a glowing face ring, number beats as giants behind the head, and designed proof scenes. Only one special move is on screen at a time.

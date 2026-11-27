@@ -1,0 +1,258 @@
+{
+ "shots": [
+  {
+   "f": [
+    0,
+    99
+   ],
+   "type": "TH",
+   "scale_ref_f900_start": 0.77,
+   "zoom": "eased push-in x1.57(chain)-1.65(direct), f5-55, peak 3.2%/frame f13-14"
+  },
+  {
+   "f": [
+    100,
+    189
+   ],
+   "type": "white MG A (card, cage)"
+  },
+  {
+   "f": [
+    190,
+    219
+   ],
+   "type": "white MG grid word-by-word"
+  },
+  {
+   "f": [
+    220,
+    313
+   ],
+   "type": "TH",
+   "scale_ref_start": 1.12,
+   "zoom": "push-in +5..9% over 3.1s"
+  },
+  {
+   "f": [
+    314,
+    366
+   ],
+   "type": "title First/Understand/the Flow"
+  },
+  {
+   "f": [
+    367,
+    451
+   ],
+   "type": "TH list",
+   "scale_ref_start": 0.85,
+   "zoom_steps": [
+    [
+     367,
+     373,
+     1.134
+    ],
+    [
+     385,
+     392,
+     1.151
+    ],
+    [
+     405,
+     411,
+     1.065
+    ],
+    [
+     442,
+     450,
+     1.124
+    ]
+   ],
+   "total_direct": 1.615
+  },
+  {
+   "f": [
+    452,
+    472
+   ],
+   "type": "title Second"
+  },
+  {
+   "f": [
+    473,
+    583
+   ],
+   "type": "TH",
+   "scale_ref_start": 1.35,
+   "zoom": "pull-out x0.887 over 3.7s"
+  },
+  {
+   "f": [
+    584,
+    612
+   ],
+   "type": "title & Third"
+  },
+  {
+   "f": [
+    613,
+    770
+   ],
+   "type": "TH",
+   "scale_ref_start": 1.31,
+   "zoom": "pull-out x0.876 over 5.23s"
+  },
+  {
+   "f": [
+    771,
+    832
+   ],
+   "type": "white MG B robot"
+  },
+  {
+   "f": [
+    833,
+    1020
+   ],
+   "type": "TH",
+   "scale_ref_start": 1.09,
+   "zoom": "pull-out x0.818 over 6.23s, flat after f1001"
+  }
+ ],
+ "caption_sync_frames_minus_whisper": {
+  "n": 53,
+  "median": 0.8,
+  "iqr": [
+   -2.0,
+   2.6
+  ],
+  "within3f_pct": 70,
+  "within5f_pct": 92,
+  "title_cards": [
+   -2.0,
+   -8.4,
+   -5.4
+  ]
+ },
+ "keyword_fade_opacity": {
+  "Master": [
+   0.31,
+   0.4,
+   0.43,
+   0.5,
+   0.6,
+   0.69,
+   0.77,
+   0.86,
+   0.92,
+   0.97,
+   1.0
+  ],
+  "remember": [
+   0.36,
+   0.36,
+   0.34,
+   0.46,
+   0.59,
+   0.7,
+   0.81,
+   0.89,
+   0.97,
+   1.0
+  ],
+  "Understand": [
+   0.39,
+   0.43,
+   0.48,
+   0.61,
+   0.7,
+   0.82,
+   0.91,
+   1.0
+  ],
+  "forget": [
+   0.32,
+   0.39,
+   0.42,
+   0.55,
+   0.7,
+   0.83,
+   0.94,
+   1.0
+  ]
+ },
+ "caption_geometry": {
+  "centre_x_W": 0.5,
+  "block_y_H": [
+   0.56,
+   0.74
+  ],
+  "small_glyph_h_px": 22,
+  "big_glyph_h_px": 50,
+  "ratio": 2.3,
+  "list_label_h_px": 46,
+  "shadow_halo": "none measurable"
+ },
+ "colours": {
+  "bg": "#040004",
+  "orange_rim_peak": "#DC8438",
+  "orange_rim_median": "#953C26",
+  "cool_fill": "#465C70",
+  "skin": "#9C7668",
+  "shirt": "#B4A6A6",
+  "cyan_accent": "#2EC0D7",
+  "title_bg": "#020308",
+  "ribbon_edge": "#5D5E62..#BAB7BB",
+  "title_text": "#F1EFF3",
+  "white_bg": "#FFFFFF",
+  "grid": "#F1F1F1",
+  "black_text": "#100D11",
+  "bulbs": "#FDEE96"
+ },
+ "music": {
+  "hat_period_s": 0.2254,
+  "bpm_8ths": 133.1,
+  "bpm_triplet_reading": 88.7,
+  "hats_on_grid": "134/161",
+  "drop_t": 3.36,
+  "beat_out": [
+   1.0,
+   3.3
+  ],
+  "cuts_on_hat_grid_34ms": "3/10 (chance 30%)",
+  "keywords_on_hat_grid_34ms": "7/23 (chance 30%)"
+ },
+ "sfx": {
+  "stereo_transients": [
+   3.22,
+   5.05,
+   5.84,
+   7.2,
+   8.57,
+   10.94,
+   11.49,
+   12.28,
+   12.91,
+   16.22,
+   18.76,
+   19.5,
+   20.27,
+   24.12,
+   25.93,
+   26.82,
+   27.5,
+   32.7,
+   33.14,
+   33.94
+  ],
+  "visual_events_hit_120ms": "7/20 (chance 14%)"
+ },
+ "loudness": {
+  "I_LUFS": -14.1,
+  "TP_dBTP": -0.8,
+  "LRA": 1.0,
+  "music_only_gap_rms_dBFS": -18.7,
+  "speech_plus_music_rms_dBFS": -15.5
+ },
+ "title_bg_clip_restart_corr": 0.99
+}

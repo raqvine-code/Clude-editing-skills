@@ -1,0 +1,2174 @@
+# QUICK INDEX - all video-editing skills
+Generated 2026-11-26 by `VIDEO EDITING MASTERY/tools/build_index.py`. Paths are relative to `/Users/raghusai/Desktop/CLAUDE 2.0/skills`.
+Use: find the topic, then Read the file at the listed line (offset) instead of loading whole skills.
+
+## Contents
+- [_edit-kit](#edit-kit) - 
+- [_video-analysis-tools](#video-analysis-tools) - 
+- [aasil-khan-longform-edit-style](#aasil-khan-longform-edit-style) - Use when editing, captioning or storyboarding a 16:9 long-form talking-head explainer built on numbers, stages or a fram
+- [ae-builder](#ae-builder) - "Use to turn an animation (code, MP4, storyboard or HTML/canvas) into an After Effects ExtendScript that rebuilds it as 
+- [aesthetic-pro-reel-edit-style](#aesthetic-pro-reel-edit-style) - Use for every short of the client who asked (2026-11-25) for "aesthetic font subtitles like the Instagram channels, and 
+- [app-product-animation](#app-product-animation) - Use for SaaS / product motion-graphics videos with no talking head (app UI, cards, cursor, type-on, logo bookends) - "Sa
+- [beginner-to-pro-edit-tips](#beginner-to-pro-edit-tips) - Use on EVERY edit that has graphics or animation (reels, long-form, intros, thumbnails), while designing and again in fi
+- [broll-library](#broll-library) - Use when editing a video, placing B-roll on a script/voiceover line, searching footage (coding, AI, college, exams, mone
+- [client-video-editing-process](#client-video-editing-process) - Use for any client edit request, "make this boring video high-engagement", professional motion graphics on a talking hea
+- [edit-kit-playbook](#edit-kit-playbook) - Use on every edit (short or long) as the second layer after my-editing-rules - the distilled Edit-Kit (40 open-source Hy
+- [event-map-reel-edit-style](#event-map-reel-edit-style) - Use when planning, editing, captioning, sound-designing or reviewing ANY 9:16 short - the event-map method (something ne
+- [faceless-explainer-reel-edit-style](#faceless-explainer-reel-edit-style) - Use when planning, editing, building or reviewing a 9:16 faceless voice-over explainer reel (no camera footage) in the e
+- [fonts-and-colours](#fonts-and-colours) - Use before choosing any font, caption style, title card, heading or colour palette for a Deepak video. Holds his approve
+- [mistakes-to-avoid](#mistakes-to-avoid) - Use before ANY video edit, before every style frame, and in the final QA pass of every video. Deepak's rejected moves fr
+- [motion-graphics-style](#motion-graphics-style) - Use when making motion graphics, montage pacing / cut rhythm, kinetic typography, keyword/title cards, long-form explain
+- [motivational-video-editing](#motivational-video-editing) - Use before any motivational or "motivation + AI concepts" edit. Distilled lessons from three YouTube motivation referenc
+- [mustard-red-caption-style](#mustard-red-caption-style) - Use for the subtitles / captions of every short for the client who asked (2026-11-25) for "aesthetic subtitles in mustar
+- [my-editing-rules](#my-editing-rules) - Use at the start of ANY video-editing task for Deepak (Tech Boy Deepak - reels/YouTube for Indian students on tech caree
+- [png-library](#png-library) - Use when adding pop-up images, stickers, logos or overlays to a video, or asked "which PNG fits here?". Index and prep r
+- [pro-font-and-subtitle-guide](#pro-font-and-subtitle-guide) - Read on EVERY edit before choosing fonts, captions, subtitles, titles, lower thirds or thumbnail text, for any form (9:1
+- [pro-video-editing](#pro-video-editing) - Use when planning, editing, animating, reviewing or rendering a short-form or talking-head video in a premium creator st
+- [reel-editing-method](#reel-editing-method) - Use when editing a talking-head video into a high-engagement 9:16 reel with motion graphics, captions, HUD elements, beh
+- [shorts-editing-pro](#shorts-editing-pro) - Use for ANY 9:16 short, reel or YouTube Short edit (talking head first): cut to the voice, hook, word-by-word captions, 
+- [skill-saver](#skill-saver) - Use whenever Deepak gives an editing preference, correction or rule ("remember this", "always/never X"), approves an edi
+- [sound-and-music-design](#sound-and-music-design) - Use for any "improve the SFX / BGM / audio design" request, generic or repetitive-sounding edits, scoring a long-form vi
+- [text-animation-moves](#text-animation-moves) - Use whenever on-screen words must arrive with a designed move in a short or long video - a word stack that builds word b
+- [text-highlight-match-cut](#text-highlight-match-cut) - Use in every video edit when the script quotes a source, cites a number/fact, names a person/company/tool, says "accordi
+- [tharun-speaks-edit-style](#tharun-speaks-edit-style) - "Use when editing, captioning or planning a vertical talking-head reel in the Tharun Speaks style - word-pop captions, b
+- [tharun-speaks-longform-edit-style](#tharun-speaks-longform-edit-style) - Use when editing, captioning or storyboarding a 16:9 / 2:1 long-form talking-head list video (5-15 min, numbered "secret
+- [thumbnail-strategy](#thumbnail-strategy) - Use when making, improving, reviewing or A/B-testing a YouTube thumbnail for Tech Boy Deepak, pairing title + thumbnail,
+- [top-editor-styles](#top-editor-styles) - "Use when editing, planning or reviewing a video in the style of a top creator: MrBeast challenge, Hormozi talking-head,
+- [ue-sound-design](#ue-sound-design) - Use for sound designing a finished edit the Ultimate Editors (Joseph) way - three families (whooshes for movement, textu
+- [ultimate-editors-shortform-style](#ultimate-editors-shortform-style) - Use when editing a 9:16 talking-head short in the Ultimate Editors look (= profile P15) or when the user says "Ultimate 
+- [video-intro-design](#video-intro-design) - Use for any short, very dense intro, hook, cold open or title sequence (20-40 s) cut from one locked-off talking-head ta
+- [video-styles-atlas](#video-styles-atlas) - Read on EVERY edit when picking the ONE style (CLAUDE.md Rule 2). One table of every video form - 9:16 talking head, aes
+- [watch](#watch) - Watch any video link (YouTube long-form, YouTube Shorts, Instagram Reels, TikTok) or local video file frame by frame, le
+- [where-to-find-assets](#where-to-find-assets) - Use when a script line needs an asset the local B-roll/PNG libraries lack, when stuck for a visual idea, or when asked "
+- [youtube-long-video-editing](#youtube-long-video-editing) - Use when editing any 16:9 long-form YouTube explainer (10-30 min, multi-segment CapCut exports), combining segments into
+
+## _edit-kit
+- `_edit-kit/skills/anime-cel/SKILL.md` (77 lines) - Make Japanese TV-anime style videos (MP4) with code — cel-shaded characters with tapered line art, big detailed eyes, hair clumps with a spe
+- `_edit-kit/skills/blender-product-film/SKILL.md` (109 lines) - Premium 3D product films rendered in Blender (headless, GPU) — dark studio, rim light, light sweeps, glass/liquid/metal materials, condensat
+- `_edit-kit/skills/camera-arc/SKILL.md` (48 lines) - Turn a flat, already-shot clip into a slow, real-feeling 3D camera ARC (orbit) move — 2.5D parallax from per-frame AI depth, rendered by a t
+- `_edit-kit/skills/captions-overlay/SKILL.md` (84 lines) - Overlay doctrine for the embedded-captions workflow — the caption MODEL (drop / rail / embed) and the rule that captions are an OVERLAY comp
+- `_edit-kit/skills/crayon-storybook/SKILL.md` (81 lines) - Make warm children's picture-book animations (MP4) drawn in crayon, coloured pencil and pastel on cream drawing paper — waxy crayon scribble
+- `_edit-kit/skills/cut-the-curve/SKILL.md` (261 lines) - "The technique catalog: five velocity-matched SEAMS (zoom-through, INVERSE zoom-through, cut-the-curve, waterfall cut, rack-focus blur-cut) 
+- `_edit-kit/skills/director/SKILL.md` (73 lines) - The one command for the Edit Kit - give it a raw clip, a script or just an idea and it delivers a finished, professionally edited video. Ask
+- `_edit-kit/skills/edit/SKILL.md` (47 lines) - START HERE. Edit Kit is the one command for the whole editing kit - give it a raw clip, a script or just an idea and it delivers a finished,
+- `_edit-kit/skills/embedded-captions/SKILL.md` (261 lines) - Add captions or subtitles to an existing single-subject talking-head video without editing the
+- `_edit-kit/skills/faceless-explainer/SKILL.md` (236 lines) - "Turn arbitrary text — an article, notes, a topic, a brief — into a faceless explainer video: there is no site or footage to capture, so the
+- `_edit-kit/skills/ffmpeg/SKILL.md` (433 lines) - Video and audio processing with FFmpeg. Use for format conversion, resizing, compression, audio extraction, and preparing assets for Remotio
+- `_edit-kit/skills/figma/SKILL.md` (133 lines) - Import Figma content into a HyperFrames composition — rendered assets, brand tokens, components, storyboard sections → reconstructed motion 
+- `_edit-kit/skills/frontend-design/SKILL.md` (72 lines) - Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typog
+- `_edit-kit/skills/fx/SKILL.md` (82 lines) - Shared motion-graphics effects library and build engine for the Edit Kit (HyperFrames + GSAP). Use whenever an edit needs kinetic typography
+- `_edit-kit/skills/general-video/SKILL.md` (166 lines) - Author or edit a custom HyperFrames composition when no specialized workflow fits, or when
+- `_edit-kit/skills/motion-doctrine/SKILL.md` (176 lines) - "GATEWAY — load FIRST before composing any HyperFrames animation or video. The high-level motion law that makes a multi-scene video feel lik
+- `_edit-kit/skills/motion-graphics/SKILL.md` (177 lines) - A short, design-led motion graphic where motion is the message — kinetic
+- `_edit-kit/skills/music-to-video/SKILL.md` (209 lines) - "Turn a music track (an audio file, a video to pull audio from, or a track generated from a mood brief) into a beat-synced video — lyric vid
+- `_edit-kit/skills/oversized-cursor/SKILL.md` (140 lines) - House-style oversized macOS cursor technique for HyperFrames launch videos. Load whenever a scene involves cursors or a pointer-led action, 
+- `_edit-kit/skills/painted-animation/SKILL.md` (86 lines) - Make hand-painted watercolour-and-ink cartoon videos (MP4) with code — p5.js + p5.brush rendered frame by frame in headless Chrome, encoded 
+- `_edit-kit/skills/paper-cutout/SKILL.md` (74 lines) - Make paper cut-out / stop-motion style animated videos (MP4) with code — handmade construction paper, cardstock, kraft, felt and tissue piec
+- `_edit-kit/skills/particle-system/SKILL.md` (230 lines) - This skill should be used when the user asks to "build a particle system", "make confetti/snow/smoke/sparks", "create a connected-dot/conste
+- `_edit-kit/skills/pixel-art/SKILL.md` (70 lines) - Make modern, polished pixel-art animated videos (MP4) with code — indie-game look (Celeste / Eastward / Stardew-level scenes, original), 480
+- `_edit-kit/skills/pr-to-video/SKILL.md` (272 lines) - "Turn a GitHub pull request (a PR URL, owner/repo#N, or 'this PR' in a checked-out repo) into a code-change explainer video — changelog, fea
+- `_edit-kit/skills/product-launch-video/SKILL.md` (263 lines) - "Turn a product or marketing URL, pasted script, or brief into a product launch / promo video — SaaS promos, feature reveals, product demos,
+- `_edit-kit/skills/qa/SKILL.md` (46 lines) - Final quality gate for Edit Kit videos - format, loudness, SFX sync, and a frame-by-frame visual check (safe zone, face clear, captions read
+- `_edit-kit/skills/reels/SKILL.md` (50 lines) - Edit raw talking-head or phone footage into a finished 9:16 Reel / TikTok / Short with kinetic captions, smooth zooms, words behind the subj
+- `_edit-kit/skills/remotion-to-hyperframes/SKILL.md` (131 lines) - 'Port an existing Remotion (React) composition''s source to HyperFrames HTML. Use ONLY on an explicit ask to port/convert/migrate/translate 
+- `_edit-kit/skills/saas/SKILL.md` (50 lines) - Create a fully code-built motion graphics promo from a prompt alone (no footage) - SaaS / product / agency launch videos in the viral Opus-s
+- `_edit-kit/skills/seam-craft/SKILL.md` (71 lines) - Render-correctness doctrine for scene-to-scene seams in HyperFrames launch videos — the prerequisites that make transitions composite correc
+- `_edit-kit/skills/shader-glsl/SKILL.md` (211 lines) - This skill should be used when the user asks to "write a fragment shader", "make a GLSL gradient/noise/plasma background", "create an image 
+- `_edit-kit/skills/slideshow/SKILL.md` (531 lines) - Author a HyperFrames slideshow — a presentation, pitch deck, or interactive
+- `_edit-kit/skills/sound/SKILL.md` (66 lines) - Separate audio pass for Edit Kit edits - SFX that land exactly on each visual impact frame at -17 dB, a very soft music bed under the voice,
+- `_edit-kit/skills/talking-head-recut/SKILL.md` (1219 lines) - Package an existing talking-head / interview / podcast video with timed, designed GRAPHIC OVERLAY cards — kinetic titles, lower-thirds, data
+- `_edit-kit/skills/theme/SKILL.md` (79 lines) - Decide colours, fonts and card design for an Edit Kit edit. For a client, always use that client's brand kit (colours, fonts, logo, cards, d
+- `_edit-kit/skills/threejs-animation/SKILL.md` (253 lines) - This skill should be used when the user asks to "build a 3D hero section or WebGL background", "animate a Three.js scene", "play or crossfad
+- `_edit-kit/skills/video-clone/SKILL.md` (145 lines) - 參考影片風格克隆器 — 使用者給一支參考影片（本機檔案、螢幕錄影或 YouTube/網址）加上一句需求（「做一支類似風格的影片，主軸是…」），就拆解它的剪法與視覺風格、判斷屬於哪種風格、交給對應的製作 skill，寫分鏡、做動畫、逐格自我審查，最後輸出 MP4 並依回饋修改。Us
+- `_edit-kit/skills/video-shotcraft/SKILL.md` (277 lines) - Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D
+- `_edit-kit/skills/vox-director/SKILL.md` (332 lines) - Turn ONE topic into a finished Vox-style paper-collage explainer / ad video, end to end
+- `_edit-kit/skills/whiteboard/SKILL.md` (93 lines) - Make hand-drawn whiteboard / doodle-explainer / sketch-note animation videos (MP4) with code — marker lines that draw themselves on, a carto
+- `_edit-kit/skills/youtube/SKILL.md` (65 lines) - Edit talking-head, interview or explainer footage into a 16:9 YouTube video (1920x1080 or 4K) with key words or kinetic captions, smooth imp
+
+## _video-analysis-tools
+- `_video-analysis-tools/README.md` (37 lines)
+  - L16: Browser reference capture (added 2026-11-25)
+- `_video-analysis-tools/band_onsets.py` (28 lines)
+  - usage: python -I band_onsets.py <mono wav>. Loudness, energy share per band, per-band onset times (20 ms hop), 1 s RMS profile. (ref69, 2026
+- `_video-analysis-tools/gsheet.py` (22 lines)
+  - Aspect-agnostic labelled contact sheets (16:9, 1:1 and 9:16). (refs 70-74, 2026-10-09)
+- `_video-analysis-tools/motion_curve.py` (23 lines)
+  - usage: python -I motion_curve.py <ffmpeg path> <video>. Frame-difference at 60 fps, luma and saturation per second, biggest jumps (= hard cu
+- `_video-analysis-tools/refsheet.py` (46 lines)
+  - Overview sheets for a reference video: 1 frame per STEP s, 6x5 tiles, each labelled with its time and the words spoken
+- `_video-analysis-tools/sfx_analysis.py` (83 lines)
+  - SFX / music forensic analysis of a reference video from Demucs stems + a frame-difference visual event track.
+- `_video-analysis-tools/specpanel.py` (33 lines)
+  - Spectrogram panels (accompaniment stem) around given event times, red line = picture event.
+- `_video-analysis-tools/spectrogram_log.py` (34 lines)
+  - usage: python -I spectrogram_log.py <mono wav> <out.png>. Log-frequency spectrogram with second ticks, plus a low-band tempo guess and onset
+- `_video-analysis-tools/strip.py` (27 lines)
+  - Frame-accurate strip: frames from t0 to t1 at FPS, 8 per row, each labelled with its time (s, 2 decimals).
+- `_video-analysis-tools/track.py` (74 lines)
+  - Track one shape per frame at 60 fps and classify its easing. (refs 70-74, 2026-10-09)
+- `_video-analysis-tools/vidsheet.py` (42 lines)
+  - Overview sheets of a video with SRT text under each frame: 1 frame per STEP s, 6x5 tiles.
+
+## aasil-khan-longform-edit-style
+_Use when editing, captioning or storyboarding a 16:9 long-form talking-head explainer built on numbers, stages or a framework (income breakdown, roadmap, "how I did X", tool or business lesson, 8-15 min) in the Aasil Khan style - low-key blue A-roll hard-cut a_
+- `aasil-khan-longform-edit-style/LEARNING-REPORT.md` (31 lines)
+  - L3: 2026-11-21: first reference video
+  - L8: Confidence
+  - L24: Not done / weak
+  - L29: To raise confidence
+- `aasil-khan-longform-edit-style/SKILL.md` (100 lines)
+  - L12: Evidence labels
+  - L19: When to choose this style
+  - L27: A. The three worlds (Measured shares)
+  - L34: B. Rules
+  - L60: C. Setup recipe (0:00-1:19, Measured)
+  - L71: D. Caption system (sizes Measured by OCR on 27 caption frames; text-box height as % of frame height, so multip
+  - L84: E. Workflow for new footage
+  - L95: F. Do not copy
+- `aasil-khan-longform-edit-style/references/graphics-catalogue.md` (67 lines)
+  - L6: 1. The three worlds
+  - L16: 2. Recurring devices (the spine of the video)
+  - L26: 3. One-off scenes
+  - L42: 4. Overlays on the A-roll
+  - L54: 5. Screen recordings
+  - L59: 6. Transitions
+- `aasil-khan-longform-edit-style/references/video1-8-85-lakh.md` (133 lines)
+  - L7: How it was studied (coverage)
+  - L17: Measured numbers
+  - L33: Measured colours (sampled from frames)
+  - L51: Chapter map
+  - L73: Pacing shape
+  - L80: Sound map (Measured)
+  - L86: Type (closest free matches, Observed)
+  - L95: Speech numbers (Measured, word-level transcript, 2,492 words)
+  - L104: Caption numbers (Measured by OCR on a sample of 27 caption frames; box height and position as % of the frame)
+  - L117: Whole-video text numbers (Measured, OCR at 5 fps on all 3,535 frames, 2,456 text events)
+  - L128: Limits
+
+## ae-builder
+_"Use to turn an animation (code, MP4, storyboard or HTML/canvas) into an After Effects ExtendScript that rebuilds it as a clean, hand-editable project: rigs, keyframes fitted to match the source easing exactly, slider-driven expressions a non-coder can steer, _
+- `ae-builder/SKILL.md` (302 lines)
+  - L18: 0. Before writing anything
+  - L37: 1. Read the source properly
+  - L48: 2. Project structure
+  - L67: 3. Shape layer rules
+  - L77: 4. Clipping: masks, track mattes, preserve transparency
+  - L93: 5. Characters
+  - L102: 6. Keyframes or expression?
+  - L115: 7. Keyframes that move exactly like the source
+  - L119: 7.1 The rule
+  - L122: 7.2 The traps that caused a 70% error
+  - L128: 7.3 How (generator side, Python)
+  - L140: 7.4 Apply (script side)
+  - L143: 7.5 Motion blur
+  - L146: 7.6 Verify (mandatory before delivery)
+  - L155: 8. Expressions a non-coder can drive
+  - L159: 8.1 Rules
+  - L171: 8.2 Systems library (in `assets/ae_build_lib.jsx`)
+  - L184: 9. Cameras and parallax
+  - L192: 10. Other AE craft rules
+  - L203: 11. Script engineering
+  - L205: 11.1 Shape of the deliverable script
+  - L208: 11.2 ExtendScript is ES3
+  - L211: 11.3 AE runtime facts (details: `references/ae_runtime_facts.md`)
+  - L219: 11.4 Build order per comp
+  - L225: 11.5 Testing gate (all mandatory before the first hand-off)
+  - L233: 11.6 When the user reports an AE error
+  - L242: 12. Make it obvious for a first-time human
+  - L252: 13. Delivery package and hand-off
+  - L254: 13.1 The zip (everything the script needs; the user never has to ask)
+  - L268: 13.2 Hand-off message (plain, short)
+  - L279: Bundled resources
+  - L292: On this Mac (added by Claude, 2026-11-22; not part of the received skill)
+- `ae-builder/assets/smoke_checks.json` (4 lines)
+- `ae-builder/references/ae_runtime_facts.md` (53 lines)
+  - L7: 1. ExtendScript is ES3
+  - L16: 2. Properties and handles
+  - L31: 3. Verified matchNames
+  - L42: 4. Build-time behaviour
+  - L50: 5. Sandbox facts (the environment Claude builds in)
+- `ae-builder/references/easing_translation.md` (104 lines)
+  - L3: Why the first rebuild felt wrong (measured)
+  - L20: The rule
+  - L25: Method
+  - L48: Never
+  - L56: Normalised preset table (2-key segment speeds in move/duration units)
+  - L78: When an expression IS the right tool for an overshoot
+- `ae-builder/references/postmortem_coh_rebuild.md` (26 lines)
+  - L20: Process lessons
+- `ae-builder/scripts/ease_fit.py` (236 lines)
+  - #!/usr/bin/env python3
+- `ae-builder/scripts/fetch_fonts.py` (79 lines)
+  - #!/usr/bin/env python3
+- `ae-builder/scripts/verify_curves.py` (47 lines)
+  - #!/usr/bin/env python3
+
+## aesthetic-pro-reel-edit-style
+_Use for every short of the client who asked (2026-11-25) for "aesthetic font subtitles like the Instagram channels, and fully advanced pro edits, not a normal edit" (the Naveen bro Telugu / English shorts), and for any request for an aesthetic, premium, advanc_
+- `aesthetic-pro-reel-edit-style/SKILL.md` (94 lines)
+  - L12: 1. What "advanced pro" is (measured, not guessed)
+  - L24: 2. The layer stack (build order)
+  - L34: 3. The insert menu (rotate; never two at once)
+  - L51: 4. Event grid for a 45 s Telugu short (fit to the real words)
+  - L61: 5. Sound for the inserts (levels from `ue-sound-design`)
+  - L65: 6. Rules
+  - L76: 7. Clashes (said to the user before an edit)
+  - L82: 8. QC (add to the `event-map-reel-edit-style` QC list)
+  - L91: 9. Status (2026-11-25)
+- `aesthetic-pro-reel-edit-style/references/instagram-references.md` (33 lines)
+  - L23: Numbers across the 11 references
+  - L30: Web notes (2026, mostly tool-vendor blogs, so read them as direction only)
+
+## app-product-animation
+_Use for SaaS / product motion-graphics videos with no talking head (app UI, cards, cursor, type-on, logo bookends) - "SaaS video", "product demo animation", "app UI motion graphics", "feature explainer", "logo + UI reveal", or a client wanting SaaS-style motio_
+- `app-product-animation/SKILL.md` (144 lines)
+  - L9: 1. Structure
+  - L12: 2. Motion grammar
+  - L23: 3. Typography
+  - L29: 4. Grade and colour
+  - L34: 5. SFX recipe (carries the impact)
+  - L55: 6. Build with our kit
+  - L58: 7. Showreel and promo formats (refs 62-63)
+  - L63: 8. Professional SaaS Short: problem, product, result, CTA (ref 69)
+  - L97: 9. Smooth-animation study (refs 70-74)
+  - L128: 10. Checklist
+  - L131: 11. Talking-head product review adaptation (IKKO MindOne)
+  - L134: 12. Premium SaaS news show on a talking head (AI Tech News ep 02)
+  - L140: 13. 3D product explainer without Blender (video 15 Mini LED Backlight)
+- `app-product-animation/original-full.md` (216 lines)
+  - L12: 1. Structure (all three references)
+  - L15: 2. Motion grammar (frame-accurate rules)
+  - L26: 3. Typography
+  - L32: 4. Grade and colour (measured)
+  - L37: 5. SFX recipe (measured — `audio_ref09.md`, `audio_ref10.md`, `audio_ref11.md`; SFX carries the impact)
+  - L59: 6. How to build one with our kit
+  - L62: 6b. Two more formats *(refs 62–63, 2026-10-06 — Deepak: "high demand in the market, I want this type")*
+  - L77: 6c. "Professional SaaS motion" Short: problem → product → result → CTA *(ref 69, 2026-10-09)*
+  - L125: 6d. Smooth-animation study: five UI/UX promo clips *(refs 70–74, 2026-10-09)*
+  - L173: 7. Checklist
+  - L176: 8. On a talking-head product review (IKKO MindOne, 2026-09-30)
+  - L187: 9. Premium SaaS news show on a talking head *(AI Tech News ep 02, 2026-10-15; refs 80–81)*
+  - L204: 10. Rebuilding a 3D product explainer without Blender *(video 15 Mini LED Backlight, 2026-10-16)*
+
+## beginner-to-pro-edit-tips
+_Use on EVERY edit that has graphics or animation (reels, long-form, intros, thumbnails), while designing and again in final QC - three rules heard in the user's training video of 2026-11-22 - (1) stop oversizing, make every element 25 % smaller, (2) stop overu_
+- `beginner-to-pro-edit-tips/SKILL.md` (50 lines)
+  - L13: Rule 1: stop oversizing everything
+  - L22: Rule 2: stop overusing effects
+  - L31: Rule 3: use more dull colours
+  - L41: Final QC (add to the export check of every edit)
+  - L46: When another skill disagrees (tell the user before continuing)
+- `beginner-to-pro-edit-tips/references/transcript.md` (44 lines)
+  - L5: Raw talking head (76.3 s) with the retake and the pauses
+  - L28: Finished reel (49.75 s)
+  - L42: Cut from raw to reel
+
+## broll-library
+_Use when editing a video, placing B-roll on a script/voiceover line, searching footage (coding, AI, college, exams, money, jobs, motivation, emotions, flags, social CTAs, icons, backgrounds, transitions), or asked "which B-roll fits this part?". Index, technic_
+- `broll-library/SKILL.md` (41 lines)
+  - L11: Picking B-roll for a line
+  - L21: Professional-first rule (2026-09-29)
+  - L24: Technical rules
+  - L33: Category index (counts of Pro entries are large; see catalog for filenames)
+  - L37: Maintenance
+- `broll-library/catalog.md` (1973 lines)
+  - L7: Coding, laptops & tech setups
+  - L9: `87.gif`
+  - L16: `arrange.mp4`
+  - L23: `coding 3.mp4`
+  - L30: `coding 4.mp4`
+  - L37: `edit.mp4`
+  - L44: `game set up.mp4`
+  - L51: `laptop 1.mp4`
+  - L58: `laptops.mp4`
+  - L65: `mouse.mp4`
+  - L72: `work 1.mp4`
+  - L79: `work.mp4`
+  - L86: `coding 1.mp4`
+  - L93: `coding 2.mp4`
+  - L100: `codings.mp4`
+  - L108: `editing 1.mp4`
+  - L115: `editing.mp4`
+  - L122: `laptop.mp4`
+  - L129: `typing 1.mp4`
+  - L136: `typing 3.mp4`
+  - L144: `typing.mp4`
+  - L152: AI, tech companies & logos
+  - L154: `ai flow.mp4`
+  - L161: `ai tools.mp4`
+  - L168: `chips.mp4`
+  - L175: `drive.jpeg`
+  - L182: `google logo.mp4`
+  - L189: `insta .mp4`
+  - L196: `microsoft.mp4`
+  - L203: `python.mp4`
+  - L210: `2ef870a917d917edcbeb721c88420269.jpg`
+  - L217: `AI 1.mp4`
+  - L225: `insta logo.jpg`
+  - L232: `meta png.jpeg`
+  - L239: `aiii.mp4`
+  - L247: `faang.jpeg`
+  - L255: Electronics (ECE), factories & engineering
+  - L257: `ece 1.mp4`
+  - L264: `ece 3.mp4`
+  - L271: `ece 4.mp4`
+  - L278: `ece 6.mp4`
+  - L285: `ece.mp4`
+  - L292: `energy .mp4`
+  - L299: `factory 1.mp4`
+  - L306: `factory.mp4`
+  - L313: Study, exams & books
+  - L315: `From KlickPin CF Creative Book Reveal – Motion Inspiration _ Video.mp4`
+  - L322: `list.jpg`
+  - L329: `maths.mp4`
+  - L336: `study 3.mp4`
+  - L343: `study 5.mp4`
+  - L350: `studying.mp4`
+  - L357: `write 1.mp4`
+  - L364: `writing.mp4`
+  - L371: `book 1.mp4`
+  - L378: `books.mp4`
+  - L385: `study 1.mp4`
+  - L392: `write.mp4`
+  - L399: `study 2.mp4`
+  - L406: `study 4.mp4`
+  - L414: College, school & students
+  - L416: `class 2.mp4`
+  - L423: `college.mp4`
+  - L430: `discuss 1.mp4`
+  - L437: `enjoy.png`
+  - L444: `fees video.mp4`
+  - L451: `graduate.mp4`
+  - L458: `hope students.png`
+  - L465: `stage fear.mp4`
+  - L472: `student.png`
+  - L479: `students.png`
+  - L486: `class 1.mp4`
+  - L493: `college 1.mp4`
+  - L500: `parents.mp4`
+  - L507: `school.mp4`
+  - L514: `class.mp4`
+  - L522: Jobs, office, meetings & interviews
+  - L524: `From Klickpin.com- Discover Trending small kitchen organization for your next inspiration board using ideas t
+  - L532: `From Main Klickpin CF- Man taking property of orphan - lcLrO1H7G.mp4`
+  - L540: `bag video.mp4`
+  - L547: `boss.mp4`
+  - L554: `call .mp4`
+  - L561: `discuss 2.mp4`
+  - L568: `discuss.mp4`
+  - L575: `friends.mp4`
+  - L582: `i Handshake.mp4`
+  - L589: `interview 1.mp4`
+  - L596: `interview 2.mp4`
+  - L603: `meetings.mp4`
+  - L610: `office bag.mp4`
+  - L617: `office work.mp4`
+  - L624: `students.mp4`
+  - L631: `interview.mp4`
+  - L638: `meeting 1.mp4`
+  - L645: Money, salary, payments & finance
+  - L647: `Digital pay 1 .mp4`
+  - L654: `Money .mp4`
+  - L661: `Money Rain.mp4.mov`
+  - L669: `cash .mp4`
+  - L676: `cash.png`
+  - L683: `coin.jpg`
+  - L690: `digital pay.mp4`
+  - L697: `dollar.mp4`
+  - L704: `ece 5.mp4`
+  - L712: `money 1.mp4`
+  - L719: `money chase.mp4`
+  - L726: `money count.mp4`
+  - L733: `money graph.mp4`
+  - L740: `money lose.mp4`
+  - L747: `money smell.mp4`
+  - L754: `money.mp4`
+  - L761: `moneys.mp4`
+  - L768: `pursue.mp4`
+  - L775: `tax.mp4`
+  - L782: `trading 1.mp4`
+  - L789: `money 2.mp4`
+  - L796: `money machine.mp4`
+  - L803: `hook.jpg`
+  - L811: Emotions & people (confused, stressed, sad, shocked, crowds)
+  - L813: `211052630dea3ffefda0596d193be199_720w.mp4`
+  - L820: `angry.png`
+  - L827: `burden.jpg`
+  - L834: `cbd95149bd6ac829583c53b12aaa5cfd.jpg`
+  - L841: `confusee.jpg`
+  - L848: `doubts.mp4`
+  - L855: `doubtssss.jpg`
+  - L862: `explain.jpg`
+  - L869: `eyes.mp4`
+  - L876: `mobile use.mp4`
+  - L883: `peoples.mp4`
+  - L890: `sad .mp4`
+  - L897: `shock.mp4`
+  - L904: `sleep.mp4`
+  - L911: `stress.png`
+  - L918: `toy.mp4`
+  - L925: `unknown man.jpg`
+  - L932: `confuse boy.mp4`
+  - L939: `confuse.jpg`
+  - L946: `peoples 1.mp4`
+  - L953: `time pass.mp4`
+  - L960: `pngtree-surprised-expressive-happy-man-celebrating-with-excitement-png-image_16504464.png`
+  - L967: Motivation, success, growth & ideas
+  - L969: `726e40b9a3d5f4ca43c48bb84a363f3e.mp4`
+  - L976: `bow.mp4`
+  - L983: `brain.mp4`
+  - L990: `brains.mp4`
+  - L997: `bulb.mp4`
+  - L1004: `c1f327799c7c2a0c34b469c7b434580f.jpg`
+  - L1011: `chess.mp4`
+  - L1018: `exercise.mp4`
+  - L1025: `eye.mp4`
+  - L1032: `graph 1.mp4`
+  - L1039: `help.mp4`
+  - L1046: `idea.png`
+  - L1053: `lv_0_20260526163945.mp4`
+  - L1060: `man.jpeg`
+  - L1067: `motivate.mp4`
+  - L1074: `rise.mp4`
+  - L1081: `running.mp4`
+  - L1088: `sucess.jpg`
+  - L1095: `think.jpeg`
+  - L1102: `traingle.mp4`
+  - L1109: `ups 1.mp4`
+  - L1116: `ups.mp4`
+  - L1123: `batman.mp4`
+  - L1130: `dream.mp4`
+  - L1137: `fall.mp4`
+  - L1144: `hands mp4.mp4`
+  - L1151: `ideas.jpg`
+  - L1158: `route.mp4`
+  - L1165: `star png.jpg`
+  - L1172: `superman.mp4`
+  - L1179: `trophy.jpeg`
+  - L1187: `win.mp4`
+  - L1194: Social media, engagement & Tech Boy Deepak branding
+  - L1196: `chat.png`
+  - L1203: `comment.mp4`
+  - L1210: `like.mp4`
+  - L1217: `message.mp4`
+  - L1224: `mobile view.mp4`
+  - L1231: `outro.mp4`
+  - L1238: `save.mp4`
+  - L1245: `savee.mp4`
+  - L1252: `share button.mp4`
+  - L1259: `share.mp4`
+  - L1266: `social media.mp4`
+  - L1273: `sub button.mp4`
+  - L1280: `subscribe button .mp4`
+  - L1287: `tbd.mp4`
+  - L1295: `tech boy follow.mp4`
+  - L1302: `views increse.mp4`
+  - L1309: `abhi follow button.mp4`
+  - L1316: `bargav follow button.mp4`
+  - L1323: `follow.mp4`
+  - L1330: `sent.mp4`
+  - L1337: `views.mp4`
+  - L1344: `viewsss.mp4`
+  - L1352: `upload.mp4`
+  - L1359: Icons, arrows, counters & motion-graphic elements
+  - L1361: `10 min.mp4`
+  - L1369: `73 Family Dinner Ideas for Weekends - Pin-1084874997737814236.mp4`
+  - L1377: `From KlickPin CF think3 _ Digital Marketing Agency Derby on Instagram Circles in motion 🟣 Drawing inspi...rec
+  - L1384: `arrow 1.mp4`
+  - L1391: `arrow 2.mp4`
+  - L1398: `arrows.mp4`
+  - L1405: `ball.mp4`
+  - L1412: `battery icon.mp4`
+  - L1419: `bubble.mp4`
+  - L1426: `cd2bcdf6808749bc0ffa83572507a4b0.jpg`
+  - L1433: `circle.mp4`
+  - L1440: `correct.mp4`
+  - L1447: `dates.mp4`
+  - L1454: `document.mp4`
+  - L1461: `e9aed732150bd7df4643302e146fdd91.jpg`
+  - L1468: `finding.mp4`
+  - L1475: `i Home.mp4`
+  - L1482: `loading.mp4`
+  - L1489: `loadingg.mp4`
+  - L1496: `maps.mp4`
+  - L1503: `numbers.mp4`
+  - L1510: `on png.mp4`
+  - L1517: `reuse.mp4`
+  - L1524: `ring.mp4`
+  - L1531: `smoke.mp4`
+  - L1538: `sound video.mp4`
+  - L1545: `sound.mp4`
+  - L1552: `timee.mp4`
+  - L1559: `vibrate.mp4`
+  - L1566: `wrong.mp4`
+  - L1573: `years.mp4`
+  - L1580: `80 perc.mp4`
+  - L1587: `arrow.mp4`
+  - L1595: `arrowss.mp4`
+  - L1603: `count.mp4`
+  - L1610: `numberss.mp4`
+  - L1617: `roadmap.mp4`
+  - L1624: Countries, flags, maps & Earth
+  - L1626: `UAE.mp4`
+  - L1633: `china.mp4`
+  - L1640: `earth video.mp4`
+  - L1647: `earth.mp4`
+  - L1654: `india png.jpeg`
+  - L1661: `map.mp4`
+  - L1668: `india flag.mp4`
+  - L1675: `indo map.mp4`
+  - L1683: `iran map.mp4`
+  - L1690: `japan flag.mp4`
+  - L1697: `saudi arabia.mp4`
+  - L1704: Health, lifestyle, cars, food, movies & misc
+  - L1706: `covid.mp4`
+  - L1713: `driving .mp4`
+  - L1720: `food test.mp4`
+  - L1727: `old age.mp4`
+  - L1734: `photography.mp4`
+  - L1741: `play game.mp4`
+  - L1748: `premium.mp4`
+  - L1755: `anime 1.mp4`
+  - L1762: `anime 2.mp4`
+  - L1770: `anime 4.mp4`
+  - L1778: `body.mp4`
+  - L1786: `car 1.mp4`
+  - L1794: `elonmusk.mp4`
+  - L1801: `hollywood.mp4`
+  - L1808: `popcorn png.jpeg`
+  - L1816: `health issue.mp4`
+  - L1824: `health.mp4`
+  - L1832: `heart beat.mp4`
+  - L1840: `images.jpeg`
+  - L1848: Backgrounds, templates & transitions
+  - L1850: `template 16.mp4`
+  - L1857: `template 2.mp4`
+  - L1864: `template 3.mp4`
+  - L1871: `template 4.mp4`
+  - L1878: `template 5.mp4`
+  - L1885: `template 6.mp4`
+  - L1892: `template 7.mp4`
+  - L1899: `template 8.mp4`
+  - L1906: `template 9.mp4`
+  - L1913: `template1 .mp4`
+  - L1920: `templates 10.mp4`
+  - L1927: `templates 11.mp4`
+  - L1934: `templates 13.mp4`
+  - L1941: `transisition.mp4`
+  - L1948: `transistion .mp4`
+  - L1955: `template 15.mp4`
+  - L1962: `transisition 1.mp4`
+  - L1970: Audio file in the B-roll folder
+  - L1972: `ES_Relentless Pursuit - Howard Harper-Barnes.mp3`
+- `broll-library/original-full.md` (93 lines)
+  - L11: How to pick a B-roll for a script line
+  - L19: Professional-first rule (Deepak, 2026-09-29)
+  - L27: Technical rules (derived from the files themselves)
+  - L36: Category index (⭐ Pro · ✅ Usable · ⛔ Avoid)
+  - L89: Rules learned from Deepak
+  - L92: Maintenance
+
+## client-video-editing-process
+_Use for any client edit request, "make this boring video high-engagement", professional motion graphics on a talking head, camera keyframes/zooms/rolls, price/number reveals, map/route beats, SaaS-style product reviews, or when reusing the Mr. Unbox build kit._
+- `client-video-editing-process/SKILL.md` (112 lines)
+  - L10: 0. Rules learned (read first)
+  - L24: 1. Pipeline
+  - L34: 2. Footage correction (selective, mask-based)
+  - L41: 3. Design system
+  - L45: 4. Beat structure (25 s)
+  - L48: 5. Build kit (`.../code/`)
+  - L54: 6. Gotchas
+  - L72: 7. What worked / rejected
+  - L76: 8. QA outcome (v4 -> v5)
+  - L80: 9. Checklist
+  - L83: 10. Draft 3 — IKKO MindOne review (SaaS-style, 32.73 s, 14 cuts)
+- `client-video-editing-process/original-full.md` (142 lines)
+  - L12: 0. Rules learned in this project (read first)
+  - L26: 1. Pipeline (do in this order)
+  - L36: 2. Footage correction recipe (selective, mask-based)
+  - L42: 3. Design system used
+  - L46: 4. Beat structure that worked (25 s)
+  - L49: 5. Build kit (files in `edited videos by claude/2. Mr Unbox iPhone 18 Pro/code/`)
+  - L63: 6. Gotchas (all hit in this project)
+  - L86: 7. What worked / what did not
+  - L90: 8. QA workflow outcome (v4 master -> v5) — what six lenses + skeptics found
+  - L113: 9. Checklist for the next client reel
+  - L116: 10. Draft 3 — IKKO MindOne review (SaaS-style product review, 2026-09-30)
+
+## edit-kit-playbook
+_Use on every edit (short or long) as the second layer after my-editing-rules - the distilled Edit-Kit (40 open-source HyperFrames video skills, vendored in skills/_edit-kit) - routing, beat grammar, speech-to-visual map, theme and typography rules, caption mod_
+- `edit-kit-playbook/SKILL.md` (151 lines)
+  - L18: 1. Router: which kit skill for which job
+  - L38: 2. Pipeline (maps onto ours)
+  - L47: 3. Beat grammar
+  - L57: 4. Speech -> visual map (visual must match the exact words)
+  - L76: 5. Theme and typography
+  - L89: 6. Caption model (embedded-captions)
+  - L108: 7. Motion law (motion-doctrine, cut-the-curve)
+  - L118: 8. Sound (kit fallback; `sound-and-music-design` wins)
+  - L127: 9. QA additions (kit `qa`)
+  - L133: 10. Reusable code
+  - L147: 11. Styles the kit names (pick ONE, see presets files)
+
+## event-map-reel-edit-style
+_Use when planning, editing, captioning, sound-designing or reviewing ANY 9:16 short - the event-map method (something new every 1.3 s, every visual caused by a word, every change has a sound) plus two measured styles - P13 two-tier kinetic talking head (small _
+- `event-map-reel-edit-style/LEARNING-REPORT.md` (22 lines)
+  - L3: 2026-11-22 - "zip 2" analysis pack learned (no edit, nothing rendered)
+  - L13: 2026-11-22 - scorecard set up on this Mac (user said "Yes, set it up")
+  - L18: 2026-11-22 - tool audit ("download what is needed to edit like a pro")
+- `event-map-reel-edit-style/SKILL.md` (122 lines)
+  - L20: When to choose this style
+  - L32: 1. Three laws (true in all five reels) (M)
+  - L37: 2. Event map (goes into PLAN.md as the shot table)
+  - L45: 3. Sync table (word → event) (M)
+  - L59: 4. Sound grammar (M, measured not heard)
+  - L69: 5. P13 Two-tier kinetic talking head (R1, R4)
+  - L80: 6. P14 Faceless 2.5D documentary (R2, R3)
+  - L90: 7. RAW vs EDITED wrapper (R4 layout) (M)
+  - L93: 8. Borrow in our talking-head shorts (S)
+  - L101: 9. QC before delivery (adds to `shorts-editing-pro/references/export-qc.md`)
+  - L111: 10. House rules win
+  - L116: 11. Tools
+- `event-map-reel-edit-style/references/devices.md` (90 lines)
+  - L6: Data and evidence
+  - L32: Lists
+  - L41: Identity and metaphor
+  - L64: Text devices
+  - L85: Overlays and glue
+- `event-map-reel-edit-style/references/format-a-editorial-motion-graphics.md` (146 lines)
+  - L10: 1. Identity (the 6 things that make it this style)
+  - L19: 2. Script and pacing template
+  - L36: 3. Two scene looks
+  - L52: 4. Typography
+  - L66: 5. Text animation
+  - L75: 6. Motion rules
+  - L84: 7. Motion-graphic devices
+  - L91: 8. Transitions (use in this ratio)
+  - L104: 9. Colour and grade
+  - L111: 10. Sound design
+  - L119: 11. Build workflow
+  - L131: 12. QC checklist
+  - L144: 13. Not this style
+- `event-map-reel-edit-style/references/format-b-talking-head.md` (116 lines)
+  - L7: 1. What the edit is for
+  - L14: 2. Three modes and their rhythm
+  - L26: 3. Captions (two-tier)
+  - L50: 4. Camera on the speaker
+  - L64: 5. Composites and cutaways (R4 devices; recipes in `devices.md`)
+  - L80: 6. Transitions in this format
+  - L92: 7. Sound in this format
+  - L101: 8. Grade (R1 lighting recipe; R4 shows the edit added none)
+  - L106: 9. Format D — the before/after showcase wrapper (R4)
+- `event-map-reel-edit-style/references/format-c-faceless-documentary.md` (129 lines)
+  - L7: 1. Identity
+  - L18: 2. Story structure
+  - L40: 3. Building a scene (2.5D diorama)
+  - L58: 4. Transitions (recipes in `transitions.md`)
+  - L67: 5. Text as object
+  - L89: 6. Colour script
+  - L98: 7. Sound
+  - L112: 8. CTA in the reel's language
+  - L121: 9. Mistakes to beat
+- `event-map-reel-edit-style/references/transitions.md` (113 lines)
+  - L6: Hide-the-cut (same scene, same speaker)
+  - L20: Speaker ↔ graphics
+  - L38: Chapter / section breaks
+  - L55: New place or time (faceless)
+  - L87: Meaning-driven
+- `event-map-reel-edit-style/references/pack/CROSS-REEL.md` (29 lines)
+  - L15: What the numbers say
+- `event-map-reel-edit-style/references/pack/pack-README.md` (57 lines)
+  - L6: Start here
+  - L13: Install the skill
+  - L19: Contents
+  - L42: How it was verified
+  - L51: Caveats
+- `event-map-reel-edit-style/references/pack/pack-skill-as-received.md` (268 lines)
+  - L24: 1. The method in one paragraph
+  - L33: 2. Pick the format
+  - L49: 3. Workflow (the event map)
+  - L79: 4. Story spine and pacing
+  - L100: 5. The hook (first 3.5 s)
+  - L116: 6. Sync rules (word → event)
+  - L132: 7. Text systems
+  - L158: 8. Camera and motion
+  - L182: 9. Transitions: choose by meaning
+  - L202: 10. Sound design
+  - L226: 11. Colour and finishing
+  - L238: 12. Surpass the references (QC checklist)
+  - L259: 13. Reverse-engineering a new reference
+- `event-map-reel-edit-style/references/pack/analysis/R0-editorial-explainer/NOTES.md` (146 lines)
+  - L10: 1. Identity (the 6 things that make it this style)
+  - L19: 2. Script and pacing template
+  - L36: 3. Two scene looks
+  - L52: 4. Typography
+  - L66: 5. Text animation
+  - L75: 6. Motion rules
+  - L84: 7. Motion-graphic devices
+  - L91: 8. Transitions (use in this ratio)
+  - L104: 9. Colour and grade
+  - L111: 10. Sound design
+  - L119: 11. Build workflow
+  - L131: 12. QC checklist
+  - L144: 13. Not this style
+- `event-map-reel-edit-style/references/pack/analysis/R0-editorial-explainer/data/frames.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R0-editorial-explainer/data/scorecard.json` (46 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R0-editorial-explainer/scripts/au.py` (34 lines)
+  - import sys, numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R0-editorial-explainer/scripts/au2.py` (24 lines)
+  - import sys, numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R0-editorial-explainer/scripts/tr.py` (9 lines)
+  - import sys, numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/NOTES.md` (222 lines)
+  - L9: 0 Identity
+  - L19: 1 Beat sheet table
+  - L37: 2 Hook dissection (f0–99, 3.30 s; sheets `hook_full_15fps`, `hook_cap_a/b_30fps`)
+  - L53: 3 Typography and captions
+  - L75: 4 Motion and camera
+  - L95: 5 Transitions catalogue
+  - L110: 6 Motion-graphic devices and metaphors
+  - L120: 7 Colour and finishing
+  - L139: 8 Sound
+  - L172: 9 Storytelling and retention devices
+  - L191: 10 Weaknesses and mistakes (so we can surpass it)
+  - L206: 11 Steal list (recipes with numbers)
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/data/frames.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/data/r1_measures.json` (258 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/data/scale_chain.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/data/scale_vs_f900.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/data/scorecard.json` (56 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/scripts/capdet.py` (18 lines)
+  - # Count near-white neutral pixels in caption band per frame; print frames where count jumps (new word) or drops (clear).
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/scripts/chain.py` (37 lines)
+  - # Within-shot chained similarity transform (frame n-1 -> n) to get zoom curve per shot.
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/scripts/direct.py` (27 lines)
+  - # Direct (non-chained) similarity fit between shot-start frame and later frames, captions masked out.
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/scripts/scale.py` (40 lines)
+  - # Track camera scale/translation of the talking-head shots relative to a common wide reference frame.
+- `event-map-reel-edit-style/references/pack/analysis/R1-talking-head-tips/scripts/topel.py` (30 lines)
+  - # Track the warm bokeh cluster near the top: centroid, area, colour; compare with chained global translation.
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/NOTES.md` (425 lines)
+  - L9: 0 Identity
+  - L15: 1 Beat sheet
+  - L40: 2 Hook dissection (0–3.4 s)
+  - L62: 3 Typography and on-screen text
+  - L64: 3.1 Inventory (sizes from `data/textmeasure.txt`, at 720 px wide)
+  - L80: 3.2 The rule behind the fonts
+  - L90: 3.3 Where text is withheld
+  - L98: 3.4 Entrance styles (frame counts)
+  - L110: 3.5 Per-word sync vs Whisper (32 words; onset frame = round(t×30); first-visible frames from the 1–2 f sheets 
+  - L153: 4 Motion and camera
+  - L155: 4.1 House move: "rotate + pull-back settle" (measured, `data/camseg.txt`)
+  - L182: 4.2 2.5D build per scene (layers, parallax, depth of field)
+  - L197: 4.3 Motion continuing across scene changes
+  - L208: 5 Transitions catalogue
+  - L234: 6 Motion-graphic devices and metaphors
+  - L274: 7 Colour and finishing
+  - L276: 7.1 Colour script (per-second luma/sat from `data/cuts.txt`; k-means from `data/palette.txt`)
+  - L300: 7.2 Finishing
+  - L311: 8 Sound
+  - L313: 8.1 Mix and level (`data/loudness.txt`, `data/side_detail.txt`, `data/bed.txt`)
+  - L322: 8.2 SFX classes (side_events.txt + mono sub-bass hits from gaps.txt)
+  - L331: 8.3 SFX-to-visual alignment (frame offsets)
+  - L364: 9 Storytelling and retention devices
+  - L387: 10 Weaknesses and mistakes (to surpass)
+  - L403: 11 Steal list (recipes with numbers)
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/data/frames.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/data/scorecard.json` (51 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/scripts/angles.py` (16 lines)
+  - import sys,cv2,numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/scripts/bed.py` (18 lines)
+  - import sys,numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/scripts/camseg.py` (29 lines)
+  - # Summarise dominant-plane camera motion per segment (360x640 frames; px reported at 720 wide)
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/scripts/halftone.py` (18 lines)
+  - import sys,cv2,numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/scripts/hex.py` (34 lines)
+  - import sys,cv2,numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/scripts/palette.py` (18 lines)
+  - import sys,cv2,numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R2-faceless-documentary/scripts/vig.py` (13 lines)
+  - import sys,cv2,numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R3-faceless-news-mystery/NOTES.md` (408 lines)
+  - L8: 0 Identity
+  - L14: 1 Beat sheet
+  - L41: 2 Hook dissection (0–3.0 s, frame by frame)
+  - L67: 3 Typography and on-screen text
+  - L162: 4 Motion and camera
+  - L203: 5 Transitions catalogue
+  - L228: 6 Motion-graphic devices and metaphors
+  - L247: 7 Colour and finishing
+  - L288: 8 Sound
+  - L357: 9 Storytelling and retention devices
+  - L374: 10 Weaknesses and mistakes
+  - L392: 11 Steal list (recipes with numbers)
+- `event-map-reel-edit-style/references/pack/analysis/R3-faceless-news-mystery/data/cam.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R3-faceless-news-mystery/data/frames.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R3-faceless-news-mystery/data/meas1.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R3-faceless-news-mystery/data/scorecard.json` (52 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R3-faceless-news-mystery/scripts/aud2.py` (73 lines)
+  - import sys, numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R3-faceless-news-mystery/scripts/cam.py` (23 lines)
+  - # per-frame similarity transform (scale, rotation, tx, ty) between consecutive frames using ORB+RANSAC
+- `event-map-reel-edit-style/references/pack/analysis/R3-faceless-news-mystery/scripts/camsum.py` (15 lines)
+  - import sys, json, numpy as np
+- `event-map-reel-edit-style/references/pack/analysis/R3-faceless-news-mystery/scripts/meas1.py` (66 lines)
+  - import sys, json, numpy as np, cv2
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/NOTES.md` (307 lines)
+  - L12: 0 Identity
+  - L18: 1 Beat sheet
+  - L54: 2 Hook dissection (0–3.73 s, f0–112)
+  - L74: 3 Typography and captions
+  - L138: 4 Motion and camera
+  - L158: 5 Transitions catalogue
+  - L179: 6 Motion-graphic devices and metaphors
+  - L197: 7 Colour and finishing (hex)
+  - L209: 8 Sound
+  - L220: 9 Storytelling and retention devices
+  - L237: 10 Weaknesses and mistakes (so we can surpass it)
+  - L254: 11 Steal list (recipes with numbers)
+  - L274: 12 RAW vs EDITED delta
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/data/frames.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/data/panel_frames.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/data/raw_to_ed.json` (1 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/data/scorecard.json` (44 lines)
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/scripts/caps.py` (39 lines)
+  - import cv2, numpy as np, sys
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/scripts/cols.py` (23 lines)
+  - import cv2, numpy as np, sys
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/scripts/geom.py` (27 lines)
+  - import cv2, numpy as np, sys
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/scripts/geom2.py` (23 lines)
+  - import cv2, numpy as np, sys
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/scripts/grade.py` (41 lines)
+  - import cv2, numpy as np, sys
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/scripts/music.py` (23 lines)
+  - import numpy as np, sys
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/scripts/pal.py` (17 lines)
+  - import cv2, numpy as np, sys
+- `event-map-reel-edit-style/references/pack/analysis/R4-talking-head-showcase/scripts/sync.py` (23 lines)
+  - import cv2, numpy as np, sys
+- `event-map-reel-edit-style/references/pack/analysis-tools/ametrics.py` (38 lines)
+  - # usage: python3 -I ametrics.py <reel_dir>
+- `event-map-reel-edit-style/references/pack/analysis-tools/cross.py` (76 lines)
+  - # cross-reel pacing + sync statistics.  usage: python3 -I cross.py <v2_dir>
+- `event-map-reel-edit-style/references/pack/analysis-tools/quiet_cal.py` (26 lines)
+  - import sys, cv2, numpy as np
+- `event-map-reel-edit-style/references/pack/analysis-tools/r4_cuts.py` (39 lines)
+  - import sys, glob, json, numpy as np, cv2
+- `event-map-reel-edit-style/references/pack/analysis-tools/r4_match.py` (28 lines)
+  - # Estimate similarity transform RAW panel -> EDITED panel per frame (scale, tx, ty, rotation, inliers)
+- `event-map-reel-edit-style/references/pack/analysis-tools/side_events.py` (47 lines)
+  - # Side-channel (L-R) event detector: isolates stereo SFX/music from centred voice.
+- `event-map-reel-edit-style/references/pack/analysis-tools/transcribe.py` (14 lines)
+  - # usage: python3 -I transcribe.py <reel_dir> [model]
+- `event-map-reel-edit-style/references/pack/analysis-tools/vmetrics.py` (49 lines)
+  - # usage: python3 -I vmetrics.py <reel_dir>
+- `event-map-reel-edit-style/references/reels/R1-talking-head-tips.md` (226 lines)
+  - L13: 0 Identity
+  - L23: 1 Beat sheet table
+  - L41: 2 Hook dissection (f0–99, 3.30 s; sheets `hook_full_15fps`, `hook_cap_a/b_30fps`)
+  - L57: 3 Typography and captions
+  - L79: 4 Motion and camera
+  - L99: 5 Transitions catalogue
+  - L114: 6 Motion-graphic devices and metaphors
+  - L124: 7 Colour and finishing
+  - L143: 8 Sound
+  - L176: 9 Storytelling and retention devices
+  - L195: 10 Weaknesses and mistakes (so we can surpass it)
+  - L210: 11 Steal list (recipes with numbers)
+- `event-map-reel-edit-style/references/reels/R2-faceless-documentary.md` (429 lines)
+  - L13: 0 Identity
+  - L19: 1 Beat sheet
+  - L44: 2 Hook dissection (0–3.4 s)
+  - L66: 3 Typography and on-screen text
+  - L68: 3.1 Inventory (sizes from `data/textmeasure.txt`, at 720 px wide)
+  - L84: 3.2 The rule behind the fonts
+  - L94: 3.3 Where text is withheld
+  - L102: 3.4 Entrance styles (frame counts)
+  - L114: 3.5 Per-word sync vs Whisper (32 words; onset frame = round(t×30); first-visible frames from the 1–2 f sheets 
+  - L157: 4 Motion and camera
+  - L159: 4.1 House move: "rotate + pull-back settle" (measured, `data/camseg.txt`)
+  - L186: 4.2 2.5D build per scene (layers, parallax, depth of field)
+  - L201: 4.3 Motion continuing across scene changes
+  - L212: 5 Transitions catalogue
+  - L238: 6 Motion-graphic devices and metaphors
+  - L278: 7 Colour and finishing
+  - L280: 7.1 Colour script (per-second luma/sat from `data/cuts.txt`; k-means from `data/palette.txt`)
+  - L304: 7.2 Finishing
+  - L315: 8 Sound
+  - L317: 8.1 Mix and level (`data/loudness.txt`, `data/side_detail.txt`, `data/bed.txt`)
+  - L326: 8.2 SFX classes (side_events.txt + mono sub-bass hits from gaps.txt)
+  - L335: 8.3 SFX-to-visual alignment (frame offsets)
+  - L368: 9 Storytelling and retention devices
+  - L391: 10 Weaknesses and mistakes (to surpass)
+  - L407: 11 Steal list (recipes with numbers)
+- `event-map-reel-edit-style/references/reels/R3-faceless-news-mystery.md` (412 lines)
+  - L12: 0 Identity
+  - L18: 1 Beat sheet
+  - L45: 2 Hook dissection (0–3.0 s, frame by frame)
+  - L71: 3 Typography and on-screen text
+  - L166: 4 Motion and camera
+  - L207: 5 Transitions catalogue
+  - L232: 6 Motion-graphic devices and metaphors
+  - L251: 7 Colour and finishing
+  - L292: 8 Sound
+  - L361: 9 Storytelling and retention devices
+  - L378: 10 Weaknesses and mistakes
+  - L396: 11 Steal list (recipes with numbers)
+- `event-map-reel-edit-style/references/reels/R4-talking-head-showcase.md` (311 lines)
+  - L16: 0 Identity
+  - L22: 1 Beat sheet
+  - L58: 2 Hook dissection (0–3.73 s, f0–112)
+  - L78: 3 Typography and captions
+  - L142: 4 Motion and camera
+  - L162: 5 Transitions catalogue
+  - L183: 6 Motion-graphic devices and metaphors
+  - L201: 7 Colour and finishing (hex)
+  - L213: 8 Sound
+  - L224: 9 Storytelling and retention devices
+  - L241: 10 Weaknesses and mistakes (so we can surpass it)
+  - L258: 11 Steal list (recipes with numbers)
+  - L278: 12 RAW vs EDITED delta
+- `event-map-reel-edit-style/tools/reel_metrics.py` (267 lines)
+  - #!/usr/bin/env python3
+- `event-map-reel-edit-style/tools/score_reel.py` (106 lines)
+  - #!/usr/bin/env python3
+
+## faceless-explainer-reel-edit-style
+_Use when planning, editing, building or reviewing a 9:16 faceless voice-over explainer reel (no camera footage) in the editorial motion-graphics style - white studio cutout scenes that flip once to dark glow object scenes, blur-in two-font word-by-word caption_
+- `faceless-explainer-reel-edit-style/LEARNING-REPORT.md` (25 lines)
+  - L3: 2026-11-21 - first study ("zip 1 .zip" from Downloads)
+  - L8: Corrections to the pack (from its own frames)
+  - L17: Not verified
+  - L24: Next
+- `faceless-explainer-reel-edit-style/SKILL.md` (189 lines)
+  - L10: When to choose this style
+  - L27: 1. What makes it this style
+  - L35: 2. Beat map (M, frames at 30 fps)
+  - L58: 3. Script shape (reuse the shape, write new words)
+  - L74: 4. The two looks
+  - L88: 5. Type
+  - L101: 6. Text animation
+  - L115: 7. Transitions (9 scene changes in 30 s)
+  - L125: 8. Motion rules
+  - L132: 9. Graphic devices
+  - L138: 10. Colour (M, sampled by the pack)
+  - L143: 11. Sound (M: measured from the audio, nobody listened)
+  - L150: 12. Using it in our edits (S)
+  - L176: 13. QC
+  - L188: Do not copy
+- `faceless-explainer-reel-edit-style/references/pack/pack-README.md` (22 lines)
+  - L5: Install the skill
+  - L9: Contents
+  - L20: Caveats
+- `faceless-explainer-reel-edit-style/references/pack/pack-skill-as-received.md` (147 lines)
+  - L11: 1. Identity (the 6 things that make it this style)
+  - L20: 2. Script and pacing template
+  - L37: 3. Two scene looks
+  - L53: 4. Typography
+  - L67: 5. Text animation
+  - L76: 6. Motion rules
+  - L85: 7. Motion-graphic devices
+  - L92: 8. Transitions (use in this ratio)
+  - L105: 9. Colour and grade
+  - L112: 10. Sound design
+  - L120: 11. Build workflow
+  - L132: 12. QC checklist
+  - L145: 13. Not this style
+- `faceless-explainer-reel-edit-style/references/pack/analysis/scripts/au.py` (34 lines)
+  - import sys, numpy as np
+- `faceless-explainer-reel-edit-style/references/pack/analysis/scripts/au2.py` (24 lines)
+  - import sys, numpy as np
+- `faceless-explainer-reel-edit-style/references/pack/analysis/scripts/tr.py` (9 lines)
+  - import sys, numpy as np
+
+## fonts-and-colours
+_Use before choosing any font, caption style, title card, heading or colour palette for a Deepak video. Holds his approved font list with free stand-ins, per-role type-system rules, change-every-video rule, fonts/palettes already used or disliked, and palettes _
+- `fonts-and-colours/SKILL.md` (98 lines)
+  - L8: Fonts Deepak gave me
+  - L30: Files he downloaded (2026-10-09) - `/Users/raghusai/Downloads/Fonts Used By Creators/`
+  - L40: Rules
+  - L49: Already used - don't repeat
+  - L66: Colour
+  - L74: Reference palettes (study only, measured from frames; not a choice)
+  - L96: Central font files (added 2026-11-22)
+- `fonts-and-colours/original-full.md` (95 lines)
+  - L8: Fonts Deepak gave me
+  - L32: Rules
+  - L43: Already used — don't repeat next time
+  - L55: Colour
+  - L62: Palettes and type studied from the "new reference" folder (2026-10-09, refs 67–69; measured from frames, fonts
+  - L81: Font files Deepak downloaded (2026-10-09) — `/Users/raghusai/Downloads/Fonts Used By Creators/`
+  - L94: Motivation refs 75-77 (2026-10-13)
+
+## mistakes-to-avoid
+_Use before ANY video edit, before every style frame, and in the final QA pass of every video. Deepak's rejected moves from delivered videos (Day 03, video 13 Top 5 Skills, AI Tech News ep 02) with the fix for each - coloured backgrounds behind his cut-out, clu_
+- `mistakes-to-avoid/SKILL.md` (102 lines)
+  - L10: A. Backgrounds
+  - L14: B. Clutter on the footage
+  - L20: C. Labels and small type
+  - L24: D. Gimmicks
+  - L30: E. Captions
+  - L34: F. Pacing and sync ("pacing not sync")
+  - L43: G. Reference patterns that break the rules (Claude's conflict check, 2026-10-09)
+  - L53: H. "Only text and basic sound effects" (video 13 Top 5 Skills, rejected 2026-10-13)
+  - L63: I. Designed stand-ins that read as evidence (ep 02 v1 -> v2, 2026-10-16)
+  - L70: J. "Not that pretty" (16. Uncertainty Short, feedback 2026-11-16)
+  - L85: How to use
+  - L94: K. Learned from the Edit-Kit and 2026-11-17 references (pre-emptive, not yet user feedback)
+- `mistakes-to-avoid/original-full.md` (74 lines)
+  - L10: A. Backgrounds
+  - L14: B. Clutter on the footage
+  - L20: C. Labels and small type
+  - L24: D. Gimmicks
+  - L30: E. Captions
+  - L34: F. Pacing and sync (his note: "pacing not sync")
+  - L43: G. Reference patterns that break the rules above (Claude's conflict check, 2026-10-09 — not Deepak's words)
+  - L54: H. "Only text and basic sound effects" (video 13, Top 5 Skills, rejected 2026-10-13)
+  - L63: I. Designed stand-ins that read as evidence (ep 02 v1 → v2, Deepak 2026-10-16)
+  - L70: How to use this skill
+
+## motion-graphics-style
+_Use when making motion graphics, montage pacing / cut rhythm, kinetic typography, keyword/title cards, long-form explainer infographics, charts, diagrams, split or framed talking-head layouts, luxury serif, dark neon, red-glass, frosted-glass or editorial prin_
+- `motion-graphics-style/SKILL.md` (200 lines)
+  - L10: 1. Typography
+  - L19: Cinematic font set (Short "Best cinematic fonts to try in 2025"; Deepak's grading still pending, don't rank)
+  - L23: Font-grading reel (Short "Top 5 Fonts I Use Daily", 11.2 s, read at 10 fps)
+  - L26: 2. Layout and background
+  - L33: 3. Objects and visuals
+  - L40: 4. Motion
+  - L44: 5. Colour grade
+  - L49: 6. Sound
+  - L54: 7. Story shapes
+  - L59: 8. Fast-flow creator edit (ref07 Tharun Speaks, ref08 Somrat Dutta)
+  - L71: 9. Highlight + match cut
+  - L74: 10. Editorial print-grain explainer (refs 14-40; default for 16:9 long-form explainers on careers, companies, 
+  - L84: 11. Black faded overlay (Iman Gadzhi tutorial; learn-only)
+  - L89: 12. Podcast / interview intro (6 stills of "Raw Talks with VK #142"; fonts/timing inferred)
+  - L93: 13. Y2K / retro-futurist premium (details in `video-intro-design`)
+  - L100: 14. Giant type behind the head
+  - L103: 15. Red-glass educator look (refs 41-49; list/framework/"5 lanes" explainers; stills, so fonts/blur inferred)
+  - L114: 16. Montage pacing from launch films (refs 50-56; Deepak: "only pacing")
+  - L127: 17. Concept explainer on a talking head (refs 57-58, Aishwarya Srinivasan RAG / vector DB)
+  - L140: 18. Motivation red world and frosted-glass explainer (refs 67-68; 38 stills + 6 recordings; ignore player chro
+  - L175: 19. Adapting to a talking head (Deepak's videos)
+  - L179: 20. In-the-room editorial system (Day 03 "How machines are trained", approved on 5 style frames 2026-10-07; **
+  - L189: 21. Long-form references (refs 75-82)
+- `motion-graphics-style/original-full.md` (418 lines)
+  - L16: Typography
+  - L29: Cinematic font set *(YouTube Short "Best cinematic fonts to try in 2025", youtube.com/shorts/zsnD2OjwEsQ, 12 s
+  - L40: Font-grading reel (keyframe pattern) *(YouTube Short "Top 5 Fonts I Use Daily as a Video Editor", youtube.com/
+  - L49: Layout & background
+  - L60: Objects / visuals
+  - L76: Motion
+  - L81: Transitions
+  - L86: Colour grade
+  - L94: Sound
+  - L101: Story shape
+  - L106: Fast-flow creator edit *(ref07 Tharun Speaks, ref08 Somrat Dutta — 2026-09-30)*
+  - L121: Highlight + match cut *(ref12 Dhruv Rathee-style tutorial, ref13 match cut — 2026-09-30)*
+  - L126: Editorial print-grain explainer *(refs 14–40, Deepak's "refrences for claude" folder — 2026-09-30)*
+  - L138: Black faded overlay *(tutorial "How to Add a Black Faded Overlay Like Iman Gadzhi in Premiere Pro", Mujahid Fi
+  - L148: Podcast / interview intro *(6 screenshots of "Raw Talks with VK #142 – Allari Naresh" intro, pro editor, sent 
+  - L157: Y2K / retro-futurist, executed premium *(built on the Y2K intro, 2026-10-01)*
+  - L178: Giant type behind the head — the mechanics *(2026-10-01)*
+  - L184: Red-glass educator look *(refs 41–49, nine stills from a motion-design educator's YouTube video — 2026-10-01)*
+  - L217: Montage pacing from launch films and creator clips *(refs 50–56, the AI Tech News ep. 1 folder — 2026-10-02)*
+  - L231: Concept explainer on a talking head *(refs 57–58, Aishwarya Srinivasan's "Vector Databases Explained" and "RAG
+  - L259: Concept-explainer devices that carried Day 06 *(Claude's build, 2026-10-12 — Deepak approved the style frames;
+  - L267: Motivation red world and frosted-glass explainer *(refs 67–68, Deepak's "new reference" folder: 38 stills + 6 
+  - L272: ref67 — oxblood world, semantic gauges
+  - L301: ref68 — near-black frosted-glass explainer
+  - L313: Take / do not take (conflict check against `mistakes-to-avoid`)
+  - L317: Adapting to a talking-head (Deepak's tech videos)
+  - L326: In-the-room editorial system *(Day 03 — **see `mistakes-to-avoid` first: the yellow world, floating thumbnails
+  - L357: Motivation talking-head references (refs 75-77, 2026-10-13)
+  - L360: Somrat Dutta + Tharun Speaks long-form references *(refs 78–79, 2026-10-13: every 2 s of both videos read on 2
+  - L400: Tharun Speaks + Somrat Dutta, second pair *(refs 80–81, 2026-10-15, AI Tech News ep 02 brief: sheets every 2 s
+  - L413: Documentary evidence grammar *(ref82 Think School, youtu.be/e1cwjeP5Ofs, 16:33, 1080p — every 3 s read on six 
+
+## motivational-video-editing
+_Use before any motivational or "motivation + AI concepts" edit. Distilled lessons from three YouTube motivation references (colour, type, text animation, pacing, story, devices, transitions, SFX, B-roll) plus what not to copy and the v2 redo that worked. Princ_
+- `motivational-video-editing/SKILL.md` (78 lines)
+  - L10: Colour
+  - L16: Type
+  - L22: Text animation
+  - L28: Pacing
+  - L33: Story
+  - L36: Visual devices
+  - L43: Transitions and SFX
+  - L47: B-roll
+  - L56: Do NOT copy
+  - L61: Plan checklist ("motivation + 5 AI concepts")
+  - L64: What made the v2 redo work (video 13; v1 rejected as "only text and basic sound effects")
+  - L70: Applied: video 13 "Top 5 Skills to Stand Out in the AI Era"
+- `motivational-video-editing/original-full.md` (88 lines)
+  - L9: Colour I learnt
+  - L15: Font / text style I learnt
+  - L21: Text animation I learnt
+  - L28: Pacing I learnt
+  - L34: Story I learnt
+  - L42: Visual devices I learnt
+  - L49: Transitions I learnt
+  - L52: SFX I learnt (inferred from structure, I cannot hear)
+  - L55: B-roll I learnt
+  - L67: Do NOT copy (breaks Deepak's rules)
+  - L74: Plan checklist for "motivation + 5 AI concepts"
+  - L77: What made the v2 redo work *(video 13, 2026-10-13: he rejected v1 as "only text and basic sound effects")*
+  - L83: Applied on video 13 "Top 5 Skills to Stand Out in the AI Era" (2026-10-13, awaiting his review)
+
+## mustard-red-caption-style
+_Use for the subtitles / captions of every short for the client who asked (2026-11-25) for "aesthetic subtitles in mustard yellow and red" (the Naveen bro Telugu and English shorts), and whenever a request says mustard captions, yellow and red subtitles, aesthe_
+- `mustard-red-caption-style/SKILL.md` (139 lines)
+  - L15: 1. Palette (fixed for this client, every video)
+  - L31: 2. The three looks
+  - L32: M1 podcast serif (fallback) - from R1 Figuring Out
+  - L39: M2 golden caps - from R4 Kobe edit + R5 Hormozi
+  - L45: M3 film subtitle - from R6 (Instagram "vintage yellow subtitles" trend)
+  - L51: 2b. M4 Haldi-Kumkum (Claude's own look, default) - 2026-11-25
+  - L67: 2c. Client font pairings: round 4 (client brief, 2026-11-25)
+  - L100: 3. Placement and timing (all looks)
+  - L106: 4. shortkit settings (`skills/shorts-editing-pro/tools/shortkit.py`)
+  - L120: 5. Claude's ideas (C, not in any reference; use when they fit the plan)
+  - L125: 6. QC (add to the export check)
+  - L133: 7. Clashes with other skills (say these before editing; CLAUDE.md Rule 3)
+- `mustard-red-caption-style/references/client-font-brief.md` (66 lines)
+  - L16: A. The carousel: raktimcreates "font pairings you must try" (1,661 likes, 572 comments, 84 shares, 7 slides)
+  - L34: B. The reel: tobydeboer "Grind szn" (2,818 likes, 10 comments, 8.1 s, 16:9 1916x1078)
+  - L47: C. What it means for the client's shorts (talking head, 9:16, Telugu in English letters)
+- `mustard-red-caption-style/references/reference-reels.md` (35 lines)
+  - L18: Search notes
+  - L24: Round 2 (same day): aesthetic editing, captions and fonts in general
+  - L34: Round 3 (same day): Instagram advanced pro edits
+- `mustard-red-caption-style/tools/pairing_board.py` (204 lines)
+  - Font-pairing board on the client's own footage (mustard-red-caption-style section 8, 2026-11-25).
+- `mustard-red-caption-style/tools/restyle_edl.py` (86 lines)
+  - Restyle the captions of an existing shortkit EDL into a mustard-red look. Only "style" and "captions" change.
+- `mustard-red-caption-style/tools/style_board.py` (74 lines)
+  - One-page style board for a client pitch (2400x1350): look name, palette, fonts, three 9:16 frames.
+- `mustard-red-caption-style/tools/style_frames.py` (154 lines)
+  - Style frames for the mustard-red caption style (M1 podcast serif, M2 golden caps, M3 film subtitle).
+
+## my-editing-rules
+_Use at the start of ANY video-editing task for Deepak (Tech Boy Deepak - reels/YouTube for Indian students on tech careers, coding, AI, colleges, jobs, money) - script breakdown, B-roll/PNG placement, pacing, captions, hooks, music, transitions, briefs per vid_
+- `my-editing-rules/SKILL.md` (158 lines)
+  - L10: 1. Channel context
+  - L15: 2. Automatic routine (never wait for "save this")
+  - L35: 3. Standard workflow
+  - L54: 4. Keep his cut; patching vs rebuilding
+  - L62: 5. Briefs by video type
+  - L96: 6. Shorts (9:16)
+  - L106: 7. Hooks and openings
+  - L117: 8. Pacing and cuts
+  - L124: 9. B-roll, PNG, captions, CTA
+  - L131: 10. Music and SFX (details in `sound-and-music-design`)
+  - L144: 11. Transitions and effects
+  - L151: 12. Things Deepak dislikes (see `mistakes-to-avoid` for the full numbered list)
+- `my-editing-rules/original-full.md` (268 lines)
+  - L14: Channel context
+  - L18: Automatic routine — Deepak never has to say "save this" (2026-10-06)
+  - L43: Editing workflow
+  - L154: Hooks & openings
+  - L173: Pacing & cuts
+  - L185: B-roll placement
+  - L189: PNG / pop-up placement
+  - L193: Redoing a rejected video *(Deepak, 2026-10-13, video 13 v2)*
+  - L206: Captions & text
+  - L211: CTA & branding
+  - L215: Music & sound effects
+  - L229: Transitions & effects
+  - L238: Things Deepak dislikes
+  - L250: Approved insights
+
+## png-library
+_Use when adding pop-up images, stickers, logos or overlays to a video, or asked "which PNG fits here?". Index and prep rules for the 78 images in "png for claude/" (logos, AI robots, number stickers, exam props, money, reactions, places); full per-file entries_
+- `png-library/SKILL.md` (45 lines)
+  - L11: Picking a pop-up
+  - L16: Professional-first rule (2026-09-29)
+  - L19: Prep cheat-sheet
+  - L26: Gotchas
+  - L31: Category index (Pro / Usable / Avoid)
+  - L41: Maintenance
+- `png-library/catalog.md` (659 lines)
+  - L7: Number stickers (list/step counters)
+  - L9: `1 number sticker_motion graphics (1).jpeg`
+  - L18: `1 number sticker_motion graphics.jpeg`
+  - L26: `2 number sticker_motion graphics.jpeg`
+  - L34: `3 number sticker_motion graphics.jpeg`
+  - L42: `4 number sticker_motion graphics.jpeg`
+  - L50: `6.jpeg`
+  - L58: `4.jpeg`
+  - L67: Brand, app & company logos
+  - L69: `Amazon logo.pngg.jpeg`
+  - L77: `Amazon.jpeg`
+  - L85: `Gmail logo.jpeg`
+  - L93: `Scaler_Logo_WhiteBG (1).jpg`
+  - L101: `chatgpt.jpg`
+  - L109: `claude.jpg`
+  - L117: `cursor.jpeg`
+  - L125: `facebook logo.jpeg`
+  - L133: `gmail.jpeg`
+  - L141: `infosys.jpeg`
+  - L149: `microsoft.jpg`
+  - L157: `myntra.jpg`
+  - L165: `reel .jpeg`
+  - L173: `scalarr.png`
+  - L181: `settings icon.png`
+  - L189: `uber logo png.jpg`
+  - L197: `yt.jpeg`
+  - L205: AI, robots & tech gadgets
+  - L207: `ai 1.jpg`
+  - L215: `ai.jpg`
+  - L223: `coding.jpg`
+  - L231: `coding.png`
+  - L239: `robo.jpg`
+  - L247: `ai 2.jpg`
+  - L255: `hand.jpg`
+  - L263: `laptop.jpg`
+  - L271: `drone.jpeg`
+  - L280: Study, exams, college & documents
+  - L282: `book.jpg`
+  - L290: `books.jpg`
+  - L298: `certificate png.jpeg`
+  - L306: `eapcet jpeg.jpeg`
+  - L315: `exam.jpg`
+  - L323: `file.jpg`
+  - L331: `letter.jpg`
+  - L339: `papers.jpg`
+  - L347: `scholar.png`
+  - L355: `books.jpeg`
+  - L363: `test.jpeg`
+  - L372: `test paper.jpeg`
+  - L381: Money & payments
+  - L383: `atm.jpeg`
+  - L391: `money.jpg`
+  - L399: People, reactions & concepts
+  - L401: `30834b30e608bc6ae177ace2c61eb32e.jpg`
+  - L409: `ChatGPT Image Nov 2, 2025, 03_38_24 PM.png`
+  - L417: `ChatGPT Image Oct 11, 2025, 11_45_34 PM.png`
+  - L425: `Clock.png`
+  - L433: `d9874cf39316445896bd70980c9817c1.jpg`
+  - L441: `doubt.jpg`
+  - L449: `doubts .jpeg`
+  - L457: `doubts.jpg`
+  - L465: `fall png.png`
+  - L473: `go.jpeg`
+  - L481: `mask.png`
+  - L489: `me.jpeg`
+  - L497: `question.jpeg`
+  - L505: `tech boy deepak .jpeg`
+  - L514: `thug.jpg`
+  - L522: `trap.jpg`
+  - L530: `you.jpg`
+  - L538: `yt man.jpeg`
+  - L546: `kid.png`
+  - L555: `layer png.jpeg`
+  - L564: Places, buildings, transport, food & objects
+  - L566: `bullet train.jpeg`
+  - L574: `hospital.jpeg`
+  - L582: `time png.jpg`
+  - L590: `black.jpeg`
+  - L598: `bus.jpeg`
+  - L606: `delivery boys.jpg`
+  - L614: `hyd.jpg`
+  - L622: `ticket png.jpeg`
+  - L630: `building.jpg`
+  - L638: `cafe.jpeg`
+  - L647: `pani puri.jpeg`
+  - L656: Broken file
+  - L658: `gift.png`
+- `png-library/original-full.md` (68 lines)
+  - L11: How to pick a pop-up for a script line
+  - L17: Professional-first rule (Deepak, 2026-09-29)
+  - L25: Background / prep cheat-sheet
+  - L33: Gotchas
+  - L38: Category index (⭐ Pro · ✅ Usable · ⛔ Avoid)
+  - L64: Rules learned from Deepak
+  - L67: Maintenance
+
+## pro-font-and-subtitle-guide
+_Read on EVERY edit before choosing fonts, captions, subtitles, titles, lower thirds or thumbnail text, for any form (9:16 shorts / reels, 16:9 YouTube long-form, podcast clips, documentary, vlog / travel, cinematic / wedding, tutorial / SaaS, ads / UGC, Telugu_
+- `pro-font-and-subtitle-guide/SKILL.md` (128 lines)
+  - L12: 1. The rule of three
+  - L15: 2. Pick by video type (start here)
+  - L33: 2b. Pairing recipes (two fonts that look designer-made; learned 2026-11-25 from a client's carousel brief and 
+  - L50: 3. The library (all in `skills/fonts-and-colours/assets/fonts/`, free for commercial use)
+  - L64: 4. Subtitle and caption numbers
+  - L81: 5. Placement: safe zones (1080x1920)
+  - L96: 6. Telugu
+  - L114: 7. Licensing
+  - L119: 8. QC (fonts and subtitles)
+  - L127: 9. Sources (2026-11-25; vendor blogs are direction, not proof)
+- `pro-font-and-subtitle-guide/references/vertical-text-placement-research.md` (91 lines)
+  - L12: 1. What the platform UI covers on 1080 x 1920 [P]
+  - L23: 2. Where subtitles should sit relative to the speaker [S]
+  - L35: 3. What the short-form reels we already studied do [M]
+  - L69: 4. The rule (all three sources together)
+  - L85: Sources
+- `pro-font-and-subtitle-guide/tools/specimen.py` (62 lines)
+  - Font specimen sheet for the central library (skills/fonts-and-colours/assets/fonts).
+- `pro-font-and-subtitle-guide/tools/telugu_check.py` (69 lines)
+  - Telugu shaping check + specimen (2026-11-25, after `brew install fribidi` made Pillow's raqm work).
+
+## pro-video-editing
+_Use when planning, editing, animating, reviewing or rendering a short-form or talking-head video in a premium creator style learned from the user's reference library (glass spotlight motion ads, editorial red studio, podcast magazine edits, before/after showca_
+- `pro-video-editing/SKILL.md` (62 lines)
+  - L10: Evidence labels
+  - L13: Choosing a profile (do not blend profiles in one video)
+  - L34: Libraries
+  - L44: Core principles (all V across >= 2 references)
+  - L53: Applying to new footage
+  - L56: Continuous learning (when the user adds references)
+- `pro-video-editing/qc.md` (23 lines)
+  - L5: Automatic checks (tools)
+  - L11: Visual checklist
+  - L22: Side-by-side test against references
+- `pro-video-editing/workflow.md` (34 lines)
+  - L3: 0. Brief (ask only what you cannot infer)
+  - L6: 1. Ingest and measure the raw footage
+  - L10: 2. Story cut
+  - L14: 3. Shot-by-shot plan (write it before building)
+  - L17: 4. Build
+  - L24: 5. Sound
+  - L27: 6. Review (see qc.md), render sample 10-15 s first, then full.
+  - L29: 7. Deliver
+  - L32: Proven build path (16. Uncertainty Short, 2026-11-16)
+- `pro-video-editing/knowledge/CHANGELOG.md` (58 lines)
+  - L3: 2026-11-15 - initial build
+  - L13: 2026-11-16 - first real edit with this skill: "16. Uncertainty Short" (raw 1115, 64.5 s -> 47.5 s)
+  - L19: 2026-11-16 - v2 of "16. Uncertainty Short": real source page on the Gita beat
+  - L23: 2026-11-16 - second real edit: "17. Embarrassment Short" (raw tes2, 46.3 s -> 32.9 s)
+  - L29: 2026-11-17 - "18. Go All In" (1115 (1)(1).mp4 -> 16.4 s), built lean on the tes2 kit
+  - L36: 2026-11-17 - 4 references + Edit-Kit learned
+  - L42: 2026-11-21 - "zip 1" analysis pack learned -> P12
+  - L48: 2026-11-22 - "zip 2" analysis pack learned -> event-map method, P13, P14
+  - L54: 2026-11-22 - five skills received -> P15 + ue-sound-design + beginner-to-pro-edit-tips + watch + ae-builder
+- `pro-video-editing/knowledge/observations-frames.md` (80 lines)
+  - L5: f00ae5949170 "Let's make it pay" (P1)
+  - L18: 4a6cb105b501 (P1)
+  - L25: fdf671691d67 (P1 pixel variant)
+  - L31: 32ec48946f60 Hera (P2)
+  - L39: 91170c08735e Raj (P3 inside P4 shell)
+  - L44: 9783b41eed0a canvers 70x (P4)
+  - L48: 1ef4cbf46f08 somrat (P5)
+  - L53: 94a17cc80891 100 AI Agents (P5, 59.94 fps)
+  - L58: 7a74184fe0d2 AI Workflow (P5 glass-UI)
+  - L63: cab9807914a3 Intermediate (P5)
+  - L67: Cross-reference measurements
+  - L74: 2026-11-17 batch (dd0713672607, 48a38ca593e4, 8f956030b898, 0e5c76cf941e)
+- `pro-video-editing/knowledge/observations-raw.md` (62 lines)
+  - L5: A. aslaniedits (After Effects motion-design ads, 720x1280 30 fps, 7-8 s each)
+  - L6: 4a6cb105b501 "#aftereffects #videoediting #motiondesign" 8.22 s, -14.4 LUFS
+  - L12: fdf671691d67 "#aftereffects #motiondesign #videoediting" 6.89 s, -16.6 LUFS
+  - L16: f00ae5949170 "Let's make it pay" 7.54 s, -14.8 LUFS
+  - L21: 32ec48946f60 (SaveClip, duplicate file pair) 9.66 s, -14.0 LUFS  [same visual system as nikhil? no: light-grey
+  - L29: B. nikhilmotion.vlc (podcast before/after showcases, 716x1274 30 fps, ~16 s)
+  - L31: 91170c08735e (Raj Shamani) 16.23 s
+  - L36: 28d9fc8134d2 (Manoj Bajpayee) 16.69 s
+  - L38: 60a96c2030c4 (Storyboard, purple variant) 13.55 s
+  - L41: C. canvers.media 9783b41eed0a "70x more views" 15.81 s, -14.2 LUFS
+  - L45: D. YouTube-shorts reposts (16:9 content letterboxed in 9:16, 1080x1920 ~30/60 fps)
+  - L46: 1ef4cbf46f08 somratdutta "How to start video editing from zero" 33.86 s, -12.4 LUFS
+  - L49: cab9807914a3 "This Is Where Editors Stop Looking Random" 32.0 s, -12.8 LUFS
+  - L54: 7a74184fe0d2 "This New AI Workflow Makes you 100X faster" 38.0 s, -14.7 LUFS
+  - L59: 94a17cc80891 "100 AI Agents Replaced My Content Team" 55.73 s @59.94 fps, -16.6 LUFS
+- `pro-video-editing/knowledge/reference-index.md` (59 lines)
+  - L11: Videos
+  - L27: Screenshots
+  - L45: Added 2026-11-17 (refscan: 4 NEW, 66 unchanged)
+  - L54: Analysis packs (no video file)
+- `pro-video-editing/library/shortform-online-research.md` (40 lines)
+  - L5: Hook (first 1-3 s) - ONL, agrees with references (V: every reference moves by frame 3)
+  - L11: Length & pacing - ONL
+  - L15: Captions - ONL (direction reliable, numbers not)
+  - L19: Safe zones for 1080x1920 (Reels/Shorts/TikTok) - ONL, numbers vary by source
+  - L26: Audio - ONL
+  - L30: Sources
+- `pro-video-editing/library/timing-sound.md` (35 lines)
+  - L3: Measured pacing (V)
+  - L16: Sync rules (V)
+  - L25: Durations cheat sheet (30 fps)
+  - L28: Sound (E unless stated)
+  - L34: Editing theory stated in the references (V, transcript cab9807914a3)
+- `pro-video-editing/library/transitions-effects.md` (33 lines)
+  - L28: Effects
+- `pro-video-editing/library/typography-motion.md` (94 lines)
+  - L5: T1 Three-tier statement stack
+  - L12: T2 Keyword slam with motion blur
+  - L17: T3 Type-on lead line
+  - L21: T4 Letter-stagger display word
+  - L25: T5 Accent script write-on with glow decay
+  - L29: T6 Serif-italic display caption (podcast)
+  - L33: T7 Caps phrase with highlight box
+  - L37: T8 Behind-subject giant word
+  - L43: T9 Neon pill caption list
+  - L47: T10 Underline-progress lower third
+  - L51: T11 Side panel bullet build
+  - L55: T12 Feathered mask title reveal
+  - L59: T13 Pixel / bitmap word with corner brackets
+  - L63: T14 Number counter
+  - L67: T15 Blur-in two-font word reveal
+  - L72: T16 Random character fade
+  - L76: Motion graphics elements
+- `pro-video-editing/profiles/P1-glass-spotlight-motion-ad.md` (32 lines)
+  - L5: Look
+  - L12: Type (3-tier stack) (V)
+  - L18: Motion recipe (frame counts at 30 fps)
+  - L26: Sound
+  - L29: Rules
+- `pro-video-editing/profiles/P10-amber-ui-educator-tips.md` (40 lines)
+  - L6: The after-edit look
+  - L12: Beat map (M)
+  - L27: Numbers (M)
+  - L32: What to borrow
+  - L39: Do not copy
+- `pro-video-editing/profiles/P11-podcast-scene-inserts.md` (45 lines)
+  - L6: The after-edit look
+  - L13: The core move: scene inserts
+  - L33: Numbers (M)
+  - L38: What to borrow
+  - L44: Do not copy
+- `pro-video-editing/profiles/P12-editorial-cutout-explainer.md` (7 lines)
+- `pro-video-editing/profiles/P13-two-tier-kinetic-talking-head.md` (5 lines)
+- `pro-video-editing/profiles/P14-faceless-2p5d-documentary.md` (5 lines)
+- `pro-video-editing/profiles/P15-ultimate-editors-sans-script.md` (7 lines)
+- `pro-video-editing/profiles/P16-aesthetic-pro-reel.md` (5 lines)
+- `pro-video-editing/profiles/P2-editorial-red-studio.md` (23 lines)
+  - L5: Look
+  - L12: Motion recipe (30 fps) (V unless E)
+  - L20: Rules
+- `pro-video-editing/profiles/P3-podcast-magazine.md` (21 lines)
+  - L5: Look
+  - L13: Motion recipe (V where framed)
+  - L19: Rules
+- `pro-video-editing/profiles/P4-results-showcase-shell.md` (22 lines)
+  - L5: Two verified layouts
+  - L9: Rules (V)
+  - L15: Layouts added 2026-11-17 (S)
+  - L21: Measured RAW vs EDITED layout (zip 2 pack, R4, 2026-11-22)
+- `pro-video-editing/profiles/P5-red-gradient-explainer.md` (26 lines)
+  - L5: Look
+  - L14: Motion recipe (V)
+  - L24: Pacing (V)
+- `pro-video-editing/profiles/P6-violet-condensed-tips.md` (21 lines)
+  - L6: Look
+  - L17: Rhythm (V/S)
+  - L20: Build notes (E)
+- `pro-video-editing/profiles/P7-noir-red-kinetic.md` (20 lines)
+  - L6: Look
+  - L16: Rhythm (V)
+  - L19: Build notes (E)
+- `pro-video-editing/profiles/P8-real-estate-orange-explainer.md` (20 lines)
+  - L6: Look
+  - L16: Rhythm (V)
+  - L19: Build notes (E)
+- `pro-video-editing/profiles/P9-lime-studio-personal-brand.md` (21 lines)
+  - L6: The after-edit look
+  - L17: The promo shell (P4 layout D)
+  - L20: Rhythm (S)
+- `pro-video-editing/profiles/screenshot-only-styles.md` (18 lines)
+  - L5: S1 Bold Yellow Shorts (josephvideoediting, screenshots 41, 43, 45-52)
+  - L10: S2 Whiteboard doodle (unknown Shorts creator, screenshots 39, 40, 44)
+  - L14: S3 Storyboard-frames reel (nikhilmotion.vlc, screenshots 13, 14, 16-18, 23)
+  - L17: S4 canvers 50X variants (screenshots 0, 1, 4)
+- `pro-video-editing/tools/analyze_raw.py` (89 lines)
+  - Analyse one video BEFORE editing and start its plan (Rule 2 in CLAUDE 2.0/CLAUDE.md).
+- `pro-video-editing/tools/matte.py` (24 lines)
+  - Person matte for behind-subject text (T8). Run with the venv that has mediapipe:
+- `pro-video-editing/tools/refscan.py` (265 lines)
+  - Incremental reference-library scanner for the pro-video-editing skill.
+- `pro-video-editing/tools/render_p1_test.py` (179 lines)
+  - Technique test render for profile P1 (Glass Spotlight): rebuilds the f00ae5949170 statement build with the
+- `pro-video-editing/tools/transcribe.py` (17 lines)
+  - Add word-level transcripts to every cached video that lacks one.
+- `pro-video-editing/tools/vstrip.py` (26 lines)
+  - Aspect-correct frame strip (works for 9:16 and 16:9): every frame from t0 to t1 at the source fps (or FPS),
+- `pro-video-editing/tools/learnkit/README.md` (43 lines)
+  - L9: What it produces (in <study_dir>)
+  - L20: Then look closer only where it matters
+  - L27: Token budget (V2 Tharun, 11:47): 6 shot sheets + 9 strips + 2 still sheets ≈ 35k tokens of images, about 12k o
+  - L29: Notes
+  - L37: Shorts (under ~60 s)
+- `pro-video-editing/tools/learnkit/audio_side.py` (49 lines)
+  - import json, numpy as np
+- `pro-video-editing/tools/learnkit/face_stats.py` (27 lines)
+  - Framing sizes, punch-in ratio, slow push and A-roll share from faces.txt (5 fps) + shots/shots.json. Run in the study folder.
+- `pro-video-editing/tools/learnkit/ocr_agg.py` (48 lines)
+  - import json, re, collections, numpy as np
+- `pro-video-editing/tools/learnkit/shots.py` (65 lines)
+  - shots.py <proxy> <outdir>: cuts (frame-diff, same rule as refscan), per-frame colour stats,
+- `pro-video-editing/tools/learnkit/stills.py` (12 lines)
+  - stills.py <video> <out.jpg> <cols> <tile_w> t1 t2 ...  -> one sheet of full-quality stills from the ORIGINAL file (time-labelled).
+- `pro-video-editing/tools/learnkit/strip.py` (21 lines)
+  - strip.py name:start:dur:fps ...  -> strips/<name>.jpg (6 cols, time-labelled)
+- `pro-video-editing/tools/learnkit/sync_stats.py` (46 lines)
+  - Speech stats, caption-vs-speech sync, caption coverage, SFX-vs-graphics alignment. Writes transcript.txt and captions_compact.txt. Run in th
+- `pro-video-editing/tools/learnkit/transcribe_one.py` (7 lines)
+  - transcribe_one.py <wav> <out.json> [model=small] [lang]  (run with the whisper venv python)
+
+## reel-editing-method
+_Use when editing a talking-head video into a high-engagement 9:16 reel with motion graphics, captions, HUD elements, behind-the-head text, SFX and music, or when asked to "edit it like the AI-AGI-ASI video". Full methodology from Deepak's first motion-graphics_
+- `reel-editing-method/SKILL.md` (158 lines)
+  - L12: 1. Philosophy
+  - L18: 2. Structure (68 s)
+  - L36: 3. Timeline rules
+  - L45: 4. Text and typography
+  - L54: 5. Motion graphics
+  - L61: 6. Effects
+  - L79: 7. B-roll
+  - L83: 8. Music
+  - L89: 9. Sound design
+  - L95: 10. Colour
+  - L101: 11. Transitions
+  - L104: 12. Decision rules (IF -> THEN)
+  - L122: 13. Tools and workflow
+  - L130: 14. What worked
+  - L133: 15. What did not work
+  - L136: 16. Checklist
+  - L148: 17. Applying to a new video
+- `reel-editing-method/original-full.md` (411 lines)
+  - L22: 1. Editing philosophy
+  - L50: 2. Video structure
+  - L84: 3. Timeline and pacing rules
+  - L98: 4. Text and typography
+  - L132: 5. Motion graphics
+  - L174: 6. Effects
+  - L201: 7. B-roll
+  - L217: 8. Music / BGM
+  - L242: 9. Sound design
+  - L268: 10. Colour / visual style
+  - L279: 11. Transitions
+  - L296: 12. Creative decision rules
+  - L320: 13. Tools and workflow
+  - L361: 14. What worked
+  - L373: 15. What did not work / was rejected
+  - L386: 16. Reusable checklist
+  - L401: 17. Applying this to a new video
+
+## shorts-editing-pro
+_Use for ANY 9:16 short, reel or YouTube Short edit (talking head first): cut to the voice, hook, word-by-word captions, punch-in zooms, B-roll, sound design and 1080x1920 export. One playbook built from Deepak's rules, the measured Tharun Speaks style, top-edi_
+- `shorts-editing-pro/LEARNING-LOG.md` (428 lines)
+  - L15: Seed: lessons from shorts delivered before this skill existed
+  - L17: 18. Go All In · 2026-11-17 · 16.4 s, Tharun grammar + external 4K B-roll
+  - L30: 17. Embarrassment Short · 2026-11-16 · tes2
+  - L40: 16. Uncertainty Short · 2026-11-15 · 1115
+  - L53: Standing rules distilled from these
+  - L61: Edits made with this skill
+  - L63: 19. Self Story · 2026-11-17 · 35.8 s, Tharun grammar + Mixkit B-roll · first edit with this skill
+  - L82: 2026-11-17 - training batch (no edit): Edit-Kit + 4 reference reels
+  - L89: 2026-11-20 - training batch (no edit): 2 reference shorts -> P10, P11
+  - L102: 20. Speed Game (telugu 2 video) · 2026-11-21 · 83.3 s, Tharun grammar + designed scene inserts · first Telugu 
+  - L131: 21. Fan Idea (telugu ruff cut 1) · 2026-11-21 · 57.6 s, Tharun grammar + Pexels B-roll + one designed "oil lin
+  - L159: 2026-11-21 - training batch (no edit): "zip 1" analysis pack -> P12
+  - L179: 2026-11-22 - training batch (no edit): "zip 2" analysis pack -> event-map method, P13, P14
+  - L195: 22. Grayscale Tip (telugu 3.mp4) · 2026-11-22 · 58.35 s, P13 two-tier kinetic talking head · first edit with t
+  - L226: 2026-11-22 - training batch (no edit): 5 skills received -> P15, ue-sound-design, beginner-to-pro-edit-tips, w
+  - L236: 23. Uncertainty Truth ("Telugu short.mp4") · 2026-11-22/23 · 60.38 s, Tharun 9:16 grammar + motivational two-v
+  - L255: 24. Pink Tax ("ammailu.mp4") · 2026-11-25 · 43.90 s, P8 "X vs Y" explainer + event-map method
+  - L277: Client feedback · 2026-11-25 · caption style change (applies to the Naveen bro shorts, videos 16-24)
+  - L288: Research + signature look · 2026-11-25 · mustard-red round 2 (aesthetic) and round 3 (Instagram advanced pro e
+  - L300: Research · 2026-11-25 · fonts for every video type, subtitle standards, editing styles
+  - L312: Client brief · 2026-11-25 · font pairings (round 4), Naveen bro client
+  - L327: Toolchain · 2026-11-25 (night) · Telugu script renders now
+  - L337: Learning · 2026-11-25 (late) · text animation moves (no edit; "dont do edits now just learn skills")
+  - L351: Feedback · 2026-11-25 · subtitles too heavy above the head; no Telugu font
+  - L361: Research · 2026-11-25 · where text goes in a vertical short ("don't create by your own, research")
+  - L373: Edit · 2026-11-26 · 25. Uncertainty Truth English (Naveen bro client, "Rough cut 3.mp4")
+  - L393: Feedback · 2026-11-26 · video 25 not impressed by the client: use ALL skills, real motion graphics
+  - L406: Edit · 2026-11-26 · video 25 v2 rebuild: Uncertainty Truth English ("Rough cut 3.mp4"), to the `before edit/` 
+- `shorts-editing-pro/SKILL.md` (184 lines)
+  - L16: Workflow (lean: low credits is a standing rule)
+  - L48: The 12 rules of an attractive short
+  - L90: Numbers cheat sheet
+  - L116: Style picker (ONE per video)
+  - L140: QC (run on the encoded MP4)
+  - L155: Files
+  - L168: shortkit keys added 2026-11-25 (all optional; old EDLs render unchanged)
+- `shorts-editing-pro/references/broll-graphics.md` (51 lines)
+  - L3: B-roll
+  - L27: PNGs, icons, proof
+  - L32: Motion graphics that read as pro
+- `shorts-editing-pro/references/captions-type-colour.md` (70 lines)
+  - L3: Caption system (default: Tharun word-pop, measured)
+  - L40: Alternatives (per style)
+  - L44: Type system (one font per role; change the pair every video)
+  - L55: Colour
+- `shorts-editing-pro/references/cut-pacing-camera.md` (60 lines)
+  - L3: Cut to the voice (raw take)
+  - L18: Rhythm (measured)
+  - L29: Camera on his footage (shorts allow keyframes)
+  - L46: Transitions (ranked, use sparingly)
+- `shorts-editing-pro/references/export-qc.md` (42 lines)
+  - L3: Export spec
+  - L13: Safe zones (1080x1920, union of platforms, ONL)
+  - L25: QC commands (ffmpeg `FF` from the kit: `/Users/raghusai/Downloads/claude/pending videos/aimldl_reels/bin/ffmpe
+  - L33: Senior-editor eye pass
+  - L41: Event-map scorecard (added 2026-11-22)
+- `shorts-editing-pro/references/hook-and-story.md` (46 lines)
+  - L3: Hook (first 0-1.5 s)
+  - L28: Story shapes
+  - L41: Three-speed rhythm
+- `shorts-editing-pro/references/sound-design.md` (50 lines)
+  - L3: Voice chain (first, always)
+  - L13: SFX map (main master = voice + SFX)
+  - L41: Music (alt master only, unless Deepak asks)
+  - L47: Master
+- `shorts-editing-pro/references/style-profiles.md` (92 lines)
+  - L3: Tharun Speaks 9:16 (default for Deepak's talking heads; measured)
+  - L17: Hormozi talking head
+  - L23: Iman Gadzhi premium
+  - L28: MrBeast-lite (stakes)
+  - L32: Calm educational
+  - L35: Reference library profiles (`pro-video-editing`)
+  - L42: Borrow without mixing
+  - L47: P10 and P11 in brief (learned 2026-11-20 from two reference shorts)
+  - L61: P12 in brief (learned 2026-11-21 from the "zip 1" analysis pack)
+  - L79: P13 + P14 in brief (learned 2026-11-22 from the "zip 2" analysis pack)
+- `shorts-editing-pro/references/web-research-2026.md` (49 lines)
+  - L7: Hooks
+  - L12: Pacing
+  - L19: Captions
+  - L30: Zooms
+  - L34: B-roll
+  - L37: Sound
+  - L42: Export
+  - L48: Older research
+- `shorts-editing-pro/tools/shortkit.py` (974 lines)
+  - shortkit: lean 9:16 short renderer for the shorts-editing-pro skill (one file, no browser, no subagents).
+
+## skill-saver
+_Use whenever Deepak gives an editing preference, correction or rule ("remember this", "always/never X"), approves an editing insight, adds new B-rolls/PNGs to the asset folders, sends reference videos, or asks to create/adjust a skill. Defines where each insig_
+- `skill-saver/SKILL.md` (70 lines)
+  - L10: Skill map
+  - L18: 1. Capture insights automatically
+  - L25: 2. Where an insight goes
+  - L33: 3. Creating a skill
+  - L36: 4. New assets
+  - L47: 5. Asset folders (under /Users/raghusai/Downloads/claude/)
+  - L50: 6. Reference videos (82 processed so far; latest ref82 documentary explainer, 2026-10-16)
+- `skill-saver/original-full.md` (136 lines)
+  - L36: 1. Capture insights automatically (do not wait to be asked)
+  - L53: 2. Where does the insight go?
+  - L65: 3. Creating a new skill
+  - L86: 4. When new assets are added
+  - L106: 5. Asset folders
+  - L113: 6. When Deepak sends reference videos
+
+## sound-and-music-design
+_Use for any "improve the SFX / BGM / audio design" request, generic or repetitive-sounding edits, scoring a long-form video, building SFX from the scene engine's cue export, adding sound to a delivered mix, or checking a mix is dialogue-clear and phone-friendl_
+- `sound-and-music-design/SKILL.md` (83 lines)
+  - L10: 1. Brief in practice
+  - L16: 2. Measure the old mix first (Claude) [USED]
+  - L19: 3. Facts that shaped the design [USED]
+  - L26: 4. Pipeline (run order) [USED]
+  - L34: 5. SFX palette [USED]
+  - L44: 6. Music scoring [USED]
+  - L52: 7. QA without ears (Claude)
+  - L55: 8. Where real sounds are (Mac, 2026-10-01)
+  - L67: 9. Gotchas
+  - L76: 10. Adding sound to a delivered mix without touching it (video 13 v2, 2026-10-13)
+- `sound-and-music-design/original-full.md` (72 lines)
+  - L10: 1. What the brief means in practice
+  - L16: 2. Measure the old mix first *(Claude)* [USED]
+  - L19: 3. Facts that shaped the design [USED]
+  - L26: 4. Pipeline (run order) [USED]
+  - L34: 5. SFX palette [USED]
+  - L41: 6. Music scoring [USED]
+  - L49: 7. QA that can be done without ears *(Claude)*
+  - L52: 8. Where the real sounds are (Mac, 2026-10-01)
+  - L56: 9. Gotchas (all hit on this video)
+  - L59: 10. Adding sound to a delivered mix without touching it *(video 13 v2, 2026-10-13)*
+
+## text-animation-moves
+_Use whenever on-screen words must arrive with a designed move in a short or long video - a word stack that builds word by word on the chest under the chin, a letter-by-letter type-on keyword, blur / rise / grain / pop / cut arrivals, big meaning words with sma_
+- `text-animation-moves/SKILL.md` (193 lines)
+  - L23: 1. Measured references (study only, CLAUDE.md Rule 1.6)
+  - L26: A. shami.mp4 `DKC2AJ0z6s0` (50K likes): a "$5 vs $80 edit" of a Mark Tilbury talking head, 16.1 s
+  - L42: B. yp.motionstudio `DYnW0cCIlry` (28K likes): "Your brand deserves more than basic edits", 9.4 s, faceless kin
+  - L52: C. tobydeboer "Grind szn" (the client's reference)
+  - L59: 2. The move menu (shortkit `stacks` token `fx`)
+  - L76: 3. Word-stack layout (9:16 talking head)
+  - L117: 4. In shortkit (`skills/shorts-editing-pro/tools/shortkit.py`, 2026-11-25)
+  - L142: 5. Sound for each move (files on this Mac; chosen by numbers, because Claude cannot listen)
+  - L167: 6. Faceless kinetic type (P12 reels only)
+  - L178: 7. QC (add to the edit's QC list)
+  - L189: 8. Gaps (build when a video needs them; research first, CLAUDE.md Rule 4.3)
+- `text-animation-moves/tools/sfx_measure.py` (24 lines)
+  - sfx_measure: numbers for choosing a sound when Claude cannot listen (text-animation-moves, 2026-11-25).
+- `text-animation-moves/tools/stack_demo_edl.json` (264 lines)
+
+## text-highlight-match-cut
+_Use in every video edit when the script quotes a source, cites a number/fact, names a person/company/tool, says "according to…" / "reports say…" / "search…", or needs proof or an evidence montage. Covers (1) brush-stroke text HIGHLIGHT on article/news/screensh_
+- `text-highlight-match-cut/SKILL.md` (68 lines)
+  - L10: 1. Highlight (HL)
+  - L22: 2. Match cut (MC)
+  - L34: 3. Variants by subject
+  - L40: 4. QC
+  - L45: 5. No source documents (IKKO MindOne variant; Claude's adaptation, not yet approved)
+  - L50: 6. Real-source capture (video 13 v2)
+  - L55: 7. MC on a company name across real headlines (AI Tech News ep 02)
+  - L60: 8. Real public-domain text page (16. Uncertainty Short v2, 2026-11-16)
+- `text-highlight-match-cut/original-full.md` (74 lines)
+  - L12: 1. Highlighting text (ref12)
+  - L25: 2. Match cut on the highlighted word (ref13)
+  - L38: 3. Variants (same rule, other subjects)
+  - L44: 4. QC
+  - L49: 5. Variant used when the script has no source documents *(IKKO MindOne review, 2026-09-30 — Claude's adaptatio
+  - L55: 6. Real-source capture for HL + MC *(video 13 v2, 2026-10-13)*
+  - L71: 7. Match cut on a company name across real headlines *(AI Tech News ep 02, 2026-10-15)*
+
+## tharun-speaks-edit-style
+_"Use when editing, captioning or planning a vertical talking-head reel in the Tharun Speaks style - word-pop captions, behind-subject headlines, punch-in cuts, lime labels, flash transitions."_
+- `tharun-speaks-edit-style/SKILL.md` (198 lines)
+  - L12: Where the rules come from
+  - L30: The style in twelve rules
+  - L45: Design tokens
+  - L67: Captions
+  - L79: Scene types
+  - L94: Reel B additions
+  - L109: Transitions and camera
+  - L119: Timing and structure
+  - L138: Sound
+  - L144: How to apply the style to new footage
+  - L159: What to hand back
+  - L170: QC list
+  - L181: Extra files
+- `tharun-speaks-edit-style/assets/style-template.html` (328 lines)
+- `tharun-speaks-edit-style/assets/style-tokens.json` (427 lines)
+- `tharun-speaks-edit-style/references/after-effects-recipes.md` (255 lines)
+  - L11: 1. Project set-up
+  - L17: 2. Caption style
+  - L45: 3. Caption beats from a list
+  - L69: 4. Emphasis stack
+  - L115: 5. Punch-in at a jump cut
+  - L124: 6. Slow push-in
+  - L135: 7. Hook push-in
+  - L142: 8. Negative flash
+  - L151: 9. White flash
+  - L157: 10. Headline behind the subject
+  - L167: 11. Lime label that sizes itself
+  - L190: 12. Kinetic title on black
+  - L197: 13. Type-on label, letter by letter
+  - L203: 14. Cards
+  - L217: 15. Icon badge pop
+  - L224: 16. Step coin flip
+  - L231: 17. Backgrounds
+  - L250: 18. Final checks in After Effects
+- `tharun-speaks-edit-style/references/captions-typography.md` (189 lines)
+  - L12: 1. Caption voice
+  - L14: Font
+  - L26: Colour and edge
+  - L38: Position
+  - L52: Beats
+  - L69: Emphasis stacks
+  - L111: When there are no captions
+  - L117: Small captions
+  - L125: 2. Display voice
+  - L127: Font
+  - L138: Sizes and places
+  - L152: The headline pattern
+  - L164: Behind the subject
+  - L174: Colour pairs for display type
+  - L184: 3. Quick checks
+- `tharun-speaks-edit-style/references/motion-graphics.md` (235 lines)
+  - L7: Principles
+  - L17: Entrance table
+  - L39: Scene recipes
+  - L43: 1. Hook with headline behind the subject
+  - L61: 2. Counting headline
+  - L76: 3. Proof cards behind the head
+  - L92: 4. Icon badges
+  - L106: 5. Photo insert
+  - L122: 6. Step coin
+  - L141: 7. Demo card on white grid with lime label
+  - L158: 8. Kinetic title
+  - L172: 9. Paper reveal
+  - L187: 10. Paper kinetic ("the threat")
+  - L204: 11. CTA card
+  - L218: Camera moves on A-roll
+  - L231: Building these in a code-based tool
+- `tharun-speaks-edit-style/references/second-reel-analysis.md` (141 lines)
+  - L9: What is the same in both reels
+  - L21: What is different in reel B
+  - L39: Shot map
+  - L75: New devices in reel B
+  - L77: Counting numbers
+  - L89: Glowing props
+  - L93: Spotlight step scene
+  - L103: Glass cards on dark navy
+  - L107: Flow diagram with camera travel
+  - L111: Recap card
+  - L115: Icon strip
+  - L119: Tinted and list captions
+  - L125: Blur-zoom transition
+  - L129: Structure of reel B
+- `tharun-speaks-edit-style/references/sound-design.md` (130 lines)
+  - L7: Measured
+  - L9: Loudness
+  - L24: Where the energy is
+  - L35: Music bed, by section
+  - L49: Tempo
+  - L53: Cuts and the beat
+  - L57: Low hits that line up with pictures
+  - L67: Suggested
+  - L69: Mix targets
+  - L81: Voice
+  - L87: Music plan
+  - L102: Effects map
+  - L124: Sound checklist
+- `tharun-speaks-edit-style/references/style-analysis.md` (119 lines)
+  - L5: What was studied
+  - L13: How each number was measured
+  - L31: Things that could not be confirmed
+  - L38: What the second reel's stills add
+  - L49: Structure of the reference reel
+  - L65: Shot log
+  - L108: Shot statistics
+- `tharun-speaks-edit-style/references/timing-sequencing.md` (126 lines)
+  - L7: The three clocks
+  - L19: Pacing rules
+  - L41: Rhythm inside a sentence
+  - L53: Rhythm inside a list item
+  - L66: Section template
+  - L84: Where each device goes
+  - L105: Timing a new edit, step by step
+  - L116: Frame-rate conversion
+- `tharun-speaks-edit-style/references/transitions-effects.md` (140 lines)
+  - L7: Transition count in the reference reel
+  - L16: Hard cut
+  - L28: Negative flash
+  - L48: White flash
+  - L62: Punch-in jump cut
+  - L78: Slow push-in
+  - L89: Snap zoom on stills
+  - L93: Looks
+  - L95: A-roll grade
+  - L109: Third-party photos
+  - L113: Text behind the subject
+  - L117: Paper scenes
+  - L121: White card scenes
+  - L125: Coin scene
+  - L129: Effects that are absent
+- `tharun-speaks-edit-style/references/workflow-new-footage.md` (209 lines)
+  - L7: Before you start: what to ask for
+  - L22: Shooting notes, if the footage is not shot yet
+  - L34: The workflow
+  - L36: Step 1. Clean the voice
+  - L43: Step 2. Mark the sections
+  - L49: Step 3. Set the framing
+  - L57: Step 4. Choose keywords
+  - L68: Step 5. Build the caption track
+  - L85: Step 6. Plan a picture for every noun
+  - L103: Step 7. Place the full-screen scenes
+  - L111: Step 8. Add transitions
+  - L118: Step 9. Colour and look
+  - L125: Step 10. Sound
+  - L129: Step 11. Check and export
+  - L133: What to hand the editor
+  - L135: Edit plan table
+  - L146: Caption track
+  - L156: Graphics list
+  - L166: Tool notes
+  - L170: After Effects
+  - L179: Timeline editors (Premiere Pro, DaVinci Resolve, CapCut, Final Cut)
+  - L187: Code-based tools (HyperFrames, Remotion)
+  - L194: Adapting the style
+  - L207: What not to carry over
+- `tharun-speaks-edit-style/scripts/caption_beats.py` (191 lines)
+  - #!/usr/bin/env python3
+
+## tharun-speaks-longform-edit-style
+_Use when editing, captioning or storyboarding a 16:9 / 2:1 long-form talking-head list video (5-15 min, numbered "secrets/tips/lessons") in the Tharun Speaks long-form style - warm A-roll hard-cut against dark graphic scenes, giant behind-head headlines, behin_
+- `tharun-speaks-longform-edit-style/LEARNING-REPORT.md` (44 lines)
+  - L5: Studied (with coverage)
+  - L13: Measured
+  - L16: Not done / weak
+  - L24: To raise confidence
+  - L29: Update 2026-11-20: second reference video
+  - L34: What this fixed from the "Not done / weak" list
+  - L41: Still weak
+- `tharun-speaks-longform-edit-style/SKILL.md` (84 lines)
+  - L14: Evidence labels (read every rule with its label)
+  - L22: A. Constants (Both videos)
+  - L40: B. Devices that change per video (choose ONE set, do not mix)
+  - L50: C. Moves learned from V2
+  - L65: Workflow in one page
+- `tharun-speaks-longform-edit-style/references/motion-graphics.md` (37 lines)
+  - L22: Principles
+  - L30: V2 additions (2026-11-20)
+- `tharun-speaks-longform-edit-style/references/sound-and-colour.md` (23 lines)
+  - L3: Loudness (Measured)
+  - L6: Music/SFX (Measured on V2 with the stereo side channel, 2026-11-20)
+  - L14: Colour
+  - L19: Colour, V2 additions (Observed)
+- `tharun-speaks-longform-edit-style/references/style-analysis.md` (38 lines)
+  - L5: What was studied
+  - L9: Measured numbers
+  - L20: Chapter map (reference)
+  - L37: Things not confirmed
+- `tharun-speaks-longform-edit-style/references/timing-sequencing.md` (42 lines)
+  - L3: Shot length targets (Measured from 209 shots)
+  - L6: Pattern per tip (about 45-70 s)
+  - L14: Graphic timing
+  - L19: Sections
+  - L25: V2 numbers (Measured 2026-11-20)
+  - L32: Item template v2 (36-56 s)
+  - L41: Video skeleton v2
+- `tharun-speaks-longform-edit-style/references/transitions-effects.md` (33 lines)
+  - L3: Default: the hard cut
+  - L6: Punch-in
+  - L9: Flash/glow transitions (sponsor segment only)
+  - L12: Shrink-to-card
+  - L15: Colour effects
+  - L20: Texture stack for chalkboard scenes (Suggested values)
+  - L23: Avoid
+  - L26: V2 additions (Measured 2026-11-20)
+- `tharun-speaks-longform-edit-style/references/typography-captions.md` (49 lines)
+  - L12: Caption rules
+  - L21: Headline rules
+  - L27: Sizes for a 3840x1920 canvas (Suggested, tune by eye)
+  - L32: V2 caption system (Measured 2026-11-20, see video2-14-truths.md)
+  - L44: Headline sandwich (V2, Measured)
+  - L48: Lesson tag (V2)
+- `tharun-speaks-longform-edit-style/references/video2-14-truths.md` (109 lines)
+  - L6: How it was studied (coverage)
+  - L12: Measured numbers
+  - L34: Chapter map
+  - L59: Graphics catalogue (new in this video)
+  - L80: Transitions and gags seen once each
+  - L89: Sound map (Measured)
+  - L95: Type (closest free matches, Observed)
+  - L104: Limits
+- `tharun-speaks-longform-edit-style/references/workflow-new-footage.md` (26 lines)
+  - L3: Inputs
+  - L6: Steps
+  - L18: Checklist
+
+## thumbnail-strategy
+_Use when making, improving, reviewing or A/B-testing a YouTube thumbnail for Tech Boy Deepak, pairing title + thumbnail, or fixing low CTR. Covers glanceability, focal points, face/gaze, separation, light/dark colour, text, the 1+1=3 information gap, six formu_
+- `thumbnail-strategy/SKILL.md` (64 lines)
+  - L11: Viewer decision timeline (why the rules exist)
+  - L17: Rules
+  - L33: Six formulas (pick one first)
+  - L43: Ref61 thumbnail reading
+  - L46: Workflow
+  - L54: QA checklist
+- `thumbnail-strategy/original-full.md` (66 lines)
+  - L12: The decision the viewer makes (why every rule below exists)
+  - L20: Rules
+  - L36: The six formulas (pick one before designing)
+  - L47: Workflow
+  - L56: QA checklist (run on every thumbnail)
+- `thumbnail-strategy/principles.md` (57 lines)
+  - L7: 1. Glanceability and cognitive load
+  - L14: 2. Information asymmetry ("1+1=3")
+  - L20: 3. Formula table (the creator's "format table")
+  - L28: 4. Saccadic eye movement
+  - L33: 5. Light mode vs dark mode
+  - L38: 6. Process
+  - L41: 7. Reading of the ref61 thumbnail itself (seen)
+  - L48: 8. Strategist additions (Claude's, not from ref61; apply with judgement)
+  - L54: 9. Feed test of the ref61 thumbnail (`scripts/feed_test.py`, seen 2026-10-06)
+- `thumbnail-strategy/scripts/feed_test.py` (50 lines)
+  - #!/usr/bin/env python3
+
+## top-editor-styles
+_"Use when editing, planning or reviewing a video in the style of a top creator: MrBeast challenge, Hormozi talking-head, Johnny Harris documentary, Iman Gadzhi premium, or a calm educational style."_
+- `top-editor-styles/SKILL.md` (137 lines)
+  - L14: How much to trust these rules
+  - L23: Rules every style shares
+  - L32: Pick the style
+  - L44: Style 1: MrBeast challenge
+  - L57: Style 2: Hormozi talking-head
+  - L70: Style 3: Johnny Harris documentary
+  - L83: Style 4: Iman Gadzhi premium
+  - L95: Style 5: Calm educational
+  - L105: How to apply a style to new footage
+  - L117: What to hand back
+  - L128: QC list
+
+## ue-sound-design
+_Use for sound designing a finished edit the Ultimate Editors (Joseph) way - three families (whooshes for movement, textures for events, risers and hits for anticipation), four passes in fixed order (whooshes, textures, risers and hits, music last), fixed level_
+- `ue-sound-design/SKILL.md` (274 lines)
+  - L11: Complete instructions for Claude, sound designing in Remotion
+  - L21: A1. The philosophy
+  - L35: A2. The library — three sections
+  - L41: Section 1 — WHOOSHES (movement)
+  - L64: Section 2 — TEXTURES (things that happen without sliding)
+  - L96: Section 3 — RISERS & HITS (anticipation)
+  - L118: A3. Levels
+  - L131: A4. Music
+  - L138: A5. The three-pass workflow (the order is not negotiable)
+  - L150: A6. Never-do list
+  - L168: B1. Session protocol (the order you work in, every time)
+  - L188: B2. Track and timeline rules
+  - L197: B3. Placement precision
+  - L206: B4. Using the library inside Remotion
+  - L213: B5. What you can and can't do (known limits)
+  - L220: B6. How Joseph will talk to you (what to expect)
+  - L231: B7. Acceptance criteria — check before you hand off
+  - L249: 1. What is missing, checked 2026-11-22
+  - L254: 2. Same method in every renderer
+  - L262: 3. Where this skill and the older skills disagree (tell the user before continuing, per CLAUDE.md Rule 3)
+  - L273: 4. Seen in a real Ultimate Editors reel
+- `ue-sound-design/references/UE-Sound-Design-Claude-Training-as-received.md` (234 lines)
+  - L2: Complete instructions for Claude, sound designing in Remotion
+  - L12: A1. The philosophy
+  - L26: A2. The library — three sections
+  - L32: Section 1 — WHOOSHES (movement)
+  - L55: Section 2 — TEXTURES (things that happen without sliding)
+  - L87: Section 3 — RISERS & HITS (anticipation)
+  - L109: A3. Levels
+  - L122: A4. Music
+  - L129: A5. The three-pass workflow (the order is not negotiable)
+  - L141: A6. Never-do list
+  - L159: B1. Session protocol (the order you work in, every time)
+  - L179: B2. Track and timeline rules
+  - L188: B3. Placement precision
+  - L197: B4. Using the library inside Remotion
+  - L204: B5. What you can and can't do (known limits)
+  - L211: B6. How Joseph will talk to you (what to expect)
+  - L222: B7. Acceptance criteria — check before you hand off
+
+## ultimate-editors-shortform-style
+_Use when editing a 9:16 talking-head short in the Ultimate Editors look (= profile P15) or when the user says "Ultimate Editors", "Joseph style", "sans + script captions", "Remotion short", "on-screen animation", "beginner to pro reel" - two-font captions (sma_
+- `ultimate-editors-shortform-style/SKILL.md` (79 lines)
+  - L15: When to choose this style
+  - L24: 1. Captions (Prompt: two kinds, sans and script; learn placement, colour, animation)
+  - L33: 2. Hook (Prompt: hook psychology; keep the speaker on screen; right text combinations between sans and script;
+  - L39: 3. Animations (Prompt: three kinds of animations, then four categories)
+  - L56: 4. How to create an animation (Prompt order: background, placement, effects on the objects, stylise the scene)
+  - L62: 5. On-screen animations (Prompt: place the on-screen UIs, darken and blur the background behind them)
+  - L68: 6. Sound
+  - L71: 7. Building it on this Mac
+  - L76: 8. Do not
+- `ultimate-editors-shortform-style/references/master-prompt.md` (13 lines)
+- `ultimate-editors-shortform-style/references/reference-reel-3-mistakes.md` (57 lines)
+  - L9: 1. Timeline (M: cuts.json + words.json; O: 1 fps overview, split starts are +-0.5 s)
+  - L28: 2. Captions
+  - L37: 3. On-screen animations (overlay on the speaker)
+  - L42: 4. Split and full-screen scenes
+  - L48: 5. Sound (M, not listened)
+  - L53: 6. Raw to edit (M)
+  - L56: 7. The reel obeys its own three rules
+- `ultimate-editors-shortform-style/references/reel-data/audio_profile.json` (236 lines)
+- `ultimate-editors-shortform-style/references/reel-data/cuts.json` (7 lines)
+- `ultimate-editors-shortform-style/references/reel-data/summary.json` (32 lines)
+- `ultimate-editors-shortform-style/references/reel-data/words.json` (787 lines)
+
+## video-intro-design
+_Use for any short, very dense intro, hook, cold open or title sequence (20-40 s) cut from one locked-off talking-head take. Build kit and rules - browser-side camera on a 2560x1440 plate (pixel-exact punch-ins), Vision person mattes for giant type behind the h_
+- `video-intro-design/SKILL.md` (86 lines)
+  - L10: 1. Pipeline
+  - L19: 2. Camera: punch-ins can be pixel-exact [USED]
+  - L29: 3. Giant type behind the head [USED]
+  - L34: 4. Accent colour is measured [USED]
+  - L46: 5. Composition and hierarchy [USED]
+  - L53: 6. Transitions [USED]
+  - L59: 7. SFX: phone-speaker rule [USED]
+  - L73: 8. Six-lens QA (Claude's rule) [USED]
+  - L77: 9. Measurements worth keeping
+- `video-intro-design/original-full.md` (180 lines)
+  - L17: 1. Pipeline [USED]
+  - L36: 2. The camera — a punch-in can be pixel-exact [USED]
+  - L49: Camera rules learned
+  - L58: 3. Giant type behind the head [USED]
+  - L71: 4. The accent colour is a measurement, not a taste call [USED]
+  - L91: 5. Composition and hierarchy [USED]
+  - L104: 6. Transitions [USED]
+  - L116: 7. SFX — the phone-speaker rule *(the single biggest audio finding)* [USED]
+  - L135: Other sound rules learned
+  - L151: 8. Six-lens QA *(Claude's rule, not yet approved by Deepak)* [USED]
+  - L173: 9. Measurements worth keeping
+
+## video-styles-atlas
+_Read on EVERY edit when picking the ONE style (CLAUDE.md Rule 2). One table of every video form - 9:16 talking head, aesthetic premium, podcast clip, faceless explainer / documentary, motivation, 16:9 YouTube explainer, documentary, entertainment / challenge, _
+- `video-styles-atlas/SKILL.md` (81 lines)
+  - L12: 1. The atlas
+  - L33: 2. Vlog / lifestyle (new)
+  - L41: 3. Cinematic brand film / wedding highlight (new)
+  - L49: 4. Tutorial / screen recording / SaaS (new; product animation in `app-product-animation`)
+  - L58: 5. Ad / UGC (new)
+  - L66: 6. Meme / gaming / fan edit (new)
+  - L71: 7. Across every form (pro rules found in all the research)
+
+## watch
+_Watch any video link (YouTube long-form, YouTube Shorts, Instagram Reels, TikTok) or local video file frame by frame, learn its editing style (cuts, zooms, transitions, word-by-word captions, SFX, music, pacing, hook) and save it as a reusable style skill insi_
+- `watch/SKILL.md` (134 lines)
+  - L12: Step 0: Check tools
+  - L22: Step 1: Run the extractor
+  - L45: Step 2: Frame pair pass
+  - L60: Step 3: Captions, word by word
+  - L71: Step 4: Audio, SFX and music
+  - L80: Step 5: Hook and ending
+  - L88: Step 6: Combine into numbers and rules
+  - L93: Step 7: Save as a new style skill
+  - L101: Step 8: Tell the user
+  - L109: Rules
+  - L118: On this Mac (added by Claude, 2026-11-22; not part of the received skill)
+- `watch/references/style-skill-template.md` (96 lines)
+  - L14: 1. Quick recap (5 lines)
+  - L21: 2. Pacing and cuts
+  - L28: 3. Framing and movement
+  - L34: 4. Transitions
+  - L39: 5. Captions (word by word)
+  - L51: 6. Overlays and graphics
+  - L56: 7. Color and look
+  - L60: 8. Audio
+  - L71: 9. Hook (first 3 seconds)
+  - L76: 10. Ending
+  - L79: 11. Step by step recipe for a new video
+  - L88: 12. Do not
+  - L91: References in this skill
+- `watch/scripts/extract.py` (399 lines)
+  - #!/usr/bin/env python3
+- `watch/scripts/watch_mac.py` (124 lines)
+  - #!/usr/bin/env python3
+
+## where-to-find-assets
+_Use when a script line needs an asset the local B-roll/PNG libraries lack, when stuck for a visual idea, or when asked "where do I get X" (footage, SFX, music, fonts, vectors, real photos/documents for news videos). Deepak's fixed website list plus decision tr_
+- `where-to-find-assets/SKILL.md` (52 lines)
+  - L10: Step 0: local first
+  - L13: Decision tree
+  - L21: Site list (first = default)
+  - L30: Recommending a download
+  - L35: Pexels workflow (video 13 v2, 2026-10-13)
+  - L42: Real photos, footage, documents for news videos (AI Tech News ep 02 v2, 2026-10-16)
+- `where-to-find-assets/original-full.md` (62 lines)
+  - L10: Step 0 — check the local kit first
+  - L13: Decision tree
+  - L25: The library
+  - L37: How to recommend a download
+  - L44: ⚠ Open question — SFX & music source
+  - L47: Pexels in practice *(video 13 v2, 2026-10-13 — worked end to end)*
+  - L55: Real photos, footage and documents for news videos *(AI Tech News ep 02 v2, 2026-10-16 — worked end to end)*
+
+## youtube-long-video-editing
+_Use when editing any 16:9 long-form YouTube explainer (10-30 min, multi-segment CapCut exports), combining segments into one film, or rendering HTML/GSAP motion graphics over a long talking head. Pipeline (EDL join, graded base frames, scene engine, frame rend_
+- `youtube-long-video-editing/SKILL.md` (105 lines)
+  - L10: 1. Pipeline
+  - L19: 2. Gotchas
+  - L28: 3. Layout and rhythm QA (Claude)
+  - L41: 4. Audio redesign (2026-10-01)
+  - L44: 5. AI Tech News ep 1 kit
+  - L55: 6. RAG explainer kit (9:29.6, uncut, no BGM, 71 scenes)
+  - L62: 7. Day 03 kit — "How machines are trained" (12:57)
+  - L72: 8. Sale-phones kit (client buying guide, 11:30.7)
+  - L78: 9. Day 06 kit — "Classification vs Regression" (16:37)
+  - L87: 10. Video 13 render ops and add-on kit
+  - L96: 11. AI Tech News ep 02 kit (16:10, premium SaaS news show)
+- `youtube-long-video-editing/original-full.md` (226 lines)
+  - L12: 1. Pipeline [USED]
+  - L21: 2. Gotchas (all hit on this video)
+  - L31: 3. Layout QA rules *(Claude, not yet approved by Deepak)*
+  - L44: 4. Notes (2026-10-01)
+  - L49: 5. Audio redesign pass (2026-10-01)
+  - L52: 6. AI Tech News ep 1 kit (2026-10-02) — `experiment/claude9_ainews01_edit/`
+  - L72: 7. RAG concept explainer kit (2026-10-03/04) — `experiment/claude10_rag_edit/`
+  - L109: 8. Day 03 kit — "How machines are trained" (12:57, 2026-10-07) — `edited videos by claude/10. How Machines Are
+  - L138: 9. Sale-phones kit (client buying guide, 11:30.7, 2026-10-08) — `edited videos by claude/11. Sale Phones Buyin
+  - L146: 10. Day 06 kit — "Classification vs Regression" (16:37, 2026-10-12) — `edited videos by claude/12. Classificat
+  - L174: Render-ops gotchas (video 13, 2026-10-13)
+  - L181: 11. Add-on-top kit (video 13 v2, 2026-10-13) — `edited videos by claude/13. Top 5 Skills AI Era/code/` (v2 fil
+  - L213: 12. AI Tech News ep 02 kit — premium SaaS news show (16:10, 2026-10-15) — `edited videos by claude/14. AI Tech

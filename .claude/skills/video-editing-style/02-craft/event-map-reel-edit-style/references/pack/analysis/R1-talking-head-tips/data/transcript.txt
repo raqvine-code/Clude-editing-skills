@@ -1,0 +1,20 @@
+language en p=0.99 duration 34.07s
+[0.00-3.22] How will you even master your personal branding if you can't remember your script?
+   0.00 How | 0.24 will | 0.42 you | 0.52 even | 0.70 master | 0.98 your | 1.22 personal | 1.50 branding | 1.82 if | 2.02 you | 2.14 can't | 2.48 remember | 2.74 your | 3.06 script?
+[3.58-7.06] So here's the thing, you don't actually need to learn your scripts word by word,
+   3.58 So | 3.80 here's | 4.16 the | 4.26 thing, | 4.66 you | 4.68 don't | 4.88 actually | 5.14 need | 5.36 to | 5.52 learn | 5.70 your | 5.88 scripts | 6.14 word | 6.54 by | 6.72 word,
+[7.24-10.42] but the trick is to break them into ideas and not into the sentences.
+   7.24 but | 7.46 the | 7.60 trick | 7.80 is | 7.96 to | 8.06 break | 8.24 them | 8.44 into | 8.66 ideas | 9.06 and | 9.36 not | 9.58 into | 9.82 the | 10.00 sentences.
+[10.70-15.00] First, understand the flow. Hook, mean point, example, and then ending.
+   10.70 First, | 11.56 understand | 11.56 the | 11.76 flow. | 12.30 Hook, | 13.00 mean | 13.12 point, | 13.60 example, | 14.36 and | 14.50 then | 14.68 ending.
+[15.38-19.16] Second, practice saying it in your own words instead of forcing exact lines.
+   15.38 Second, | 15.88 practice | 16.06 saying | 16.44 it | 16.60 in | 16.74 your | 16.88 own | 17.10 words | 17.48 instead | 17.78 of | 18.00 forcing | 18.30 exact | 18.78 lines.
+[19.68-23.42] And third, repeat it out loud a couple of times until it feels natural
+   19.68 And | 19.84 third, | 20.44 repeat | 20.62 it | 20.86 out | 21.00 loud | 21.30 a | 21.54 couple | 21.68 of | 21.86 times | 22.18 until | 22.48 it | 22.72 feels | 22.92 natural
+[23.42-25.54] like you're just telling a story to a friend.
+   23.42 like | 23.90 you're | 24.08 just | 24.26 telling | 24.46 a | 24.64 story | 24.92 to | 25.12 a | 25.26 friend.
+[25.88-29.04] And that way you will never sound robotic and won't forget what to say.
+   25.88 And | 26.12 that | 26.34 way | 26.52 you | 26.70 will | 26.78 never | 27.00 sound | 27.20 robotic | 27.58 and | 27.90 won't | 28.24 forget | 28.52 what | 28.72 to | 28.90 say.
+[29.04-33.86] Try this in your next video and you will see how much easier it gets to speak on camera and remember the script.
+   29.04 Try | 29.40 this | 29.60 in | 29.76 your | 29.84 next | 30.04 video | 30.32 and | 30.56 you | 30.68 will | 30.80 see | 30.98 how | 31.16 much | 31.32 easier | 31.58 it | 31.76 gets | 32.00 to | 32.20 speak | 32.38 on | 32.54 camera | 32.88 and | 33.14 remember | 33.40 the | 33.68 script.
+words 127 | wpm over full duration 224

@@ -1,0 +1,24 @@
+language en p=1.00 duration 35.61s
+[0.00-3.34] Agents keep asking me how do I show up on chatGPT searches?
+   0.00 Agents | 0.62 keep | 0.82 asking | 1.20 me | 1.40 how | 1.62 do | 1.76 I | 1.86 show | 2.08 up | 2.26 on | 2.40 chatGPT | 3.04 searches?
+[3.80-7.42] And honestly that's a question that every single realtor should be asking right now
+   3.80 And | 3.90 honestly | 4.32 that's | 4.76 a | 4.84 question | 5.12 that | 5.38 every | 5.68 single | 5.90 realtor | 6.32 should | 6.52 be | 6.66 asking | 7.00 right | 7.26 now
+[7.42-9.98] because AI isn't coming, it's already here.
+   7.42 because | 7.78 AI | 8.16 isn't | 8.58 coming, | 9.14 it's | 9.32 already | 9.64 here.
+[10.16-14.04] Consumers are literally asking chatGPT who are the best agents in their city
+   10.16 Consumers | 10.60 are | 10.76 literally | 11.12 asking | 11.54 chatGPT | 12.32 who | 12.62 are | 12.76 the | 12.88 best | 13.10 agents | 13.42 in | 13.66 their | 13.78 city
+[14.04-18.06] and it's pulling results based off of who's consistent, who's creating content
+   14.04 and | 14.38 it's | 14.58 pulling | 14.82 results | 15.26 based | 15.58 off | 15.82 of | 16.02 who's | 16.28 consistent, | 17.00 who's | 17.24 creating | 17.56 content
+[18.06-20.74] and who's actually showing up online consistently.
+   18.06 and | 18.46 who's | 18.80 actually | 19.22 showing | 19.50 up | 19.72 online | 20.12 consistently.
+[21.14-24.34] If you are ignoring the shift as an agent you're already falling behind
+   21.14 If | 21.28 you | 21.50 are | 21.66 ignoring | 22.02 the | 22.22 shift | 22.38 as | 22.62 an | 22.76 agent | 23.00 you're | 23.32 already | 23.68 falling | 23.94 behind
+[24.34-25.78] and it's only going to get worse.
+   24.34 and | 24.62 it's | 24.78 only | 25.02 going | 25.22 to | 25.36 get | 25.50 worse.
+[26.00-28.24] But the crazy thing is you still have the upper hand.
+   26.00 But | 26.12 the | 26.26 crazy | 26.50 thing | 26.74 is | 27.00 you | 27.18 still | 27.48 have | 27.68 the | 27.80 upper | 27.98 hand.
+[28.24-31.04] Most agents have no idea how to use AI yet.
+   28.24 Most | 28.60 agents | 29.00 have | 29.30 no | 29.60 idea | 30.00 how | 30.24 to | 30.32 use | 30.52 AI | 30.80 yet.
+[31.16-35.42] Which means if you learn it now you're positioning yourself miles ahead of everyone else.
+   31.16 Which | 31.26 means | 31.52 if | 31.70 you | 31.86 learn | 32.06 it | 32.18 now | 32.44 you're | 32.90 positioning | 33.46 yourself | 33.90 miles | 34.40 ahead | 34.72 of | 34.92 everyone | 35.20 else.
+words 121 | wpm over full duration 204

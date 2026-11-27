@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit Style Template</title>
+<!--
+  STYLE TEMPLATE - a working, frame-accurate demo of every building block in the style.
+  All text here is placeholder. Swap in your own words, footage and brand.
+  Stage: 1080 x 1920, 25 fps. Every data-in / data-out value is a frame number.
+  Open in a browser: press Play, or drag the slider. Add ?frame=120&clean=1 to the URL for a still.
+  Scenes:  0-151 A-roll (hook, captions, punch-in)   152-199 step coin   200-249 demo card + lime label
+           250-279 kinetic title   280-339 paper reveal   340-389 A-roll + icon badges   390-449 CTA card
+-->
+<style>
+@font-face{font-family:"Cap";src:url("fonts/InterTight-VF.ttf") format("truetype");font-weight:100 900}
+@font-face{font-family:"Disp";src:url("fonts/BebasNeue-Regular.ttf") format("truetype")}
+@font-face{font-family:"DispHeavy";src:url("fonts/Anton-Regular.ttf") format("truetype")}
+:root{
+  --lime:#D6FD00; --white-card:#FDFDFD; --grid:#E0E0E0;
+  --paper:#E8E2D7; --paper-edge:#CEC8BD; --paper-corner:#67625D; --red:#D92029; --char:#323230;
+  --purple:#7709BA; --purple-l:#940CE4; --purple-d:#64079F;
+  --cap-size:116px; --cap-y:67.9%;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#16161a;overflow:hidden;font-family:"Cap",system-ui,sans-serif}
+#stage{position:absolute;left:50%;top:50%;width:1080px;height:1920px;overflow:hidden;background:#000;transform-origin:0 0}
+.scene{position:absolute;inset:0;display:none;overflow:hidden}
+.abs{position:absolute}
+/* display type: condensed caps, squeezed to match the reel's narrower face */
+.disp{font-family:"Disp",sans-serif;text-transform:uppercase;line-height:.9;letter-spacing:-.02em;display:inline-block;transform:scaleX(.80);transform-origin:left center;white-space:nowrap}
+.disp.c{transform-origin:center center}
+
+/* ---------- A-ROLL (placeholder for your footage) ---------- */
+.aroll{position:absolute;inset:0;transform-origin:50% 36%}
+.aroll .bg{position:absolute;inset:0;background:
+  radial-gradient(60% 34% at 50% 8%,#6c6a1e 0%,rgba(81,72,24,.0) 100%),
+  radial-gradient(30% 20% at 4% 44%,rgba(140,200,40,.35),transparent 70%),
+  linear-gradient(#3d3612 0%,#33230f 55%,#190d08 100%)}
+.aroll .vig{position:absolute;inset:0;background:radial-gradient(75% 60% at 50% 42%,transparent 55%,rgba(0,0,0,.62) 100%)}
+.aroll .desk{position:absolute;left:0;right:0;bottom:0;height:330px;background:
+  repeating-linear-gradient(90deg,rgba(255,255,255,.13) 0 2px,transparent 2px 54px),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.13) 0 2px,transparent 2px 54px),linear-gradient(#17120f,#0b0908)}
+.subject{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.subject text{font-family:"Cap";font-weight:600;font-size:30px;fill:rgba(255,255,255,.55);letter-spacing:.06em}
+/* text that lives BEHIND the subject: slight blur + bloom so it sits in the room */
+.behind{filter:blur(1.6px) drop-shadow(0 0 18px rgba(255,255,255,.35));color:#fff}
+.hook-tag{left:107px;top:340px;font-weight:700;font-size:44px;letter-spacing:-.02em;color:#fff}
+.hook-big{left:86px;top:404px;font-family:"DispHeavy";font-size:470px;line-height:.9;transform:scaleX(.83);transform-origin:left top;letter-spacing:-.01em}
+.hook-big2{left:560px;top:404px;font-family:"DispHeavy";font-size:470px;line-height:.9;transform:scaleX(.83);transform-origin:left top}
+.hook-trail{left:800px;top:790px;font-weight:700;font-size:44px;letter-spacing:-.02em}
+.card{left:76px;top:132px;width:540px;height:768px;border-radius:16px;background:#fff;box-shadow:0 14px 40px rgba(0,0,0,.45);padding:44px 40px;color:#111}
+.card b{display:block;font-size:54px;line-height:1.02;letter-spacing:-.03em}
+.card i{display:block;margin-top:26px;height:16px;border-radius:8px;background:#e3e3e3;font-style:normal}
+.card i.s{width:62%}
+.side-label{left:742px;top:208px;font-size:66px;color:#fff;filter:drop-shadow(0 0 10px rgba(255,255,255,.25))}
+.arrow{left:612px;top:270px;width:240px;height:150px}
+.badge{width:183px;height:183px;border-radius:50%;background:#F9F5F3;box-shadow:0 0 0 10px rgba(255,255,255,.18),0 0 46px rgba(255,255,255,.55);display:grid;place-items:center}
+.badge svg{width:92px;height:92px}
+
+/* ---------- CAPTIONS (always the top layer) ---------- */
+#cap{position:absolute;left:0;right:0;top:var(--cap-y);height:0;z-index:50;pointer-events:none}
+.beat{position:absolute;left:0;right:0;top:0;transform:translateY(-50%);text-align:center;
+  font-family:"Cap";font-weight:700;font-size:var(--cap-size);letter-spacing:-.025em;line-height:.86;color:#fff;white-space:nowrap;
+  text-shadow:0 5px 12px rgba(0,0,0,.8),0 10px 34px rgba(0,0,0,.5)}
+.beat.dark{color:#000;text-shadow:none;font-size:62px;line-height:.95}
+.beat.small{font-size:48px}
+/* emphasis stack: small lead-in top-left, big keyword, small trailer bottom-right */
+.stack{display:inline-flex;flex-direction:column;align-items:stretch;text-align:left}
+.stack .lead{font-size:.72em;margin-bottom:-.06em}
+.stack .trail{font-size:.72em;text-align:right;margin-top:-.04em}
+.key{font-size:1.45em;line-height:.84}
+.key.s{font-size:1.75em}.key.l{font-size:1.3em}
+.stack .side{font-size:.5em}
+
+/* ---------- STEP COIN ---------- */
+.coin-scene{background:radial-gradient(48% 30% at 8% 36%,#641C97 0%,transparent 100%),radial-gradient(48% 34% at 96% 24%,#0A2666 0%,transparent 100%),#040309}
+.coin{position:absolute;width:124px;height:124px;margin:-62px 0 0 -62px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 35% 28%,var(--purple-l),var(--purple) 55%,var(--purple-d));box-shadow:inset 0 0 0 5px rgba(255,255,255,.1),0 10px 26px rgba(0,0,0,.5);
+  color:#fff;font-weight:700;font-size:58px;letter-spacing:-.03em}
+.coin.done{filter:saturate(.5) brightness(.5)}
+#hero{width:313px;height:313px;margin:-156px 0 0 -156px;font-size:44px;line-height:1.02;text-align:center;box-shadow:inset 0 0 0 8px rgba(255,255,255,.12),0 0 90px rgba(148,12,228,.55)}
+.hand{position:absolute;top:560px;width:330px;height:440px;border:10px solid #7221A4;border-radius:50%;opacity:.9;filter:drop-shadow(0 0 22px #940CE4)}
+.hand.l{left:-150px;border-left-color:transparent;border-bottom-color:transparent}
+.hand.r{right:-150px;border-right-color:transparent;border-bottom-color:transparent}
+
+/* ---------- DEMO CARD ON WHITE GRID + LIME LABEL ---------- */
+.grid-scene{background:var(--white-card)}
+.grid-scene .grid{position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,var(--grid) 0 1px,transparent 1px 113px),
+  repeating-linear-gradient(0deg,var(--grid) 0 1px,transparent 1px 91px);
+  -webkit-mask-image:radial-gradient(60% 50% at 50% 46%,#000 30%,transparent 100%);mask-image:radial-gradient(60% 50% at 50% 46%,#000 30%,transparent 100%)}
+.screen{left:88px;top:407px;width:904px;height:923px;border-radius:14px;background:#0f1012;box-shadow:0 22px 34px rgba(0,0,0,.36);display:grid;place-items:center;color:#5c5f66;font-weight:600;font-size:40px;letter-spacing:.08em}
+.lime{left:0;right:0;top:1406px;text-align:center}
+.lime span{background:var(--lime);color:#000;padding:15px 24px 7px;font-size:170px}
+
+/* ---------- KINETIC TITLE ---------- */
+.kin{background:#000;color:var(--lime);text-align:center}
+.kin .l1{left:0;right:0;top:662px}.kin .l2{left:0;right:0;top:850px}.kin .l3{left:0;right:0;top:918px}
+.kin .disp{font-size:238px}
+.kin .and{font-weight:700;font-size:70px;letter-spacing:-.03em}
+
+/* ---------- PAPER REVEAL ---------- */
+.paper{background:radial-gradient(70% 55% at 50% 45%,#EFE9DE 0%,var(--paper) 40%,var(--paper-edge) 72%,var(--paper-corner) 118%)}
+.paper .grain{position:absolute;inset:0;opacity:.22;mix-blend-mode:multiply}
+.paper .t{left:0;right:0;text-align:center;color:var(--red)}
+.paper .t .disp{font-size:380px}
+.cut{left:350px;top:600px;width:380px;height:430px;border-radius:50% 50% 46% 46%;background:#3b2a22;display:grid;place-items:center;color:rgba(255,255,255,.6);font-weight:600;font-size:26px;letter-spacing:.06em;text-align:center;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+
+/* ---------- CTA CARD ---------- */
+.cta{background:var(--white-card)}
+#qr{left:281px;top:600px;width:517px;height:517px}
+
+/* ---------- flash layers + HUD ---------- */
+#flash{position:absolute;inset:0;z-index:40;display:none}
+#hud{position:fixed;left:0;right:0;bottom:0;display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(10,10,12,.88);color:#e8e8ea;font:13px/1.2 system-ui,sans-serif;z-index:99}
+#hud button{background:#D6FD00;border:0;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer}
+#hud input{flex:1;min-width:60px}
+#hud span{white-space:nowrap;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- ================= SCENE 1+2: A-ROLL ================= -->
+  <section class="scene" data-in="0" data-out="151">
+    <div class="aroll" id="aroll">
+      <div class="bg"></div>
+      <!-- layer order matters: background, then behind-subject text and cards, then the cut-out subject -->
+      <div class="behind">
+        <div class="abs hook-tag" data-in="0" data-out="86">
+          <span data-in="2">the</span> <span data-in="6">story</span> <span data-in="11">of</span> <span data-in="15">a</span>
+        </div>
+        <div class="abs hook-big" data-in="22" data-out="86">21</div>
+        <div class="abs hook-big2" data-in="36" data-out="86">YO</div>
+        <div class="abs hook-trail" data-in="39" data-out="86">founder</div>
+      </div>
+      <div class="abs card" data-in="92" data-out="118" data-fx="slide:4:90"><b>Your proof card goes here.</b><i></i><i></i><i class="s"></i><i></i><i class="s"></i></div>
+      <svg class="subject" viewBox="0 0 1080 1920" aria-label="placeholder subject">
+        
+        <path d="M150 1920 C150 1300 300 1120 440 1090 L440 1010 C360 950 330 860 330 760 C330 590 420 480 540 480 C660 480 750 590 750 760 C750 860 720 950 640 1010 L640 1090 C780 1120 930 1300 930 1920 Z" fill="#6a4939"/>
+        <text x="540" y="1500" text-anchor="middle">YOUR FOOTAGE (CUT-OUT SUBJECT)</text>
+      </svg>
+      <div class="desk"></div>
+      <div class="vig"></div>
+    </div>
+    <!-- labels that sit in front of the footage -->
+    <div class="abs side-label" data-in="92" data-out="118"><span class="disp">Project 1</span></div>
+    <svg class="abs arrow" data-in="92" data-out="118" viewBox="0 0 240 150"><path d="M225 12 C200 96 120 128 22 130" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M48 112 L20 130 L50 146" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- ================= SCENE 3: STEP COIN ================= -->
+  <section class="scene coin-scene" data-in="152" data-out="200">
+    <div class="hand l"></div><div class="hand r"></div>
+    <div class="coin" id="c1" style="left:150px;top:1300px">1</div>
+    <div class="coin" style="left:345px;top:1300px">2</div>
+    <div class="coin" style="left:540px;top:1300px">3</div>
+    <div class="coin" style="left:735px;top:1300px">4</div>
+    <div class="coin" style="left:930px;top:1300px">5</div>
+    <div class="coin" id="hero" style="left:540px;top:776px"><span id="heroLabel">Step<br>One</span></div>
+  </section>
+
+  <!-- ================= SCENE 4: DEMO CARD + LIME LABEL ================= -->
+  <section class="scene grid-scene" data-in="200" data-out="250">
+    <div class="grid"></div>
+    <div class="abs screen">SCREEN RECORDING</div>
+    <div class="abs lime" data-in="200" data-out="210"><span class="disp c">Plan,</span></div>
+    <div class="abs lime" data-in="210" data-out="222"><span class="disp c">Build,</span></div>
+    <div class="abs lime" data-in="222" data-out="228"><span class="disp c">And</span></div>
+    <div class="abs lime" data-in="228" data-out="250"><span class="disp c">Ship</span></div>
+  </section>
+
+  <!-- ================= SCENE 5: KINETIC TITLE ================= -->
+  <section class="scene kin" data-in="250" data-out="280">
+    <div class="abs l1"><span class="disp c"><span data-in="250">Real</span> <span data-in="256">Results</span></span></div>
+    <div class="abs l2 and" data-in="262">and</div>
+    <div class="abs l3" data-in="268"><span class="disp c">No Excuses</span></div>
+  </section>
+
+  <!-- ================= SCENE 6: PAPER REVEAL (exits on a white flash) ================= -->
+  <section class="scene paper" data-in="280" data-out="339">
+    <svg class="grain" width="1080" height="1920"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+    <div class="abs t" style="top:440px" data-in="288" data-fx="fade:4"><span class="disp c">The</span></div>
+    <div class="abs t" style="top:726px" data-in="291" data-fx="fade:4"><span class="disp c">Secret</span></div>
+    <div class="abs t" style="top:1012px" data-in="297" data-fx="fade:4"><span class="disp c">Revealed</span></div>
+    <div class="abs cut" data-in="280" data-fx="over:7">CUT-OUT<br>HEAD</div>
+  </section>
+
+  <!-- ================= SCENE 7: A-ROLL + ICON BADGES ================= -->
+  <section class="scene" data-in="340" data-out="390">
+    <div class="aroll" id="aroll2">
+      <div class="bg"></div>
+      <svg class="subject" viewBox="0 0 1080 1920"><path d="M150 1920 C150 1300 300 1120 440 1090 L440 1010 C360 950 330 860 330 760 C330 590 420 480 540 480 C660 480 750 590 750 760 C750 860 720 950 640 1010 L640 1090 C780 1120 930 1300 930 1920 Z" fill="#6a4939"/></svg>
+      <div class="desk"></div><div class="vig"></div>
+    </div>
+    <div class="abs badge" style="left:83px;top:479px" data-in="346" data-fx="spin:6"><svg viewBox="0 0 24 24" fill="#222"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.7 3.8-7.6 8.5-7.6s8.5 2.9 8.5 7.6z"/></svg></div>
+    <div class="abs badge" style="left:397px;top:126px" data-in="360" data-fx="spin:6"><svg viewBox="0 0 24 24" fill="#222"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 8.2v3.6c0 1.7 3.6 3 8 3s8-1.3 8-3V8.2c-1.5 1.5-4.6 2.3-8 2.3s-6.5-.8-8-2.3z"/><path d="M4 14.4V18c0 1.7 3.6 3 8 3s8-1.3 8-3v-3.6c-1.5 1.5-4.6 2.3-8 2.3s-6.5-.8-8-2.3z"/></svg></div>
+    <div class="abs badge" style="left:819px;top:400px" data-in="374" data-fx="spin:6"><svg viewBox="0 0 24 24" fill="#222"><path d="M12 2.5a6.5 6.5 0 0 0-3.8 11.8c.5.4.8 1 .8 1.6V17h6v-1.1c0-.6.3-1.2.8-1.6A6.5 6.5 0 0 0 12 2.5z"/><rect x="9" y="18.3" width="6" height="1.7" rx=".8"/><rect x="10" y="20.7" width="4" height="1.5" rx=".7"/></svg></div>
+  </section>
+
+  <!-- ================= SCENE 8: CTA CARD ================= -->
+  <section class="scene cta" data-in="390" data-out="450">
+    <canvas class="abs" id="qr" width="517" height="517"></canvas>
+  </section>
+
+  <div id="flash"></div>
+
+  <!-- ================= CAPTION TRACK =================
+       One .beat per caption state. Hard pop in, hard swap out. No fades, no bounce.
+       Inside an emphasis stack every word has its own data-in, and its space is reserved from the first word. -->
+  <div id="cap">
+    <div class="beat" data-in="57" data-out="59">This</div>
+    <div class="beat" data-in="59" data-out="63">will</div>
+    <div class="beat" data-in="63" data-out="69">change</div>
+    <div class="beat" data-in="69" data-out="86">your week.</div>
+    <div class="beat" data-in="86" data-out="98">She built</div>
+    <div class="beat" data-in="98" data-out="102">one</div>
+    <div class="beat" data-in="102" data-out="110">app,</div>
+    <div class="beat" data-in="110" data-out="118">and</div>
+    <div class="beat" data-in="118" data-out="151"><span class="stack"><span class="lead" data-in="118">you're</span><span class="key l" data-in="121">seriously</span><span class="trail" data-in="130">missing out.</span></span></div>
+    <div class="beat small" data-in="212" data-out="230">small caption over a demo</div>
+    <div class="beat" data-in="340" data-out="346">handling</div>
+    <div class="beat" data-in="346" data-out="360">user input,</div>
+    <div class="beat" data-in="360" data-out="366">storing</div>
+    <div class="beat" data-in="366" data-out="374">data,</div>
+    <div class="beat" data-in="374" data-out="390"><span class="stack"><span class="lead" data-in="374">simple</span><span class="key s" data-in="380">logic</span></span></div>
+    <div class="beat dark" data-in="390" data-out="416"><span class="stack" style="text-align:center"><span data-in="390">scan <span data-in="395">this</span></span><span class="key" data-in="401">QR <span data-in="407">Code</span></span></span></div>
+    <div class="beat dark" data-in="416" data-out="450"><span class="stack" style="text-align:center"><span data-in="416">for <span data-in="418">the</span></span><span class="key" data-in="421">full <span data-in="431">guide</span></span></span></div>
+  </div>
+</div>
+
+<div id="hud"><button id="play">Play</button><input id="scrub" type="range" min="0" max="449" value="0"><span id="read">f 0</span></div>
+
+<script>
+/* ---------------- timeline engine ---------------- */
+const FPS = 25, TOTAL = 450;
+const stage = document.getElementById('stage'), flash = document.getElementById('flash');
+const easeOut = p => 1 - Math.pow(1 - p, 3);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+
+// Transitions. "neg" = 1 frame inverted + desaturated, then 1 frame black. "white" = 1 frame blown out, then 1 frame white.
+const FLASHES = [{ type: 'neg', at: 150 }, { type: 'white', at: 338 }];
+
+// An element with no data-out of its own leaves when its nearest parent with a data-out leaves.
+const outFrame = el => { const o = el.closest('[data-out]'); return o ? +o.dataset.out : Infinity; };
+const items = [...document.querySelectorAll('[data-in]')].map(el => ({
+  el, i: +el.dataset.in, o: outFrame(el),
+  scene: el.classList.contains('scene'), fx: (el.dataset.fx || 'pop').split(':')
+}));
+
+function fx(e, k) {                       // k = frames since the element appeared
+  const [type, n = 4, d = 60] = e.fx, p = clamp((k + 1) / +n), s = e.el.style;
+  if (type === 'fade') s.opacity = p;
+  else if (type === 'rise') { s.opacity = p; s.transform = `translateY(${(1 - easeOut(p)) * d}px)`; }
+  else if (type === 'slide') { s.transform = `translateX(${-(1 - easeOut(p)) * d}px)`; s.filter = p < 1 ? `blur(${(1 - p) * 14}px)` : 'none'; s.opacity = clamp(p * 1.5); }
+  else if (type === 'spin') { s.transform = `scale(${0.3 + 0.7 * easeOut(p)}) rotate(${(1 - p) * -120}deg)`; s.opacity = clamp(p * 2); }
+  else if (type === 'over') s.transform = `scale(${1 + 0.35 * (1 - easeOut(p))})`;
+}
+
+function render(f) {
+  f = clamp(Math.round(f), 0, TOTAL - 1);
+  for (const e of items) {
+    const on = f >= e.i && f < e.o;
+    if (e.scene) e.el.style.display = on ? 'block' : 'none';
+    else { e.el.style.visibility = on ? 'visible' : 'hidden'; if (on && e.fx[0] !== 'pop') fx(e, f - e.i); }
+  }
+  // camera: hook push-in 100% to 116% over 43 frames then hold; punch-in to 139% at the jump cut on frame 118
+  const a = document.getElementById('aroll');
+  a.style.transform = `scale(${f < 118 ? 1 + 0.16 * easeOut(clamp(f / 43)) : 1.39})`;
+  // slow push-in, about 2.5% per second, on the second A-roll shot
+  document.getElementById('aroll2').style.transform = `scale(${1 + 0.025 * Math.max(0, f - 340) / FPS})`;
+  // step coin: flips out of the row to the centre over 12 frames, label shows on the second half of the flip
+  const hero = document.getElementById('hero'), c1 = document.getElementById('c1'), p = clamp((f - 155) / 12);
+  c1.style.visibility = f < 155 ? 'visible' : 'hidden';
+  hero.style.visibility = f >= 155 && f < 200 ? 'visible' : 'hidden';
+  const e = easeOut(p), x = 150 + (540 - 150) * e, y = 1300 + (776 - 1300) * e, sc = 0.4 + 0.6 * e;
+  hero.style.left = x + 'px'; hero.style.top = y + 'px';
+  hero.style.transform = `scale(${sc}) scaleX(${Math.max(0.04, Math.abs(Math.cos(p * Math.PI * 3)))}) rotate(${(1 - p) * -18}deg)`;
+  document.getElementById('heroLabel').style.visibility = p > 0.55 ? 'visible' : 'hidden';
+  // flashes: the picture is affected, captions are not
+  let filter = 'none', overlay = null, hideCap = false;
+  for (const fl of FLASHES) {
+    if (f === fl.at) filter = fl.type === 'neg' ? 'invert(1) grayscale(1)' : 'brightness(1.6) contrast(.8)';
+    if (f === fl.at + 1) { overlay = fl.type === 'neg' ? '#000' : '#fff'; hideCap = fl.type === 'neg'; }
+  }
+  document.querySelectorAll('.scene').forEach(s => s.style.filter = filter);
+  flash.style.display = overlay ? 'block' : 'none'; if (overlay) flash.style.background = overlay;
+  document.getElementById('cap').style.visibility = hideCap ? 'hidden' : 'visible';
+  document.getElementById('scrub').value = f;
+  document.getElementById('read').textContent = `f ${f}  ·  ${(f / FPS).toFixed(2)}s`;
+  window.__frame = f;
+}
+
+/* placeholder QR: a random pattern, not a real code. Replace with your own QR image. */
+(function () {
+  const c = document.getElementById('qr'), g = c.getContext('2d'), N = 29, s = 517 / N; let seed = 7;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  g.fillStyle = '#fff'; g.fillRect(0, 0, 517, 517); g.fillStyle = '#000';
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) if (rnd() > 0.52) g.fillRect(x * s, y * s, s + 0.5, s + 0.5);
+  for (const [fx0, fy0] of [[0, 0], [N - 7, 0], [0, N - 7]]) {
+    g.fillStyle = '#fff'; g.fillRect(fx0 * s - 1, fy0 * s - 1, 7 * s + 2, 7 * s + 2);
+    g.fillStyle = '#000'; g.fillRect(fx0 * s, fy0 * s, 7 * s, 7 * s);
+    g.fillStyle = '#fff'; g.fillRect((fx0 + 1) * s, (fy0 + 1) * s, 5 * s, 5 * s);
+    g.fillStyle = '#000'; g.fillRect((fx0 + 2) * s, (fy0 + 2) * s, 3 * s, 3 * s);
+  }
+})();
+
+/* ---------------- fit to window, playback, URL params ---------------- */
+const q = new URLSearchParams(location.search), clean = q.has('clean');
+function fit() {
+  const hud = clean ? 0 : 48, s = Math.min(innerWidth / 1080, (innerHeight - hud) / 1920);
+  stage.style.transform = `translate(${-540 * s}px, ${-960 * s - hud / 2}px) scale(${s})`;
+}
+if (clean) document.getElementById('hud').style.display = 'none';
+addEventListener('resize', fit); fit();
+let playing = false, t0 = 0, f0 = 0;
+function tick(now) { if (!playing) return; const f = f0 + (now - t0) / 1000 * FPS; render(f % TOTAL); requestAnimationFrame(tick); }
+document.getElementById('play').onclick = function () {
+  playing = !playing; this.textContent = playing ? 'Pause' : 'Play';
+  if (playing) { t0 = performance.now(); f0 = window.__frame || 0; requestAnimationFrame(tick); }
+};
+document.getElementById('scrub').oninput = e => { playing = false; document.getElementById('play').textContent = 'Play'; render(+e.target.value); };
+window.seekFrame = render;                      // for frame-by-frame rendering tools
+document.fonts.ready.then(() => render(+(q.get('frame') || 0)));
+render(+(q.get('frame') || 0));
+</script>
+</body>
+</html>

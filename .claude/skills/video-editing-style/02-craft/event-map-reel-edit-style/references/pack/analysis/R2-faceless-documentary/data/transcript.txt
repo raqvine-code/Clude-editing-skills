@@ -1,0 +1,32 @@
+language en p=1.00 duration 40.85s
+[0.00-3.04] Doctors were unknowingly killing their own patients
+   0.00 Doctors | 0.34 were | 0.68 unknowingly | 1.42 killing | 1.86 their | 2.20 own | 2.48 patients
+[3.04-6.82] until one man discovered a simple habit that could save lives.
+   3.04 until | 3.56 one | 3.96 man | 4.18 discovered | 4.58 a | 4.82 simple | 5.14 habit | 5.58 that | 5.84 could | 5.98 save | 6.38 lives.
+[7.24-9.36] His name was Igna Semmelweis.
+   7.24 His | 7.60 name | 7.92 was | 8.20 Igna | 8.68 Semmelweis.
+[9.82-12.72] In the 1840s, he noticed women were dying
+   9.82 In | 10.12 the | 10.22 1840s, | 11.28 he | 11.46 noticed | 11.74 women | 12.12 were | 12.34 dying
+[12.72-15.16] from childbirth fever at alarming rates.
+   12.72 from | 12.98 childbirth | 13.62 fever | 13.96 at | 14.24 alarming | 14.66 rates.
+[15.40-18.00] He discovered that doctors were going from autopsies
+   15.40 He | 15.52 discovered | 15.88 that | 16.14 doctors | 16.54 were | 16.82 going | 17.04 from | 17.24 autopsies
+[18.00-20.18] to patients without washing their hands.
+   18.00 to | 18.18 patients | 18.64 without | 19.10 washing | 19.56 their | 19.76 hands.
+[20.46-22.78] So he introduced hand disinfection.
+   20.46 So | 20.78 he | 21.12 introduced | 21.64 hand | 22.02 disinfection.
+[22.96-24.82] The death rate dropped dramatically,
+   22.96 The | 23.06 death | 23.34 rate | 23.56 dropped | 24.02 dramatically,
+[25.16-26.90] but doctors rejected his idea.
+   25.16 but | 25.32 doctors | 25.68 rejected | 26.26 his | 26.58 idea.
+[26.90-30.06] Years later, germ theory proved why he was right.
+   26.90 Years | 27.42 later, | 28.20 germ | 28.36 theory | 28.70 proved | 29.16 why | 29.44 he | 29.60 was | 29.78 right.
+[30.58-31.84] He didn't know about bacteria,
+   30.58 He | 30.68 didn't | 30.94 know | 31.10 about | 31.34 bacteria,
+[32.40-35.36] but he discovered that clean hands could save lives.
+   32.40 but | 32.54 he | 32.66 discovered | 33.10 that | 33.38 clean | 33.74 hands | 34.26 could | 34.52 save | 34.86 lives.
+[35.70-37.36] The editors making work like this
+   35.70 The | 35.80 editors | 36.14 making | 36.48 work | 36.78 like | 37.00 this
+[37.36-40.42] started with a project file from earnedits.com.
+   37.36 started | 37.78 with | 38.04 a | 38.12 project | 38.48 file | 38.84 from | 39.14 earnedits | 39.88 .com.
+words 103 | wpm over full duration 151

@@ -1,0 +1,5 @@
+# P14 Faceless 2.5D Documentary Story
+
+**This profile lives in its own skill: `02-craft/event-map-reel-edit-style/GUIDE.md` (section 6).** Full recipes in its `references/format-c-faceless-documentary.md`, `references/transitions.md`, `references/devices.md`; frames in `references/pack/analysis/R2-*` and `R3-*`.
+
+In one paragraph: a 9:16 voice-over story (history, news, mystery; 130-151 wpm with sentence gaps) with no camera footage. Stills are built as layered dioramas and filmed by a virtual camera that never stops (rotate-and-pull-back on every plate); scene changes are moves through windows, irises, portals and texture bridges, not cuts; no captions, text appears only when the word is the picture (verdict 3D caps with one red word, typed date card, serif one-word moral); colour carries meaning (red danger, green life, B&W death / past); no music, sub drones plus a tick / whoosh-boom / sub-boom grammar. Learned 2026-11-22 from the "zip 2" analysis pack (reels R2 and R3); nothing rendered yet.

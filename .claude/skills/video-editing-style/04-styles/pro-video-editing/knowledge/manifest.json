@@ -1,0 +1,1653 @@
+{
+ "root": "/Users/raghusai/Desktop/training claude",
+ "files": {
+  "training videos/#aftereffects #motiondesign #videoediting.mp4": {
+   "hash": "fdf671691d67",
+   "kind": "video",
+   "meta": {
+    "dur": 6.89,
+    "w": 720,
+    "h": 1280,
+    "fps": 30.0,
+    "audio_hz": 44100,
+    "loudness": {
+     "I_LUFS": "-16.6",
+     "LRA": "2.0",
+     "peak_dBFS": "-0.4"
+    },
+    "cuts": [
+     2.233,
+     4.767,
+     5.033,
+     5.567
+    ],
+    "shots": {
+     "n": 5,
+     "mean": 1.38,
+     "median": 1.32,
+     "per_min": 43.5
+    },
+    "sheets": 1
+   },
+   "cache": "cache/fdf671691d67"
+  },
+  "training videos/#aftereffects #videoediting #motiondesign.mp4": {
+   "hash": "4a6cb105b501",
+   "kind": "video",
+   "meta": {
+    "dur": 8.22,
+    "w": 720,
+    "h": 1280,
+    "fps": 30.0,
+    "audio_hz": 44100,
+    "loudness": {
+     "I_LUFS": "-14.4",
+     "LRA": "4.0",
+     "peak_dBFS": "0.2"
+    },
+    "cuts": [
+     0.033,
+     2.067,
+     3.433,
+     5.233,
+     5.533,
+     6.133
+    ],
+    "shots": {
+     "n": 7,
+     "mean": 1.17,
+     "median": 1.37,
+     "per_min": 51.1
+    },
+    "sheets": 1
+   },
+   "cache": "cache/4a6cb105b501"
+  },
+  "training videos/100 AI Agents Replaced My Content Team [0s-56s].mp4": {
+   "hash": "94a17cc80891",
+   "kind": "video",
+   "meta": {
+    "dur": 55.73,
+    "w": 1080,
+    "h": 1920,
+    "fps": 59.94,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-16.6",
+     "LRA": "4.6",
+     "peak_dBFS": "0.1"
+    },
+    "active_crop": "804:662:250:564",
+    "cuts": [
+     4.838,
+     5.556,
+     6.256,
+     6.59,
+     6.874,
+     35.452,
+     35.652,
+     38.488,
+     52.202,
+     52.402
+    ],
+    "shots": {
+     "n": 11,
+     "mean": 5.07,
+     "median": 0.72,
+     "per_min": 11.8
+    },
+    "sheets": 5
+   },
+   "cache": "cache/94a17cc80891"
+  },
+  "training videos/70x more views with pro editing.This video grew from 1K to 70K views.DM us for high-performing v.mp4": {
+   "hash": "9783b41eed0a",
+   "kind": "video",
+   "meta": {
+    "dur": 15.81,
+    "w": 720,
+    "h": 1280,
+    "fps": 30.0,
+    "audio_hz": 44100,
+    "loudness": {
+     "I_LUFS": "-14.2",
+     "LRA": "2.2",
+     "peak_dBFS": "0.7"
+    },
+    "cuts": [],
+    "shots": {
+     "n": 1,
+     "mean": 15.81,
+     "median": 15.81,
+     "per_min": 3.8
+    },
+    "sheets": 2
+   },
+   "cache": "cache/9783b41eed0a"
+  },
+  "training videos/AQM9Tn2 reel 2026-11-17.mp4": {
+   "hash": "8f956030b898",
+   "kind": "video",
+   "meta": {
+    "dur": 15.04,
+    "w": 720,
+    "h": 1280,
+    "fps": 30.0,
+    "audio_hz": 44100,
+    "loudness": {
+     "I_LUFS": "-14.1",
+     "LRA": "1.4",
+     "peak_dBFS": "-2.8"
+    },
+    "active_crop": "720:1012:0:128",
+    "cuts": [
+     2.5,
+     4.2,
+     5.3,
+     6.2,
+     7.7,
+     8.733,
+     11.633
+    ],
+    "shots": {
+     "n": 8,
+     "mean": 1.88,
+     "median": 1.7,
+     "per_min": 31.9
+    },
+    "sheets": 2
+   },
+   "cache": "cache/8f956030b898"
+  },
+  "training videos/Before After clean text animation smooth transitions sound design.mp4": {
+   "hash": "48a38ca593e4",
+   "kind": "video",
+   "meta": {
+    "dur": 22.93,
+    "w": 1080,
+    "h": 1920,
+    "fps": 29.83,
+    "audio_hz": 44100,
+    "loudness": {
+     "I_LUFS": "-14.6",
+     "LRA": "4.3",
+     "peak_dBFS": "-0.6"
+    },
+    "cuts": [
+     3.52,
+     7.308,
+     7.576,
+     11.431,
+     11.633,
+     11.834,
+     12.035,
+     16.058,
+     16.259
+    ],
+    "shots": {
+     "n": 10,
+     "mean": 2.29,
+     "median": 3.52,
+     "per_min": 26.2
+    },
+    "sheets": 2
+   },
+   "cache": "cache/48a38ca593e4"
+  },
+  "training videos/Before After premiere pro motiongraphic talkinghead project file.mp4": {
+   "hash": "dd0713672607",
+   "kind": "video",
+   "meta": {
+    "dur": 45.17,
+    "w": 1080,
+    "h": 1920,
+    "fps": 30.0,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-14.3",
+     "LRA": "3.8",
+     "peak_dBFS": "-0.5"
+    },
+    "cuts": [
+     5.867,
+     11.5,
+     17.7,
+     20.467,
+     30.467,
+     36.9,
+     41.2
+    ],
+    "shots": {
+     "n": 8,
+     "mean": 5.65,
+     "median": 5.87,
+     "per_min": 10.6
+    },
+    "sheets": 4
+   },
+   "cache": "cache/dd0713672607"
+  },
+  "training videos/Edited a video from podcast Before ~ After Special thanks to @the_nicks_edit ..#motiongraphic #a.mp4": {
+   "hash": "28d9fc8134d2",
+   "kind": "video",
+   "meta": {
+    "dur": 16.69,
+    "w": 716,
+    "h": 1274,
+    "fps": 30.0,
+    "audio_hz": 44100,
+    "loudness": {
+     "I_LUFS": "-14.5",
+     "LRA": "3.0",
+     "peak_dBFS": "-0.8"
+    },
+    "cuts": [
+     1.933,
+     4.433,
+     5.3,
+     7.067,
+     10.067,
+     11.933,
+     13.3
+    ],
+    "shots": {
+     "n": 8,
+     "mean": 2.09,
+     "median": 1.93,
+     "per_min": 28.8
+    },
+    "sheets": 2
+   },
+   "cache": "cache/28d9fc8134d2"
+  },
+  "training videos/Edited a video from podcast Before ~ AfterSpecial thanks to @rajshamani[Video editor, video edit.mp4": {
+   "hash": "91170c08735e",
+   "kind": "video",
+   "meta": {
+    "dur": 16.23,
+    "w": 716,
+    "h": 1274,
+    "fps": 30.0,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-14.1",
+     "LRA": "4.9",
+     "peak_dBFS": "-2.3"
+    },
+    "cuts": [
+     3.1,
+     3.433,
+     4.467,
+     4.7,
+     6.467,
+     7.7,
+     10.867,
+     12.2,
+     14.633
+    ],
+    "shots": {
+     "n": 10,
+     "mean": 1.62,
+     "median": 1.6,
+     "per_min": 37.0
+    },
+    "sheets": 2
+   },
+   "cache": "cache/91170c08735e"
+  },
+  "training videos/Four speakers four styles one Claude skill (Edit-Kit promo).mp4": {
+   "hash": "0e5c76cf941e",
+   "kind": "video",
+   "meta": {
+    "dur": 10.0,
+    "w": 1080,
+    "h": 1920,
+    "fps": 30.0,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-14.1",
+     "LRA": "2.1",
+     "peak_dBFS": "1.6"
+    },
+    "cuts": [],
+    "shots": {
+     "n": 1,
+     "mean": 10.0,
+     "median": 10.0,
+     "per_min": 6.0
+    },
+    "sheets": 1
+   },
+   "cache": "cache/0e5c76cf941e"
+  },
+  "training videos/How to start video editing from zero in 2026 editing premiere videoediting [0s-34s].mp4": {
+   "hash": "1ef4cbf46f08",
+   "kind": "video",
+   "meta": {
+    "dur": 33.86,
+    "w": 1080,
+    "h": 1920,
+    "fps": 29.97,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-12.4",
+     "LRA": "1.9",
+     "peak_dBFS": "-0.4"
+    },
+    "active_crop": "1080:632:0:690",
+    "cuts": [
+     11.211,
+     18.151,
+     20.087,
+     22.389,
+     25.459,
+     28.495
+    ],
+    "shots": {
+     "n": 7,
+     "mean": 4.84,
+     "median": 3.07,
+     "per_min": 12.4
+    },
+    "sheets": 3
+   },
+   "cache": "cache/1ef4cbf46f08"
+  },
+  "training videos/Let’s make it pay. 📩#aftereffects #videoediting #motiondesign.mp4": {
+   "hash": "f00ae5949170",
+   "kind": "video",
+   "meta": {
+    "dur": 7.54,
+    "w": 720,
+    "h": 1280,
+    "fps": 30.0,
+    "audio_hz": 44100,
+    "loudness": {
+     "I_LUFS": "-14.8",
+     "LRA": "7.0",
+     "peak_dBFS": "-0.1"
+    },
+    "cuts": [
+     4.6,
+     5.967
+    ],
+    "shots": {
+     "n": 3,
+     "mean": 2.51,
+     "median": 1.57,
+     "per_min": 23.9
+    },
+    "sheets": 1
+   },
+   "cache": "cache/f00ae5949170"
+  },
+  "training videos/SaveClip.App_AQPMvWXMUrvlu88Mm9_T1uneEGQey1oqVfSk3-CJvF8uXMkxzvQPgydNHPXXsyRqCzPxTpR7-DggGz1lg_VCehilrqtYbefy1W496c8 (1).mp4": {
+   "hash": "32ec48946f60",
+   "kind": "video",
+   "meta": {
+    "dur": 9.66,
+    "w": 720,
+    "h": 1280,
+    "fps": 30.0,
+    "audio_hz": 44100,
+    "loudness": {
+     "I_LUFS": "-14.0",
+     "LRA": "2.4",
+     "peak_dBFS": "-0.9"
+    },
+    "cuts": [
+     0.1,
+     2.967,
+     4.9,
+     6.233,
+     7.333,
+     8.533
+    ],
+    "shots": {
+     "n": 7,
+     "mean": 1.38,
+     "median": 1.2,
+     "per_min": 43.5
+    },
+    "sheets": 1
+   },
+   "cache": "cache/32ec48946f60"
+  },
+  "training videos/SaveClip.App_AQPMvWXMUrvlu88Mm9_T1uneEGQey1oqVfSk3-CJvF8uXMkxzvQPgydNHPXXsyRqCzPxTpR7-DggGz1lg_VCehilrqtYbefy1W496c8.mp4": {
+   "hash": "32ec48946f60",
+   "kind": "video",
+   "duplicate_of": "training videos/SaveClip.App_AQPMvWXMUrvlu88Mm9_T1uneEGQey1oqVfSk3-CJvF8uXMkxzvQPgydNHPXXsyRqCzPxTpR7-DggGz1lg_VCehilrqtYbefy1W496c8 (1).mp4"
+  },
+  "training videos/Story board Before ~ AfterEdited this video a long ago just posting and giving away valuable ass.mp4": {
+   "hash": "60a96c2030c4",
+   "kind": "video",
+   "meta": {
+    "dur": 13.55,
+    "w": 720,
+    "h": 1280,
+    "fps": 30.0,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-14.5",
+     "LRA": "2.9",
+     "peak_dBFS": "1.5"
+    },
+    "cuts": [
+     2.333,
+     5.533,
+     9.767,
+     10.0,
+     10.267,
+     10.467
+    ],
+    "shots": {
+     "n": 7,
+     "mean": 1.94,
+     "median": 2.33,
+     "per_min": 31.0
+    },
+    "sheets": 2
+   },
+   "cache": "cache/60a96c2030c4"
+  },
+  "training videos/This Is Where Editors Stop Looking Random and Start Looking Pro [0s-32s].mp4": {
+   "hash": "cab9807914a3",
+   "kind": "video",
+   "meta": {
+    "dur": 32.0,
+    "w": 1080,
+    "h": 1920,
+    "fps": 29.97,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-12.8",
+     "LRA": "7.0",
+     "peak_dBFS": "-0.5"
+    },
+    "active_crop": "1060:604:0:690",
+    "cuts": [
+     1.502,
+     12.613,
+     17.317,
+     19.586,
+     25.092,
+     27.694
+    ],
+    "shots": {
+     "n": 7,
+     "mean": 4.57,
+     "median": 4.31,
+     "per_min": 13.1
+    },
+    "sheets": 3
+   },
+   "cache": "cache/cab9807914a3"
+  },
+  "training videos/This New AI Workflow Makes you 100X faster [0s-38s].mp4": {
+   "hash": "7a74184fe0d2",
+   "kind": "video",
+   "meta": {
+    "dur": 38.0,
+    "w": 1080,
+    "h": 1920,
+    "fps": 29.97,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-14.7",
+     "LRA": "2.3",
+     "peak_dBFS": "-0.7"
+    },
+    "active_crop": "1080:850:0:536",
+    "cuts": [
+     0.467,
+     2.035,
+     4.071,
+     15.716,
+     16.884,
+     19.686,
+     21.755,
+     21.989,
+     26.627,
+     31.131,
+     32.799,
+     34.301,
+     35.102,
+     36.203
+    ],
+    "shots": {
+     "n": 15,
+     "mean": 2.53,
+     "median": 1.67,
+     "per_min": 23.7
+    },
+    "sheets": 4
+   },
+   "cache": "cache/7a74184fe0d2"
+  },
+  "training videos/tharun-speaks-longform/14 Brutally Honest Truths I wish I knew at 18 [0s-707s].mp4": {
+   "hash": "e32f46e6a48b",
+   "kind": "video",
+   "meta": {
+    "dur": 706.68,
+    "w": 3840,
+    "h": 1920,
+    "fps": 25.0,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-10.5",
+     "LRA": "3.2",
+     "peak_dBFS": "1.6"
+    },
+    "cuts": [
+     2.4,
+     3.68,
+     4.88,
+     5.6,
+     7.24,
+     8.8,
+     9.04,
+     9.28,
+     9.52,
+     9.76,
+     9.96,
+     15.96,
+     19.4,
+     20.12,
+     21.4,
+     22.76,
+     24.16,
+     26.2,
+     26.64,
+     27.24,
+     28.0,
+     28.88,
+     31.56,
+     35.48,
+     39.56,
+     42.32,
+     43.56,
+     45.2,
+     45.68,
+     47.6,
+     50.16,
+     53.08,
+     54.88,
+     59.28,
+     61.0,
+     67.52,
+     68.84,
+     75.96,
+     78.0,
+     78.56,
+     79.2,
+     80.04,
+     81.04,
+     83.12,
+     86.56,
+     88.84,
+     92.12,
+     98.12,
+     98.44,
+     98.84,
+     100.6,
+     104.16,
+     105.04,
+     108.16,
+     108.92,
+     113.48,
+     114.36,
+     116.52,
+     118.0,
+     121.32,
+     122.0,
+     123.24,
+     123.92,
+     128.72,
+     132.52,
+     139.4,
+     141.04,
+     145.88,
+     149.92,
+     158.16,
+     162.48,
+     163.64,
+     165.84,
+     167.76,
+     168.44,
+     170.52,
+     173.28,
+     175.04,
+     176.32,
+     187.72,
+     189.4,
+     202.24,
+     203.72,
+     207.92,
+     209.6,
+     214.2,
+     220.76,
+     226.6,
+     231.52,
+     236.68,
+     240.72,
+     243.72,
+     244.2,
+     244.6,
+     245.0,
+     245.6,
+     249.04,
+     256.32,
+     264.32,
+     270.72,
+     271.44,
+     277.0,
+     281.36,
+     282.8,
+     291.68,
+     293.2,
+     294.6,
+     295.24,
+     296.8,
+     297.68,
+     298.44,
+     300.0,
+     301.2,
+     302.52,
+     305.04,
+     308.32,
+     310.4,
+     312.76,
+     313.8,
+     325.28,
+     326.04,
+     327.0,
+     329.84,
+     330.12,
+     330.96,
+     332.04,
+     333.2,
+     334.0,
+     334.64,
+     338.52,
+     341.4,
+     343.84,
+     349.6,
+     354.44,
+     355.24,
+     357.44,
+     361.92,
+     362.8,
+     366.6,
+     371.0,
+     372.92,
+     374.04,
+     375.48,
+     385.24,
+     388.2,
+     390.88,
+     392.16,
+     394.84,
+     396.2,
+     405.12,
+     406.32,
+     407.68,
+     410.56,
+     412.04,
+     413.88,
+     415.28,
+     416.56,
+     417.96,
+     422.24,
+     424.44,
+     426.16,
+     428.28,
+     429.68,
+     438.52,
+     439.84,
+     442.72,
+     447.52,
+     449.72,
+     453.04,
+     460.12,
+     462.64,
+     464.48,
+     466.0,
+     471.04,
+     472.84,
+     475.24,
+     477.8,
+     478.64,
+     480.24,
+     494.6,
+     497.12,
+     500.08,
+     502.6,
+     506.48,
+     508.92,
+     510.0,
+     510.4,
+     511.44,
+     514.44,
+     518.6,
+     520.8,
+     529.4,
+     530.36,
+     532.44,
+     536.16,
+     541.52,
+     542.6,
+     546.24,
+     547.48,
+     548.48,
+     551.08,
+     552.6,
+     554.92,
+     557.64,
+     559.6,
+     561.64,
+     562.16,
+     562.88,
+     565.04,
+     568.96,
+     570.88,
+     572.8,
+     574.92,
+     576.12,
+     582.04,
+     584.88,
+     585.72,
+     588.8,
+     596.48,
+     603.72,
+     604.8,
+     607.6,
+     610.8,
+     611.48,
+     626.36,
+     628.04,
+     632.84,
+     634.16,
+     634.52,
+     634.84,
+     635.92,
+     637.08,
+     637.52,
+     658.16,
+     688.72,
+     691.92,
+     696.48,
+     700.52
+    ],
+    "shots": {
+     "n": 239,
+     "mean": 2.96,
+     "median": 2.04,
+     "per_min": 20.3
+    },
+    "sheets": 59
+   },
+   "cache": "cache/e32f46e6a48b"
+  },
+  "training videos/shorts-batch-2026-11-20/short-A AQMg4Yz.mp4": {
+   "hash": "898e464d9565",
+   "kind": "video",
+   "meta": {
+    "dur": 29.32,
+    "w": 720,
+    "h": 1280,
+    "fps": 30.0,
+    "audio_hz": 44100,
+    "loudness": {
+     "I_LUFS": "-14.1",
+     "LRA": "1.6",
+     "peak_dBFS": "-0.7"
+    },
+    "cuts": [
+     1.2,
+     4.0,
+     6.033,
+     8.733,
+     12.567,
+     19.8,
+     22.533,
+     25.0
+    ],
+    "shots": {
+     "n": 9,
+     "mean": 3.26,
+     "median": 2.73,
+     "per_min": 18.4
+    },
+    "sheets": 3
+   },
+   "cache": "cache/898e464d9565"
+  },
+  "training videos/shorts-batch-2026-11-20/short-B AQNKkmg.mp4": {
+   "hash": "9735270fd1bb",
+   "kind": "video",
+   "meta": {
+    "dur": 34.52,
+    "w": 720,
+    "h": 1280,
+    "fps": 30.0,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-14.3",
+     "LRA": "2.7",
+     "peak_dBFS": "-0.5"
+    },
+    "cuts": [
+     0.033,
+     2.067,
+     4.533,
+     7.667,
+     9.967,
+     12.133,
+     12.5,
+     13.7,
+     14.667,
+     17.1,
+     21.633,
+     22.3,
+     23.5,
+     25.233,
+     27.533,
+     28.267,
+     28.533,
+     29.133,
+     29.567
+    ],
+    "shots": {
+     "n": 20,
+     "mean": 1.73,
+     "median": 1.73,
+     "per_min": 34.8
+    },
+    "sheets": 3
+   },
+   "cache": "cache/9735270fd1bb"
+  },
+  "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4": {
+   "hash": "cb389ae34b89",
+   "kind": "video",
+   "meta": {
+    "dur": 707.01,
+    "w": 1920,
+    "h": 1080,
+    "fps": 29.97,
+    "audio_hz": 48000,
+    "loudness": {
+     "I_LUFS": "-16.5",
+     "LRA": "4.1",
+     "peak_dBFS": "-0.3"
+    },
+    "cuts": [
+     2.936,
+     5.105,
+     7.307,
+     9.743,
+     11.512,
+     12.346,
+     14.381,
+     15.816,
+     18.685,
+     21.755,
+     23.524,
+     29.129,
+     32.799,
+     35.102,
+     38.138,
+     44.244,
+     45.679,
+     49.416,
+     52.452,
+     56.323,
+     58.759,
+     64.131,
+     67.734,
+     71.104,
+     74.241,
+     78.579,
+     81.048,
+     88.589,
+     91.225,
+     94.761,
+     94.962,
+     97.431,
+     98.832,
+     99.466,
+     100.534,
+     102.135,
+     104.304,
+     104.505,
+     108.542,
+     112.779,
+     112.98,
+     114.882,
+     118.151,
+     119.987,
+     123.123,
+     126.76,
+     127.728,
+     127.928,
+     129.897,
+     130.764,
+     130.998,
+     131.265,
+     135.369,
+     135.936,
+     137.037,
+     141.441,
+     144.011,
+     144.244,
+     144.478,
+     146.146,
+     153.253,
+     157.591,
+     160.894,
+     165.232,
+     165.899,
+     169.203,
+     170.304,
+     172.873,
+     175.576,
+     180.28,
+     186.386,
+     189.99,
+     192.125,
+     193.894,
+     195.262,
+     196.53,
+     198.599,
+     204.171,
+     209.142,
+     212.346,
+     215.849,
+     218.051,
+     223.323,
+     225.926,
+     230.264,
+     231.665,
+     232.866,
+     238.005,
+     240.407,
+     244.545,
+     246.28,
+     250.584,
+     252.486,
+     255.455,
+     257.024,
+     259.193,
+     262.496,
+     264.998,
+     268.268,
+     273.841,
+     274.308,
+     274.675,
+     274.975,
+     275.242,
+     275.475,
+     275.709,
+     277.411,
+     279.713,
+     280.914,
+     283.183,
+     290.791,
+     293.427,
+     298.365,
+     304.238,
+     312.012,
+     317.618,
+     319.219,
+     321.955,
+     324.825,
+     332.699,
+     336.403,
+     341.308,
+     343.644,
+     353.787,
+     355.522,
+     357.591,
+     360.394,
+     363.13,
+     365.199,
+     368.035,
+     374.575,
+     379.746,
+     379.947,
+     382.95,
+     385.285,
+     386.687,
+     386.92,
+     388.856,
+     389.256,
+     393.327,
+     395.529,
+     397.464,
+     400.567,
+     411.545,
+     414.615,
+     419.052,
+     422.022,
+     427.728,
+     433.734,
+     436.303,
+     440.04,
+     443.51,
+     445.946,
+     450.884,
+     452.085,
+     453.12,
+     455.022,
+     457.925,
+     461.428,
+     463.23,
+     465.165,
+     466.033,
+     467.901,
+     469.503,
+     475.008,
+     477.211,
+     478.078,
+     479.88,
+     480.347,
+     480.681,
+     484.017,
+     484.718,
+     486.22,
+     487.02,
+     491.158,
+     492.693,
+     499.833,
+     500.367,
+     501.401,
+     505.939,
+     517.918,
+     523.657,
+     527.861,
+     532.332,
+     534.468,
+     536.436,
+     538.038,
+     543.01,
+     547.047,
+     549.483,
+     552.853,
+     555.455,
+     558.091,
+     560.227,
+     561.862,
+     566.066,
+     567.668,
+     571.638,
+     575.509,
+     576.143,
+     582.95,
+     585.252,
+     599.499,
+     602.469,
+     606.707,
+     611.545,
+     615.549,
+     619.52,
+     621.922,
+     627.728,
+     632.799,
+     639.64,
+     651.919,
+     657.958,
+     661.595,
+     663.897,
+     670.971,
+     684.117,
+     689.256,
+     691.892,
+     699.166,
+     700.767,
+     703.637,
+     703.837
+    ],
+    "shots": {
+     "n": 225,
+     "mean": 3.14,
+     "median": 2.64,
+     "per_min": 19.1
+    },
+    "sheets": 59
+   },
+   "cache": "cache/cb389ae34b89"
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.50 PM.jpeg": {
+   "hash": "048cd0e1c2db",
+   "kind": "image",
+   "match": {
+    "video": "training videos/70x more views with pro editing.This video grew from 1K to 70K views.DM us for high-performing v.mp4",
+    "t": 0.2,
+    "dist": 37,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.51 PM (1).jpeg": {
+   "hash": "27753fd3a79d",
+   "kind": "image",
+   "match": {
+    "video": "training videos/70x more views with pro editing.This video grew from 1K to 70K views.DM us for high-performing v.mp4",
+    "t": 0.0,
+    "dist": 42,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.51 PM (2).jpeg": {
+   "hash": "bcc7ae34ca0a",
+   "kind": "image",
+   "match": {
+    "video": "training videos/70x more views with pro editing.This video grew from 1K to 70K views.DM us for high-performing v.mp4",
+    "t": 15.2,
+    "dist": 26,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.51 PM (3).jpeg": {
+   "hash": "d62bf0e61f20",
+   "kind": "image",
+   "match": {
+    "video": "training videos/70x more views with pro editing.This video grew from 1K to 70K views.DM us for high-performing v.mp4",
+    "t": 14.2,
+    "dist": 29,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.51 PM.jpeg": {
+   "hash": "ca27ae3220ac",
+   "kind": "image",
+   "match": {
+    "video": "training videos/shorts-batch-2026-11-20/short-B AQNKkmg.mp4",
+    "t": 6.6,
+    "dist": 39,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.56 PM (1).jpeg": {
+   "hash": "2984ac5c3c09",
+   "kind": "image",
+   "match": {
+    "video": "training videos/#aftereffects #videoediting #motiondesign.mp4",
+    "t": 4.2,
+    "dist": 41,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.56 PM (2).jpeg": {
+   "hash": "b9d5d09513e4",
+   "kind": "image",
+   "match": {
+    "video": "training videos/#aftereffects #videoediting #motiondesign.mp4",
+    "t": 0.8,
+    "dist": 25,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.56 PM.jpeg": {
+   "hash": "8e20ed5d2286",
+   "kind": "image",
+   "match": {
+    "video": "training videos/70x more views with pro editing.This video grew from 1K to 70K views.DM us for high-performing v.mp4",
+    "t": 8.4,
+    "dist": 27,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.57 PM (1).jpeg": {
+   "hash": "e4c97fa97ecf",
+   "kind": "image",
+   "match": {
+    "video": "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4",
+    "t": 4.0,
+    "dist": 32,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.57 PM (2).jpeg": {
+   "hash": "9ba226276ce3",
+   "kind": "image",
+   "match": {
+    "video": "training videos/This New AI Workflow Makes you 100X faster [0s-38s].mp4",
+    "t": 10.0,
+    "dist": 25,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.57 PM (3).jpeg": {
+   "hash": "b5e9e5ab493d",
+   "kind": "image",
+   "match": {
+    "video": "training videos/Let’s make it pay. 📩#aftereffects #videoediting #motiondesign.mp4",
+    "t": 4.2,
+    "dist": 26,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.57 PM.jpeg": {
+   "hash": "0e8f49b4ccd9",
+   "kind": "image",
+   "match": {
+    "video": "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4",
+    "t": 255.2,
+    "dist": 16,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.58 PM (1).jpeg": {
+   "hash": "de70b66a944f",
+   "kind": "image",
+   "match": {
+    "video": "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4",
+    "t": 104.0,
+    "dist": 42,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.58 PM (2).jpeg": {
+   "hash": "d58952663962",
+   "kind": "image",
+   "match": {
+    "video": "training videos/Edited a video from podcast Before ~ After Special thanks to @the_nicks_edit ..#motiongraphic #a.mp4",
+    "t": 4.0,
+    "dist": 33,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.58 PM (3).jpeg": {
+   "hash": "4a0c43fce92b",
+   "kind": "image",
+   "match": {
+    "video": "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4",
+    "t": 465.6,
+    "dist": 48,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.58 PM.jpeg": {
+   "hash": "7c5398745428",
+   "kind": "image",
+   "match": {
+    "video": "training videos/Let’s make it pay. 📩#aftereffects #videoediting #motiondesign.mp4",
+    "t": 3.0,
+    "dist": 22,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.59 PM (1).jpeg": {
+   "hash": "2d9fcee0e1c2",
+   "kind": "image",
+   "match": {
+    "video": "training videos/tharun-speaks-longform/14 Brutally Honest Truths I wish I knew at 18 [0s-707s].mp4",
+    "t": 353.0,
+    "dist": 40,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.59 PM (2).jpeg": {
+   "hash": "8f298972633c",
+   "kind": "image",
+   "match": {
+    "video": "training videos/tharun-speaks-longform/14 Brutally Honest Truths I wish I knew at 18 [0s-707s].mp4",
+    "t": 97.0,
+    "dist": 41,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.41.59 PM.jpeg": {
+   "hash": "29e79c616e2b",
+   "kind": "image",
+   "match": {
+    "video": "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4",
+    "t": 602.8,
+    "dist": 40,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.00 PM (1).jpeg": {
+   "hash": "956e79a250f9",
+   "kind": "image",
+   "match": {
+    "video": "training videos/Edited a video from podcast Before ~ AfterSpecial thanks to @rajshamani[Video editor, video edit.mp4",
+    "t": 9.8,
+    "dist": 29,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.00 PM (2).jpeg": {
+   "hash": "137440bfba4f",
+   "kind": "image",
+   "match": {
+    "video": "training videos/Edited a video from podcast Before ~ After Special thanks to @the_nicks_edit ..#motiongraphic #a.mp4",
+    "t": 0.0,
+    "dist": 23,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.00 PM (3).jpeg": {
+   "hash": "6513ac265dce",
+   "kind": "image",
+   "match": {
+    "video": "training videos/Edited a video from podcast Before ~ After Special thanks to @the_nicks_edit ..#motiongraphic #a.mp4",
+    "t": 0.0,
+    "dist": 28,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.00 PM (4).jpeg": {
+   "hash": "6513ac265dce",
+   "kind": "image",
+   "duplicate_of": "images/WhatsApp Image 2026-11-15 at 7.42.00 PM (3).jpeg",
+   "match": {
+    "video": "training videos/Edited a video from podcast Before ~ After Special thanks to @the_nicks_edit ..#motiongraphic #a.mp4",
+    "t": 0.0,
+    "dist": 28,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.00 PM.jpeg": {
+   "hash": "0c01e6daf558",
+   "kind": "image",
+   "match": {
+    "video": "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4",
+    "t": 478.4,
+    "dist": 41,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.01 PM (1).jpeg": {
+   "hash": "05de6aa38e6c",
+   "kind": "image",
+   "match": {
+    "video": "training videos/SaveClip.App_AQPMvWXMUrvlu88Mm9_T1uneEGQey1oqVfSk3-CJvF8uXMkxzvQPgydNHPXXsyRqCzPxTpR7-DggGz1lg_VCehilrqtYbefy1W496c8 (1).mp4",
+    "t": 9.0,
+    "dist": 23,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.01 PM (2).jpeg": {
+   "hash": "81784cc4bcd8",
+   "kind": "image",
+   "match": {
+    "video": "training videos/SaveClip.App_AQPMvWXMUrvlu88Mm9_T1uneEGQey1oqVfSk3-CJvF8uXMkxzvQPgydNHPXXsyRqCzPxTpR7-DggGz1lg_VCehilrqtYbefy1W496c8 (1).mp4",
+    "t": 5.8,
+    "dist": 29,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.01 PM (3).jpeg": {
+   "hash": "5c67ddf7d6e0",
+   "kind": "image",
+   "match": {
+    "video": "training videos/SaveClip.App_AQPMvWXMUrvlu88Mm9_T1uneEGQey1oqVfSk3-CJvF8uXMkxzvQPgydNHPXXsyRqCzPxTpR7-DggGz1lg_VCehilrqtYbefy1W496c8 (1).mp4",
+    "t": 3.8,
+    "dist": 26,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.01 PM.jpeg": {
+   "hash": "5248173f01e6",
+   "kind": "image",
+   "match": {
+    "video": "training videos/Edited a video from podcast Before ~ After Special thanks to @the_nicks_edit ..#motiongraphic #a.mp4",
+    "t": 5.8,
+    "dist": 18,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.02 PM (1).jpeg": {
+   "hash": "1dcbf4bb394c",
+   "kind": "image",
+   "match": {
+    "video": "training videos/SaveClip.App_AQPMvWXMUrvlu88Mm9_T1uneEGQey1oqVfSk3-CJvF8uXMkxzvQPgydNHPXXsyRqCzPxTpR7-DggGz1lg_VCehilrqtYbefy1W496c8 (1).mp4",
+    "t": 0.8,
+    "dist": 33,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.02 PM (2).jpeg": {
+   "hash": "8d863b7897e4",
+   "kind": "image",
+   "match": {
+    "video": "training videos/This Is Where Editors Stop Looking Random and Start Looking Pro [0s-32s].mp4",
+    "t": 12.8,
+    "dist": 20,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.02 PM (3).jpeg": {
+   "hash": "b137b4a6f96c",
+   "kind": "image",
+   "match": {
+    "video": "training videos/SaveClip.App_AQPMvWXMUrvlu88Mm9_T1uneEGQey1oqVfSk3-CJvF8uXMkxzvQPgydNHPXXsyRqCzPxTpR7-DggGz1lg_VCehilrqtYbefy1W496c8 (1).mp4",
+    "t": 2.2,
+    "dist": 20,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.02 PM.jpeg": {
+   "hash": "9b261a7455db",
+   "kind": "image",
+   "match": {
+    "video": "training videos/100 AI Agents Replaced My Content Team [0s-56s].mp4",
+    "t": 13.0,
+    "dist": 28,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.03 PM (1).jpeg": {
+   "hash": "d48dcec7f47f",
+   "kind": "image",
+   "match": {
+    "video": "training videos/This New AI Workflow Makes you 100X faster [0s-38s].mp4",
+    "t": 31.8,
+    "dist": 17,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.03 PM (2).jpeg": {
+   "hash": "c0a57b7e4d1f",
+   "kind": "image",
+   "match": {
+    "video": "training videos/This New AI Workflow Makes you 100X faster [0s-38s].mp4",
+    "t": 5.4,
+    "dist": 11,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.03 PM.jpeg": {
+   "hash": "5cb5b9bd4b1b",
+   "kind": "image",
+   "match": {
+    "video": "training videos/100 AI Agents Replaced My Content Team [0s-56s].mp4",
+    "t": 30.4,
+    "dist": 32,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.04 PM (1).jpeg": {
+   "hash": "609baec52665",
+   "kind": "image",
+   "match": {
+    "video": "training videos/This New AI Workflow Makes you 100X faster [0s-38s].mp4",
+    "t": 25.8,
+    "dist": 23,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.04 PM (2).jpeg": {
+   "hash": "36a8fe2ab366",
+   "kind": "image",
+   "match": {
+    "video": "training videos/This New AI Workflow Makes you 100X faster [0s-38s].mp4",
+    "t": 5.4,
+    "dist": 16,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.04 PM (3).jpeg": {
+   "hash": "fe6ba593fcfc",
+   "kind": "image",
+   "match": {
+    "video": "training videos/This New AI Workflow Makes you 100X faster [0s-38s].mp4",
+    "t": 3.4,
+    "dist": 16,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.04 PM.jpeg": {
+   "hash": "7e6b97b37ee0",
+   "kind": "image",
+   "match": {
+    "video": "training videos/This New AI Workflow Makes you 100X faster [0s-38s].mp4",
+    "t": 22.2,
+    "dist": 26,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.05 PM (1).jpeg": {
+   "hash": "c60ecaccdb6d",
+   "kind": "image",
+   "match": {
+    "video": "training videos/shorts-batch-2026-11-20/short-B AQNKkmg.mp4",
+    "t": 24.2,
+    "dist": 25,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.05 PM (2).jpeg": {
+   "hash": "845552a82b16",
+   "kind": "image",
+   "match": {
+    "video": "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4",
+    "t": 52.0,
+    "dist": 32,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.05 PM (3).jpeg": {
+   "hash": "4f3d3eaef0d1",
+   "kind": "image",
+   "match": {
+    "video": "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4",
+    "t": 125.0,
+    "dist": 46,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.05 PM.jpeg": {
+   "hash": "a0833794f187",
+   "kind": "image",
+   "match": {
+    "video": "training videos/This New AI Workflow Makes you 100X faster [0s-38s].mp4",
+    "t": 1.6,
+    "dist": 17,
+    "confidence": "high"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.06 PM (1).jpeg": {
+   "hash": "94c9a4b3239d",
+   "kind": "image",
+   "match": {
+    "video": "training videos/shorts-batch-2026-11-20/short-B AQNKkmg.mp4",
+    "t": 14.6,
+    "dist": 31,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.06 PM (2).jpeg": {
+   "hash": "24b0c0bde06b",
+   "kind": "image",
+   "match": {
+    "video": "training videos/#aftereffects #motiondesign #videoediting.mp4",
+    "t": 6.6,
+    "dist": 25,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.06 PM (3).jpeg": {
+   "hash": "49e594c21ca6",
+   "kind": "image",
+   "match": {
+    "video": "training videos/asil-khan-longform/I Made 8.85 Lakh From Content in One Month Copy Me [0s-707s].mp4",
+    "t": 423.4,
+    "dist": 45,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.06 PM (4).jpeg": {
+   "hash": "f7f7296bd649",
+   "kind": "image",
+   "match": {
+    "video": "training videos/tharun-speaks-longform/14 Brutally Honest Truths I wish I knew at 18 [0s-707s].mp4",
+    "t": 562.0,
+    "dist": 32,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.06 PM.jpeg": {
+   "hash": "94c9a4b3239d",
+   "kind": "image",
+   "duplicate_of": "images/WhatsApp Image 2026-11-15 at 7.42.06 PM (1).jpeg",
+   "match": {
+    "video": "training videos/shorts-batch-2026-11-20/short-B AQNKkmg.mp4",
+    "t": 14.6,
+    "dist": 31,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.07 PM (1).jpeg": {
+   "hash": "caad92f1018f",
+   "kind": "image",
+   "match": {
+    "video": "training videos/tharun-speaks-longform/14 Brutally Honest Truths I wish I knew at 18 [0s-707s].mp4",
+    "t": 237.8,
+    "dist": 36,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.07 PM (2).jpeg": {
+   "hash": "9bd2167264f6",
+   "kind": "image",
+   "match": {
+    "video": "training videos/tharun-speaks-longform/14 Brutally Honest Truths I wish I knew at 18 [0s-707s].mp4",
+    "t": 390.8,
+    "dist": 32,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.07 PM (3).jpeg": {
+   "hash": "63d01bd60faa",
+   "kind": "image",
+   "match": {
+    "video": "training videos/tharun-speaks-longform/14 Brutally Honest Truths I wish I knew at 18 [0s-707s].mp4",
+    "t": 549.4,
+    "dist": 42,
+    "confidence": "low/none"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.07 PM.jpeg": {
+   "hash": "7052e1136801",
+   "kind": "image",
+   "match": {
+    "video": "training videos/tharun-speaks-longform/14 Brutally Honest Truths I wish I knew at 18 [0s-707s].mp4",
+    "t": 165.8,
+    "dist": 34,
+    "confidence": "medium"
+   }
+  },
+  "images/WhatsApp Image 2026-11-15 at 7.42.08 PM.jpeg": {
+   "hash": "0ec42123eec2",
+   "kind": "image",
+   "match": {
+    "video": "training videos/tharun-speaks-longform/14 Brutally Honest Truths I wish I knew at 18 [0s-707s].mp4",
+    "t": 96.6,
+    "dist": 42,
+    "confidence": "low/none"
+   }
+  }
+ }
+}

@@ -1,0 +1,19 @@
+DISCOVERED (3D red caps) f157: x 183-709 y 500-555 | w 527px = 73.2% W | h 56px = 7.8% W (4.4% H) | centre y 41% H | colour #F61D27 
+THAT COULD SAVE LIVES (3D navy caps) f207: x 0-508 y 534-559 | w 509px = 70.7% W | h 26px = 3.6% W (2.0% H) | centre y 43% H | colour #2A4254 
+name strip text (red serif) f280: x 351-592 y 519-550 | w 242px = 33.6% W | h 32px = 4.4% W (2.5% H) | centre y 42% H | colour #AC1D20 
+name strip (dark torn paper) f280: x 200-719 y 480-619 | w 520px = 72.2% W | h 140px = 19.4% W (10.9% H) | centre y 43% H | colour #131B23 (strip incl. coat overlap is unreliable)
+1840s (stencil serif): no text found
+Autopsy Room sign text f480: x 255-468 y 184-214 | w 214px = 29.7% W | h 31px = 4.3% W (2.4% H) | centre y 16% H | colour #24241F 
+THE DEATH RATE (white typewriter) f745: x 166-557 y 212-241 | w 392px = 54.4% W | h 30px = 4.2% W (2.3% H) | centre y 18% H | colour #C8C7C5 
+DROPPED DRAMATICALY (green typewriter) f745: x 97-629 y 257-288 | w 533px = 74.0% W | h 32px = 4.4% W (2.5% H) | centre y 21% H | colour #3AB339 
+underline f745: x 92-632 y 306-308 | w 541px = 75.1% W | h 3px = 0.4% W (0.2% H) | centre y 24% H | colour #E6E8E2 
+DOCTORS/REJECTED/HIS IDEA block f800: x 180-559 y 420-679 | w 380px = 52.8% W | h 260px = 36.1% W (20.3% H) | centre y 43% H | colour #503838 
+REJECTED (red) f800: x 225-520 y 509-586 | w 296px = 41.1% W | h 78px = 10.8% W (6.1% H) | centre y 43% H | colour #D2353A 
+newspaper headline highlight (yellow) f890: x 131-558 y 425-634 | w 428px = 59.4% W | h 210px = 29.2% W (16.4% H) | centre y 41% H | colour #EFC114 
+discovered (italic serif) f990: x 273-564 y 445-553 | w 292px = 40.6% W | h 109px = 15.1% W (8.5% H) | centre y 39% H | colour #161A1C 
+lives. (italic serif) f1050: x 329-432 y 415-454 | w 104px = 14.4% W | h 40px = 5.6% W (3.1% H) | centre y 34% H | colour #171B1F 
+THE EDITORS (red) f1105: x 93-627 y 493-548 | w 535px = 74.3% W | h 56px = 7.8% W (4.4% H) | centre y 41% H | colour #D3292D 
+CTA 3-line block f1105: x 93-627 y 493-694 | w 535px = 74.3% W | h 202px = 28.1% W (15.8% H) | centre y 46% H | colour #673A3D 
+search bar pill f1215: x 147-557 y 217-318 | w 411px = 57.1% W | h 102px = 14.2% W (8.0% H) | centre y 21% H | colour #28425B 
+EarnEdits.com text (white) f1215: x 120-379 y 230-299 | w 260px = 36.1% W | h 70px = 9.7% W (5.5% H) | centre y 21% H | colour #E5E5E5 
+laptop screen (black) f1215: x 62-633 y 350-749 | w 572px = 79.4% W | h 400px = 55.6% W (31.2% H) | centre y 43% H | colour #080808 

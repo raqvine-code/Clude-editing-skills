@@ -1,0 +1,427 @@
+{
+  "_about": "Design tokens for the Tharun Speaks edit style. Values marked measured were read off the reference reel (1080x1920, 25 fps, 84.6 s). Values marked approx were matched by eye or by fitting and should be tuned by eye.",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 25,
+    "aspect": "9:16",
+    "note": "All pixel values are for a 1080-wide frame. Scale by width/1080 for other sizes. Frame counts are at 25 fps; multiply by fps/25 for 30 fps."
+  },
+  "fonts": {
+    "caption": {
+      "family": "Inter Tight",
+      "weight": 700,
+      "status": "closest free match (measured widths fit within 1-2%)",
+      "alternatives": [
+        "SF Pro Display Bold",
+        "Inter Bold with -4% tracking",
+        "Helvetica Now Display Bold"
+      ]
+    },
+    "display": {
+      "family": "Bebas Neue",
+      "horizontalScale": 0.8,
+      "tracking_em": -0.02,
+      "status": "closest free match. The reel's face is about 15-20% narrower than any free font tested, so squeeze the width to 82%. Bebas Neue comes out slightly lighter than the reel, Anton slightly heavier.",
+      "heavyAlternative": {
+        "family": "Anton",
+        "horizontalScale": 0.83,
+        "use_for": "giant hook numerals"
+      },
+      "case": "ALL CAPS always",
+      "measured_reel_proportions": {
+        "line_width_to_cap_height": 4.76,
+        "stem_to_cap_height": 0.145
+      }
+    }
+  },
+  "caption": {
+    "fill_on_footage": "#FFFFFF",
+    "fill_on_white_card": "#000000",
+    "stroke": "none",
+    "background_box": "none",
+    "highlight_colour": "none - emphasis is by size only",
+    "regular": {
+      "fontSize_px": 116,
+      "xHeight_px": 64,
+      "tracking_em": -0.025,
+      "status": "measured"
+    },
+    "lead_in_scale": 0.72,
+    "lead_in_range": [
+      0.7,
+      0.8
+    ],
+    "keyword_scale": {
+      "short_word_up_to_5_letters": 1.75,
+      "medium_6_to_8_letters": 1.45,
+      "long_9_plus_letters": 1.3,
+      "max_line_width_px": 765
+    },
+    "line_height": 0.86,
+    "centre_x_px": 540,
+    "centre_y_px": 1304,
+    "centre_y_percent": 67.9,
+    "centre_y_range_percent": [
+      50,
+      68
+    ],
+    "centre_y_note": "68% in the supplied reel; about 50% in the screenshots from the second reel, where the framing is tighter. Rule: chest zone, below the chin, never the bottom. Pick one value per video and keep it.",
+    "shadow_css": "0 5px 12px rgba(0,0,0,.80), 0 10px 34px rgba(0,0,0,.50)",
+    "shadow_status": "approx",
+    "shadow_on_white_card": "none",
+    "small_caption_on_full_screen_demo_px": 48,
+    "white_card_caption_fontSize_px": 62,
+    "entry_animation": "none - hard pop on the frame the word is spoken (measured: size and position are final on frame 1)",
+    "exit_animation": "none - replaced by the next beat",
+    "beat_duration_frames": {
+      "median": 6,
+      "mean": 7.7,
+      "p10": 2,
+      "p90": 14,
+      "emphasis_hold_range": [
+        12,
+        33
+      ]
+    },
+    "words_per_beat": "1 (most), 2 for short glue pairs, 3+ only in emphasis stacks"
+  },
+  "colours": {
+    "lime_label": "#D6FD00",
+    "black": "#000000",
+    "white_card": "#FDFDFD",
+    "grid_line": "#E0E0E0",
+    "paper_centre": "#E8E2D7",
+    "paper_edge": "#CEC8BD",
+    "paper_corner": "#67625D",
+    "paper_red_title": "#D92029",
+    "paper_charcoal": "#323230",
+    "paper_ball": "#434343",
+    "coin_purple": "#7709BA",
+    "coin_purple_light": "#940CE4",
+    "coin_purple_dark": "#64079F",
+    "coin_scene_bg": "#040309",
+    "coin_scene_glow_left": "#641C97",
+    "coin_scene_glow_right": "#0A2666",
+    "coin_scene_hands": "#7221A4",
+    "highlighter_yellow": "#F8E202",
+    "news_card_paper": "#FDF8F3",
+    "badge_white": "#F9F5F3",
+    "aroll_bg_olive": "#514818",
+    "aroll_corner_dark": "#190D08",
+    "aroll_skin_shirt_warm": "#C4754D",
+    "second_reel_note": "Screenshots from the second reel use a navy/blue family with a warm spotlight instead of purple and lime. Rule: one accent family per video; the type system and layout stay the same."
+  },
+  "layout_px": {
+    "hook_display_block": {
+      "x": [
+        91,
+        956
+      ],
+      "y": [
+        368,
+        830
+      ],
+      "note": "behind the subject, 80% of frame width"
+    },
+    "big_count_block": {
+      "x": [
+        95,
+        1010
+      ],
+      "y": [
+        190,
+        514
+      ],
+      "note": "top third, behind the subject's head"
+    },
+    "card_behind_subject": {
+      "x": [
+        76,
+        616
+      ],
+      "y": [
+        132,
+        900
+      ],
+      "radius": 16
+    },
+    "news_card": {
+      "x": [
+        94,
+        971
+      ],
+      "y": [
+        97,
+        974
+      ]
+    },
+    "side_label": {
+      "x": [
+        600,
+        940
+      ],
+      "y": [
+        200,
+        420
+      ],
+      "note": "PROJECT n label plus thin curved arrow pointing at the card"
+    },
+    "icon_badge_diameter": 183,
+    "icon_badge_slots": [
+      [
+        83,
+        479
+      ],
+      [
+        397,
+        126
+      ],
+      [
+        819,
+        400
+      ]
+    ],
+    "screen_card_on_grid": {
+      "x": [
+        88,
+        992
+      ],
+      "width_percent": 84
+    },
+    "lime_label": {
+      "x_centre": 540,
+      "y": [
+        1406,
+        1574
+      ],
+      "y_centre_percent": 77.6,
+      "fontSize_px": 170,
+      "padding_px": [
+        15,
+        24,
+        7
+      ]
+    },
+    "kinetic_block": {
+      "x": [
+        154,
+        944
+      ],
+      "y": [
+        667,
+        1088
+      ],
+      "fontSize_px": 238
+    },
+    "qr": {
+      "x": [
+        281,
+        798
+      ],
+      "y": [
+        600,
+        1117
+      ],
+      "size": 517,
+      "caption_y": [
+        1250,
+        1366
+      ]
+    },
+    "grid_cell": {
+      "w": 113,
+      "h": 91
+    },
+    "prop_numerals": {
+      "x": [
+        167,
+        874
+      ],
+      "y": [
+        1408,
+        1496
+      ]
+    }
+  },
+  "motion_frames_at_25fps": {
+    "hook_push_in": {
+      "from": 1.0,
+      "to": 1.16,
+      "frames": 43,
+      "ease": "ease-out",
+      "then": "hold"
+    },
+    "slow_push_in_percent_per_second": [
+      1.2,
+      3.6
+    ],
+    "punch_in_scale": [
+      1.27,
+      1.43
+    ],
+    "punch_in_anchor_percent": {
+      "x": 50,
+      "y": 36
+    },
+    "negative_flash": [
+      "1 frame: outgoing shot inverted and desaturated",
+      "1 frame: black",
+      "incoming shot"
+    ],
+    "white_flash": [
+      "1 frame: outgoing shot blown out",
+      "1 frame: white",
+      "incoming shot"
+    ],
+    "word_stagger_display_text": [
+      3,
+      6
+    ],
+    "kinetic_word_stagger": 6,
+    "lime_label_word_swap": "on the spoken word, hard cut, 6-20 frames each",
+    "title_line_fade": {
+      "frames": 4,
+      "stagger": [
+        3,
+        6
+      ]
+    },
+    "card_slide_in": {
+      "frames": 4,
+      "motion_blur": true
+    },
+    "news_card_rise": {
+      "frames": 8,
+      "distance_px": 60,
+      "fade": true
+    },
+    "highlighter_swipe": {
+      "frames": 4
+    },
+    "icon_badge_pop": {
+      "frames": 6,
+      "from_scale": 0.3,
+      "spin": true
+    },
+    "coin_flip": {
+      "frames": 12,
+      "hold_frames": [
+        28,
+        46
+      ]
+    },
+    "prop_numerals_stagger": [
+      2,
+      4
+    ],
+    "label_type_on_frames_per_letter": [
+      1,
+      2
+    ],
+    "photo_defocus_in": 3,
+    "colour_reveal_sweep": 12
+  },
+  "pacing": {
+    "shots": 36,
+    "duration_s": 84.6,
+    "avg_shot_s": 2.35,
+    "median_shot_s": 2.0,
+    "shortest_s": 0.56,
+    "longest_s": 8.48,
+    "aroll_share_percent": 64,
+    "graphics_share_percent": 36,
+    "graphic_scene_s": {
+      "min": 1.12,
+      "median": 2.14,
+      "max": 3.44
+    },
+    "first_cut_s": 3.44,
+    "cuts_follow": "speech, not the music beat (measured: cut-to-beat distance is no better than chance)"
+  },
+  "audio_measured": {
+    "integrated_loudness_LUFS": -9.4,
+    "loudness_range_LU": 2.4,
+    "true_peak_dBFS": 2.2,
+    "bass_bed": [
+      {
+        "from_s": 3.4,
+        "to_s": 12.0
+      },
+      {
+        "from_s": 52.5,
+        "to_s": 81.5,
+        "kick_bpm": 129
+      }
+    ],
+    "no_bass_bed": [
+      {
+        "from_s": 12.0,
+        "to_s": 52.5
+      }
+    ],
+    "note": "Measured by signal analysis only. Individual sound effects could not be identified by ear."
+  },
+  "reel_b": {
+    "_about": "Second reference reel, 88.6 s, 31 shots. Values measured unless marked approx.",
+    "caption": {
+      "centre_y_px": 1062,
+      "centre_y_percent": 55.3,
+      "fontSize_px_approx": 85,
+      "tint_orange": "#D78D5C",
+      "tint_fade_frames": 8,
+      "list_caption_x": [
+        60,
+        400
+      ],
+      "caption_over_card_y_percent": 28
+    },
+    "colours": {
+      "navy": "#11315C",
+      "navy_edge": "#000612",
+      "neon_green_label": "#D4FD2D",
+      "neon_counter": "#E3FE00",
+      "yellow_numerals": "#FDE944",
+      "grey_flow_centre": "#7C7C77",
+      "recap_card": "#F0EDEB"
+    },
+    "pacing": {
+      "shots": 31,
+      "median_shot_s": 2.44,
+      "avg_shot_s": 2.86,
+      "shortest_s": 0.64,
+      "longest_s": 9.16,
+      "aroll_share_percent": 48,
+      "longest_graphic_scene_s": 7.0
+    },
+    "transitions": {
+      "negative_flash": 2,
+      "white_flash_approx": 6,
+      "blur_zoom_min": 4,
+      "blur_zoom_frames": [
+        3,
+        4
+      ]
+    },
+    "punch_in_scale": [
+      1.24,
+      1.29,
+      1.33,
+      1.43
+    ],
+    "counter_run_frames": [
+      20,
+      30
+    ],
+    "step_scene_s": [
+      1.8,
+      2.5
+    ],
+    "audio": {
+      "integrated_loudness_LUFS": -9.5,
+      "loudness_range_LU": 1.6,
+      "true_peak_dBFS": 0.5,
+      "steady_bass_bed": false
+    }
+  }
+}

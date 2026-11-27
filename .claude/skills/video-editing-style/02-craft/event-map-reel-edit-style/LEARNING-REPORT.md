@@ -1,0 +1,22 @@
+# Learning report: event-map-reel-edit-style
+
+## 2026-11-22 - "zip 2" analysis pack learned (no edit, nothing rendered)
+- **Source:** `~/Downloads/zip 2.zip` (39 MB, 275 files, no video): a ready skill file, 5 reference files, 4 per-reel notes, and for each of 5 reels contact sheets, frame-numbered evidence sheets, stills, word-timed transcripts, cut lists, audio data, scorecards and the measurement scripts.
+- **What it is:** one method (three laws + event map) measured on five reels in four formats. R0 is the same finance reel as zip 1 (already P12), so the new styles are P13 two-tier kinetic talking head (R1, R4) and P14 faceless 2.5D documentary (R2, R3), plus measured numbers for the RAW vs EDITED wrapper (P4).
+- **What Claude read and viewed:** the pack skill file, format B, format C, transitions and devices files in full; the cross-reel table; the 1 fps overview sheet of R1-R4; one R4 caption sheet (f692-790) and one R1 full-size still. The per-reel notes (R1-R4, 34-55 KB each) and the other evidence sheets were stored but not read: open them when a build needs a specific recipe.
+- **Checked against the pack's own data (script over the 4 transcripts and scorecards):** speech rate 224 / 151 / 130 / 204 wpm, hard cuts 10 / 7 / 9 / 8, loudness and true peak, and the turn position 77 / 62 / 63 / 73 % all match the pack. One range widened: the turn is at 60-77 %, not 60-75 % (R1 is 26.1 s of 34.0 s).
+- **Added from the sheets (Claude's observation):** R4's threat word "WORSE" enters as a letter stagger (letters about 4 f apart, about 16 f in all), not the tracking-in the pack lists for keywords. The typos "scipt" (R1) and "DRAMATIC..." (R2) and the NBC-style masthead on a generated headline (R3) are visible on the overview sheets.
+- **Stored as:** this folder (GUIDE.md, references as received, pack under `references/pack/`, the two scripts under `tools/`), pointer profiles P13 and P14, rows in the shorts style picker and skill lists, CLAUDE.md Rule 1.
+- **Not done / not tested:** nothing was rendered in either style. `tools/reel_metrics.py` was not run here (no ffprobe, no opencv-python on this Mac). shortkit.py has no two-tier typed caption, pedestal or 2.5D camera component yet; the first edit that uses P13 or P14 builds them and logs the result in `shorts-editing-pro/LEARNING-LOG.md`. Sound findings are measured, not heard; font names are guesses.
+- **Feedback:** pending.
+
+## 2026-11-22 - scorecard set up on this Mac (user said "Yes, set it up")
+- Installed `opencv-python-headless` 5.1.0 from PyPI (scipy and numpy were already there). Added `tools/score_reel.py`, a wrapper that leaves the pack's `reel_metrics.py` untouched: ffmpeg from the imageio binary, an ffprobe stand-in, a temporary 30 fps copy for 60 fps renders, `--words N` for wpm. `tools/frame_sheets.sh` got a 2-line ffmpeg fallback.
+- Tested on `edited videos by claude/17. Embarrassment Short/Embarrassment_Short.mp4`: runs in about 20 s; numbers are in GUIDE.md section 11. `--words` was tested with a placeholder count (95), so that wpm is not a real measurement. The frame sheet was viewed: frame labels draw correctly (a harmless Fontconfig warning prints).
+- Not verified: the pack's reference videos are not on this Mac, so the wrapper's numbers could not be compared with the pack's own scorecards. `--transcribe` is not available (no faster-whisper).
+
+## 2026-11-22 - tool audit ("download what is needed to edit like a pro")
+- Already on this Mac: full ffmpeg build (imageio binary: libass, drawtext, loudnorm, rubberband, vidstab, denoise, x264 / x265 / ProRes / VideoToolbox), faster-whisper 1.2.1 with base / small / medium / large-v3 models in `~/.local/share/whisper-venv`, HyperFrames + Node 20, the SFX engine in `sound-and-music-design`, 290 GB free disk.
+- Downloaded: 11 font files (about 6 MB) from the Google Fonts repository into `03-sound-type-assets/fonts-and-colours/assets/fonts/` (roles in its FONTS-README.md), plus `opencv-python-headless` for the scorecard.
+- Not installed: ffprobe (a static build download was stopped by the app's safety check for downloading and running a program; the scorecard uses a stand-in, so nothing depends on it). rembg, onnxruntime, librosa, mediapipe and pedalboard have no builds for Python 3.15 on this Intel Mac.
+- House-rule conflict found and written into GUIDE.md section 10: keyword captions only, so P13's sentence line becomes a short lead-in.

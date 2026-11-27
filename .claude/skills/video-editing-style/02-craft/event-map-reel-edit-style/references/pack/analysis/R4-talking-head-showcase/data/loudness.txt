@@ -1,0 +1,4 @@
+Input Integrated:    -14.7 LUFS
+Input True Peak:      +2.9 dBTP
+Input LRA:             3.9 LU
+Input Threshold:     -24.7 LUFS

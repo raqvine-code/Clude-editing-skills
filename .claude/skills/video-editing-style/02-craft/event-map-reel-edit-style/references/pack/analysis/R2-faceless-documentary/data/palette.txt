@@ -1,0 +1,37 @@
+scene           f     mean     luma  sat  | k-means 4 (share)
+hospital ext      30  #5B3344     65 0.40 | #2D222E(52%)  #663E52(25%)  #B2445B(20%)  #D7A1AB(3%)
+surgery           85  #374B54     71 0.40 | #22353D(50%)  #364C58(38%)  #728C90(9%)  #C9CFD3(4%)
+sky+card         130  #75B3A3    159 0.59 | #48C3EC(36%)  #569420(29%)  #B4E7EC(27%)  #DF233C(8%)
+sky ticker       200  #4CAFA9    145 0.76 | #1B9CE8(35%)  #4F960F(31%)  #5BCFF3(23%)  #BBE9F1(11%)
+study            280  #473534     59 0.39 | #1A181A(52%)  #513433(28%)  #9D675B(13%)  #D2BDB5(6%)
+1840s grid       306  #C1BEBB    191 0.03 | #C3C0BE(47%)  #D6D2CF(29%)  #ADAAA7(23%)  #4C494A(2%)
+photo on grid    336  #A59F9B    161 0.06 | #D5CEC8(39%)  #B0ACA9(37%)  #333131(18%)  #7A706B(7%)
+graph            420  #656362    100 0.16 | #1A1E21(51%)  #C3BDB7(27%)  #A8A097(18%)  #726B65(5%)
+corridor         540  #9AA7AE    164 0.14 | #CBD3D7(43%)  #64757D(31%)  #95A9B4(23%)  #181E27(3%)
+sink             660  #B0A097    164 0.15 | #E1DAD6(49%)  #C0947D(20%)  #77645A(16%)  #2D2928(14%)
+deathrate        745  #1E3B1C     47 0.47 | #2C2B2B(35%)  #082506(31%)  #0E5D0A(23%)  #565E53(11%)
+clipboard        800  #875E51    106 0.49 | #3A1B15(31%)  #E2D9D3(25%)  #723727(25%)  #AD6144(19%)
+newspaper        890  #925753    105 0.53 | #541E22(39%)  #A84348(33%)  #E1D4C7(17%)  #B79E71(11%)
+microscope       960  #561219     40 0.70 | #070001(43%)  #620610(25%)  #AA1627(22%)  #D06D76(11%)
+spotlight       1040  #9B9D9F    157 0.13 | #D3D6D9(36%)  #4B575D(29%)  #9AA4A7(26%)  #BA8777(9%)
+cta text        1105  #CAC5C6    199 0.03 | #DCDCDC(57%)  #BCB8B9(37%)  #625F60(4%)  #C5293D(2%)
+laptop          1215  #736961    108 0.26 | #5C4534(44%)  #DDDDDE(30%)  #0C0F0E(22%)  #978C7E(4%)
+
+scene  p1 luma  p99 luma (full-res frames from fr/)
+hospital ext      24   199
+surgery           24   237
+sky+card          50   244
+sky ticker        48   234
+study              0   221
+1840s grid        67   225
+photo on grid     33   228
+graph             22   221
+corridor          18   243
+sink               8   248
+deathrate         12   139
+clipboard         20   244
+newspaper         13   248
+microscope         0   185
+spotlight         58   234
+cta text          63   239
+laptop             1   238

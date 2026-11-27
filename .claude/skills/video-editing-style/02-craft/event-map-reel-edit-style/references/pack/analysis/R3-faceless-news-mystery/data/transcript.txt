@@ -1,0 +1,16 @@
+language en p=0.99 duration 42.56s
+[0.00-6.04] A Russian scientist died mysteriously, and fears of a deadly plague suddenly resurfaced.
+   0.00 A | 0.20 Russian | 0.44 scientist | 1.16 died | 1.56 mysteriously, | 2.94 and | 3.26 fears | 3.58 of | 3.80 a | 3.94 deadly | 4.22 plague | 4.72 suddenly | 5.28 resurfaced.
+[6.94-14.04] In October 2026, a 28-year-old laboratory worker in Siberia died after developing severe pneumonia.
+   6.94 In | 7.02 October | 7.38 2026, | 8.90 a | 8.94 28 | 9.40 -year | 9.62 -old | 9.78 laboratory | 10.18 worker | 10.74 in | 10.96 Siberia | 11.58 died | 12.04 after | 12.50 developing | 12.98 severe | 13.46 pneumonia.
+[14.84-20.74] Rumors of a possible plague infection spread, putting nearly 200 contacts under medical observation.
+   14.84 Rumors | 15.18 of | 15.38 a | 15.52 possible | 15.82 plague | 16.24 infection | 16.82 spread, | 17.66 putting | 17.88 nearly | 18.20 200 | 18.66 contacts | 19.40 under | 19.78 medical | 20.12 observation.
+[21.44-26.98] The news quickly raised fears of a disease once responsible for devastating outbreaks throughout history.
+   21.44 The | 21.66 news | 21.88 quickly | 22.28 raised | 22.64 fears | 22.98 of | 23.20 a | 23.30 disease | 23.58 once | 23.98 responsible | 24.60 for | 24.92 devastating | 25.48 outbreaks | 26.14 throughout | 26.44 history.
+[26.98-33.56] But there was a twist. Russian officials reported negative plague tests, and no outbreak was confirmed.
+   26.98 But | 27.74 there | 28.10 was | 28.26 a | 28.34 twist. | 29.36 Russian | 29.60 officials | 30.06 reported | 30.56 negative | 31.02 plague | 31.36 tests, | 32.16 and | 32.26 no | 32.52 outbreak | 32.90 was | 33.14 confirmed.
+[34.14-36.26] So what actually killed the scientist?
+   34.14 So | 34.48 what | 34.92 actually | 35.42 killed | 35.80 the | 35.94 scientist?
+[37.22-42.22] Some editors rewatch this. Others open the project file on earnedits.com.
+   37.22 Some | 37.40 editors | 37.78 rewatch | 38.38 this. | 39.22 Others | 39.46 open | 39.94 the | 40.04 project | 40.40 file | 40.80 on | 41.06 earnedits | 41.70 .com.
+words 92 | wpm over full duration 130

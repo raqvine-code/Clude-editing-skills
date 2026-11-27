@@ -1,0 +1,51 @@
+{
+ "file": "reel.mp4",
+ "duration": 40.86666666666667,
+ "width": 720,
+ "height": 1280,
+ "fps": 30.0,
+ "sample_rate": 44100,
+ "channels": 2,
+ "frames": 1226,
+ "median_diff": 5.843368053436279,
+ "static_pct": 0.4897959183673469,
+ "hard_cuts": [
+  3.47,
+  7.83,
+  10.0,
+  12.5,
+  20.5,
+  32.5,
+  35.5
+ ],
+ "longest_quiet_stretch_s": 0.13333333333333333,
+ "longest_quiet_at_s": 35.6,
+ "quiet_share_pct": 0.48939641109298526,
+ "first_hard_cut_s": 3.466666666666667,
+ "luma_median": 130.0,
+ "sat_mean": 0.32265030906864967,
+ "luma_flip_times_s": [
+  3,
+  8,
+  10,
+  13,
+  23,
+  32,
+  33,
+  38
+ ],
+ "integrated_lufs": -14.9,
+ "true_peak_dbtp": 1.3,
+ "lra_lu": 4.2,
+ "side_mid_ratio": 0.5897262692451477,
+ "sfx_on_cut_pct": 85.71428571428571,
+ "cut_to_air_onset_offsets_s": [
+  0.03,
+  0.59,
+  -0.06,
+  -0.03,
+  0.0,
+  -0.03,
+  -0.06
+ ]
+}
