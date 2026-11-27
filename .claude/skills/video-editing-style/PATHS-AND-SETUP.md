@@ -39,7 +39,8 @@ This folder is installed as the skill `.claude/skills/video-editing-style/` of t
 | ffmpeg, ffprobe, numpy, scipy, OpenCV, Pillow (raqm), faster-whisper | present or installable with pip | whisper models download on first use |
 | `analyze_raw.py`, `transcribe.py` | expect `~/.local/share/whisper-venv/bin/python` | create that venv, or run faster-whisper directly |
 | B-roll, PNG, music and full font folders on the Mac | **not here**; only the catalogs and 6 fonts (+ Great Vibes and Bebas Neue in the showcase style) | ask the owner to upload the clips the plan names, or search stock |
-| Stock sites | Pexels and Pixabay were blocked (403) by the network policy; Mixkit and Wikimedia Commons answered | use Mixkit / Commons, or ask the owner to allow the hosts in the environment settings |
+| Stock sites | Pexels and Pixabay were blocked (403) by the network policy; Mixkit video pages answered, but Mixkit's sound category pages now return a Cloudflare bot check (not bypassed); Openverse's API answers but its anonymous daily quota was used up; Commons answered 429 |
+| Ears (earshot) | installs in a venv (CPU torch + 1.1 GB models, about 5 min, 50 GB disk free); `earshot critique --profile ...showcase-reels-sound-profile.json <video>` scores a mix | steps and commands in `03-sound-type-assets/sound-and-music-design/references/sfx-sources-and-ears.md` | use Mixkit / Commons, or ask the owner to allow the hosts in the environment settings |
 | Google Fonts | reachable through `raw.githubusercontent.com/google/fonts` | download the family named in the plan; keep its licence file |
 | Delivery folders on the Mac | not here | put the finished video and notes in the repo or send the file; the owner copies it |
 | The container | temporary | commit and push anything worth keeping |

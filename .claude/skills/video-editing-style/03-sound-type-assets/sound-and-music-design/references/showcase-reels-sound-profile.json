@@ -1,0 +1,811 @@
+{
+ "version": 2,
+ "n": 4,
+ "metrics": {
+  "lufs_i": {
+   "n": 4,
+   "median": -14.15,
+   "p10": -14.62,
+   "p90": -14.1,
+   "min": -14.8,
+   "max": -14.1,
+   "values": [
+    -14.1,
+    -14.1,
+    -14.8,
+    -14.2
+   ]
+  },
+  "true_peak": {
+   "n": 4,
+   "median": -0.7,
+   "p10": -2.75,
+   "p90": -0.12,
+   "min": -3.5,
+   "max": 0.0,
+   "values": [
+    -3.5,
+    -1.0,
+    0.0,
+    -0.4
+   ]
+  },
+  "lra": {
+   "n": 4,
+   "median": 2.95,
+   "p10": 1.98,
+   "p90": 3.57,
+   "min": 1.8,
+   "max": 3.6,
+   "values": [
+    1.8,
+    2.4,
+    3.6,
+    3.5
+   ]
+  },
+  "crest_lu": {
+   "n": 4,
+   "median": 1.65,
+   "p10": 1.04,
+   "p90": 2.26,
+   "min": 0.8,
+   "max": 2.5,
+   "values": [
+    0.8,
+    1.6,
+    2.5,
+    1.7
+   ]
+  },
+  "intro_lu": {
+   "n": 4,
+   "median": 2.1,
+   "p10": 0.77,
+   "p90": 2.38,
+   "min": 0.2,
+   "max": 2.5,
+   "values": [
+    0.2,
+    2.1,
+    2.5,
+    2.1
+   ]
+  },
+  "end_lu": {
+   "n": 4,
+   "median": -2.85,
+   "p10": -7.01,
+   "p90": -0.37,
+   "min": -8.0,
+   "max": -0.1,
+   "values": [
+    -0.1,
+    -4.7,
+    -1.0,
+    -8.0
+   ]
+  },
+  "peak_pos": {
+   "n": 4,
+   "median": 0.245,
+   "p10": 0.08,
+   "p90": 0.508,
+   "min": 0.05,
+   "max": 0.58,
+   "values": [
+    0.58,
+    0.15,
+    0.05,
+    0.34
+   ]
+  },
+  "first_sound_s": {
+   "n": 4,
+   "median": 0.045,
+   "p10": 0.016,
+   "p90": 0.067,
+   "min": 0.01,
+   "max": 0.07,
+   "values": [
+    0.01,
+    0.03,
+    0.07,
+    0.06
+   ]
+  },
+  "max_gap_s": {
+   "n": 4,
+   "median": 0.0,
+   "p10": 0.0,
+   "p90": 0.0,
+   "min": 0.0,
+   "max": 0.0,
+   "values": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "end_silence_s": {
+   "n": 4,
+   "median": 0.025,
+   "p10": 0.01,
+   "p90": 0.068,
+   "min": 0.01,
+   "max": 0.08,
+   "values": [
+    0.01,
+    0.01,
+    0.04,
+    0.08
+   ]
+  },
+  "fade_s": {
+   "n": 4,
+   "median": 0.345,
+   "p10": 0.055,
+   "p90": 0.887,
+   "min": 0.04,
+   "max": 1.01,
+   "values": [
+    0.04,
+    0.6,
+    0.09,
+    1.01
+   ]
+  },
+  "final_lu": {
+   "n": 4,
+   "median": 1.55,
+   "p10": -1.29,
+   "p90": 1.87,
+   "min": -2.4,
+   "max": 1.9,
+   "values": [
+    1.3,
+    1.8,
+    1.9,
+    -2.4
+   ]
+  },
+  "tail_s": {
+   "n": 4,
+   "median": 2.03,
+   "p10": 0.802,
+   "p90": 2.257,
+   "min": 0.31,
+   "max": 2.32,
+   "values": [
+    0.31,
+    2.32,
+    2.11,
+    1.95
+   ]
+  },
+  "music_frac": {
+   "n": 4,
+   "median": 0.93,
+   "p10": 0.678,
+   "p90": 1.0,
+   "min": 0.6,
+   "max": 1.0,
+   "values": [
+    1.0,
+    1.0,
+    0.86,
+    0.6
+   ]
+  },
+  "speech_frac": {
+   "n": 4,
+   "median": 1.0,
+   "p10": 0.86,
+   "p90": 1.0,
+   "min": 0.8,
+   "max": 1.0,
+   "values": [
+    1.0,
+    1.0,
+    1.0,
+    0.8
+   ]
+  },
+  "tempo": {
+   "n": 4,
+   "median": 128.0,
+   "p10": 112.5,
+   "p90": 146.3,
+   "min": 108.0,
+   "max": 152.0,
+   "values": [
+    152.0,
+    108.0,
+    123.0,
+    133.0
+   ]
+  },
+  "onset_rate": {
+   "n": 4,
+   "median": 5.765,
+   "p10": 5.12,
+   "p90": 7.131,
+   "min": 5.0,
+   "max": 7.56,
+   "values": [
+    7.56,
+    6.13,
+    5.4,
+    5.0
+   ]
+  },
+  "hit_rate": {
+   "n": 4,
+   "median": 1.89,
+   "p10": 1.652,
+   "p90": 2.107,
+   "min": 1.58,
+   "max": 2.17,
+   "values": [
+    2.17,
+    1.58,
+    1.96,
+    1.82
+   ]
+  },
+  "stopdowns_min": {
+   "n": 4,
+   "median": 2.3,
+   "p10": 0.57,
+   "p90": 8.16,
+   "min": 0.0,
+   "max": 10.5,
+   "values": [
+    0.0,
+    10.5,
+    1.9,
+    2.7
+   ]
+  },
+  "cut_rate": {
+   "n": 4,
+   "median": 0.405,
+   "p10": 0.21,
+   "p90": 1.048,
+   "min": 0.18,
+   "max": 1.27,
+   "values": [
+    1.27,
+    0.53,
+    0.28,
+    0.18
+   ]
+  },
+  "cuts_with_sound": {
+   "n": 4,
+   "median": 0.945,
+   "p10": 0.848,
+   "p90": 1.0,
+   "min": 0.83,
+   "max": 1.0,
+   "values": [
+    1.0,
+    0.83,
+    0.89,
+    1.0
+   ]
+  },
+  "cut_hit_frac": {
+   "n": 4,
+   "median": 0.47,
+   "p10": 0.363,
+   "p90": 0.647,
+   "min": 0.33,
+   "max": 0.71,
+   "values": [
+    0.71,
+    0.33,
+    0.44,
+    0.5
+   ]
+  },
+  "cut_frame_sync": {
+   "n": 4,
+   "median": 0.46,
+   "p10": 0.229,
+   "p90": 0.733,
+   "min": 0.22,
+   "max": 0.76,
+   "values": [
+    0.76,
+    0.67,
+    0.22,
+    0.25
+   ]
+  },
+  "cuts_on_beat": {
+   "n": 4,
+   "median": 0.375,
+   "p10": 0.152,
+   "p90": 0.563,
+   "min": 0.11,
+   "max": 0.59,
+   "values": [
+    0.59,
+    0.5,
+    0.11,
+    0.25
+   ]
+  },
+  "band_sub": {
+   "n": 4,
+   "median": -12.25,
+   "p10": -16.62,
+   "p90": -11.73,
+   "min": -18.3,
+   "max": -11.7,
+   "values": [
+    -11.7,
+    -12.7,
+    -18.3,
+    -11.8
+   ]
+  },
+  "band_low": {
+   "n": 4,
+   "median": -4.2,
+   "p10": -5.84,
+   "p90": -2.42,
+   "min": -6.2,
+   "max": -2.0,
+   "values": [
+    -2.0,
+    -3.4,
+    -5.0,
+    -6.2
+   ]
+  },
+  "band_lowmid": {
+   "n": 4,
+   "median": -3.2,
+   "p10": -5.13,
+   "p90": -2.46,
+   "min": -5.7,
+   "max": -2.4,
+   "values": [
+    -5.7,
+    -3.8,
+    -2.6,
+    -2.4
+   ]
+  },
+  "band_mid": {
+   "n": 4,
+   "median": -14.9,
+   "p10": -16.04,
+   "p90": -11.66,
+   "min": -16.1,
+   "max": -10.7,
+   "values": [
+    -15.9,
+    -16.1,
+    -10.7,
+    -13.9
+   ]
+  },
+  "band_presence": {
+   "n": 4,
+   "median": -16.25,
+   "p10": -20.41,
+   "p90": -12.79,
+   "min": -21.7,
+   "max": -11.8,
+   "values": [
+    -21.7,
+    -15.1,
+    -17.4,
+    -11.8
+   ]
+  },
+  "band_air": {
+   "n": 4,
+   "median": -20.0,
+   "p10": -26.22,
+   "p90": -17.98,
+   "min": -28.8,
+   "max": -17.2,
+   "values": [
+    -28.8,
+    -19.8,
+    -20.2,
+    -17.2
+   ]
+  },
+  "brightness_hz": {
+   "n": 4,
+   "median": 1494.0,
+   "p10": 1259.7,
+   "p90": 1787.1,
+   "min": 1209.0,
+   "max": 1863.0,
+   "values": [
+    1209.0,
+    1378.0,
+    1863.0,
+    1610.0
+   ]
+  },
+  "side_to_mid_db": {
+   "n": 4,
+   "median": -18.9,
+   "p10": -24.21,
+   "p90": -16.53,
+   "min": -25.8,
+   "max": -16.2,
+   "values": [
+    -25.8,
+    -20.5,
+    -17.3,
+    -16.2
+   ]
+  },
+  "correlation": {
+   "n": 4,
+   "median": 0.97,
+   "p10": 0.953,
+   "p90": 0.987,
+   "min": 0.95,
+   "max": 0.99,
+   "values": [
+    0.99,
+    0.98,
+    0.96,
+    0.95
+   ]
+  }
+ },
+ "chance": {
+  "cuts_with_sound": {
+   "n": 4,
+   "median": 0.86,
+   "p10": 0.777,
+   "p90": 0.915,
+   "min": 0.75,
+   "max": 0.93,
+   "values": [
+    0.93,
+    0.84,
+    0.88,
+    0.75
+   ]
+  },
+  "cut_hit_frac": {
+   "n": 4,
+   "median": 0.335,
+   "p10": 0.279,
+   "p90": 0.405,
+   "min": 0.27,
+   "max": 0.42,
+   "values": [
+    0.42,
+    0.3,
+    0.37,
+    0.27
+   ]
+  },
+  "cut_frame_sync": {
+   "n": 4,
+   "median": 0.46,
+   "p10": 0.395,
+   "p90": 0.609,
+   "min": 0.38,
+   "max": 0.66,
+   "values": [
+    0.66,
+    0.49,
+    0.43,
+    0.38
+   ]
+  },
+  "cuts_on_beat": {
+   "n": 4,
+   "median": 0.3,
+   "p10": 0.265,
+   "p90": 0.342,
+   "min": 0.25,
+   "max": 0.36,
+   "values": [
+    0.36,
+    0.25,
+    0.3,
+    0.3
+   ]
+  }
+ },
+ "arc": {
+  "median": [
+   1.6,
+   0.3,
+   -0.9,
+   -0.1,
+   0.1,
+   -0.5,
+   0.6,
+   -0.1,
+   -1.1,
+   -1.2,
+   -2.8
+  ],
+  "p10": [
+   0.5,
+   -0.1,
+   -1.2,
+   -0.2,
+   -0.3,
+   -2.3,
+   -1.0,
+   -0.8,
+   -1.3,
+   -3.9,
+   -7.1
+  ],
+  "p90": [
+   3.6,
+   1.3,
+   0.3,
+   0.5,
+   0.4,
+   0.6,
+   1.0,
+   0.2,
+   -0.4,
+   1.1,
+   -0.7
+  ]
+ },
+ "films": [
+  {
+   "id": "ref_1",
+   "style": "",
+   "duration": 13.353,
+   "has_video": true,
+   "metrics": {
+    "lufs_i": -14.1,
+    "true_peak": -3.5,
+    "lra": 1.8,
+    "crest_lu": 0.8,
+    "intro_lu": 0.2,
+    "end_lu": -0.1,
+    "peak_pos": 0.58,
+    "first_sound_s": 0.01,
+    "max_gap_s": 0.0,
+    "end_silence_s": 0.01,
+    "fade_s": 0.04,
+    "final_lu": 1.3,
+    "tail_s": 0.31,
+    "music_frac": 1.0,
+    "speech_frac": 1.0,
+    "tempo": 152,
+    "onset_rate": 7.56,
+    "hit_rate": 2.17,
+    "stopdowns_min": 0.0,
+    "cut_rate": 1.27,
+    "cuts_with_sound": 1.0,
+    "cut_hit_frac": 0.71,
+    "cut_frame_sync": 0.76,
+    "cuts_on_beat": 0.59,
+    "band_sub": -11.7,
+    "band_low": -2.0,
+    "band_lowmid": -5.7,
+    "band_mid": -15.9,
+    "band_presence": -21.7,
+    "band_air": -28.8,
+    "brightness_hz": 1209,
+    "side_to_mid_db": -25.8,
+    "correlation": 0.99
+   },
+   "chance": {
+    "cuts_with_sound": 0.93,
+    "cut_hit_frac": 0.42,
+    "cut_frame_sync": 0.66,
+    "cuts_on_beat": 0.36
+   },
+   "arc": [
+    0.1,
+    -0.2,
+    -1.3,
+    -0.1,
+    0.2,
+    0.9,
+    0.7,
+    0.2,
+    -0.2,
+    -0.1,
+    -0.0
+   ]
+  },
+  {
+   "id": "ref_2",
+   "style": "",
+   "duration": 11.415,
+   "has_video": true,
+   "metrics": {
+    "lufs_i": -14.1,
+    "true_peak": -1.0,
+    "lra": 2.4,
+    "crest_lu": 1.6,
+    "intro_lu": 2.1,
+    "end_lu": -4.7,
+    "peak_pos": 0.15,
+    "first_sound_s": 0.03,
+    "max_gap_s": 0.0,
+    "end_silence_s": 0.01,
+    "fade_s": 0.6,
+    "final_lu": 1.8,
+    "tail_s": 2.32,
+    "music_frac": 1.0,
+    "speech_frac": 1.0,
+    "tempo": 108,
+    "onset_rate": 6.13,
+    "hit_rate": 1.58,
+    "stopdowns_min": 10.5,
+    "cut_rate": 0.53,
+    "cuts_with_sound": 0.83,
+    "cut_hit_frac": 0.33,
+    "cut_frame_sync": 0.67,
+    "cuts_on_beat": 0.5,
+    "band_sub": -12.7,
+    "band_low": -3.4,
+    "band_lowmid": -3.8,
+    "band_mid": -16.1,
+    "band_presence": -15.1,
+    "band_air": -19.8,
+    "brightness_hz": 1378,
+    "side_to_mid_db": -20.5,
+    "correlation": 0.98
+   },
+   "chance": {
+    "cuts_with_sound": 0.84,
+    "cut_hit_frac": 0.3,
+    "cut_frame_sync": 0.49,
+    "cuts_on_beat": 0.25
+   },
+   "arc": [
+    1.8,
+    1.6,
+    0.7,
+    -0.1,
+    -0.5,
+    0.0,
+    0.6,
+    0.1,
+    -1.3,
+    -2.4,
+    -3.3
+   ]
+  },
+  {
+   "id": "ref_3",
+   "style": "",
+   "duration": 31.639,
+   "has_video": true,
+   "metrics": {
+    "lufs_i": -14.8,
+    "true_peak": 0.0,
+    "lra": 3.6,
+    "crest_lu": 2.5,
+    "intro_lu": 2.5,
+    "end_lu": -1.0,
+    "peak_pos": 0.05,
+    "first_sound_s": 0.07,
+    "max_gap_s": 0.0,
+    "end_silence_s": 0.04,
+    "fade_s": 0.09,
+    "final_lu": 1.9,
+    "tail_s": 2.11,
+    "music_frac": 0.86,
+    "speech_frac": 1.0,
+    "tempo": 123,
+    "onset_rate": 5.4,
+    "hit_rate": 1.96,
+    "stopdowns_min": 1.9,
+    "cut_rate": 0.28,
+    "cuts_with_sound": 0.89,
+    "cut_hit_frac": 0.44,
+    "cut_frame_sync": 0.22,
+    "cuts_on_beat": 0.11,
+    "band_sub": -18.3,
+    "band_low": -5.0,
+    "band_lowmid": -2.6,
+    "band_mid": -10.7,
+    "band_presence": -17.4,
+    "band_air": -20.2,
+    "brightness_hz": 1863,
+    "side_to_mid_db": -17.3,
+    "correlation": 0.96
+   },
+   "chance": {
+    "cuts_with_sound": 0.88,
+    "cut_hit_frac": 0.37,
+    "cut_frame_sync": 0.43,
+    "cuts_on_beat": 0.3
+   },
+   "arc": [
+    4.4,
+    0.0,
+    -0.8,
+    -0.3,
+    0.0,
+    -2.9,
+    -1.7,
+    -0.2,
+    -0.9,
+    1.6,
+    -2.4
+   ]
+  },
+  {
+   "id": "ref_4",
+   "style": "",
+   "duration": 21.996,
+   "has_video": true,
+   "metrics": {
+    "lufs_i": -14.2,
+    "true_peak": -0.4,
+    "lra": 3.5,
+    "crest_lu": 1.7,
+    "intro_lu": 2.1,
+    "end_lu": -8.0,
+    "peak_pos": 0.34,
+    "first_sound_s": 0.06,
+    "max_gap_s": 0.0,
+    "end_silence_s": 0.08,
+    "fade_s": 1.01,
+    "final_lu": -2.4,
+    "tail_s": 1.95,
+    "music_frac": 0.6,
+    "speech_frac": 0.8,
+    "tempo": 133,
+    "onset_rate": 5.0,
+    "hit_rate": 1.82,
+    "stopdowns_min": 2.7,
+    "cut_rate": 0.18,
+    "cuts_with_sound": 1.0,
+    "cut_hit_frac": 0.5,
+    "cut_frame_sync": 0.25,
+    "cuts_on_beat": 0.25,
+    "band_sub": -11.8,
+    "band_low": -6.2,
+    "band_lowmid": -2.4,
+    "band_mid": -13.9,
+    "band_presence": -11.8,
+    "band_air": -17.2,
+    "brightness_hz": 1610,
+    "side_to_mid_db": -16.2,
+    "correlation": 0.95
+   },
+   "chance": {
+    "cuts_with_sound": 0.75,
+    "cut_hit_frac": 0.27,
+    "cut_frame_sync": 0.38,
+    "cuts_on_beat": 0.3
+   },
+   "arc": [
+    1.5,
+    0.7,
+    -0.9,
+    0.7,
+    0.5,
+    -0.9,
+    1.1,
+    -1.0,
+    -1.2,
+    -4.6,
+    -8.7
+   ]
+  }
+ ],
+ "warnings": [],
+ "summary": "profile of 4 reference films (medians): integrated -14.2 LUFS (p10-p90 -14.6 LUFS .. -14.1 LUFS), LRA 3.0 LU, onsets 5.76 /s, salient hits 1.89 /s, music in 93% of 5 s windows, visual events 0.41 /s."
+}
