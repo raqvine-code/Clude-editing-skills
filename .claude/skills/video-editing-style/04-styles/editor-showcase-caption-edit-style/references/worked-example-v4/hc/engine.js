@@ -177,7 +177,7 @@ C.C3 = it => {                                                     // sunset B-r
     if (!bOn) return;
     await setImg(img, frameB('sunset', Math.round((t - tB) * TL.fps) + 6)); brollCard(img, wrap, FULL);
     const pe = outCubic(prog(t, tB, 0.32)); wrap.style.transform = `scale(${lerp(1.12, 1, pe) * (1 + 0.035 * prog(t, tB, it.t1 - tB))})`; wrap.style.filter = pe < 1 ? `blur(${14 * (1 - pe)}px)` : 'none';
-    wrap.style.opacity = 1 - out; img.style.transform = 'scale(1.30) translateY(-14%)';
+    wrap.style.opacity = 1 - out; img.style.transform = 'scale(1.30) translateY(-9.5%)';   /* translate runs before the scale: -9.5 % x 1.3 keeps the bottom covered */
     halo.style.opacity = 0.9 * outCubic(prog(t, wGood[0] + 0.45, 0.5));
     for (const q of P) {                                          // each light travels a curved path to the word, then hovers there
       const p = outCubic(prog(t, q.t0, q.dur)), x = lerp(q.from[0], q.to[0], p) + Math.sin(p * Math.PI) * q.bend, y = lerp(q.from[1], q.to[1], p) - Math.sin(p * Math.PI) * q.bend * 0.3;
