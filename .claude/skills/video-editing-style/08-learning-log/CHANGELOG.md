@@ -2,6 +2,14 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-27 (re-edit, v4): script letters whole, the 0:39 bubble in sync, three keyword motion graphics
+**The user's words:** "Every cursue caption or letters is cut the edges ... At 39 sec the frame is move fast like it doesn't sync the voice ... Add some proper motion graphics make sure don't add messy type of random graphics".
+- **Cause and fix, clipped script:** the write-on mask never fully cleared and swash glyphs overhang their box. The mask now runs past the word and is removed when the word is complete; script spans are padded with matching negative margins. Saved in `worked-example-v4/hc/engine.js` (`writeOn`) and `hc/stage.html` (`.w.script`).
+- **Cause and fix, out of sync:** never show a second window of the same speaker talking at a different moment next to live speech; use a still, closed-mouth frame with a slow push (or the same live frame). Saved in GUIDE section 11.
+- **New overlays (one per keyword, drawn above the captions):** lens over "the facts", pen nib on the script write-on, a two-stage arrow under "only way". Logged in COMPONENTS-LOG.
+- **QC added:** crop every fully written script word at full size; play every motion graphic as a frame sequence and check it finishes at least 0.1 s before its caption leaves.
+- **Open:** earshot's minor notes (thin low end, dull presence) stay, as in v3; the owner's feedback on v4.
+
 ## 2026-11-27 (re-edit, delivered): v3 rendered after the owner's approval with three panels redesigned
 **The user's words:** "approved but improved motion graphics and render the video, DONT LIKED FRAMES IS 3,13,16".
 - **Client taste saved:** no fake app UI and no flat dark text plates for Naveen bro (CLIENT-BAR). Three redesigns and motion upgrades (typing dots, converge spark, pill overshoot, frame corners, match-cut pulse, card drift, a circular arrow on "change").

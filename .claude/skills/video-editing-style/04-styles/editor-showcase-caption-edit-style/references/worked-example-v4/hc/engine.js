@@ -9,7 +9,7 @@ const outCubic = p => 1 - Math.pow(1 - p, 3);
 const outExpo = p => p >= 1 ? 1 : 1 - Math.pow(2, -10 * p);
 const inOut = p => 0.5 - 0.5 * Math.cos(Math.PI * p);
 const pad = n => String(n).padStart(5, '0');
-let TL, FPS, stage, L = {}, items = [], comps = [];
+let TL, FPS, stage, L = {}, items = [], comps = [], post = [];
 const imgCache = {};
 async function setImg(el, src) { if (el.dataset.src === src) return; el.dataset.src = src; el.src = src; try { await el.decode(); } catch (e) {} }
 const frameMain = i => `frames/main/${pad(TL.src_frame[Math.max(0, Math.min(TL.n - 1, i))] + 1)}.jpg`;
@@ -27,9 +27,9 @@ function arrive(el, t, tw, kind) {
 }
 function writeOn(el, t, tw, dur) {
   if (dur == null) dur = Math.max(0.24, Math.min(0.45, 0.03 * (el.textContent || '').length));                       // R8: the script line uncovers left to right through a soft edge
-  const p = t < tw ? 0 : outCubic(prog(t, tw, dur)), x = lerp(-16, 108, p);
-  const m = `linear-gradient(90deg, #000 ${x - 14}%, rgba(0,0,0,.35) ${x - 4}%, transparent ${x}%)`;
-  el.style.webkitMaskImage = m; el.style.maskImage = m; el.style.opacity = p > 0 ? 1 : 0;
+  const p = t < tw ? 0 : outCubic(prog(t, tw, dur)), x = lerp(-16, 124, p);
+  const m = p >= 1 ? 'none' : `linear-gradient(90deg, #000 ${x - 14}%, rgba(0,0,0,.35) ${x - 4}%, transparent ${x}%)`;   // fully clear once written
+  el.style.webkitMaskImage = m; el.style.maskImage = m; el.style.opacity = p > 0 ? 1 : 0; el._wp = p; el._wx = x;
   el.style.filter = p < 1 ? `blur(${2.5 * (1 - p)}px)` : 'none';
 }
 function exitFx(el, t, t1, d = 0.12) {                          // R7: the block drops 2 % and blurs out on the cut
@@ -352,7 +352,7 @@ C.C10 = it => {                                                    // "self-conv
   return async (t, i) => {
     const on = t >= it.t0 && t < it.t1; board.style.display = on ? 'block' : 'none'; [A.sh, B.sh].forEach(b => b.style.display = on ? 'block' : 'none'); cap.style.display = on ? 'block' : 'none';
     if (!on) return;
-    await setImg(A.im, frameMain(i)); await setImg(B.im, `frames/main/${pad(10 + (i - i0))}.jpg`);
+    await setImg(A.im, frameMain(i)); await setImg(B.im, 'frames/main/00270.jpg'); B.im.style.transform = `scale(${1 + 0.05 * prog(t, it.t0, it.t1 - it.t0)})`; B.im.style.transformOrigin = '50% 40%';
     [[A, it.t0], [B, it.t0 + 0.16]].forEach(([b, t0]) => { const p = clamp(prog(t, t0, 0.42)); const s = p >= 1 ? 1 : 1 + 0.1 * Math.sin(p * Math.PI) * (1 - p) - 0.14 * (1 - p);
       b.sh.style.opacity = outCubic(Math.min(1, p * 2)); b.sh.style.transform = `translateY(${(1 - outExpo(p)) * 60 + Math.sin(t * 2 + (b === A ? 0 : 1.7)) * 5}px) scale(${s})`; });
     arrive(sThr, t, Math.max(wThr[0], it.show0 || 0), 'small'); writeOn(sSelf, t, wSelf[0], 0.3); arrive(sConv, t, wConv[0] - 0.04, 'key');
@@ -403,6 +403,49 @@ function changeLoop(t0, t1, x, y) {
     const p = outCubic(prog(t, t0, 0.32)); arc.style.strokeDashoffset = len * (1 - p); head.style.opacity = p > 0.85 ? 1 : 0;
     d.style.transform = `rotate(${-200 * (1 - outCubic(prog(t, t0, 0.55)))}deg) scale(${lerp(0.7, 1, p)})`; d.style.opacity = 1 - prog(t, t1 - 0.12, 0.12); };
 }
+// "interpreting": a glass lens slides across the small words and magnifies each one as it passes
+function lensComp(cap, spans, t0, t1) {
+  const d = $('div', 'abs', L.text, `<svg width="190" height="190" viewBox="0 0 190 190"><defs><radialGradient id="lg" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity=".04"/></radialGradient></defs>
+    <circle cx="80" cy="80" r="62" fill="url(#lg)" stroke="#E9B86F" stroke-width="7"/><path d="M 38 62 A 46 46 0 0 1 70 34" stroke="#fff" stroke-opacity=".7" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M 126 126 L 172 172" stroke="#E9B86F" stroke-width="16" stroke-linecap="round"/></svg>`);
+  d.style.filter = 'drop-shadow(0 10px 18px rgba(0,0,0,.45))';
+  return t => {
+    if (t < t0 || t >= t1 || cap.style.display === 'none') { d.style.display = 'none'; spans.forEach(s => s.style.scale = ''); return; }
+    d.style.display = 'block'; const r0 = spans[0].getBoundingClientRect(), r1 = spans[spans.length - 1].getBoundingClientRect();
+    const p = inOut(prog(t, t0, t1 - t0 - 0.15)), x = lerp(r0.left - 10, r1.right + 10, p), y = (r0.top + r0.bottom) / 2;
+    d.style.left = (x - 80) + 'px'; d.style.top = (y - 80) + 'px'; d.style.opacity = prog(t, t0, 0.15) * (1 - prog(t, t1 - 0.15, 0.15));
+    spans.forEach(s => { const r = s.getBoundingClientRect(), c = (r.left + r.right) / 2, k = Math.max(0, 1 - Math.abs(c - x) / 90); s.style.scale = 1 + 0.28 * k; s.style.color = k > 0.3 ? '#F7DDB0' : ''; });
+  };
+}
+// "self-narrative": a gold pen nib rides the write-on edge of the script word
+function nibComp(sc, t0, t1) {
+  const d = $('div', 'abs', L.text, `<svg width="70" height="110" viewBox="0 0 70 110"><defs><linearGradient id="nb" x1="0" x2="1"><stop offset="0" stop-color="#F7DDB0"/><stop offset=".55" stop-color="#E9B86F"/><stop offset="1" stop-color="#A9732C"/></linearGradient></defs>
+    <path d="M35 108 L8 52 Q6 30 20 14 L35 2 L50 14 Q64 30 62 52 Z" fill="url(#nb)" stroke="#5a3d16" stroke-width="2"/><path d="M35 108 L35 52" stroke="#5a3d16" stroke-width="2.5"/><circle cx="35" cy="48" r="5" fill="#5a3d16"/></svg>`);
+  d.style.filter = 'drop-shadow(0 8px 12px rgba(0,0,0,.45))'; d.style.transformOrigin = '50% 100%';
+  return t => {
+    if (t < t0 || t >= t1 || sc._wp == null || sc._wp <= 0) { d.style.display = 'none'; return; }
+    const r = sc.getBoundingClientRect(), p = sc._wp, x = r.left + r.width * clamp(sc._wx - 8, 0, 100) / 100, y = r.top + r.height * 0.62;
+    const lift = prog(t, t1 - 0.25, 0.25); d.style.display = 'block'; d.style.left = (x - 35) + 'px'; d.style.top = (y - 108 - 40 * lift) + 'px';
+    d.style.transform = `scale(.72) rotate(${58 + 6 * Math.sin(t * 22)}deg)`; d.style.opacity = (p < 1 ? 1 : 1 - lift);   // body angled right, away from the line above
+  };
+}
+// "the only way": one amber path draws itself under the keyword and ends in an arrowhead
+function arrowComp(keys, t0, tB, t1) {   // t0: "only" -> line under "only"; tB: "way" -> line reaches on and the head lands 0.12 s later
+  const d = $('div', 'abs', L.text, `<svg width="1080" height="200" style="position:absolute;left:0;top:0;overflow:visible"><path class="ln" fill="none" stroke="#E9B86F" stroke-width="7" stroke-linecap="round"/><path class="hd" fill="none" stroke="#E9B86F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`);
+  d.style.left = '0'; d.style.filter = 'drop-shadow(0 0 10px rgba(233,184,111,.55))';
+  const ln = d.querySelector('.ln'), hd = d.querySelector('.hd'); let len = 0, built = false, fA = 0.5;
+  return t => {
+    if (t < t0 || t >= t1) { d.style.display = 'none'; return; }
+    d.style.display = 'block';
+    if (!built) { const a = keys[0].getBoundingClientRect(), b = keys[keys.length - 1].getBoundingClientRect(), y = Math.max(a.bottom, b.bottom) + 14 - 0, x0 = a.left + 6, x1 = b.right + 26;
+      d.style.top = y + 'px'; ln.setAttribute('d', `M ${x0} 10 C ${x0 + 120} 26, ${x1 - 160} -4, ${x1} 10`); hd.setAttribute('d', `M ${x1 - 26} -8 L ${x1} 10 L ${x1 - 26} 28`);
+      len = ln.getTotalLength(); ln.style.strokeDasharray = len; fA = clamp((a.right - x0) / (x1 - x0), 0.2, 0.8); built = true; }
+    const p = t < tB ? fA * outCubic(prog(t, t0, tB - t0)) : fA + (1 - fA) * outCubic(prog(t, tB, 0.12));
+    ln.style.strokeDashoffset = len * (1 - p); hd.style.opacity = p > 0.96 ? 1 : 0;
+    const e = prog(t, t1 - 0.12, 0.12); d.style.opacity = 1 - e; d.style.transform = `translateY(${38 * e}px)`;   // leaves with the caption block (exitFx)
+    d.style.filter = `drop-shadow(0 0 10px rgba(233,184,111,.55))${e > 0 ? ` blur(${8 * e}px)` : ''}`;
+  };
+}
 window.init = tl => {
   TL = tl; FPS = tl.fps; stage = document.getElementById('stage');
   L.cardwrap = document.getElementById('cardwrap'); L.main = document.getElementById('main');
@@ -418,12 +461,20 @@ window.init = tl => {
   const ch = tl.items.filter(x => x.kind === 'r7').map(x => x.groups[0]).flat().find(w => w[1].toLowerCase() === 'change');
   const chIt = tl.items.find(x => x.groups[0].includes(ch));
   comps.push([null, changeLoop(ch[0] + 0.02, chIt.t1, 850, chIt.y + 18)]);
+  const capOf = word => items.find(([it]) => it.groups[0].some(w => w[1].toLowerCase() === word));
+  const [itI, capI] = capOf('interpreting'); const postSp = capI._spans.filter(([el, w, k]) => k === 'small' && w[0] > itI.groups[0].find(w => w[2] === '~')[0]).map(x => x[0]);
+  post.push([null, lensComp(capI, postSp, postSp.length ? Math.max(itI.groups[0].find(w => w[1] === 'the')[0] - 0.05, itI.t0) : 1e9, endOf(itI))]);
+  const [itN, capN] = capOf('self-narrative'); const tN = itN.groups[0].find(w => w[2] === '~')[0];
+  post.push([null, nibComp(capN._script, tN, tN + 0.75)]);
+  const [itW, capW] = items.find(([it]) => it.kind === 'r7' && it.groups[0].some(w => w[1] === 'only' && w[2] === '*')); const keysW = capW._spans.filter(([el, w, k]) => k === 'key').map(x => x[0]);
+  post.push([null, arrowComp(keysW, itW.groups[0].find(w => w[1] === 'only')[0] - 0.02, itW.groups[0].find(w => w[1] === 'way')[0], itW.t1)]);
 };
 window.renderAt = async t => {
   const i = Math.min(TL.n - 1, Math.round(t * FPS));
   let rect = null;
   for (const [it, f] of comps) { const r = await f(t, i); if (r && typeof r === 'object' && 'w' in r) rect = r; }
   for (const [it, cap] of items) drawCap(cap, t, it.show0 || it.t0, endOf(it));
+  for (const [it, f] of post) f(t, i);
   await setImg(L.main, frameMain(i)); placeMain(i, rect, t);
 };
 })();

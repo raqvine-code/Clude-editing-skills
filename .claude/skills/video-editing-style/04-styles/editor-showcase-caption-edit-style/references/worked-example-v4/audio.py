@@ -55,6 +55,7 @@ cue(word(c6, "frames"), "paperflip", -14); cue(word(c6, "frames") + 0.10, "key",
 cue(word(it("r7", 3), "think"), "knock", -22)
 c7a = it("C7a"); cue(c7a["groups"][0][0][0], "click", -18)
 cue(word(it("r8", 1), "interpreting"), "paper", -24)
+tLens = word(it("r8", 1), "the") - 0.05; cue(tLens, "slide", -21, sweep=[-0.45, 0.45])
 c7b = it("C7b"); tP = c7b["groups"][0][0][0]; tC = c7b["groups"][0][4][0]
 cue(tP, "whoosh", -15, sweep=[0.7, -0.2]); cue(tP + 0.05, "click", -19); cue(tC, "whoosh", -15, sweep=[-0.7, 0.2]); cue(tC + 0.05, "click", -19); cue(c7b["t1"], "whoosh_rev", -20)
 cue(word(it("r7", 4), "patterns"), "pop", -20)
@@ -71,6 +72,7 @@ cuts = tl["cuts"]; cue([x for x in cuts if 33 < x < 34][0], "whoosh", -19, align
 tCh = word(it("r7", 6), "change"); cue(tCh, "impact", -12); cue(tCh + 0.02, "whoosh", -18, sweep=[0.2, 0.7])
 cue(word(it("r8", 3), "self-narrative"), "marker", -22); cue([x for x in cuts if 36 < x < 37.5][0], "whoosh", -19, align="peak")
 cue(word(it("r7", 7), "only"), "impact", -17)
+tWay = word(it("r7", 7), "only") - 0.02; cue(tWay, "whoosh", -22, sweep=[-0.3, 0.5]); cue(word(it("r7", 7), "way") + 0.12, "click", -21)   # click on the arrowhead landing
 c10 = it("C10"); cue(c10["t0"], "riser", -16, align="peak"); cue(c10["t0"] + 0.01, "slide", -16); cue(c10["t0"] + 0.16, "pop", -20)
 cue(word(c10, "self"), "paper", -24); cue(word(c10, "conversation"), "marker", -15); cue(c10["t1"], "whoosh_rev", -20)
 cue(word(it("r8", 4), "aware"), "chime", -22); cue([x for x in cuts if 41 < x < 42][0], "cloth", -20)
@@ -90,14 +92,14 @@ mg = lambda key, a, b: dict(key=key, dir="-", t0=round(a, 3), t1=round(b, 3), be
 layers = [mg("mg_hook_bubble", 0.15, it("converge")["t0"]), mg("txt_converge", it("converge")["t0"], it("converge")["t1"]), mg("mg_attract_lights", tB, c3["t1"]),
           mg("mg_luck_frame", tS, c4["t1"]), mg("mg_paper_board", c5["t0"], c5["t1"]), mg("mg_facts_frames", c6["t0"], c6["t1"]), mg("mg_pill_list", c7a["groups"][0][0][0], c7a["t1"]),
           mg("mg_pill_list_broll", c7b["t0"], c7b["t1"]), mg("mc_patterns", c8["t0"], tRep - 0.02), mg("txt_echo", tRep, c8["t1"]), mg("hl_self_conversation", c10["t0"], c10["t1"]),
-          mg("mg_change_loop", tCh + 0.02, it("r7", 6)["t1"]), mg("mg_share_bubble", c12["t0"] + 0.05, tSome + 0.85)]
+          mg("mg_change_loop", tCh + 0.02, it("r7", 6)["t1"]), mg("mg_lens", tLens, it("r8", 1)["t1"]), mg("mg_pen_nib", word(it("r8", 3), "self-narrative"), word(it("r8", 3), "self-narrative") + 0.75), mg("mg_one_way", tWay, it("r7", 7)["t1"]), mg("mg_share_bubble", c12["t0"] + 0.05, tSome + 0.85)]
 B = lambda key, a, b: dict(key=key, file="hc/frames/" + key, t0=round(a, 3), t1=round(b, 3), src=0)
 broll = [B("sunset", tB, c3["t1"]), B("book", tBook, c5["t1"]), B("couple", tP, tC), B("coworkers", tC, c7b["t1"]), B("dominoes", tRep - 0.02, c8["t1"]), B("eye", tE, c9["t1"])]
 caps = []                                   # every spoken word is on screen (captions and the words inside components)
 for x in items:
     caps.append(dict(t0=x["t0"], t1=x["t1"], words=[[w[0], w[1], "k" if w[2] else "n"] for w in sum(x["groups"], [])]))
 FONTS = P + "/hc/fonts/"
-edl = dict(name="story_you_tell_yourself_v4", src=os.environ.get("SRC30", S + "/redo/src30.mp4"), fps=30, project=PROJ, keeps=K,
+edl = dict(name="story_you_tell_yourself_v4", src=S + "/redo/src30.mp4", fps=30, project=PROJ, keeps=K,
            camera=[[s[0], s[2], "linear"] for s in tl["shots"]], broll=broll, layers=layers, captions=caps, sfx=sfx,
            flashes=[dict(t=round(c4["t1"] - 0.05, 3), type="white")],
            style=dict(cap_font=FONTS + "Arimo.ttf", key_font=FONTS + "Arimo.ttf", serif_font=FONTS + "GreatVibes-Regular.ttf"),

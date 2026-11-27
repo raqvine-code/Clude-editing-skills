@@ -165,6 +165,9 @@ See `references/ghost-editor-recipes.md` for 18 worked examples of "a different 
 - Spell-check every card against the audio (R6 shipped "TEN TIME").
 - Variety audit (section 10b): lay the cards side by side; if two neighbours look like the same template, redesign one.
 - Thin script at phone size: view a still at 25 % zoom; if the script is not readable, raise its weight or opacity.
+- **Script letters whole (owner, 2026-11-27):** crop every script word at full size on the frame after its write-on ends. No swash, tail, capital or last letter may be cut or faded. A write-on mask must run past the word and be removed when the word is complete, and the script box needs padding for glyph overhang (`worked-example-v4/hc/stage.html`, `.w.script`).
+- **One talking mouth at a time (owner, 2026-11-27):** a second window of the same speaker next to live speech must be a still, closed-mouth frame (or the same live frame). His face talking at another moment reads as "out of sync with the voice".
+- **Every motion graphic finishes before its caption leaves:** play it as a frame sequence. Its last state (arrowhead, magnified word, full stroke) holds at least 0.1 s before the caption exit; start it on the first keyword of the phrase, not the last.
 
 ## 12. Limits
 - Four reels, one viewing pass each, picture only for the detail. Counts from scripts are exact for those files; "≈" values were read off sheets.

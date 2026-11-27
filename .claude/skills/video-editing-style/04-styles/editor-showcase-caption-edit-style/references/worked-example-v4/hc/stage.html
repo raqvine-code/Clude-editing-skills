@@ -24,6 +24,9 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 .line { display: block; white-space: nowrap; font-size: 0; }
 .w { display: inline-block; will-change: filter, opacity, transform; margin-right: .27em; }
 .w:last-child { margin-right: 0; }
+/* script glyphs overhang their box (swash capitals, tails, descenders): give them room so the write-on mask never clips them */
+.w.script { padding: .22em .36em .34em; margin: -.22em -.09em -.34em -.36em; }
+.w.script:last-child { margin-right: -.36em; }
 .small { font: 400 56px/1.12 AR; color: rgba(255,255,255,.96); text-shadow: var(--sh); letter-spacing: .1px; }
 .key { font: 700 124px/1.0 AR; color: var(--amber); letter-spacing: -2.5px; text-shadow: 0 0 26px rgba(233,184,111,.32), 0 6px 16px rgba(0,0,0,.50); }
 .white { font: 700 96px/1.0 AR; color: #fff; letter-spacing: -2px; text-shadow: var(--sh); }

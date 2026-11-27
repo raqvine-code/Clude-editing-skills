@@ -12,7 +12,15 @@
 
 ---
 
-## 2026-11-27 (cloud session) · "The story you tell yourself" v3, 45.0 s · delivered, feedback pending
+## 2026-11-27 (cloud session) · "The story you tell yourself" v4, 45.0 s · three fixes after the owner's notes on v3
+- **Feedback (quoted):** "1. Every cursue caption or letters is cut the edges once you see and fix it . 2.At 39 sec the frame is move fast like it doesn't sync the voice check the once and fix it sync the voice 3.Add some proper motion graphics make sure don't add messy type of random graphics" (screenshots at 0:08 "luck frame", 0:32 "seeing", 0:39 the two bubbles).
+- **What went wrong 1, script letters cut:** the write-on mask (a moving gradient) stopped at 110 % of the word box, so the last tenth of every script word stayed half transparent ("frame" lost its "e"), and Great Vibes swashes, tails and capitals overhang the glyph box, so the masked box cut them off ("seeing" lost the tail of its "g"). **Fix:** the mask runs to 124 % and is removed (`mask: none`) the frame the word is complete; script spans get padding `.22em .36em .34em` with equal negative margins, so the mask box covers the overhang without moving the layout.
+- **What went wrong 2, 0:39 out of sync:** the right speech bubble played his footage from another moment, so a second mouth moved to words that were not being said. **Fix:** the second bubble is a still, closed-mouth "listening" frame (source 8.98 s) with a 5 % push; measured frame-to-frame change in that window is 1.3 (still).
+- **What went wrong 3, more MG:** three overlays tied to one word each, drawn above the captions: a glass lens slides over "the facts of my life" and magnifies each word as it passes; a gold pen nib rides the write-on edge of "self-narrative"; an amber stroke draws under "only", reaches under "way" and lands its arrowhead 0.12 s after "way", then leaves with the caption. First arrow version started on "way" and its head landed during the caption exit (a flicker); caught on a frame sequence and fixed before delivery.
+- **Numbers:** 85 cues + room-tone bed, 66 real files, at most 2 uses; gate READY (designed MG 49 %, longest gap 7.6 s); -14.0 LUFS, -1.5 dBTP; earshot 19 of 23 in range, the only critical flag is music (client rule: no BGM); 3 of 43 visual events have no matched onset (two soft cut whooshes, one gesture foley).
+- **Rule changes:** `04-styles/editor-showcase-caption-edit-style/GUIDE.md` section 11 (three QC checks), CLIENT-BAR row.
+
+## 2026-11-27 (cloud session) · "The story you tell yourself" v3, 45.0 s · delivered, superseded by v4
 - **Process:** master brief (R7 > R6 > R5 > R8, R8 fonts, no BGM, no grade, keep B-roll) -> fonts matched to R8 -> light trim (2.6 s) -> four preview boards -> owner approved, rejected panels 3, 13, 16 -> three redesigns + motion upgrades -> render -> gate READY -> earshot 19 of 23 in range (only music flagged, excluded by the client rule).
 - **New tools:** the browser compositor (`04-styles/editor-showcase-caption-edit-style/references/worked-example-v4/`), `audio.py` (real sounds by role, least-used first, at most 3 uses), earshot critique against the showcase profile.
 - **Numbers:** 1351 frames rendered in about 2 min; 82 sound cues from 66 real files; -14.0 LUFS, -1.3 dBTP; caption centre at chin + 17 %; footage colour within about 2 levels of the source.
