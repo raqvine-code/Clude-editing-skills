@@ -32,7 +32,7 @@ Owner: Raghu (studio: RAQVINE; channel: Move with Raghu). Skills were first writ
 | `08-learning-log/` | everything learned by date, the video 25 post-mortem |
 | `_archive/` | the original CLAUDE.md, old README, old index, long originals |
 
-`INDEX.md` lists all 37 skills with path, scope and use-when line.
+`INDEX.md` lists all 38 skills with path, scope and use-when line.
 
 ## Router: job, then read
 | Job | Read (after the Core 5) |
