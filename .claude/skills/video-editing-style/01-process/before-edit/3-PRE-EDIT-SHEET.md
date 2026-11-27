@@ -56,6 +56,8 @@ cp "01-process/before-edit/3-PRE-EDIT-SHEET.md" "<ROOT>/edits/<project>/PRE-EDIT
 | # | t0-t1 | Kind (list device, contrast object, HL card, MC, UI card, split, full scene, object behind head, paper, plate, HUD / ring, B&W, mirror) | Words it shows | Build (scenes.py key `mg_...` / `layers` / kit key) | Sound |
 |---|---|---|---|---|---|
 
+Components used in the last three videos (`02-craft/shorts-editing-pro/COMPONENTS-LOG.md`) and the NEW ones chosen for this video (no layout appears twice; at most the house look repeats):
+
 Check before going on:
 - [ ] count >= runtime / 8
 - [ ] 3+ kinds

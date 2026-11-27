@@ -151,6 +151,10 @@ The redo had 6 cards with one layout (window on top, hero word in the lower thir
 5. **Small words stay readable at phone size:** at least 3 % of the frame height (58 px at 1080x1920) at full opacity.
 6. **Sound: a different recording for each kind of event, real recordings only, no file more than 3 times in a 47 s video** (gate row). Fewer, better matched cues beat 71 cues from 18 files. Pick the sound by what moves: a card closing = a soft close or paper sound, a colour flip = a short click, a list pop = a UI tick, never one pop for every word.
 7. Listen or look: when you cannot hear the mix (cloud session), say so to the owner and ask for one check before delivery.
+8. **House look vs components** (from Ghost Editor's Clean OS: "a system, not a template"). The house look is fixed for a client: type families, the caption treatment family, accent colours, how an insert is framed, the speaker as shot. The components are NEW every video: the scenes, props, transitions, hook device, outro device and B-roll treatment that fill the slots. The redo kept one component (the card with a window and a giant hero) and used it six times.
+9. **Two worlds, literal state changes:** alternate the footage world (the person) with a designed world (the idea made concrete). A designed moment shows exactly what is said and its state change (a number flips, a box closes, a word is struck) lands on the key word within about 0.05 s.
+10. **Log the components** in `02-craft/shorts-editing-pro/COMPONENTS-LOG.md` after every video and read the last three rows before planning: use components that are not there. One layout may appear once in a video.
+See `references/ghost-editor-recipes.md` for 18 worked examples of "a different world per video".
 
 ## 11. QC for this style (add to the normal QC)
 - Caption block centre measured on 5 stills: 54-62 % of the height, and chin + 13-21 %.

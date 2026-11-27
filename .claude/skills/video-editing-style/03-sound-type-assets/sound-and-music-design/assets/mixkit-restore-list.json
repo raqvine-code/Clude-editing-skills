@@ -1,0 +1,955 @@
+{
+ "note": "Mixkit sounds and music by id, from Ghost Editor's manifests (MIT repo). Fetch with 06-tools/tools/mixkit_fetch.py. Do not commit the files: Mixkit's licence allows use in a video but not redistribution as-is.",
+ "sfx": {
+  "whoosh-1": {
+   "role": "whoosh",
+   "tags": [
+    "zoom",
+    "transition",
+    "card-in"
+   ],
+   "duration": 0.9,
+   "mixkit_id": "2350",
+   "source": "https://mixkit.co/free-sound-effects/whoosh/ #2350 Magic sparkle whoosh",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "whoosh-2": {
+   "role": "whoosh",
+   "tags": [
+    "zoom",
+    "transition",
+    "card-in"
+   ],
+   "duration": 0.9,
+   "mixkit_id": "1492",
+   "source": "https://mixkit.co/free-sound-effects/whoosh/ #1492 Cinematic whoosh fast transition",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "whoosh-3": {
+   "role": "whoosh",
+   "tags": [
+    "zoom",
+    "transition",
+    "card-in"
+   ],
+   "duration": 0.9,
+   "mixkit_id": "1714",
+   "source": "https://mixkit.co/free-sound-effects/whoosh/ #1714 Fast rocket whoosh",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "whoosh-cine": {
+   "role": "whoosh",
+   "tags": [
+    "text-slam",
+    "reveal"
+   ],
+   "duration": 0.313,
+   "mixkit_id": "1491",
+   "source": "https://mixkit.co/free-sound-effects/whoosh/ #1491 Arrow whoosh",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "pop-1": {
+   "role": "ui",
+   "tags": [
+    "chip",
+    "emoji",
+    "list-item"
+   ],
+   "duration": 0.219,
+   "mixkit_id": "2925",
+   "source": "https://mixkit.co/free-sound-effects/pop/ #2925 Soap bubble sound",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "pop-3": {
+   "role": "ui",
+   "tags": [
+    "chip",
+    "emoji",
+    "list-item"
+   ],
+   "duration": 0.14,
+   "mixkit_id": "2364",
+   "source": "https://mixkit.co/free-sound-effects/pop/ #2364 Hard pop click",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "click-1": {
+   "role": "ui",
+   "tags": [
+    "ui",
+    "cursor"
+   ],
+   "duration": 0.25,
+   "mixkit_id": "900",
+   "source": "https://mixkit.co/free-sound-effects/click/ #900 Sci fi click",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "tick-1": {
+   "role": "ui",
+   "tags": [
+    "typing"
+   ],
+   "duration": 0.2,
+   "mixkit_id": "2531",
+   "source": "https://mixkit.co/free-sound-effects/typing/ #2531 Typing on a laptop keyboard",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "typing-1": {
+   "role": "ui",
+   "tags": [
+    "typing",
+    "prompt"
+   ],
+   "duration": 2.5,
+   "mixkit_id": "2532",
+   "source": "https://mixkit.co/free-sound-effects/typing/ #2532 Slow typing on a keyboard",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "impact-1": {
+   "role": "impact",
+   "tags": [
+    "text-slam",
+    "number",
+    "stamp"
+   ],
+   "duration": 1.6,
+   "mixkit_id": "2908",
+   "source": "https://mixkit.co/free-sound-effects/impact/ #2908 Movie trailer epic impact",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "impact-2": {
+   "role": "impact",
+   "tags": [
+    "text-slam",
+    "number",
+    "stamp"
+   ],
+   "duration": 1.2,
+   "mixkit_id": "788",
+   "source": "https://mixkit.co/free-sound-effects/impact/ #788 Big cinematic impact",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "riser-1": {
+   "role": "whoosh",
+   "tags": [
+    "build-up"
+   ],
+   "duration": 1.705,
+   "mixkit_id": "790",
+   "source": "https://mixkit.co/free-sound-effects/cinematic/ #790 Cinematic trailer riser",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "ding-1": {
+   "role": "ui",
+   "tags": [
+    "win",
+    "check"
+   ],
+   "duration": 0.885,
+   "mixkit_id": "2870",
+   "source": "https://mixkit.co/free-sound-effects/notification/ #2870 Correct answer tone",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "buzzer-1": {
+   "role": "meme",
+   "tags": [
+    "wrong",
+    "dismiss",
+    "myth"
+   ],
+   "duration": 1.2,
+   "mixkit_id": "948",
+   "source": "https://mixkit.co/free-sound-effects/game-show/ #948 Wrong answer bass buzzer",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "kaching-1": {
+   "role": "impact",
+   "tags": [
+    "money",
+    "price",
+    "win"
+   ],
+   "duration": 0.726,
+   "mixkit_id": "1993",
+   "source": "https://mixkit.co/free-sound-effects/cash/ #1993 Clinking coins",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "shutter-1": {
+   "role": "ui",
+   "tags": [
+    "screenshot",
+    "save",
+    "freeze"
+   ],
+   "duration": 0.444,
+   "mixkit_id": "1430",
+   "source": "https://mixkit.co/free-sound-effects/camera/ #1430 Camera shutter hard click",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "pop-2": {
+   "role": "ui",
+   "tags": [
+    "chip",
+    "emoji",
+    "list-item"
+   ],
+   "duration": 0.049,
+   "mixkit_id": "2354",
+   "source": "https://mixkit.co/free-sound-effects/pop/ #2354 Message pop alert",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-boing": {
+   "role": "meme",
+   "tags": [
+    "absurd",
+    "bounce",
+    "flex"
+   ],
+   "duration": 0.487,
+   "mixkit_id": "2894",
+   "source": "https://mixkit.co/free-sound-effects/cartoon/ #2894 Boing hit sound",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-rimshot": {
+   "role": "meme",
+   "tags": [
+    "punchline",
+    "bad-joke"
+   ],
+   "duration": 1.841,
+   "mixkit_id": "579",
+   "source": "https://mixkit.co/free-sound-effects/drum/ #579 Drum joke accent",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-fail-trombone": {
+   "role": "meme",
+   "tags": [
+    "fail",
+    "sad",
+    "pity"
+   ],
+   "duration": 3.0,
+   "mixkit_id": "471",
+   "source": "https://mixkit.co/free-sound-effects/funny/ #471 Sad game over trombone",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-drum-roll": {
+   "role": "meme",
+   "tags": [
+    "build-up",
+    "reveal",
+    "suspense"
+   ],
+   "duration": 3.0,
+   "mixkit_id": "566",
+   "source": "https://mixkit.co/free-sound-effects/drum/ #566 Drum Roll",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-crowd-laugh": {
+   "role": "meme",
+   "tags": [
+    "punchline",
+    "roast",
+    "dumb"
+   ],
+   "duration": 3.0,
+   "mixkit_id": "424",
+   "source": "https://mixkit.co/free-sound-effects/crowd/ #424 Crowd laugh",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-crowd-boo": {
+   "role": "meme",
+   "tags": [
+    "bad-take",
+    "myth",
+    "wrong"
+   ],
+   "duration": 2.5,
+   "mixkit_id": "463",
+   "source": "https://mixkit.co/free-sound-effects/crowd/ #463 Crowd disappointment long boo",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-applause-short": {
+   "role": "meme",
+   "tags": [
+    "win",
+    "flex",
+    "sarcastic"
+   ],
+   "duration": 3.0,
+   "mixkit_id": "475",
+   "source": "https://mixkit.co/free-sound-effects/applause/ #475 Small group clapping",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-tape-rewind": {
+   "role": "meme",
+   "tags": [
+    "wait",
+    "freeze-frame",
+    "twist"
+   ],
+   "duration": 1.5,
+   "mixkit_id": "1088",
+   "source": "https://mixkit.co/free-sound-effects/cinematic/ #1088 Tape rewind cinematic transition",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-cartoon-pop": {
+   "role": "meme",
+   "tags": [
+    "emoji",
+    "idea",
+    "light"
+   ],
+   "duration": 0.6,
+   "mixkit_id": "729",
+   "source": "https://mixkit.co/free-sound-effects/cartoon/ #729 Cartoon bubbles pop",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-slide-whistle": {
+   "role": "meme",
+   "tags": [
+    "fail",
+    "drop",
+    "falling"
+   ],
+   "duration": 2.0,
+   "mixkit_id": "395",
+   "source": "https://mixkit.co/free-sound-effects/cartoon/ #395 Cartoon falling whistle",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-gasp": {
+   "role": "meme",
+   "tags": [
+    "shock",
+    "disbelief",
+    "claim"
+   ],
+   "duration": 0.623,
+   "mixkit_id": "966",
+   "source": "https://mixkit.co/free-sound-effects/gasp/ #966 Male astonished gasp",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "reaction-ding-ding": {
+   "role": "meme",
+   "tags": [
+    "correct",
+    "idea",
+    "win"
+   ],
+   "duration": 0.875,
+   "mixkit_id": "588",
+   "source": "https://mixkit.co/free-sound-effects/bell/ #588 Service bell double ding",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "cinematic-deep-boom": {
+   "role": "impact",
+   "tags": [
+    "text-slam",
+    "reveal",
+    "number"
+   ],
+   "duration": 2.5,
+   "mixkit_id": "553",
+   "source": "https://mixkit.co/free-sound-effects/drum/ #553 Blockbuster trailer bass drum",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "cinematic-rumble-riser": {
+   "role": "whoosh",
+   "tags": [
+    "build-up",
+    "tension"
+   ],
+   "duration": 3.0,
+   "mixkit_id": "632",
+   "source": "https://mixkit.co/free-sound-effects/riser/ #632 Cinematic drama riser",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "cinematic-drone-swell": {
+   "role": "whoosh",
+   "tags": [
+    "tension",
+    "bed",
+    "reveal"
+   ],
+   "duration": 4.0,
+   "mixkit_id": "678",
+   "source": "https://mixkit.co/free-sound-effects/cinematic/ #678 Trailer cinematic suspense swell",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "cinematic-heartbeat": {
+   "role": "impact",
+   "tags": [
+    "tension",
+    "pause",
+    "stakes"
+   ],
+   "duration": 0.455,
+   "mixkit_id": "490",
+   "source": "https://mixkit.co/free-sound-effects/boom/ #490 Human single heart beat",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "cinematic-film-flash": {
+   "role": "whoosh",
+   "tags": [
+    "flash",
+    "cut",
+    "transition"
+   ],
+   "duration": 1.0,
+   "mixkit_id": "3131",
+   "source": "https://mixkit.co/free-sound-effects/impact/ #3131 Short impact static",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "tech-glitch-1": {
+   "role": "ui",
+   "tags": [
+    "glitch",
+    "cut",
+    "error"
+   ],
+   "duration": 0.688,
+   "mixkit_id": "1031",
+   "source": "https://mixkit.co/free-sound-effects/glitch/ #1031 Glitch short",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "tech-glitch-2": {
+   "role": "whoosh",
+   "tags": [
+    "glitch",
+    "transition"
+   ],
+   "duration": 0.585,
+   "mixkit_id": "2951",
+   "source": "https://mixkit.co/free-sound-effects/glitch/ #2951 Digital glitch break",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "tech-digital-whoosh": {
+   "role": "whoosh",
+   "tags": [
+    "zoom",
+    "transition",
+    "tech"
+   ],
+   "duration": 1.2,
+   "mixkit_id": "2596",
+   "source": "https://mixkit.co/free-sound-effects/whoosh/ #2596 Electric whoosh",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "tech-ui-confirm": {
+   "role": "ui",
+   "tags": [
+    "check",
+    "win",
+    "done"
+   ],
+   "duration": 1.0,
+   "mixkit_id": "2865",
+   "source": "https://mixkit.co/free-sound-effects/notification/ #2865 Success software tone",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "tech-ui-error": {
+   "role": "ui",
+   "tags": [
+    "wrong",
+    "myth",
+    "reject"
+   ],
+   "duration": 0.358,
+   "mixkit_id": "1110",
+   "source": "https://mixkit.co/free-sound-effects/interface/ #1110 Click error",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "tech-keyboard-burst": {
+   "role": "ui",
+   "tags": [
+    "typing",
+    "prompt",
+    "code"
+   ],
+   "duration": 2.0,
+   "mixkit_id": "1387",
+   "source": "https://mixkit.co/free-sound-effects/typing/ #1387 Fast keyboard typing",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "tech-notification-2": {
+   "role": "ui",
+   "tags": [
+    "notification",
+    "chip",
+    "alert"
+   ],
+   "duration": 0.405,
+   "mixkit_id": "2519",
+   "source": "https://mixkit.co/free-sound-effects/technology/ #2519 High tech notification bleep",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "tech-camera-flash": {
+   "role": "ui",
+   "tags": [
+    "screenshot",
+    "flash",
+    "freeze"
+   ],
+   "duration": 0.347,
+   "mixkit_id": "1432",
+   "source": "https://mixkit.co/free-sound-effects/camera/ #1432 Camera digital shutter",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "cinematic-cine-hit": {
+   "role": "impact",
+   "tags": [
+    "title",
+    "stamp",
+    "reveal"
+   ],
+   "duration": 2.0,
+   "mixkit_id": "2901",
+   "source": "https://mixkit.co/free-sound-effects/impact/ #2901 Epic movie impact",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "wood-saw": {
+   "role": "foley",
+   "tags": [
+    "craft",
+    "wood",
+    "workshop"
+   ],
+   "duration": 1.2,
+   "mixkit_id": "827",
+   "source": "https://mixkit.co/free-sound-effects/wood/ #827 Hand saw tool on wood",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "wood-hit": {
+   "role": "impact",
+   "tags": [
+    "craft",
+    "wood",
+    "turn",
+    "hit"
+   ],
+   "duration": 0.235,
+   "mixkit_id": "2182",
+   "source": "https://mixkit.co/free-sound-effects/wood/ #2182 Wood hard hit",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "wood-ambience": {
+   "role": "ambience",
+   "tags": [
+    "craft",
+    "workshop",
+    "room-tone"
+   ],
+   "duration": 14.0,
+   "mixkit_id": "797",
+   "source": "https://mixkit.co/free-sound-effects/wood/ #797 Wooden construction assembly ambience",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "wood-sanding": {
+   "role": "foley",
+   "tags": [
+    "craft",
+    "wood",
+    "workshop"
+   ],
+   "duration": 4.0,
+   "mixkit_id": "850",
+   "source": "https://mixkit.co/free-sound-effects/wood/ #850 Wood polishing electrical tool",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "marker-scribble": {
+   "role": "foley",
+   "tags": [
+    "whiteboard",
+    "write",
+    "draw",
+    "doodle"
+   ],
+   "duration": 0.543,
+   "mixkit_id": "2369",
+   "source": "https://mixkit.co/free-sound-effects/paper/ #2369 Writing scribble on paper",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "pencil-write": {
+   "role": "foley",
+   "tags": [
+    "whiteboard",
+    "write",
+    "notebook"
+   ],
+   "duration": 1.866,
+   "mixkit_id": "3194",
+   "source": "https://mixkit.co/free-sound-effects/paper/ #3194 Writing pencil",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "send-swoosh": {
+   "role": "ui",
+   "tags": [
+    "send",
+    "message",
+    "imessage",
+    "swoosh"
+   ],
+   "duration": 0.639,
+   "mixkit_id": "166",
+   "source": "https://mixkit.co/free-sound-effects/transition/ #166 Fast small sweep transition",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  },
+  "alarm-bell": {
+   "role": "foley",
+   "tags": [
+    "alarm",
+    "clock",
+    "wake-up",
+    "ring"
+   ],
+   "duration": 3.5,
+   "mixkit_id": "995",
+   "source": "https://mixkit.co/free-sound-effects/alarm/ #995 Classic alarm",
+   "licence": "Mixkit Free SFX licence (commercial OK, no redistribution as-is)"
+  }
+ },
+ "music": {
+  "deep-techno-ambience": {
+   "file": "deep-techno-ambience.mp3",
+   "mood": [
+    "tense",
+    "tech",
+    "ambient",
+    "minimal"
+   ],
+   "source": "https://mixkit.co/free-stock-music/techno/ #134 Deep Techno Ambience, Alejandro Maga\u00f1a (A. M.)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/134/134.mp3",
+   "styles": [
+    "editorial"
+   ],
+   "lufs_i": -7.3,
+   "duration": 122.5
+  },
+  "cyberpunk-city": {
+   "file": "cyberpunk-city.mp3",
+   "mood": [
+    "tech",
+    "night",
+    "driving",
+    "electronic"
+   ],
+   "source": "https://mixkit.co/free-stock-music/ambient/ #140 Cyberpunk City, Alejandro Maga\u00f1a (A. M.)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/140/140.mp3",
+   "styles": [
+    "editorial",
+    "launch",
+    "product-launch"
+   ],
+   "lufs_i": -10.8,
+   "duration": 99.7
+  },
+  "lo-fi-02": {
+   "file": "lo-fi-02.mp3",
+   "mood": [
+    "chill",
+    "lo-fi",
+    "subtle",
+    "warm"
+   ],
+   "styles": [
+    "clean"
+   ],
+   "source": "https://mixkit.co/free-stock-music/quirky/ #764 Lo-Fi 02, Lily J (Chillout)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/764/764.mp3",
+   "lufs_i": -11.2,
+   "duration": 98.2
+  },
+  "digital-clouds": {
+   "file": "digital-clouds.mp3",
+   "mood": [
+    "chill",
+    "soft",
+    "electronic",
+    "subtle"
+   ],
+   "styles": [
+    "clean"
+   ],
+   "source": "https://mixkit.co/free-stock-music/electronic/ #175 Digital Clouds, Alejandro Maga\u00f1a (A. M.) (Chillout)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/175/175.mp3",
+   "lufs_i": -13.1,
+   "duration": 101.0
+  },
+  "comical": {
+   "file": "comical.mp3",
+   "mood": [
+    "quirky",
+    "fun",
+    "playful",
+    "comedic"
+   ],
+   "styles": [
+    "meme"
+   ],
+   "source": "https://mixkit.co/free-stock-music/quirky/ #2 Comical, Ahjay Stelino (Children)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/2/2.mp3",
+   "lufs_i": -11.3,
+   "duration": 114.4
+  },
+  "keeping-fit": {
+   "file": "keeping-fit.mp3",
+   "mood": [
+    "quirky",
+    "chiptune",
+    "bouncy",
+    "fun"
+   ],
+   "styles": [
+    "meme"
+   ],
+   "source": "https://mixkit.co/free-stock-music/quirky/ #82 Keeping Fit, Ahjay Stelino (Chiptune)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/82/82.mp3",
+   "lufs_i": -11.6,
+   "duration": 98.8
+  },
+  "silent-descent": {
+   "file": "silent-descent.mp3",
+   "mood": [
+    "piano",
+    "cinematic",
+    "reflective",
+    "slow"
+   ],
+   "styles": [
+    "cinematic",
+    "cinematic-doc"
+   ],
+   "source": "https://mixkit.co/free-stock-music/tag/cinematic/ #614 Silent Descent, Eugenio Mininni (Film Score)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/614/614.mp3",
+   "lufs_i": -13.3,
+   "duration": 160.4
+  },
+  "vastness": {
+   "file": "vastness.mp3",
+   "mood": [
+    "ambient",
+    "cinematic",
+    "drone",
+    "spacious"
+   ],
+   "styles": [
+    "cinematic",
+    "cinematic-doc"
+   ],
+   "source": "https://mixkit.co/free-stock-music/ambient/ #184 Vastness, Andrew Ev (Ambient)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/184/184.mp3",
+   "lufs_i": -13.5,
+   "duration": 229.8
+  },
+  "infinity": {
+   "file": "infinity.mp3",
+   "mood": [
+    "upbeat",
+    "tech",
+    "electronic",
+    "corporate"
+   ],
+   "styles": [
+    "launch",
+    "product-launch"
+   ],
+   "source": "https://mixkit.co/free-stock-music/electronic/ #440 Infinity, Arulo (Corporate Music)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/440/440.mp3",
+   "lufs_i": -12.2,
+   "duration": 102.9
+  },
+  "brainiac": {
+   "file": "brainiac.mp3",
+   "mood": [
+    "tech",
+    "electronic",
+    "driving",
+    "modern"
+   ],
+   "styles": [
+    "launch",
+    "product-launch"
+   ],
+   "source": "https://mixkit.co/free-stock-music/electronic/ #167 Brainiac, Alejandro Maga\u00f1a (A. M.) (Electronica)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/167/167.mp3",
+   "lufs_i": -10.6,
+   "duration": 106.4
+  },
+  "vocal-percussions": {
+   "file": "vocal-percussions.mp3",
+   "mood": [
+    "percussive",
+    "minimal",
+    "rhythmic",
+    "beat"
+   ],
+   "styles": [
+    "kinetic",
+    "kinetic-type"
+   ],
+   "source": "https://mixkit.co/free-stock-music/quirky/ #527 Vocal Percussions, Diego Nava (Rhythmic Underscore)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/527/527.mp3",
+   "lufs_i": -13.8,
+   "duration": 104.8
+  },
+  "happy-times": {
+   "file": "happy-times.mp3",
+   "mood": [
+    "upbeat",
+    "pop",
+    "bright",
+    "happy"
+   ],
+   "styles": [
+    "pop",
+    "pop-magazine"
+   ],
+   "source": "https://mixkit.co/free-stock-music/pop/ #158 Happy Times, Alejandro Maga\u00f1a (A. M.) (Pop)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/158/158.mp3",
+   "lufs_i": -9.7,
+   "duration": 100.1
+  },
+  "life-is-a-dream": {
+   "file": "life-is-a-dream.mp3",
+   "mood": [
+    "upbeat",
+    "disco",
+    "pop",
+    "groovy"
+   ],
+   "styles": [
+    "pop",
+    "pop-magazine"
+   ],
+   "source": "https://mixkit.co/free-stock-music/pop/ #837 Life is a Dream, Michael Ramir C. (Disco)",
+   "licence": "Mixkit Free Music licence (commercial OK, no attribution)",
+   "url": "https://assets.mixkit.co/music/837/837.mp3",
+   "lufs_i": -11.6,
+   "duration": 99.1
+  },
+  "the-long-road": {
+   "file": "the-long-road.mp3",
+   "mood": [
+    "melancholic",
+    "acoustic",
+    "drama"
+   ],
+   "source": "https://assets.mixkit.co/music/52/52.mp3 (Mixkit #52)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  },
+  "miss-you": {
+   "file": "miss-you.mp3",
+   "mood": [
+    "hopeful",
+    "cello",
+    "piano",
+    "arthouse"
+   ],
+   "source": "https://assets.mixkit.co/music/592/592.mp3 (Mixkit #592)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  },
+  "a-new-life": {
+   "file": "a-new-life.mp3",
+   "mood": [
+    "hopeful",
+    "strings",
+    "documentary"
+   ],
+   "source": "https://assets.mixkit.co/music/543/543.mp3 (Mixkit #543)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  },
+  "forest-mist-whispers": {
+   "file": "forest-mist-whispers.mp3",
+   "mood": [
+    "hopeful",
+    "atmospheric",
+    "piano",
+    "documentary"
+   ],
+   "source": "https://assets.mixkit.co/music/148/148.mp3 (Mixkit #148)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  },
+  "staring-at-the-night-sky": {
+   "file": "staring-at-the-night-sky.mp3",
+   "mood": [
+    "mysterious",
+    "atmospheric",
+    "cello",
+    "piano"
+   ],
+   "source": "https://assets.mixkit.co/music/168/168.mp3 (Mixkit #168)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  },
+  "drawing-the-sky": {
+   "file": "drawing-the-sky.mp3",
+   "mood": [
+    "dramatic",
+    "cinematic"
+   ],
+   "source": "https://assets.mixkit.co/music/606/606.mp3 (Mixkit #606)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  },
+  "sleepy-cat": {
+   "file": "sleepy-cat.mp3",
+   "mood": [
+    "atmospheric",
+    "city",
+    "night"
+   ],
+   "source": "https://assets.mixkit.co/music/135/135.mp3 (Mixkit #135)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  },
+  "classical-7": {
+   "file": "classical-7.mp3",
+   "mood": [
+    "melancholic",
+    "piano",
+    "soft"
+   ],
+   "source": "https://assets.mixkit.co/music/714/714.mp3 (Mixkit #714)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  },
+  "a-baby-story": {
+   "file": "a-baby-story.mp3",
+   "mood": [
+    "hopeful",
+    "relaxed",
+    "acoustic",
+    "lifestyle"
+   ],
+   "source": "https://assets.mixkit.co/music/530/530.mp3 (Mixkit #530)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  },
+  "chillax": {
+   "file": "chillax.mp3",
+   "mood": [
+    "meditative",
+    "acoustic",
+    "relaxed"
+   ],
+   "source": "https://assets.mixkit.co/music/655/655.mp3 (Mixkit #655)",
+   "licence": "Mixkit Free Music licence (free for commercial social use; not Content ID)",
+   "added": "2026-10-13"
+  }
+ }
+}
