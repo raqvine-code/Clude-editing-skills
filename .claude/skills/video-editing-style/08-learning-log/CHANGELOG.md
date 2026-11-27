@@ -2,6 +2,12 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-27 (re-edit, delivered): v3 rendered after the owner's approval with three panels redesigned
+**The user's words:** "approved but improved motion graphics and render the video, DONT LIKED FRAMES IS 3,13,16".
+- **Client taste saved:** no fake app UI and no flat dark text plates for Naveen bro (CLIENT-BAR). Three redesigns and motion upgrades (typing dots, converge spark, pill overshoot, frame corners, match-cut pulse, card drift, a circular arrow on "change").
+- **Sound:** `audio.py` in the worked example; earshot score 19 of 23 metrics in range against the four reference reels (music excluded by the client rule).
+- **Components logged** in `02-craft/shorts-editing-pro/COMPONENTS-LOG.md`; credits for CC BY sounds in `worked-example-v4/sfx_credits.md`.
+
 ## 2026-11-27 (re-edit, preview stage): storyboard built with a browser compositor, waiting for approval
 **The user's words:** the master brief (R7 > R6 > R5 > R8; new captions, typography, SFX, icons and motion; keep the B-roll; no BGM, no grade; previews first), then "For fonts use R8 fonts and for caption placement use R7 and R6 and for typography use all reference videos".
 - **Fonts matched to R8 by side-by-side renders:** Great Vibes (closest swash capitals and contrast of 13 scripts tried) + Arimo (R8's sans is Helvetica / Arial-like). Accent sampled from the footage.

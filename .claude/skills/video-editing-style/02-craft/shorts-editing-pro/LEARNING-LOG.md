@@ -12,6 +12,15 @@
 
 ---
 
+## 2026-11-27 (cloud session) · "The story you tell yourself" v3, 45.0 s · delivered, feedback pending
+- **Process:** master brief (R7 > R6 > R5 > R8, R8 fonts, no BGM, no grade, keep B-roll) -> fonts matched to R8 -> light trim (2.6 s) -> four preview boards -> owner approved, rejected panels 3, 13, 16 -> three redesigns + motion upgrades -> render -> gate READY -> earshot 19 of 23 in range (only music flagged, excluded by the client rule).
+- **New tools:** the browser compositor (`04-styles/editor-showcase-caption-edit-style/references/worked-example-v4/`), `audio.py` (real sounds by role, least-used first, at most 3 uses), earshot critique against the showcase profile.
+- **Numbers:** 1351 frames rendered in about 2 min; 82 sound cues from 66 real files; -14.0 LUFS, -1.3 dBTP; caption centre at chin + 17 %; footage colour within about 2 levels of the source.
+- **What went wrong and the fix:** the camera-app card, the dark highlight card and the phone share sheet read as templates (owner rejected them): use cinematic, footage-based designs. Soft cloth sounds on hidden cuts did not register as onsets: use a short airy whoosh with its peak on the cut.
+- **Feedback:** pending.
+
+---
+
 ## 2026-11-27 (cloud session) · "The story you tell yourself" REDO, 47.6 s English talking head · delivered, feedback pending
 - **What was made:** the same four clips, rebuilt to the gate: P19 under-chin captions as the base, P17 object cards as inserts. 9 card layers (hook card, good-things B-roll card, luck frame, FACTS -> FRAMES inversion, 1-2-3 tiles, PATTERNS match cut, HL quote card, mirror, CTA card = the hook card again), 6 literal B-roll clips, 71 sound cues, no music, no grade. Worked example: `04-styles/editor-showcase-caption-edit-style/references/worked-example/`.
 - **Numbers (gate READY, QC):** 13 designed MG events, 47 % of runtime, longest stretch 8.4 s, HL + MC, 29 caption groups, caption block centre 61 % of the height (chin + 17 %), nothing above the head, colour within 1.5 levels of the source (no grade), -14.0 LUFS, true peak -1.5 dBTP, 1428 frames.

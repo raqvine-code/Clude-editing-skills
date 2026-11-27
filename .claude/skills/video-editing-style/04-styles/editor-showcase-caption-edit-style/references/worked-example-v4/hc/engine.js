@@ -130,7 +130,13 @@ C.converge = it => {                                               // R6: two ha
   [a, b].forEach(e => { e.style.position = 'absolute'; e.style.color = '#fff'; e.style.fontSize = '106px'; e.style.textShadow = '0 0 28px rgba(233,184,111,.55), 0 6px 16px rgba(0,0,0,.5)'; });
   box.style.display = 'block'; const wa = a.getBoundingClientRect().width, wb = b.getBoundingClientRect().width; box.style.display = 'none';
   const x0 = 540 - (wa + wb + 8) / 2;
+  const spark = $('div', 'abs', box); spark.style.left = (x0 + wa + 4) + 'px'; spark.style.top = '118px';
+  const rays = [...Array(8)].map((_, k) => { const r = $('div', 'abs', spark); r.style.cssText += `;width:5px;height:34px;left:-2px;top:-17px;border-radius:3px;background:#F3D59B;box-shadow:0 0 12px rgba(233,184,111,.9);transform-origin:50% 50%`; r._a = k * 45; return r; });
+  const tMeet = W(it)[2][0] + 0.26;
   return t => {
+    const ps = prog(t, tMeet, 0.30); spark.style.display = t >= tMeet && ps < 1 ? 'block' : 'none';
+    rays.forEach(r => { const d = 40 + 90 * outCubic(ps); r.style.transform = `rotate(${r._a}deg) translateY(${-d}px) scaleY(${1 - ps * 0.7})`; r.style.opacity = 1 - ps; });
+    const glow = t >= tMeet ? 0.55 + 0.45 * (1 - ps) : 0.55; [a, b].forEach(e => e.style.textShadow = `0 0 ${28 + 30 * (t >= tMeet ? 1 - ps : 0)}px rgba(233,184,111,${glow}), 0 6px 16px rgba(0,0,0,.5)`);
     if (t < it.t0 || t >= it.t1) { box.style.display = 'none'; return; } box.style.display = 'block';
     arrive(tiny, t, W(it)[0][0], 'small');
     [[a, W(it)[1][0], -wa - 60, x0], [b, W(it)[2][0], 1140, x0 + wa + 8]].forEach(([e, tw, from, to]) => {
@@ -139,36 +145,45 @@ C.converge = it => {                                               // R6: two ha
   };
 };
 
-C.C3 = it => {                                                     // R6: B-roll whips in, then shrinks into a camera card on his wall colour
-  const g = W(it), [wAttr, wGood, wThings] = g, pillWords = g.slice(3);
-  const board = $('div', 'plate', L.broll); board.style.background = 'radial-gradient(120% 80% at 50% 35%, #2A3C35, #17231F 70%)';
-  const wrap = $('div', 'card', L.broll); const img = $('img', '', wrap);
-  const ui = $('div', 'abs', L.broll); ui.innerHTML = `<div style="position:absolute;left:30px;top:26px;display:flex;gap:12px">${'<i style="display:block;width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.85)"></i>'.repeat(3)}</div>
-    <div style="position:absolute;left:0;right:0;bottom:34px;text-align:center;font:700 22px AR;letter-spacing:3px;color:rgba(255,255,255,.8)">VIDEO &nbsp;&nbsp; <span style="color:#E9B86F">PHOTO</span> &nbsp;&nbsp; PORTRAIT</div>
-    <div style="position:absolute;left:50%;bottom:82px;width:84px;height:84px;margin-left:-42px;border-radius:50%;border:6px solid #fff;box-shadow:0 0 0 4px rgba(0,0,0,.25)"></div>`;
-  const shade = $('div', 'shade', L.broll);
-  const cap = $('div', 'cap', L.text); const ta = $('div', 'line small', cap, wAttr[1]);
-  const big = $('div', 'line', cap); const sg = $('span', 'w key', big, 'GOOD'), st = $('span', 'w key', big, 'THINGS');
-  [sg, st].forEach(e => { e.style.color = '#F3EADB'; e.style.fontSize = '112px'; e.style.textShadow = '0 0 26px rgba(233,184,111,.5), 0 6px 18px rgba(0,0,0,.5)'; });
-  const pill = $('div', 'pill', L.text); pill.innerHTML = '<div class="glow"></div><div class="ic">' + ICON.person + '</div><div class="tx">' + pillWords.map(w => w[1]).join(' ').toUpperCase() + '</div>';
-  const card = { x: 150, y: 210, w: 780, h: 800, r: 44 };
-  cap.style.display = 'block'; const ch = cap.getBoundingClientRect().height; cap.style.top = (it.y - ch / 2) + 'px'; cap.style.display = 'none';
-  pill.style.display = 'flex'; const pw = pill.getBoundingClientRect().width; pill.style.left = (540 - pw / 2) + 'px'; pill.style.top = (it.y + 92) + 'px'; pill.style.display = 'none';
-  const tB = wGood[0], tS = tB + 0.55;
+C.C3 = it => {                                                     // sunset B-roll; warm points of light are pulled in from the edges and gather into "good things"
+  const g = W(it), wAttr = g[0], wGood = g[1], rest = g.slice(3);  // rest = you are very lucky
+  const wrap = $('div', 'card', L.broll); wrap.style.borderRadius = '0'; const img = $('img', '', wrap); const shade = $('div', 'shade', L.broll);
+  const field = $('div', 'full', L.fx); field.style.mixBlendMode = 'screen'; field.style.display = 'none';
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const cx = 540, cy = it.y - 70, P = [];
+  for (let k = 0; k < 46; k++) {
+    const side = k % 4, a = rnd(), sz = 12 + rnd() * 34;
+    const from = side === 0 ? [-60, 200 + a * 1500] : side === 1 ? [1140, 200 + a * 1500] : side === 2 ? [a * 1080, -60] : [a * 1080, 1980];
+    const ang = rnd() * Math.PI * 2, rad = 150 + rnd() * 260, to = [cx + Math.cos(ang) * rad, cy + Math.sin(ang) * rad * 0.42];
+    const d = $('div', 'abs', field); d.style.width = d.style.height = sz + 'px'; d.style.borderRadius = '50%';
+    d.style.background = `radial-gradient(circle, rgba(255,240,205,${0.75 + rnd() * 0.25}) 0%, rgba(233,184,111,.55) 38%, rgba(233,184,111,0) 70%)`; d.style.filter = `blur(${1 + rnd() * 3}px)`;
+    P.push({ d, from, to, sz, t0: wGood[0] - 0.05 + rnd() * 0.55, dur: 0.55 + rnd() * 0.45, bend: (rnd() - 0.5) * 420, ph: rnd() * 6 });
+  }
+  const halo = $('div', 'abs', field); halo.style.cssText += `;left:${cx - 420}px;top:${cy - 190}px;width:840px;height:380px;border-radius:50%;background:radial-gradient(closest-side, rgba(255,226,170,.55), rgba(233,184,111,.18) 55%, rgba(233,184,111,0))`;
+  const cap = $('div', 'cap', L.text); const blk = $('div', '', cap); blk.style.display = 'inline-block';
+  const l1 = $('div', 'line', blk); const sAttr = wspan(l1, wAttr, 'small');
+  const l2 = $('div', 'line', blk); l2.style.margin = '-6px 0 -10px'; const sc = $('span', 'w script', l2, 'good things'); sc.style.color = '#FBE7C2';
+  sc.style.textShadow = '0 0 34px rgba(233,184,111,.65), 0 8px 22px rgba(0,0,0,.45)';
+  const l3 = $('div', 'line', blk); const sp3 = rest.map(w => [wspan(l3, w, w[1].toLowerCase() === 'lucky' ? 'key' : 'small'), w]);
+  cap.style.display = 'block'; fitFont(sc, 760, 190); const ch = cap.getBoundingClientRect().height; cap.style.top = (it.y + 40 - ch / 2) + 'px'; cap.style.display = 'none';
+  const tB = wGood[0] - 0.08;
   return async t => {
-    const on = t >= it.t0 && t < it.t1; [board, wrap, ui, shade].forEach(e => e.style.display = on && t >= tB ? 'block' : 'none');
-    cap.style.display = on ? 'block' : 'none'; pill.style.display = on && t >= pillWords[0][0] ? 'flex' : 'none';
+    const on = t >= it.t0 && t < it.t1, bOn = on && t >= tB;
+    [wrap, shade].forEach(e => e.style.display = bOn ? 'block' : 'none'); field.style.display = bOn ? 'block' : 'none'; cap.style.display = on ? 'block' : 'none';
     if (!on) return;
-    arrive(ta, t, Math.max(wAttr[0], it.show0 || 0), 'small'); arrive(sg, t, wGood[0], 'key'); arrive(st, t, wThings[0], 'key');
-    if (t >= tB) {
-      await setImg(img, frameB('sunset', Math.round((t - tB) * TL.fps) + 6));
-      const ps = inOut(prog(t, tS, 0.30)), r = lerpRect(FULL, card, ps); brollCard(img, wrap, r);
-      const pe = outCubic(prog(t, tB, 0.20)); wrap.style.transform = `translateX(${(1 - pe) * 34}%)`; wrap.style.filter = pe < 1 ? `blur(${20 * (1 - pe)}px)` : 'none';
-      board.style.opacity = ps; shade.style.opacity = 1 - ps; ui.style.left = card.x + 'px'; ui.style.top = card.y + 'px'; ui.style.width = card.w + 'px'; ui.style.height = card.h + 'px'; ui.style.opacity = prog(t, tS + 0.22, 0.15);
+    arrive(sAttr, t, Math.max(wAttr[0], it.show0 || 0), 'small'); writeOn(sc, t, wGood[0], 0.5);
+    sp3.forEach(([s, w]) => arrive(s, t, w[0], s.classList.contains('key') ? 'key' : 'small'));
+    const out = prog(t, it.t1 - 0.14, 0.14); cap.style.opacity = 1 - out; field.style.opacity = 1 - out;
+    if (!bOn) return;
+    await setImg(img, frameB('sunset', Math.round((t - tB) * TL.fps) + 6)); brollCard(img, wrap, FULL);
+    const pe = outCubic(prog(t, tB, 0.32)); wrap.style.transform = `scale(${lerp(1.12, 1, pe) * (1 + 0.035 * prog(t, tB, it.t1 - tB))})`; wrap.style.filter = pe < 1 ? `blur(${14 * (1 - pe)}px)` : 'none';
+    wrap.style.opacity = 1 - out; img.style.transform = 'scale(1.30) translateY(-14%)';
+    halo.style.opacity = 0.9 * outCubic(prog(t, wGood[0] + 0.45, 0.5));
+    for (const q of P) {                                          // each light travels a curved path to the word, then hovers there
+      const p = outCubic(prog(t, q.t0, q.dur)), x = lerp(q.from[0], q.to[0], p) + Math.sin(p * Math.PI) * q.bend, y = lerp(q.from[1], q.to[1], p) - Math.sin(p * Math.PI) * q.bend * 0.3;
+      const hov = p >= 1 ? Math.sin((t - q.t0) * 3 + q.ph) * 6 : 0;
+      q.d.style.left = (x - q.sz / 2) + 'px'; q.d.style.top = (y - q.sz / 2 + hov) + 'px'; q.d.style.opacity = t < q.t0 ? 0 : Math.min(1, 0.2 + p * 1.2) * (p >= 1 ? 0.85 : 1);
     }
-    const pp = outCubic(prog(t, pillWords[0][0], 0.22)); pill.style.clipPath = `inset(0 ${100 - pp * 100}% 0 0 round 46px)`;
-    pill.querySelector('.tx').style.opacity = 1;
-    [cap, pill].forEach(e => { const q = prog(t, it.t1 - 0.12, 0.12); e.style.opacity = 1 - q; });
   };
 };
 
@@ -184,6 +199,8 @@ C.C4 = it => {                                                     // R7: the "m
   return t => {
     const on = t >= it.t0 && t < it.t1; tint.style.display = on && t >= tSnap ? 'block' : 'none';
     const p = outCubic(prog(t, tSnap, 0.10)); tint.style.transform = `scale(${lerp(1.04, 1, p)})`; tint.style.opacity = p;
+    const pc = outExpo(prog(t, tSnap, 0.28)); corners.forEach((c, k) => { const sx = k % 2 ? 1 : -1, sy = k > 1 ? 1 : -1; c.style.transform = `translate(${sx * 70 * (1 - pc)}px,${sy * 70 * (1 - pc)}px)`; });
+    const nL = Math.round(10 * prog(t, tSnap + 0.12, 0.32)); label.textContent = 'LUCK FRAME'.slice(0, nL);
     flash.style.display = on && t >= it.t1 - 1.5 / TL.fps ? 'block' : 'none'; flash.style.opacity = .45;
     drawCap(cap, t, it.show0 || it.t0, it.t1);
   };
@@ -231,18 +248,21 @@ C.C6 = it => {                                                     // R5: type c
     [dA, hero, dB, dC, fr, dD, film].forEach(e => e.style.display = on ? 'block' : 'none'); if (!on) return;
     film.style.display = inv ? 'flex' : 'none';
     for (const [s, w] of [...sA, ...sB, ...sC, ...sD]) { arrive(s, t, w[0], 'small'); s.style.color = ink; s.style.textShadow = 'none'; }
-    const dim = 1 - 0.82 * outCubic(prog(t, tIts, 0.2));
+    const dim = 1 - outCubic(prog(t, tIts - 0.04, 0.2));                 // the FACTS lines clear completely before the next line
     [dA, dB].forEach(e => { e.style.opacity = inv ? 0 : dim; e.style.transform = `translateY(${-30 * (1 - dim)}px)`; });
-    const ph = outCubic(prog(t, tFacts, 0.18)); hs.style.color = '#F3EADB'; hs.style.opacity = t < tFacts ? 0 : (inv ? 0 : lerp(.35, 1, ph) * dim);
+    const ph = outCubic(prog(t, tFacts, 0.18)); hs.style.color = '#F3EADB'; hs.style.opacity = t < tFacts ? 0 : (inv ? 0 : lerp(.35, 1, ph) * lerp(0.14, 1, dim));   // FACTS stays as a faint ghost
     hero.style.transform = `translateY(${10 * (1 - ph) - 30 * (1 - dim)}px)`;
     dC.style.opacity = t < tIts ? 0 : 1; writeOn(fs, t, tInv);
+    const zz = 1 + 0.035 * prog(t, it.t0, it.t1 - it.t0); hero.style.scale = zz; fr.style.scale = zz;
     const pf = outCubic(prog(t, tInv, 0.35)); film.style.left = (60 - 46 * (t - tInv)) + 'px'; film.style.top = '1110px'; film.style.opacity = pf;
   };
 };
 
 function pillEl(text, icon) { const p = $('div', 'pill', L.text); p.innerHTML = `<div class="glow"></div><div class="ic">${ICON[icon]}</div><div class="tx">${text}</div>`; p.style.display = 'flex'; const w = p.getBoundingClientRect().width; p.style.left = (540 - w / 2) + 'px'; p.style.display = 'none'; return p; }
 function drawPill(p, t, t0, t1, y) { if (t < t0 || t >= t1) { p.style.display = 'none'; return; } p.style.display = 'flex'; p.style.top = y + 'px';
-  const q = outCubic(prog(t, t0, 0.22)); p.style.clipPath = `inset(0 ${100 - q * 100}% 0 0 round 46px)`; p.style.opacity = 1 - prog(t, t1 - 0.12, 0.12); }
+  const q = outCubic(prog(t, t0, 0.24)), r = prog(t, t0, 0.34), ob = r >= 1 ? 1 : 1 + 2.2 * Math.pow(r - 1, 3) + 1.2 * Math.pow(r - 1, 2);
+  p.style.clipPath = `inset(0 ${100 - q * 100}% 0 0 round 50px)`; p.style.transform = `translateX(${(1 - ob) * 40}px)`; p.style.opacity = 1 - prog(t, t1 - 0.12, 0.12);
+  const ic = p.querySelector('.ic'); const pi = prog(t, t0 + 0.06, 0.25); ic.style.transform = `scale(${pi >= 1 ? 1 : 0.4 + 0.6 * (1 + 2.4 * Math.pow(pi - 1, 3) + 1.4 * Math.pow(pi - 1, 2))})`; }
 
 C.C7a = it => { const p = pillEl('HOW AM I?', 'person'); return t => drawPill(p, t, it.groups[0][0][0], it.t1, it.y - 46); };
 
@@ -278,7 +298,8 @@ C.C8 = it => {                                                     // MC: "PATTE
     const mc = t >= it.t0 && t < tRep - 0.02, on = t >= it.t0 && t < tEnd;
     plate.style.display = mc ? 'block' : 'none'; pin.style.display = mc ? 'block' : 'none'; tiny.style.display = mc ? 'block' : 'none';
     [bw, sh, rep, echo, ag].forEach(e => e.style.display = on && !mc ? 'block' : 'none');
-    if (mc) { const j = Math.floor((t - it.t0) * TL.fps / 4) % src.length, [k, f] = src[j];
+    if (mc) { const fr_ = (t - it.t0) * TL.fps, j = Math.floor(fr_ / 4) % src.length, [k, f] = src[j], ph = (fr_ % 4) / 4;
+      fl.style.transform = `scale(${1.07 - 0.07 * outCubic(ph)})`; ps.style.transform = `scale(${1.025 - 0.025 * outCubic(ph)})`;
       await setImg(fl, k === 'main' ? `frames/main/${pad(f)}.jpg` : frameB(k, f)); tw.forEach(([s, w]) => arrive(s, t, w[0], 'small')); return; }
     if (!on) return;
     await setImg(bimg, frameB('dominoes', Math.round((t - tRep) * TL.fps) + 14)); brollCard(bimg, bw, FULL);
@@ -303,58 +324,85 @@ C.C9 = it => {                                                     // R8: "seein
   };
 };
 
-C.C10 = it => {                                                    // R6 dark card with a glass icon; HL: the highlight wipes under "self-conversation" as he says it
-  const g = it.groups[0]; const tSelf = g[1][0], tConv = g[2][0];
-  const plate = $('div', 'plate', L.plate); plate.style.background = 'radial-gradient(70% 45% at 12% 88%, rgba(233,184,111,.42), rgba(233,184,111,0) 70%), radial-gradient(120% 90% at 60% 30%, #1E2B26, #0E1512 75%)';
-  const icon = $('div', 'abs', L.text, ICON.talk); icon.style.left = '640px'; icon.style.top = '330px'; icon.style.filter = 'drop-shadow(0 18px 30px rgba(0,0,0,.45))';
-  const tiny = $('div', 'cap', L.text); tiny.style.top = '960px'; const tl = $('div', 'line', tiny); tl.style.textAlign = 'left'; tl.style.paddingLeft = '120px';
-  const ts = [g[0]].map(w => { const s = wspan(tl, w, 'small'); return [s, w]; });
-  const mkLine = (txt, y) => { const d = $('div', 'abs', L.text); d.style.left = '120px'; d.style.top = y + 'px';
-    const hl = $('div', 'abs', d); hl.style.cssText += ';left:-14px;top:12px;bottom:4px;background:#E9B86F;border-radius:12px';
-    const s = $('span', 'w', d, txt); s.style.position = 'relative'; s.style.font = '700 118px/1.05 AR'; s.style.letterSpacing = '-3px'; s.style.color = '#F3EADB'; return [d, hl, s]; };
-  const [d1, h1, s1] = mkLine('self-', 1030), [d2, h2, s2] = mkLine('conversation', 1155);
-  return t => {
-    const on = t >= it.t0 && t < it.t1; [plate, icon, tiny, d1, d2].forEach(e => e.style.display = on ? 'block' : 'none'); if (!on) return;
-    const pi = outCubic(prog(t, it.t0, 0.25)); icon.style.opacity = pi; icon.style.transform = `translateY(${(1 - pi) * 30}px) translateY(${Math.sin(t * 2.2) * 6}px)`;
-    ts.forEach(([s, w]) => arrive(s, t, Math.max(w[0], it.show0 || 0), 'small'));
-    [[s1, h1, d1, tSelf, 0.22], [s2, h2, d2, tConv - 0.05, 0.36]].forEach(([s, h, d, tw, dur]) => {
-      arrive(s, t, tw, 'key'); const p = outCubic(prog(t, tw + 0.05, dur)); h.style.width = `calc(${p * 100}% + 28px)`; h.style.opacity = t < tw + 0.05 ? 0 : 1;
-      s.style.color = p > 0.6 ? '#17231F' : '#F3EADB'; d.style.width = s.getBoundingClientRect().width + 'px'; });
-    [tiny, d1, d2, icon].forEach(e => { e.style.opacity = (e === icon ? pi : 1) * (1 - prog(t, it.t1 - 0.12, 0.12)); });
+C.C10 = it => {                                                    // "self-conversation": two speech-bubble windows of HIM, from two moments, talking to each other; HL marker under "conversation"
+  const g = it.groups[0], wThr = g[0], wSelf = g[1], wConv = g[2];
+  const board = $('div', 'plate', L.plate); board.style.background = 'radial-gradient(80% 50% at 18% 82%, rgba(233,184,111,.22), rgba(233,184,111,0) 70%), radial-gradient(120% 90% at 55% 30%, #24342E, #121B17 78%)';
+  const path = (w, h, r, tail) => tail === 'L'
+    ? `M${r},0 H${w - r} Q${w},0 ${w},${r} V${h - r} Q${w},${h} ${w - r},${h} H150 L70,${h + 74} L92,${h} H${r} Q0,${h} 0,${h - r} V${r} Q0,0 ${r},0 Z`
+    : `M${r},0 H${w - r} Q${w},0 ${w},${r} V${h - r} Q${w},${h} ${w - r},${h} H${w - 92} L${w - 70},${h + 74} L${w - 150},${h} H${r} Q0,${h} 0,${h - r} V${r} Q0,0 ${r},0 Z`;
+  const mk = (x, y, w, h, tail) => {
+    const sh = $('div', 'abs', L.plate); sh.style.left = x + 'px'; sh.style.top = y + 'px'; sh.style.width = w + 'px'; sh.style.height = (h + 80) + 'px'; sh.style.filter = 'drop-shadow(0 26px 40px rgba(0,0,0,.5))';
+    const cl = $('div', 'abs', sh); cl.style.cssText += `;left:0;top:0;width:${w}px;height:${h + 80}px;clip-path:path('${path(w, h, 46, tail)}');background:#0E1512`;
+    const im = $('img', '', cl); im.style.position = 'absolute';
+    const rim = $('div', 'abs', sh, `<svg width="${w}" height="${h + 80}" style="position:absolute;left:0;top:0"><path d="${path(w, h, 46, tail)}" fill="none" stroke="rgba(243,234,219,.92)" stroke-width="5"/></svg>`);
+    return { sh, cl, im, w, h };
+  };
+  const A = mk(80, 230, 500, 640, 'L'), B = mk(500, 520, 500, 640, 'R');
+  const fitImg = (b, f) => { const k = Math.max(b.w / 1080, b.h / 1920) * 1.55; b.im.style.width = 1080 * k + 'px'; b.im.style.height = 1920 * k + 'px'; b.im.style.left = (b.w / 2 - 540 * k) + 'px'; b.im.style.top = (b.h * 0.46 - 760 * k) + 'px'; };
+  fitImg(A); fitImg(B);
+  const cap = $('div', 'cap', L.text); const blk = $('div', '', cap); blk.style.display = 'inline-block'; blk.style.position = 'relative';
+  const l0 = $('div', 'line', blk); l0.style.textAlign = 'left'; l0.style.paddingLeft = '14px'; l0.style.marginBottom = '-18px'; const sThr = wspan(l0, wThr, 'small');
+  const l1 = $('div', 'line', blk); const sSelf = $('span', 'w script', l1, 'self-'); sSelf.style.fontSize = '160px'; const sConv = $('span', 'w', l1, 'conversation'); sConv.style.font = '700 100px/1 AR'; sConv.style.letterSpacing = '-2.5px'; sConv.style.color = '#F3EADB'; sConv.style.textShadow = '0 6px 16px rgba(0,0,0,.5)'; sConv.style.marginRight = '0';
+  const mark = $('div', 'abs', blk, `<svg width="640" height="60" viewBox="0 0 640 60"><path d="M8 34 C 120 18, 260 46, 380 30 S 560 22, 632 34" fill="none" stroke="#E9B86F" stroke-width="16" stroke-linecap="round"/></svg>`);
+  cap.style.display = 'block'; const r1 = sConv.getBoundingClientRect(), rb = blk.getBoundingClientRect();
+  mark.style.left = (r1.left - rb.left - 10) + 'px'; mark.style.top = (r1.bottom - rb.top - 18) + 'px'; mark.querySelector('svg').setAttribute('width', r1.width + 20);
+  const mp = mark.querySelector('path'); const plen = mp.getTotalLength(); mp.style.strokeDasharray = plen; mark.style.zIndex = '-1';
+  const h = cap.getBoundingClientRect().height; cap.style.top = (1290 - h / 2) + 'px'; cap.style.display = 'none';
+  const i0 = Math.round(it.t0 * TL.fps);
+  return async (t, i) => {
+    const on = t >= it.t0 && t < it.t1; board.style.display = on ? 'block' : 'none'; [A.sh, B.sh].forEach(b => b.style.display = on ? 'block' : 'none'); cap.style.display = on ? 'block' : 'none';
+    if (!on) return;
+    await setImg(A.im, frameMain(i)); await setImg(B.im, `frames/main/${pad(10 + (i - i0))}.jpg`);
+    [[A, it.t0], [B, it.t0 + 0.16]].forEach(([b, t0]) => { const p = clamp(prog(t, t0, 0.42)); const s = p >= 1 ? 1 : 1 + 0.1 * Math.sin(p * Math.PI) * (1 - p) - 0.14 * (1 - p);
+      b.sh.style.opacity = outCubic(Math.min(1, p * 2)); b.sh.style.transform = `translateY(${(1 - outExpo(p)) * 60 + Math.sin(t * 2 + (b === A ? 0 : 1.7)) * 5}px) scale(${s})`; });
+    arrive(sThr, t, Math.max(wThr[0], it.show0 || 0), 'small'); writeOn(sSelf, t, wSelf[0], 0.3); arrive(sConv, t, wConv[0] - 0.04, 'key');
+    const pm = outCubic(prog(t, wConv[0], 0.42)); mp.style.strokeDashoffset = plen * (1 - pm); mark.style.opacity = t < wConv[0] ? 0 : 1;
+    const out = prog(t, it.t1 - 0.14, 0.14); [cap, A.sh, B.sh].forEach(e => e.style.opacity = (e === cap ? 1 : parseFloat(e.style.opacity || 1)) * (1 - out));
   };
 };
 
-C.C12 = it => {                                                    // R5: the live video shrinks into a phone; a share sheet slides up; R8 boxed lines
-  const g = it.groups[0]; const tSheet = g[2][0], tWho = g[4][0];
-  const board = $('div', 'plate', L.bg); board.style.background = 'radial-gradient(110% 70% at 50% 35%, #2A3C35, #121B17 72%)';
-  const phone = { x: 318, y: 170, w: 444, h: 950, r: 58 };
-  const bez = $('div', 'abs', L.fx); bez.style.cssText += `;left:${phone.x - 14}px;top:${phone.y - 14}px;width:${phone.w + 28}px;height:${phone.h + 28}px;border-radius:72px;border:14px solid #0A100D;box-sizing:border-box;box-shadow:0 40px 80px rgba(0,0,0,.5);display:none`;
-  const notch = $('div', 'abs', bez); notch.style.cssText += ';left:50%;top:16px;width:120px;height:30px;margin-left:-60px;border-radius:16px;background:#0A100D';
-  const sheet = $('div', 'abs', L.fx); sheet.style.cssText += `;left:${phone.x}px;width:${phone.w}px;height:340px;border-radius:30px 30px ${phone.r}px ${phone.r}px;background:#F3EADB;overflow:hidden;display:none`;
-  sheet.innerHTML = `<div style="margin:14px auto 0;width:64px;height:6px;border-radius:3px;background:rgba(30,43,38,.25)"></div>
-    <div style="font:700 30px AR;color:#1E2B26;margin:18px 0 0 30px">Share</div>
-    <div style="display:flex;gap:22px;margin:24px 0 0 30px">${['#E9B86F', '#6E8C7E', '#C98A5A', '#3E5A50'].map(c => `<div style="width:76px;height:76px;border-radius:50%;background:radial-gradient(circle at 35% 30%, #fff8, ${c} 60%)"></div>`).join('')}</div>
-    <div style="margin:30px 30px 0;height:74px;border-radius:37px;background:#E9B86F;font:700 30px/74px AR;color:#17231F;text-align:center;letter-spacing:1px">Send</div>`;
-  const mkBox = (words, y) => { const b = $('div', 'box', L.text); b.style.top = y + 'px'; const sp = words.map(w => { const s = wspan(b, w, ''); b.append(' '); return [s, w]; });
-    b.style.display = 'block'; const w = b.getBoundingClientRect().width; b.style.left = (540 - w / 2) + 'px'; b.style.display = 'none'; return [b, sp]; };
-  const [b1, sp1] = mkBox(g.slice(0, 4), 1190), [b2, sp2] = mkBox(g.slice(4), 1290);
+C.C12 = it => {                                                    // ending on HIM: the hook's glass bubble lifts off and flies out to "someone", leaving a light trail
+  const g = it.groups[0]; const iWho = g.findIndex(w => w[1].toLowerCase() === 'who');
+  const gA = g.slice(0, iWho).map(w => w[1].toLowerCase() === 'someone' ? [w[0], w[1], '~'] : w), gB = g.slice(iWho).map(w => w[1].toLowerCase() === 'this' ? [w[0], w[1], '*'] : w);
+  const cA = buildCaption({ kind: 'r8' }, gA, L.text); layoutCap(cA, it.y - 10, 640);
+  const cB = buildCaption({ kind: 'r7' }, gB, L.text); layoutCap(cB, it.y);
+  const tSome = gA.find(w => w[2] === '~')[0], tB = gB[0][0];
+  const trail = $('div', 'full', L.fx, `<svg width="1080" height="1920" style="position:absolute;left:0;top:0"><path id="tr" d="M 300 1060 C 200 900, 150 700, -140 470" fill="none" stroke="#E9B86F" stroke-width="5" stroke-linecap="round" opacity=".9" style="filter:drop-shadow(0 0 10px rgba(233,184,111,.8))"/></svg>`);
+  const tp = trail.querySelector('path'), tl = tp.getTotalLength(); tp.style.strokeDasharray = `${tl}`;
+  const bub = $('div', 'abs', L.text, ICON.bubble(150)); bub.style.filter = 'drop-shadow(0 14px 22px rgba(0,0,0,.45))';
+  const ghosts = [0, 1, 2].map(() => { const e = $('div', 'abs', L.text, ICON.bubble(150)); e.style.filter = 'blur(3px)'; return e; });
+  const tUp = it.t0 + 0.05, tFly = tSome - 0.05, dFly = 0.85;
   return t => {
-    const on = t >= it.t0 && t < it.t1; board.style.display = bez.style.display = on ? 'block' : 'none';
-    sheet.style.display = on && t >= tSheet ? 'block' : 'none'; b1.style.display = on ? 'block' : 'none'; b2.style.display = on && t >= tWho ? 'block' : 'none';
-    if (!on) return null;
-    const p = inOut(prog(t, it.t0, 0.33)); bez.style.opacity = prog(t, it.t0 + 0.18, 0.15);
-    const ps = outExpo(prog(t, tSheet, 0.35)); sheet.style.top = (phone.y + phone.h - 340 * ps) + 'px';
-    for (const [s, w] of [...sp1, ...sp2]) arrive(s, t, Math.max(w[0], it.show0 || 0), 'small');
-    [b1, b2].forEach((b, j) => { const tb = j ? tWho : Math.max(g[0][0], it.show0 || 0); const q = outCubic(prog(t, tb, 0.18)); b.style.opacity = q; b.style.transform = `translateY(${(1 - q) * 14}px)`; });
-    return lerpRect(FULL, phone, p);
+    const on = t >= it.t0 && t < it.t1; [trail, bub, ...ghosts].forEach(e => e.style.display = on ? 'block' : 'none');
+    drawCap(cA, t, Math.max(it.t0, it.show0 || 0), tB); drawCap(cB, t, tB, it.t1 + 1);
+    if (!on) return;
+    const pu = outExpo(prog(t, tUp, 0.4)), pf = inOut(prog(t, tFly, dFly));
+    const at = q => tp.getPointAtLength(tl * q);
+    const p0 = at(0), pt = at(pf); const x = pf > 0 ? pt.x : p0.x, y = pf > 0 ? pt.y : lerp(p0.y + 40, p0.y, pu);
+    bub.style.left = (x - 75) + 'px'; bub.style.top = (y - 62) + 'px'; bub.style.opacity = pu * (1 - prog(t, tFly + dFly - 0.12, 0.12));
+    bub.style.transform = `scale(${lerp(0.5, 1, pu) * lerp(1, 0.7, pf)}) rotate(${pf * 14}deg)`;
+    ghosts.forEach((e, k) => { const q = Math.max(0, pf - 0.06 * (k + 1)), pp = at(q); e.style.left = (pp.x - 75) + 'px'; e.style.top = (pp.y - 62) + 'px';
+      e.style.opacity = pf > 0.02 && pf < 0.98 ? [0.32, 0.18, 0.09][k] : 0; e.style.transform = `scale(${lerp(1, 0.7, q)})`; });
+    tp.style.strokeDashoffset = tl * (1 - pf); trail.style.opacity = (pf > 0 ? 1 : 0) * (1 - prog(t, tFly + dFly, 0.45));
   };
 };
 
 // hook accent: a glass speech bubble (the story you tell yourself), with a small callback on "talking to yourself"
 function bubble(t0, t1, x, y, w) { const b = $('div', 'abs', L.text, ICON.bubble(w)); b.style.left = x + 'px'; b.style.top = y + 'px'; b.style.filter = 'drop-shadow(0 14px 22px rgba(0,0,0,.4))';
+  const dots = [...b.querySelectorAll('circle')];
   return t => { if (t < t0 || t >= t1) { b.style.display = 'none'; return; } b.style.display = 'block'; const p = outExpo(prog(t, t0, 0.35));
+    dots.forEach((c, k) => c.setAttribute('cy', 58 - 9 * Math.max(0, Math.sin(t * 7.5 - k * 0.95))));
     b.style.opacity = p * (1 - prog(t, t1 - 0.15, 0.15)); b.style.transform = `scale(${lerp(.6, 1, p)}) translateY(${Math.sin(t * 2.4) * 6}px)`; }; }
 
+// "change": an amber circular arrow draws itself beside the keyword and turns once (designed, literal)
+function changeLoop(t0, t1, x, y) {
+  const d = $('div', 'abs', L.text, `<svg width="150" height="150" viewBox="0 0 150 150"><path d="M 118 52 A 50 50 0 1 0 124 88" fill="none" stroke="#E9B86F" stroke-width="11" stroke-linecap="round"/><path d="M 104 36 L 124 52 L 100 62" fill="none" stroke="#E9B86F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>`);
+  d.style.left = (x - 75) + 'px'; d.style.top = (y - 75) + 'px'; d.style.filter = 'drop-shadow(0 0 14px rgba(233,184,111,.55)) drop-shadow(0 6px 10px rgba(0,0,0,.45))';
+  const arc = d.querySelectorAll('path')[0], head = d.querySelectorAll('path')[1], len = arc.getTotalLength(); arc.style.strokeDasharray = len;
+  return t => { if (t < t0 || t >= t1) { d.style.display = 'none'; return; } d.style.display = 'block';
+    const p = outCubic(prog(t, t0, 0.32)); arc.style.strokeDashoffset = len * (1 - p); head.style.opacity = p > 0.85 ? 1 : 0;
+    d.style.transform = `rotate(${-200 * (1 - outCubic(prog(t, t0, 0.55)))}deg) scale(${lerp(0.7, 1, p)})`; d.style.opacity = 1 - prog(t, t1 - 0.12, 0.12); };
+}
 window.init = tl => {
   TL = tl; FPS = tl.fps; stage = document.getElementById('stage');
   L.cardwrap = document.getElementById('cardwrap'); L.main = document.getElementById('main');
@@ -367,6 +415,9 @@ window.init = tl => {
   const hook = tl.items[0], tb = tl.items.find(x => x.kind === 'r8bold');
   comps.push([null, bubble(0.15, tl.items[2].t0, 806, 286, 170)]);
   comps.push([null, bubble(tb.t0 + 0.2, tb.t1, 860, tb.y - 230, 120)]);
+  const ch = tl.items.filter(x => x.kind === 'r7').map(x => x.groups[0]).flat().find(w => w[1].toLowerCase() === 'change');
+  const chIt = tl.items.find(x => x.groups[0].includes(ch));
+  comps.push([null, changeLoop(ch[0] + 0.02, chIt.t1, 850, chIt.y + 18)]);
 };
 window.renderAt = async t => {
   const i = Math.min(TL.n - 1, Math.round(t * FPS));

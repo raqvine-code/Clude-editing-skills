@@ -86,7 +86,7 @@ for i, it in enumerate(items):
     it["t1"] = round(nxt, 3)
 items[0]["t0"] = 0.0
 # a component starts a few frames before its first word so the picture lands on the word
-LEAD = {"C3": 0.0, "C4": 0.10, "C5": 0.0, "C6": 0.0, "C7a": 0.03, "C7b": 0.0, "C8": 0.03, "C9": 0.0, "C10": 0.06, "C12": 0.0}
+LEAD = {"C3": 0.0, "C4": 0.10, "C5": 0.0, "C6": 0.0, "C7a": 0.03, "C7b": 0.0, "C8": 0.03, "C9": 0.0, "C10": 0.10, "C12": 0.0}
 for it in items:
     if it["kind"] in LEAD: it["t0"] = round(it["t0"] - LEAD[it["kind"]], 3)
 for i in range(1, len(items)): items[i - 1]["t1"] = min(items[i - 1]["t1"], items[i]["t0"])
@@ -141,9 +141,9 @@ shot(c("C10")["t1"], t_of, 1.40, 1.44)
 cut41 = [x for x in cuts if 41 < x < 42][0]
 shot(t_of, cut41, 1.16, 1.18)
 shot(cut41, c("C12")["t0"], 1.42, 1.46)
-shot(c("C12")["t0"], DUR, 1.10, 1.10)
+shot(c("C12")["t0"], DUR, 1.30, 1.16)                  # slow pull-out to the end (R8)
 punch = [t_change]                       # zoom-blur punch (R6)
-focus = [0.0, c("C3")["t1"], c("C6")["t1"], c("C7b")["t1"], c("C8")["t1"], c("C9")["t1"], c("C10")["t1"]]
+focus = [0.0, c("C3")["t1"], c("C6")["t1"], c("C7b")["t1"], c("C8")["t1"], c("C9")["t1"], c("C10")["t1"], c("C5")["t1"] - 0.30]
 
 # ---------------------------------------------------------------- per-frame camera with face follow (shortkit maths)
 ft = json.load(open(os.path.join(P, "..", "edit", "work", "face_track.json")))
