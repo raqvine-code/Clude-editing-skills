@@ -38,3 +38,6 @@ No style here is measured for challenge or comedy pacing. Every measured style i
 - Thumbnail rules (pair with `03-sound-type-assets/thumbnail-strategy/GUIDE.md`):
 - Never do:
 - Reference videos:
+
+## Worked example
+`worked-example-back-to-facts/`: the compositor, sound script, plan and approved frames of the "back to facts" update (49.85 s). Start from it for his next talking-head video.

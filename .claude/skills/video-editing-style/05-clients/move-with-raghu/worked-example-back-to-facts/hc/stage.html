@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: Anton; src: url(fonts/Anton.ttf); }
+@font-face { font-family: Manrope; src: url(fonts/Manrope.ttf); font-weight: 200 800; }
+@font-face { font-family: DMSans; src: url(fonts/DMSans.ttf); font-weight: 100 1000; }
+@font-face { font-family: Mont; src: url(fonts/Montserrat.ttf); font-weight: 100 900; }
+@font-face { font-family: GV; src: url(fonts/GreatVibes.ttf); }
+@font-face { font-family: CorI; src: url(fonts/CormorantItalic.ttf); font-weight: 300 700; }
+:root {
+  --bg: #0A0A0B; --panel: #161618; --panel2: #212124; --line: rgba(255,255,255,.10);
+  --text: #F3F3F3; --meta: #A8A8AD; --yellow: #FFD60A; --yellow2: #FFE45C; --ink: #111111; --red: #FF3B3B;
+}
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+#stage { position: absolute; inset: 0; overflow: hidden; background: var(--bg); }
+.L { position: absolute; inset: 0; overflow: hidden; }
+.abs { position: absolute; }
+#main { position: absolute; left: 0; top: 0; transform-origin: 0 0; width: 1080px; height: 1286px; }
+#grain { position: absolute; inset: 0; opacity: .06; mix-blend-mode: overlay; pointer-events: none; }
+/* headline: Anton, upright, tight, white with a soft shadow; yellow for the one stressed word */
+.anton { font-family: Mont; font-weight: 800; color: #fff; text-transform: uppercase; line-height: .95; letter-spacing: -.015em; white-space: nowrap; text-shadow: 0 10px 30px rgba(0,0,0,.55); }
+.anton .y { color: var(--yellow); }
+/* captions: Manrope SemiBold; highlighted word sits on a yellow marker */
+.cap { position: absolute; left: 0; width: 1080px; display: flex; justify-content: center; align-items: center; gap: 0 16px; pointer-events: none; }
+.cw { font: 600 60px/1.15 Manrope; color: #fff; letter-spacing: -.01em; white-space: nowrap; text-shadow: 0 4px 16px rgba(0,0,0,.65), 0 1px 3px rgba(0,0,0,.6); display: inline-block; }
+.cw.hl { color: var(--ink); background: var(--yellow); padding: 0 .22em .04em; border-radius: .16em; text-shadow: none; box-shadow: 0 8px 24px rgba(255,214,10,.28); }
+/* typography v2 (owner's reference): phrase lockups. Montserrat bold key word + Montserrat light words + Great Vibes script + Cormorant italic */
+.lk { position: absolute; left: 0; width: 1080px; text-align: center; pointer-events: none; transform-origin: 50% 50%; }
+.lkl { display: block; white-space: nowrap; font-size: 0; line-height: 1; }
+.lkw { display: inline-block; color: #fff; margin: 0 .13em; vertical-align: baseline; text-shadow: 0 6px 22px rgba(0,0,0,.48), 0 2px 5px rgba(0,0,0,.35); }
+.lkw.B { font: 700 102px/1 Mont; letter-spacing: -.012em; }
+.lkw.b { font: 700 67px/1 Mont; letter-spacing: -.01em; }
+.lkw.l { font: 400 55px/1 Mont; letter-spacing: -.005em; }
+.lkw.s { font: 400 148px/.8 GV; padding: .2em .36em .34em; margin: -.2em -.16em -.34em -.36em; }
+.lkw.i { font: italic 500 81px/1 CorI; }
+.lkw.y { color: #FFD60A; }
+/* supporting text */
+.dm { font-family: Mont; font-weight: 500; color: var(--meta); white-space: nowrap; }
+.dmw { font-family: Mont; font-weight: 600; color: var(--text); white-space: nowrap; }
+.card { position: absolute; background: var(--panel); border-radius: 36px; box-shadow: 0 30px 80px rgba(0,0,0,.55), inset 0 0 0 1.5px var(--line); overflow: hidden; }
+.av { position: absolute; border-radius: 50%; overflow: hidden; background: #333; }
+.av img { width: 100%; height: 100%; display: block; }
+.pill { position: absolute; border-radius: 999px; }
+.blur { filter: blur(9px); }
+</style></head>
+<body><div id="stage">
+  <div id="Lbg" class="L"></div>
+  <div id="Lmain" class="L"><img id="main"></div>
+  <div id="Lmg" class="L"></div>
+  <div id="Ltext" class="L"></div>
+  <div id="Lcap" class="L"></div>
+  <svg id="grain" width="1080" height="1920"><filter id="gn"><feTurbulence id="turb" type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="1"/><feColorMatrix type="saturate" values="0"/></filter><rect width="1080" height="1920" filter="url(#gn)"/></svg>
+</div>
+<script src="engine.js"></script>
+</body></html>

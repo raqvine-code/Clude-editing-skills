@@ -2,6 +2,16 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-28 (saved to GitHub): Wan 3.0 animation guide as its own skill; the back-to-facts project files
+**The owner's words:** "Of course you will save in to github repo and another question are you saving every trained data ..."
+
+**Saved:**
+- New skill `.claude/skills/wan3-animation-styles/` (a separate module, not part of video-editing-style): the SFERRO guide "5 AI Animation Styles You Can Make With Wan 3.0". One file per style (image prompt + Wan 3.0 prompt + sounds + Option B), the workflow, the 5-shot example, his 8 working rules, and the PDF itself in `source/`.
+- The two places where his pasted copy differed from the PDF (style 1 and style 5 lock paragraphs) were fixed to the PDF wording and listed in its SKILL.md.
+- `05-clients/move-with-raghu/worked-example-back-to-facts/`: compositor, sound script, plan, caption script and approved frames of the delivered video.
+
+**Open:** his skill order (rule 2) and skill index (rule 6) were blank templates; the Wan 3.0 skill uses the guide's own order as a working default until he confirms.
+
 ## 2026-11-28 ("back to facts" update, preview stage): typography from his reference; text never on his face
 **The user's words:**
 - "I don't like the font and fonts placement also ... I send it to one reference, not exactly, but do inspire for my reference. And typography maintain."
