@@ -2,6 +2,11 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-28 (storage): only trained skills stay in GitHub, no videos or frames
+**The owner's words:** "Save only trained skill for video editing ... don't save any videos or any frames bcz this is large storage ... keep it very important, 1 or 2 frames."
+
+**Done:** 199 images and the 37 MB reel-data zip removed; 2 key frames kept; rule added to `CLAUDE.md` step 6; details and the list of removed paths in `_removed-media/`; a root `.gitignore` keeps videos, zips and images from being added again.
+
 ## 2026-11-28 (saved to GitHub): Wan 3.0 animation guide as its own skill; the back-to-facts project files
 **The owner's words:** "Of course you will save in to github repo and another question are you saving every trained data ..."
 

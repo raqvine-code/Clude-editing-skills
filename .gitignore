@@ -1,0 +1,13 @@
+# Owner's rule (2026-11-28): GitHub holds trained skills (text, numbers, code), not media.
+# Videos, zips and images stay out. A genuine exception is added with `git add -f`.
+*.mp4
+*.mov
+*.m4v
+*.webm
+*.mkv
+*.zip
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp

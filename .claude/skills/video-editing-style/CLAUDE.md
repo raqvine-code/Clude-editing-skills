@@ -8,7 +8,7 @@ Regrouped from the original CLAUDE.md (kept word for word in `_archive/CLAUDE-or
 3. **Analyse, then plan, then edit** (Rule 2 below).
 4. **Pass the gate** (Rule 0): `PRE-EDIT.md` filled, draft EDL READY, then a 6-10 s full-quality sample of the hook, then the full render.
 5. **QC**: gate again, phone-size contact sheet, `05-clients/tech-boy-deepak/mistakes-to-avoid/GUIDE.md` sections H and K, `02-craft/beginner-to-pro-edit-tips/GUIDE.md`.
-6. **Deliver and log**: finished video to `edited videos by claude/N. <Short Name>/` (a Mac folder, see `PATHS-AND-SETUP.md`), append to `02-craft/shorts-editing-pro/LEARNING-LOG.md`, save every lesson with `06-tools/skill-saver/GUIDE.md`, then rebuild the index: `python3 06-tools/tools/build_index.py`.
+6. **Deliver and log** (save lessons as text and numbers only: never commit videos, frames or zips of frames; see `_removed-media/README.md`): finished video to `edited videos by claude/N. <Short Name>/` (a Mac folder, see `PATHS-AND-SETUP.md`), append to `02-craft/shorts-editing-pro/LEARNING-LOG.md`, save every lesson with `06-tools/skill-saver/GUIDE.md`, then rebuild the index: `python3 06-tools/tools/build_index.py`.
 
 ## Two reading modes (changed in the 26 Nov 2026 reorganization; the owner can overrule)
 - **Fast mode**: own-channel drafts, quick tests, captions-only or sound-only jobs. Read the Core 5, the style skill, and the router rows for the job.

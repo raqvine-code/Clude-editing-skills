@@ -1,5 +1,7 @@
 # Worked example: "I'm back to facts" channel update (Move with Raghu, 49.85 s, 60 fps)
 
+> Frames removed on 2026-11-28 to save storage (owner's request). Only `frames/final_contact_sheet.jpg` is kept; other image names below are no longer in the repo. Everything else here is the working code and numbers.
+
 Telugu talking-head video, 4 clips joined, framed-window layout B, no BGM, no colour grade. Real sound recordings only. Delivered as `Back_To_Facts.mp4`, then v2 after two notes (varied comments, fuller sound). The rules he gave while we made it are in `../PROFILE.md` ("Owner's rules (2026-11-28)").
 
 ## What is in this folder

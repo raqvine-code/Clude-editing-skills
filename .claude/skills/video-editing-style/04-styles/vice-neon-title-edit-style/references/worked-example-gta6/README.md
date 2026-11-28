@@ -1,5 +1,7 @@
 # Worked example: "GTA 6 · why it took 13 years" (owner's own channel, Telugu, 57.7 s)
 
+> Frames removed on 2026-11-28 to save storage (owner's request). Only `final_key_moments.jpg` is kept; other image names below are no longer in the repo. Everything else here is the working code and numbers.
+
 The first edit built with P21. The plan and storyboard were approved before any render. The owner chose **layout B** (his 4:5 picture in a framed window between two neon lines) and **Tenglish captions**.
 
 ## Files
