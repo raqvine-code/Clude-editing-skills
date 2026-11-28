@@ -2,6 +2,17 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-28 ("back to facts" update, preview stage): typography from his reference; text never on his face
+**The user's words:**
+- "I don't like the font and fonts placement also ... I send it to one reference, not exactly, but do inspire for my reference. And typography maintain."
+- Then: "the font on my face. I don't like that, so don't repeat again. And Pull down the captions and reduce a little bit, not a more."
+
+**Saved:**
+- `05-clients/move-with-raghu/PROFILE.md`: owner's rules, the face-clearance rule, the approved lockup typography, the channel facts.
+- The compositor rule: lockup top is at least the lowest chin of the phrase plus 46 px. An automatic face-overlap check runs over every 0.1 s and must show 0.
+
+**Open:** his verdict on the v3 frames; real comment screenshots; layout and caption choices.
+
 ## 2026-11-28 (P21 edit v2): the owner's nine changes to the GTA 6 video
 **The user's words:** "There are few mistakes you should change in this video: 1. Remove starting frame and keep my face 2. Remove tanglish captions entire video ... 5. Remove time symbol, I dont like that may be add good one ... 8. At 46 sec that letter (13 years of development keep small and add that lines on the words properly its not straight ..."
 - **Saved:**
