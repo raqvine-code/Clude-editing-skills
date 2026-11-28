@@ -92,6 +92,17 @@ Floors from `01-process/before-edit/2-PRO-MOVE-MENU.md` still apply (a designed 
 - **Facts on screen:** only checked facts. The narrator's opinion stays in his voice. Illustrative charts carry an ILLUSTRATION tag and no invented numbers.
 - **Sound without music:** put a short real attack (click, knock, glitch hit, shutter) on every cut, placed by its loudest point, at about −10 dB under the voice. Quieter hits vanish under continuous speech.
 
+## 6c. Owner's notes on the first P21 edit (2026-11-28): apply to his videos
+His words: "Remove starting frame and keep my face · Remove tanglish captions entire video · Remove (why) word in that frame · Remove top sentences entire video · Remove time symbol, I dont like that may be add good one · At 34 sec remove frame · At 41 sec remove that frame · At 46 sec that letter (13 years of development) keep small and add that lines on the words properly its not straight · At 50 sec remove that frame".
+- **Open on his face,** not on official game art. A punch-in on the first key word replaces the logo hook.
+- **No running captions** and **no small sentence pinned at the top** (series labels, kickers). Neon frame lines alone are fine.
+- **No handwritten asides** on the hero numeral.
+- **No clock or dial icon for "timing".** What he accepted instead: a flip calendar whose real dates peel away and land on the release day, circled in lime.
+- **Strike-through lines** must be perfectly straight, measured from each line's own text box (`getBoundingClientRect`), through the middle of the letters. Never hand-placed or tilted.
+- **Text over his face stays small** (hero about 118 px, second line about 72 px on 1080 wide).
+- **He removed** the GTA V sales-line chart with its counter and headline card, the delay-headline card and the 13-year timeline, wanting his face there instead. **Data-heavy full-screen cards are not his taste:** keep designed scenes for the few beats he keeps (cards, money and timing, the profit bars, the covers).
+- With the captions gone, **gentle 5 % punch-ins on one stressed word per sentence** keep the face scenes alive without any graphics.
+
 ## 7. Tool
 
 ```

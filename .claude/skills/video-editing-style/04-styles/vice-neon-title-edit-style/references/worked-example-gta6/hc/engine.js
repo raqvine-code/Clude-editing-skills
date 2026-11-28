@@ -15,11 +15,16 @@ const sceneOf = id => TL.scenes.find(s => s.id === id);
 const inScene = (t, id) => { const s = sceneOf(id); return t >= s.t0 && t < s.t1; };
 
 // ---------------------------------------------------------------- speaker (full-bleed crop of the 1080x1368 picture, face follow)
-const PUSH = { spk1: [1.00, 1.06], why: [1.20, 1.22], reason: [1.06, 1.12], hype: [1.02, 1.07], but: [1.24, 1.26], dev13: [1.03, 1.10], outro: [1.02, 1.08] };
+const PUSH = { open: [1.00, 1.03], spkv: [1.04, 1.09], spkd: [1.08, 1.03], spkt: [1.02, 1.08], spk1: [1.00, 1.06], why: [1.20, 1.22], reason: [1.06, 1.12], hype: [1.02, 1.07], but: [1.24, 1.26], dev13: [1.03, 1.10], outro: [1.02, 1.08] };
 async function drawSpeaker(t, i, sc) {
   const m = document.getElementById('main'); await setImg(m, frameMain(i));
   const f = TL.face, k = Math.min(f.cx.length - 1, i), cx = f.cx[k], cy = f.cy[k];
-  const [p0, p1] = PUSH[sc.id] || [1, 1], p = lerp(p0, p1, inOut(prog(t, sc.t0, sc.t1 - sc.t0)));
+  const [p0, p1] = PUSH[sc.id] || [1, 1]; let p = lerp(p0, p1, inOut(prog(t, sc.t0, sc.t1 - sc.t0)));
+  if (sc.id === 'open') p *= 1 + 0.07 * outCubic(prog(t, K.gta1 - 0.04, 0.14));          // punch-in on "GTA 6" (the impact lands here)
+  // gentle punch in / out on one stressed word per sentence in the face scenes (pacing without captions or graphics)
+  const STEPS = [K.many, K.gta2, K.didnt, K.release3, K.gta6b, K.n13c, K.wait, K.channel].filter(x => x >= sc.t0 && x < sc.t1);
+  let z = 0; for (let j = 0; j < STEPS.length; j++) { if (t < STEPS[j] - 0.06) break; const q = inOut(prog(t, STEPS[j] - 0.06, 0.18)); z = j % 2 === 0 ? q : 1 - q; }   // in on odd steps, out on even
+  p *= 1 + 0.05 * z;
   if (LAYOUT === 'B') {             // framed window: picture at native size between two bands
     const s = 1.0 * p, W = 1080 * s, H = 1368 * s; const x = clamp(540 - cx * s, 1080 - W, 0), y = 276 + clamp(560 - cy * s, 1368 - H, 0);
     m.style.transform = `translate(${x}px, ${y}px) scale(${s})`; document.getElementById('Lmain').style.clipPath = 'inset(276px 0 276px 0)'; return;
@@ -101,7 +106,7 @@ C.n13 = sc => {                                              // P21 moves 4-6 co
   const arr = $('div', 'abs', L.text, '<svg width="110" height="110" viewBox="0 0 90 90"><path d="M14 76 L72 18 M30 16 L74 16 L74 60" fill="none" stroke="#9EFE3C" stroke-width="13" stroke-linecap="square"/></svg>'); arr.style.cssText += ';left:210px;top:1220px';
   const g = id => box.querySelector('#' + id);
   return t => {
-    [bg, box, yrs, why, arr].forEach(e => show(e, 1)); const t0 = sc.t0;
+    [bg, box, yrs].forEach(e => show(e, 1)); const t0 = sc.t0;
     const pe = prog(t, t0, 0.62); g('wv0').setAttribute('offset', clamp(pe * 1.25 - .22)); g('wv1').setAttribute('offset', clamp(pe * 1.25));
     const pf = inOut(prog(t, t0 + 0.45, 0.35)); g('rv0').setAttribute('offset', clamp(pf * 1.3 - .3)); g('rv1').setAttribute('offset', clamp(pf * 1.3));
     const bl = inOut(prog(t, t0 + 0.65, 1.1)); g('nF').style.filter = `brightness(${lerp(.34, 1, bl)}) saturate(${lerp(.75, 1.08, bl)})`;
@@ -126,7 +131,7 @@ C.notlist = sc => {                                          // three crossed-of
     return { c, im, dim, s, x, iw, ih, tin, tx, ax, ay };
   });
   return t => {
-    show(bg, 1); show(kick, 1); flashSettle(kick, t, sc.t0 + 0.05, 99);
+    show(bg, 1);
     cards.forEach(o => {
       show(o.c, 1); const p = outCubic(prog(t, o.tin - 0.14, 0.32)); o.c.style.opacity = prog(t, o.tin - 0.14, 0.08);
       o.c.style.transform = `translateX(${lerp(160, 0, p)}px)`; o.c.style.filter = `blur(${lerp(14, 0, p)}px)`;
@@ -144,17 +149,31 @@ C.moneytime = sc => {                                        // split: MONEY (to
   const bdim = $('div', 'L', bot); bdim.style.background = 'rgba(7,3,11,.35)';
   const line = $('div', 'abs', L.mg); line.style.cssText += ';left:0;top:950px;width:1080px;height:20px;background:linear-gradient(90deg,#FA3BB1,#FDA53A)';
   const m = $('div', 'price', L.text, 'MONEY'); m.style.cssText += ';position:absolute;left:0;right:0;top:640px;text-align:center;font-size:220px';
+  const cal = $('div', 'abs', bot); cal.style.cssText += ';left:320px;top:262px;width:440px;height:470px;perspective:1400px';
+  const PAGES = [['SEP', '17', '2013'], ['MAY', '06', '2025'], ['MAY', '26', '2026'], ['NOV', '19', '2026']];      // GTA V out, Trailer 2, the May date, the release
+  const pages = PAGES.map(([mo, d, y], j) => { const pg = $('div', 'abs', cal); pg.style.cssText += `;left:0;top:0;width:440px;height:470px;border-radius:30px;background:#F6F2FA;overflow:hidden;transform-origin:50% 0;z-index:${10 - j};box-shadow:0 26px 60px rgba(0,0,0,.55),0 0 0 5px #31072C`;
+    pg.innerHTML = `<div style="position:absolute;left:0;right:0;top:0;height:120px;background:linear-gradient(90deg,#FA3BB1,#FDA53A)"></div>
+      <div class="price" style="position:absolute;left:0;right:0;top:22px;text-align:center;font-size:88px;filter:none;-webkit-text-stroke:.1em #31072C">${mo}</div>
+      <div style="position:absolute;left:0;right:0;top:118px;text-align:center;font:900 240px/1.1 Tight;letter-spacing:-8px;color:#1E0624">${d}</div>
+      <div style="position:absolute;left:0;right:0;top:392px;text-align:center;font:800 52px/1 Tight;letter-spacing:.14em;color:#7C3CC4">${y}</div>
+      <div class="shade" style="position:absolute;inset:0;background:#000;opacity:0"></div>`; return pg; });
+  const rings = $('div', 'abs', cal, '<span style="position:absolute;left:110px;top:-18px;width:26px;height:46px;border-radius:13px;background:#31072C"></span><span style="position:absolute;left:304px;top:-18px;width:26px;height:46px;border-radius:13px;background:#31072C"></span>'); rings.style.cssText += ';left:0;top:0;z-index:20';
+  const ring = $('div', 'abs', cal, '<svg width="420" height="300" viewBox="0 0 420 300" style="overflow:visible"><path id="rg" d="M 210 30 C 340 26, 392 96, 384 158 C 376 226, 300 270, 206 268 C 104 266, 34 222, 36 152 C 38 84, 110 34, 222 40" fill="none" stroke="#9EFE3C" stroke-width="13" stroke-linecap="round"/></svg>');
+  ring.style.cssText += ';left:10px;top:118px;z-index:30;filter:drop-shadow(0 0 12px rgba(158,254,60,.6))'; const rg = ring.querySelector('#rg'); let rl = 0;
   const dial = $('div', 'abs', L.mg, `<svg width="420" height="420" viewBox="0 0 420 420"><circle cx="210" cy="210" r="180" fill="rgba(7,3,11,.45)" stroke="#fff" stroke-opacity=".9" stroke-width="10"/>
     <circle id="arc" cx="210" cy="210" r="180" fill="none" stroke="#9EFE3C" stroke-width="14" stroke-dasharray="1131" stroke-dashoffset="1131" transform="rotate(-90 210 210)" stroke-linecap="round"/>
     <line id="hand" x1="210" y1="210" x2="210" y2="70" stroke="#fff" stroke-width="12" stroke-linecap="round"/><circle cx="210" cy="210" r="16" fill="#fff"/></svg>`); dial.style.cssText += ';left:410px;top:1160px;transform-origin:50% 50%'; dial.querySelector('svg').setAttribute('width', 260); dial.querySelector('svg').setAttribute('height', 260);
   const tm = $('div', 'price', L.text, 'TIMING'); tm.style.cssText += ';position:absolute;left:0;right:0;top:1000px;text-align:center;font-size:170px';
   return t => {
-    [top, bot, line, m, dial, tm].forEach(e => show(e, 1));
+    [top, bot, line, m, tm].forEach(e => show(e, 1)); show(dial, 0);
     const pb = outCubic(prog(t, K.timing - 0.12, 0.3)), th = lerp(1920, 950, pb); top.style.height = th + 'px';
     cover(ti, 1080, th, 3840, 2160, lerp(1.06, 1.12, prog(t, sc.t0, 2)), .44, .3); cover(bi, 1080, 950, 3840, 2160, lerp(1.1, 1.16, prog(t, sc.t0, 2)), .5, .5);
     m.style.top = lerp(1150, 640, pb) + 'px'; pop(m, t, K.money, ''); bot.style.transform = `translateY(${lerp(950, 0, pb)}px)`; line.style.transform = `scaleX(${pb})`;
-    pop(tm, t, K.timing + 0.04, ''); dial.style.opacity = pb; const sw = prog(t, K.timing, 1.0);
-    dial.querySelector('#arc').setAttribute('stroke-dashoffset', 1131 * (1 - sw)); dial.querySelector('#hand').setAttribute('transform', `rotate(${360 * sw} 210 210)`);
+    pop(tm, t, K.timing + 0.04, '');
+    pages.forEach((pg, j) => { if (j === pages.length - 1) return; const q = inOut(prog(t, K.timing + 0.12 + 0.18 * j, 0.16));       // each page peels up from its top edge
+      pg.style.transform = `rotateX(${-108 * q}deg)`; pg.style.opacity = q >= 1 ? 0 : 1; pg.querySelector('.shade').style.opacity = .45 * q; });
+    if (!rl) { rl = rg.getTotalLength(); rg.style.strokeDasharray = rl; }
+    const rq = outCubic(prog(t, K.timing + 0.64, 0.26)); rg.style.strokeDashoffset = rl * (1 - rq); ring.style.opacity = rq > 0 ? 1 : 0;
   };
 };
 // one chart system for the "normal game" curve, then reused for GTA V (the governing idea: GTA V's line never fell)
@@ -291,15 +310,18 @@ C.delays = sc => {                                           // timing evidence:
   };
 };
 C.dev13 = sc => {                                            // "13 years of development" appears on "develop", struck on "pattaledu"
-  const box = $('div', 'abs', L.text); box.style.cssText += ';left:0;right:0;top:1110px;text-align:center';
-  const a = $('div', 'price', box, '13 YEARS'); a.style.cssText += ';display:block;font-size:200px';
-  const b = $('div', 'serif', box, 'of development'); b.style.cssText += ';display:block;font-size:120px;margin-top:30px';
-  const st = strike(L.text); st.style.cssText += ';left:120px;top:1180px;width:840px;height:22px';
-  const st2 = strike(L.text); st2.style.cssText += ';left:180px;top:1355px;width:720px;height:18px';
+  const box = $('div', 'abs', L.text); box.style.cssText += ';left:0;right:0;top:1170px;text-align:center';
+  const l1 = $('div', '', box), l2 = $('div', '', box); l2.style.marginTop = '16px';
+  const a = $('span', 'price', l1, '13 YEARS'); a.style.cssText += ';display:inline-block;font-size:118px';
+  const b = $('span', 'serif', l2, 'of development'); b.style.cssText += ';display:inline-block;font-size:72px';
+  const st = strike(L.text), st2 = strike(L.text); let placed = false;
+  const place = (el, s, h, fy) => { const r = el.getBoundingClientRect(); s.style.left = (r.left - 14) + 'px'; s.style.width = (r.width + 28) + 'px'; s.style.height = h + 'px'; s.style.top = (r.top + r.height * fy - h / 2) + 'px'; };
   return t => {
     [box, st, st2].forEach(e => show(e, 1)); pop(a, t, K.develop - .05, ''); b.style.opacity = prog(t, K.develop + .25, .2);
-    const q = prog(t, K.didnttake, .16), q2 = prog(t, K.didnttake + .1, .16); st.style.transform = `scaleX(${q}) rotate(-4deg)`; st.style.opacity = q > 0 ? 1 : 0; st2.style.transform = `scaleX(${q2}) rotate(3deg)`; st2.style.opacity = q2 > 0 ? 1 : 0;
-    box.style.opacity = 1 - .45 * q;
+    if (!placed && t >= K.didnttake - .05) { a.style.transform = 'none'; place(a, st, 12, .5); place(b, st2, 9, .6); placed = true; }       // straight, through the middle of each line
+    const q = prog(t, K.didnttake, .16), q2 = prog(t, K.didnttake + .1, .16);
+    st.style.transform = `scaleX(${q})`; st.style.opacity = q > 0 ? 1 : 0; st2.style.transform = `scaleX(${q2})`; st2.style.opacity = q2 > 0 ? 1 : 0;
+    box.style.opacity = 1 - .35 * q;
   };
 };
 C.vs = sc => {                                               // GTA V vs GTA VI covers, then the profit bars
@@ -379,12 +401,12 @@ window.init = (tl, opts = {}) => {
   // layout B (owner's choice): the speaker sits in a 4:5 window between two neon lines; designed scenes break out to full screen
   const fr = $('div', 'L', L.text); const top = $('div', 'abs', fr); top.style.cssText += ';left:0;top:268px;width:1080px;height:8px;background:linear-gradient(90deg,#3447B5,#C936B6,#F0489C,#FDA53A);box-shadow:0 0 18px rgba(240,72,156,.55)';
   const bot = top.cloneNode(); bot.style.top = '1644px'; fr.appendChild(bot);
-  const lab = $('div', 'track cap', fr, 'GTA VI · THE 13-YEAR WAIT'); lab.style.top = '128px'; lab.style.fontSize = '34px'; FRAME = [fr];
+  FRAME = [fr];                                              // owner 2026-11-28: no top sentence, lines only
   // Tenglish captions (owner's choice): one line, Shorts-safe band centred at y 1500, the spoken word lights up
   CAPS = $('div', 'cap', document.getElementById('Lcap')); CAPS.style.cssText += ';top:1458px;height:90px;display:flex;justify-content:center;align-items:center;gap:0 18px;flex-wrap:nowrap';
   for (const c of tl.caps) c.els = null;
 };
-const SPEAKER = new Set(['spk1', 'why', 'reason', 'hype', 'but', 'dev13', 'outro']);
+const SPEAKER = new Set(['open', 'spk1', 'why', 'reason', 'hype', 'but', 'spkv', 'spkd', 'dev13', 'spkt', 'outro']);
 window.renderAt = async t => {
   const i = Math.min(TL.n - 1, Math.round(t * FPS));
   document.getElementById('turb').setAttribute('seed', 1 + (i >> 1) % 97);
@@ -395,7 +417,7 @@ window.renderAt = async t => {
   // scene-start punch (zoom-blur) on picture layers; scenes with their own entrance keep it
   const dt = t - cur.sc.t0, own = new Set(['hook', 'n13', 'notlist', 'vcover', 'famous']), pk = own.has(cur.sc.id) || cur.sc.t0 === 0 ? 1 : prog(dt, 0, 0.13);
   for (const id of ['Lbg', 'Lmain', 'Lbroll', 'Lmg']) { const e = document.getElementById(id); e.style.transform = pk < 1 ? `scale(${lerp(1.07, 1, outCubic(pk))})` : ''; e.style.filter = pk < 1 ? `blur(${lerp(10, 0, outCubic(pk))}px) brightness(${lerp(1.25, 1, pk)})` : ''; }
-  drawCaps(t);
+  if (CAPS) CAPS.style.display = 'none';                     // owner 2026-11-28: no captions
   if (SPEAKER.has(cur.sc.id)) await drawSpeaker(t, i, cur.sc);
   if (cur.draw) await cur.draw(t, i);
   await Promise.all([...document.images].filter(im => im.offsetParent !== null && !im.complete).map(im => im.decode().catch(() => {})));

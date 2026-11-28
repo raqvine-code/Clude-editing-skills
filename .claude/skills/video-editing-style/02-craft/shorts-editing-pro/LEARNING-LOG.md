@@ -12,6 +12,34 @@
 
 ---
 
+## 2026-11-28 (cloud session) · "GTA 6: why it took 13 years" v2 · the owner's 9 changes
+- **Feedback (quoted):**
+  1. "Remove starting frame and keep my face"
+  2. "Remove tanglish captions entire video"
+  3. "Remove (why) word in that frame"
+  4. "Remove top sentences entire video"
+  5. "Remove time symbol, I dont like that may be add good one"
+  6. "At 34 sec remove frame"
+  7. "At 41 sec remove that frame"
+  8. "At 46 sec that letter (13 years of development keep small and add that lines on the words properly its not straight"
+  9. "At 50 sec remove that frame"
+- **Done:**
+  - face from the first frame, with a punch-in on "GTA 6";
+  - no captions;
+  - no handwritten "why?";
+  - no top label or kicker (the frame lines stay);
+  - a flip calendar (real dates peel, NOV 19 2026 circled) instead of the clock;
+  - his face at 34, 41 and 50 s;
+  - "13 YEARS of development" at 118 / 72 px, with straight strikes measured from each line's text box;
+  - the removed graphics' sounds taken out;
+  - gentle 5 % punch-ins on stressed words in the face scenes.
+- **Numbers:**
+  - 82 cues from 62 real files, 0 masking the voice;
+  - −14.0 LUFS, −1.5 dBTP;
+  - earshot sync 77 % (target 78 %: the new punch-ins have no sound, on purpose);
+  - gate NOT READY with 4 FAILs, all from the owner's choices: font families (approved), no match cut (it lived in the 34 s frame), the longest stretch without a graphic 10.0 s (the 41 s frame), event gaps (captions removed).
+- **Lesson:** this owner wants his face and a few strong designed beats, not data-heavy full-screen cards, running captions, kickers or doodles. Saved in P21 GUIDE section 6c.
+
 ## 2026-11-27 (cloud session) · "GTA 6: why it took 13 years" (owner's own Telugu facts video), 57.7 s · delivered
 - **Brief (quoted):** "combine all 6 clips in the correct order ... DO NOT START EDITING IMMEDIATELY ... frames and references for each scene ... GTA 6 gameplay B-rolls, research-evidence B-rolls, motion graphics ... No background music ... No colour grading." The owner approved the storyboard and chose **"framed window opt B"** and **"Tinglish opt B"**.
 - **Built with:**

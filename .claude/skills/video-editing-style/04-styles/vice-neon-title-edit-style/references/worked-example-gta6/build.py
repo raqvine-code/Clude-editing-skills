@@ -19,12 +19,12 @@ KEYS = dict(gta1=1, release=3, famous=6, everyone=7, many=10, gta2=12, n13a=16, 
             n13c=105, wait=107, meaning=109, moreimp=110, channel=115, subscribe=116)
 K = {k: T[i] for k, i in KEYS.items()}; K["end"] = DUR
 S = [  # scene id, start, end  (scene starts land on the word, or 2-6 frames before it)
- ("hook", 0.0, K["famous"] - 0.02), ("famous", K["famous"] - 0.02, K["everyone"]), ("spk1", K["everyone"], K["n13a"] - 0.60),
+ ("open", 0.0, K["famous"] - 0.02), ("famous", K["famous"] - 0.02, K["everyone"]), ("spk1", K["everyone"], K["n13a"] - 0.60),
  ("n13", K["n13a"] - 0.60, K["whyB"]), ("why", K["whyB"], K["story"] - 0.30), ("notlist", K["story"] - 0.30, K["then"]),
  ("reason", K["then"], K["money"] - 0.06), ("moneytime", K["money"] - 0.06, K["normally"]), ("chart1", K["normally"], K["hype"] - 0.20),
  ("hype", K["hype"] - 0.20, K["devs"] - 0.30), ("chart2", K["devs"] - 0.30, K["but"]), ("but", K["but"], K["gta5"] - 0.04),
- ("vcover", K["gta5"] - 0.04, K["didnt"] - 0.40), ("vline", K["didnt"] - 0.40, K["newg"] - 0.10), ("scale", K["newg"] - 0.10, K["onlythen"]),
- ("delays", K["onlythen"], K["so"]), ("dev13", K["so"], K["gta5c"] - 0.06), ("vs", K["gta5c"] - 0.06, K["until"]), ("timeline", K["until"], K["moreimp"] - 0.10),
+ ("vcover", K["gta5"] - 0.04, K["didnt"] - 0.40), ("spkv", K["didnt"] - 0.40, K["newg"] - 0.10), ("scale", K["newg"] - 0.10, K["onlythen"]),
+ ("spkd", K["onlythen"], K["so"]), ("dev13", K["so"], K["gta5c"] - 0.06), ("vs", K["gta5c"] - 0.06, K["until"]), ("spkt", K["until"], K["moreimp"] - 0.10),
  ("outro", K["moreimp"] - 0.10, DUR)]
 scenes = [dict(id=i, t0=round(a_, 3), t1=round(b_, 3)) for i, a_, b_ in S]
 ft = json.load(open(P + "face_track.json"))

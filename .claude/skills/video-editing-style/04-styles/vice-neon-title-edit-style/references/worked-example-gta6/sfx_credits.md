@@ -6,7 +6,6 @@ All sound effects are real recordings (no music, no synthesised sounds). CC0 fil
 - "ExplosionBombBlastDistantMuffled_LikeCinematicBoom_3.wav" by zimbot (BY-4.0), https://freesound.org/people/zimbot/sounds/120956
 - "cabinet_door_thump.wav" by joedeshon (BY-4.0), https://freesound.org/people/joedeshon/sounds/632535
 - "Keyboard Key with Pitch and Phaser Effects" by AntoineRomo (BY-3.0), https://freesound.org/people/AntoineRomo/sounds/592765
-- "Keyboard Key" by AntoineRomo (BY-3.0), https://freesound.org/people/AntoineRomo/sounds/592766
 - "paper sliding and falling gently" by pauliperez1999 (BY-3.0), https://freesound.org/people/pauliperez1999/sounds/428798
 - "Pop, High, A (H1).wav" by InspectorJ (BY-4.0), https://freesound.org/people/InspectorJ/sounds/411642
 - "Pop, Low, A (H1).wav" by InspectorJ (BY-4.0), https://freesound.org/people/InspectorJ/sounds/411639
@@ -18,6 +17,6 @@ All sound effects are real recordings (no music, no synthesised sounds). CC0 fil
 - "VS_Short Whoosh 8.mp3" by Vilkas_Sound (BY-4.0), https://freesound.org/people/Vilkas_Sound/sounds/460473
 - "VS_Short Whoosh 6.mp3" by Vilkas_Sound (BY-4.0), https://freesound.org/people/Vilkas_Sound/sounds/460475
 
-CC0 clock ticks via Openverse/Freesound: "Clock Ticking" by unfa
-Mixkit sounds (Mixkit Sound Effects Free License): cinematic-cine-hit_2901.mp3, cinematic-deep-boom_553.mp3, cinematic-film-flash_3131.mp3, impact-1_2908.mp3, impact-2_788.mp3, kaching-1_1993.mp3, marker-scribble_2369.mp3, pencil-write_3194.mp3, tech-digital-whoosh_2596.mp3, whoosh-1_2350.mp3, whoosh-2_1492.mp3, whoosh-3_1714.mp3, wood-hit_2182.mp3
+CC0 clock ticks via Openverse/Freesound: 
+Mixkit sounds (Mixkit Sound Effects Free License): cinematic-cine-hit_2901.mp3, cinematic-deep-boom_553.mp3, kaching-1_1993.mp3, marker-scribble_2369.mp3, pencil-write_3194.mp3, whoosh-1_2350.mp3, whoosh-2_1492.mp3, wood-hit_2182.mp3
 Ghost Editor CC0 sounds: deep-boom.mp3, glitch-hit.mp3, vinyl-scratch.mp3, whoosh-reverse.mp3

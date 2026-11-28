@@ -2,6 +2,16 @@
 
 Newest first. Each entry says what was learned, where it was saved, and what is still open. The edits themselves are logged in `shorts-editing-pro/LEARNING-LOG.md` (shorts) and `../edited videos by claude/README.md` (all deliveries, 25 so far). Add an entry here after every skill change (README section 7).
 
+## 2026-11-28 (P21 edit v2): the owner's nine changes to the GTA 6 video
+**The user's words:** "There are few mistakes you should change in this video: 1. Remove starting frame and keep my face 2. Remove tanglish captions entire video ... 5. Remove time symbol, I dont like that may be add good one ... 8. At 46 sec that letter (13 years of development keep small and add that lines on the words properly its not straight ..."
+- **Saved:**
+  - P21 GUIDE section 6c: his taste (face first, no captions, no top sentences, no doodles, no clock icons, straight measured strikes, small text over the face, fewer data cards);
+  - worked example updated: engine, sound plan, a before/after sheet;
+  - learning-log entry.
+- **New component:** the flip calendar for "timing" (real dates peel off from the top edge; the release day is circled), plus measured straight strike-throughs (`getBoundingClientRect` per line).
+- **Gate:** 4 FAILs caused by the owner's removals, reported to him, gate not edited.
+- **Open:** the owner's verdict on v2.
+
 ## 2026-11-27 (first P21 edit): "GTA 6: why it took 13 years", framed window and Tenglish captions
 **The user's words:** "Edit my GTA 6 facts video ... DO NOT START EDITING IMMEDIATELY ... Show me the visual frames and references for each scene ... No background music (BGM). No colour grading." Then: "Ok it looks fine the storyboard and I select these 1.framed window opt B 2.Tinglish opt B."
 - **Saved:** `04-styles/vice-neon-title-edit-style/references/worked-example-gta6/` (README, compositor, timeline, Tenglish captions, sound plan, plan, storyboards, final key moments, credits). GUIDE section 10 holds the lessons.
