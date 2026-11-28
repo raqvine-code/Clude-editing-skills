@@ -18,7 +18,17 @@
 - **Owner's notes on the frames, in order:** (1) "I don't like the font and fonts placement" → typography rebuilt after his reference; (2) "the font on my face ... don't repeat again" → face clearance; (3) "3 lines ... look like more fonts, disturbing ... only 2 lines" → two lines at most, long phrases split in two.
 - **Went wrong and fixed:** the "coming to that…" chip hit the lockup and repeated his words, so it became a plain filling line. The last "wait." only appeared during the fade, so the exit now waits 0.1 s after the last word. The gate failed on event gaps, so 23 quiet cues went on phrase changes. Mixkit and bank pools ran out at 3 uses, so other soft roles were used.
 - **Gate at delivery:** 1 FAIL, B-roll 0 %. He asked for designed graphics over B-roll and approved a no-B-roll plan, so this was reported, not patched. earshot: sync 83 %, realness 0.99. The "no music" warning comes from his no-BGM rule. The final-LU warning comes from his own voice at the end.
-- **Comments scene:** no invented viewer comments. Each row carries only the words he quotes, with names and photos blurred. Swap in real screenshots if he sends them.
+- **v2, owner's two notes:**
+  - "all comments are same ... add like real": four different wordings of the question he says viewers asked, with names and photos still blurred and the avatar tints varied.
+  - "improve sound effects":
+    - main cues +2 dB;
+    - a low layer (deep boom) under support, facts and follow;
+    - marker swipes on every comment;
+    - a heartbeat under the hearts;
+    - audible counter ticks;
+    - a 55 Hz +5 dB shelf on the SFX bus.
+  - earshot rose from 77 % to 85 %, with the sub share from −23.0 to −18.0 dB, now in range.
+- **Comments scene (v1):** no invented viewer comments. Each row carries only the words he quotes, with names and photos blurred. Swap in real screenshots if he sends them.
 
 ## 2026-11-28 (cloud session) · "GTA 6: why it took 13 years" v2 · the owner's 9 changes
 - **Feedback (quoted):**
