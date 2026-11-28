@@ -15,7 +15,7 @@ Newest first. Each entry says what was learned, where it was saved, and what is 
 - Saved to `PROFILE.md`: two lines at most per phrase; split long phrases instead of dropping words; no on-screen element that repeats his words.
 - Compositor: lockups auto-fit a 1000 px column; chin clearance now follows each moment's own scene when a phrase crosses a cut; the exit fade waits 0.1 s after the last word.
 
-**Open:** his verdict on the v4 frames; real comment screenshots; layout and caption choices.
+**Delivered** after he approved the v4 frames ("Yeah now start the video editing"): log in `02-craft/shorts-editing-pro/LEARNING-LOG.md`. **Open:** real comment screenshots, a clean Instagram photo.
 
 ## 2026-11-28 (P21 edit v2): the owner's nine changes to the GTA 6 video
 **The user's words:** "There are few mistakes you should change in this video: 1. Remove starting frame and keep my face 2. Remove tanglish captions entire video ... 5. Remove time symbol, I dont like that may be add good one ... 8. At 46 sec that letter (13 years of development keep small and add that lines on the words properly its not straight ..."

@@ -12,6 +12,14 @@
 
 ---
 
+## 2026-11-28 (cloud session) · Move with Raghu "back to facts" channel update, 49.85 s · delivered
+- **Made:** 4 clips joined; layout B framed window; Tenglish phrase lockups (Montserrat Bold/Regular, one Great Vibes script word, one Cormorant Italic accent); M6 one-take UI graphics from his own screenshots (UNNAVA/POYAVA switch, comment list, 3 stat cards counting 10K / 27,296 / 10,106, two channel cards with a travelling arrow, community poll, follow card); 82 real-recording cues; no BGM, no grade; −14.0 LUFS / −1.5 dBTP; 60 fps.
+- **New:** text placed from the face track (lockup top ≥ the lowest chin of the phrase + 46 px), with an automatic overlap scan every 0.1 s that must read 0; lockups auto-fit a 1000 px column.
+- **Owner's notes on the frames, in order:** (1) "I don't like the font and fonts placement" → typography rebuilt after his reference; (2) "the font on my face ... don't repeat again" → face clearance; (3) "3 lines ... look like more fonts, disturbing ... only 2 lines" → two lines at most, long phrases split in two.
+- **Went wrong and fixed:** the "coming to that…" chip hit the lockup and repeated his words, so it became a plain filling line. The last "wait." only appeared during the fade, so the exit now waits 0.1 s after the last word. The gate failed on event gaps, so 23 quiet cues went on phrase changes. Mixkit and bank pools ran out at 3 uses, so other soft roles were used.
+- **Gate at delivery:** 1 FAIL, B-roll 0 %. He asked for designed graphics over B-roll and approved a no-B-roll plan, so this was reported, not patched. earshot: sync 83 %, realness 0.99. The "no music" warning comes from his no-BGM rule. The final-LU warning comes from his own voice at the end.
+- **Comments scene:** no invented viewer comments. Each row carries only the words he quotes, with names and photos blurred. Swap in real screenshots if he sends them.
+
 ## 2026-11-28 (cloud session) · "GTA 6: why it took 13 years" v2 · the owner's 9 changes
 - **Feedback (quoted):**
   1. "Remove starting frame and keep my face"
