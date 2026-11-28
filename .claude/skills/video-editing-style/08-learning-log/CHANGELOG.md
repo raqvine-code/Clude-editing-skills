@@ -11,7 +11,11 @@ Newest first. Each entry says what was learned, where it was saved, and what is 
 - `05-clients/move-with-raghu/PROFILE.md`: owner's rules, the face-clearance rule, the approved lockup typography, the channel facts.
 - The compositor rule: lockup top is at least the lowest chin of the phrase plus 46 px. An automatic face-overlap check runs over every 0.1 s and must show 0.
 
-**Open:** his verdict on the v3 frames; real comment screenshots; layout and caption choices.
+**Then (typography v4):** "3 lines ... look like more fonts, it look like disturbing ... add only 2 lines rather than 3 lines."
+- Saved to `PROFILE.md`: two lines at most per phrase; split long phrases instead of dropping words; no on-screen element that repeats his words.
+- Compositor: lockups auto-fit a 1000 px column; chin clearance now follows each moment's own scene when a phrase crosses a cut; the exit fade waits 0.1 s after the last word.
+
+**Open:** his verdict on the v4 frames; real comment screenshots; layout and caption choices.
 
 ## 2026-11-28 (P21 edit v2): the owner's nine changes to the GTA 6 video
 **The user's words:** "There are few mistakes you should change in this video: 1. Remove starting frame and keep my face 2. Remove tanglish captions entire video ... 5. Remove time symbol, I dont like that may be add good one ... 8. At 46 sec that letter (13 years of development keep small and add that lines on the words properly its not straight ..."

@@ -18,7 +18,9 @@ No style here is measured for challenge or comedy pacing. Every measured style i
   - Pull captions down onto the chest; keep them a little small rather than big.
 - **Typography he approved** (after his "Uncertainty is / The only universal / truth" reference):
   - phrase lockups of Montserrat Bold (the key word) and Montserrat Regular (small words), with one Great Vibes script word and one Cormorant Garamond Italic accent;
-  - 2-3 tight, staggered lines; words appear as spoken;
+  - **two lines at most per phrase** (his words: "3 lines ... look like more fonts, it look like disturbing ... add only 2 lines rather than 3 lines"). A phrase that needs more is split into two short phrases, so no word is lost;
+  - tight, staggered lines; words appear as spoken; the last word gets at least 0.1 s on screen before the phrase fades;
+  - no extra text element that repeats what he is saying (the "coming to that…" chip was replaced by a plain straight progress line);
   - yellow on at most a few words.
 - **From his GTA 6 notes:**
   - his face first;
